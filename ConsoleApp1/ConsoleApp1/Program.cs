@@ -9,6 +9,8 @@ namespace ConsoleApp1
             Console.WriteLine("Ola Git");
             
             Console.WriteLine("Testando GIT");
+
+            Console.WriteLine("Testando Teste");
         }
     }
 }
