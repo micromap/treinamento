@@ -6,7 +6,7 @@ namespace aula01
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World Novo !!!");
+            Console.WriteLine("Hello World Novo Teste!!!");
         }
     }
 }
