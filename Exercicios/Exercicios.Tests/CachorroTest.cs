@@ -1,12 +1,11 @@
 ﻿using Exercicios.Domain;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Exercicios.Tests
 {
     [TestClass]
-    class CachorroTest
+   public  class CachorroTest
     {
         [TestMethod]
         public void Cachorro_Latir_Test()
@@ -32,7 +31,7 @@ namespace Exercicios.Tests
 
             Console.WriteLine(quantoDevoComer);
 
-            Assert.AreEqual("Como tenho 1kg, devo comer 50g por dia", quantoDevoComer);
+            Assert.AreEqual("Como tenho 1kg, devo comer 0,05kg por dia", quantoDevoComer);
         }
 
         [TestMethod]
@@ -43,7 +42,7 @@ namespace Exercicios.Tests
 
             Console.WriteLine(quantoDevoComer);
 
-            Assert.AreEqual("Como tenho 30kg, devo comer 1500g por dia", quantoDevoComer);
+            Assert.AreEqual("Como tenho 30kg, devo comer 1,5kg por dia", quantoDevoComer);
         }
 
         [TestMethod]
@@ -54,7 +53,7 @@ namespace Exercicios.Tests
 
             Console.WriteLine(quantoDevoComer);
 
-            Assert.AreEqual("Como tenho 15kg, devo comer 750g por dia", quantoDevoComer);
+            Assert.AreEqual("Como tenho 15kg, devo comer 0,75kg por dia", quantoDevoComer);
         }
     }
 }

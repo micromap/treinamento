@@ -9,9 +9,9 @@ namespace Exercicios.Domain
             return "Au! Au!";
         }
 
-        public string QuantoDevoComer(int peso)
+        public string QuantoDevoComer(double peso)
         {
-            return $"Como tenho {peso}kg, devo comer {peso*0,05}g por dia";
+            return $"Como tenho {peso}kg, devo comer {peso*0.05}kg por dia";
         }
     }
 }
