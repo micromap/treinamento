@@ -11,7 +11,7 @@ namespace Exercicios.Domain
 
         public string QuantoDevoComer(double peso)
         {
-            return $"Como tenho {peso}kg, devo comer {peso*0.05}kg por dia";
+            return $"Como tenho {peso}kg, devo comer {(peso*1000)*0.05}g por dia";
         }
     }
 }
