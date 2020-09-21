@@ -6,5 +6,9 @@ namespace Exercicios.Domain
 {
     class Cachorro
     {
+        public string Latir()
+        {
+            return "Au, Au!";
+        }
     }
 }
