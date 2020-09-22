@@ -4,14 +4,32 @@ namespace Exercicios.Domain
 {
     public class Cachorro
     {
+        private string _nome;
+        private string _sexo;
+        private string _raca;
+        private string _porte;
+        private int _idade;
+        private double _pesoKg;
+
         public string Latir()
         {
             return "Au! Au!";
         }
 
-        public string QuantoDevoComer(int peso)
+        // Método para calcular 5% do Peso(Kg) do cachorro em Gramas de Ração
+        public string QuantoDevoComer(int pesoKg)
         {
-            throw new NotImplementedException();
+            return $"Como tenho {pesoKg}kg, devo comer {pesoKg * 50}g por dia";
+        }
+
+        public void SetNome(string nome)
+        {
+            _nome = nome;
+        }
+
+        public string GetNome()
+        {
+            return _nome;
         }
     }
 }

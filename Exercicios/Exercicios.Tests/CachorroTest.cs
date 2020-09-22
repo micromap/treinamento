@@ -34,6 +34,38 @@ namespace Exercicios.Tests
             Assert.AreEqual("Como tenho 1kg, devo comer 50g por dia", quantoDevoComer);
         }
 
-        // Criar os métodos de teste, para a Tequila e para o Yuri
+        [TestMethod]
+        public void Tequila_QuantoDevoComer_Test()
+        {
+            Cachorro tequila = new Cachorro();
+            string quantoDevoComer = tequila.QuantoDevoComer(30);
+
+            Console.WriteLine(quantoDevoComer);
+
+            Assert.AreEqual("Como tenho 30kg, devo comer 1500g por dia", quantoDevoComer);
+        }
+
+        [TestMethod]
+        public void Yuri_QuantoDevoComer_Test()
+        {
+            Cachorro yuri = new Cachorro();
+            string quantoDevoComer = yuri.QuantoDevoComer(15);
+
+            Console.WriteLine(quantoDevoComer);
+
+            Assert.AreEqual("Como tenho 15kg, devo comer 750g por dia", quantoDevoComer);
+        }
+
+        [TestMethod]
+        public void Cachorro_Set_Get_Nome_Teste()
+        {
+            Cachorro yuri = new Cachorro();
+
+            yuri.SetNome("Yuri");
+            string nome = yuri.GetNome();
+
+            Console.WriteLine(nome);
+            Assert.AreEqual("Yuri", nome);
+        }
     }
 }
