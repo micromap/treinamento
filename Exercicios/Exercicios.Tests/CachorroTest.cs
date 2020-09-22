@@ -20,7 +20,7 @@ namespace Exercicios.Tests
         }
 
         [TestMethod]
-        public void Leia_QuandoDevoComer_Test()
+        public void Leia_QuantoDevoComer_Test()
         {
             Cachorro leia = new Cachorro();
             string quantoDevoComer = leia.QuantoDevoComer(1);
@@ -30,23 +30,23 @@ namespace Exercicios.Tests
         }
 
         [TestMethod]
-        public void Yuri_QuandoDevoComer_Test()
+        public void Yuri_QuantoDevoComer_Test()
         {
             Cachorro yuri = new Cachorro();
             string quantoDevoComer = yuri.QuantoDevoComer(15);
 
             Console.WriteLine();
-            Assert.AreEqual("Como tenho 1kg, devo comer 50g", quantoDevoComer);
+            Assert.AreEqual("Como tenho 15kg, devo comer 750g", quantoDevoComer);
         }
 
         [TestMethod]
-        public void Tequila_QuandoDevoComer_Test()
+        public void Tequila_QuantoDevoComer_Test()
         {
             Cachorro tequila = new Cachorro();
             string quantoDevoComer = tequila.QuantoDevoComer(30);
 
             Console.WriteLine();
-            Assert.AreEqual("Como tenho 1kg, devo comer 50g", quantoDevoComer);
+            Assert.AreEqual("Como tenho 30kg, devo comer 1500g", quantoDevoComer);
         }
     }
 }

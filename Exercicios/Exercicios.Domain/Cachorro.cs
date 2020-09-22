@@ -15,9 +15,9 @@ namespace Exercicios.Domain
         public string QuantoDevoComer(int peso)
         {
             double total;
-            total = (peso * 5 ) / 100;
+            total = (peso * 0.05) * 1000;
 
-            return "Como tenho " + peso + "kg, tenho que comer " + total + "g";
+            return "Como peso " + peso + "kg, tenho que comer " + total + "g";
         }
     }
 
