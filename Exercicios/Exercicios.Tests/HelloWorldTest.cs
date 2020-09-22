@@ -10,8 +10,6 @@ namespace Exercicios.Tests
     {
         [TestMethod]
         public void SayHello_Test()
-
-        
         {
             string mensagem = HelloWorld.SayHello();
 
