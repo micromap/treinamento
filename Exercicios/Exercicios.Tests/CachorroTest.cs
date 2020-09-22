@@ -26,23 +26,42 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Cachorro_Quanto_Devo_Comer_Test()
         {
-            Cachorro animal = new Cachorro();
-            string quantoDevoComer = animal.QuantoDevoComer(15, "Yuri");
+            Cachorro animal1 = new Cachorro();
+            string quantoDevoComer1 = animal1.QuantoDevoComer(1, "Leia");
 
-            Console.WriteLine(quantoDevoComer);
+            Console.WriteLine(quantoDevoComer1);
+            Assert.AreEqual("Leia pesando 1Kg deve comer 50g diariamente.", quantoDevoComer1);
 
-            if (quantoDevoComer.Substring(0, 4) == "Leia")
-            {
-                Assert.AreEqual("Leia pesando 1Kg deve comer 50g diariamente.", quantoDevoComer);
-            }
-            else if (quantoDevoComer.Substring(0, 7) == "Tequila")
-            {
-                Assert.AreEqual("Tequila pesando 30Kg deve comer 1500g diariamente.", quantoDevoComer);
-            }
-            else
-            {
-                Assert.AreEqual("Yuri pesando 15Kg deve comer 750g diariamente.", quantoDevoComer);
-            }
+
+
+            Cachorro animal2 = new Cachorro();
+            string quantoDevoComer2 = animal2.QuantoDevoComer(30, "Tequila");
+
+            Console.WriteLine(quantoDevoComer2);
+            Assert.AreEqual("Tequila pesando 30Kg deve comer 1500g diariamente.", quantoDevoComer2);
+
+
+
+            Cachorro animal3 = new Cachorro();
+            string quantoDevoComer3 = animal3.QuantoDevoComer(15, "Yuri");
+
+            Console.WriteLine(quantoDevoComer3);
+            Assert.AreEqual("Yuri pesando 15Kg deve comer 750g diariamente.", quantoDevoComer3);
+
+
+            
+                        /*if (quantoDevoComer.Substring(0, 4) == "Leia")
+                        {
+                            Assert.AreEqual("Leia pesando 1Kg deve comer 50g diariamente.", quantoDevoComer);
+                        }
+                        else if (quantoDevoComer.Substring(0, 7) == "Tequila")
+                        {
+                            Assert.AreEqual("Tequila pesando 30Kg deve comer 1500g diariamente.", quantoDevoComer);
+                        }
+                        else
+                        {
+                            Assert.AreEqual("Yuri pesando 15Kg deve comer 750g diariamente.", quantoDevoComer);
+                        }*/
         }
     }
 }
