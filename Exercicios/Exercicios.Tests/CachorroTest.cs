@@ -25,8 +25,8 @@ namespace Exercicios.Tests
             Cachorro leia = new Cachorro();
             string quantoDevoComer = leia.QuantoDevoComer(1);
 
-            Console.WriteLine();
-            Assert.AreEqual("Como tenho 1kg, devo comer 50g", quantoDevoComer);
+            Console.WriteLine(quantoDevoComer);
+            Assert.AreEqual("Como tenho 1kg, tenho que comer 50g", quantoDevoComer);
         }
 
         [TestMethod]
@@ -35,8 +35,8 @@ namespace Exercicios.Tests
             Cachorro yuri = new Cachorro();
             string quantoDevoComer = yuri.QuantoDevoComer(15);
 
-            Console.WriteLine();
-            Assert.AreEqual("Como tenho 15kg, devo comer 750g", quantoDevoComer);
+            Console.WriteLine(quantoDevoComer);
+            Assert.AreEqual("Como tenho 15kg, tenho que comer 750g", quantoDevoComer);
         }
 
         [TestMethod]
@@ -45,8 +45,8 @@ namespace Exercicios.Tests
             Cachorro tequila = new Cachorro();
             string quantoDevoComer = tequila.QuantoDevoComer(30);
 
-            Console.WriteLine();
-            Assert.AreEqual("Como tenho 30kg, devo comer 1500g", quantoDevoComer);
+            Console.WriteLine(quantoDevoComer);
+            Assert.AreEqual("Como tenho 30kg, tenho que comer 1500g", quantoDevoComer);
         }
     }
 }

@@ -17,7 +17,7 @@ namespace Exercicios.Domain
             double total;
             total = (peso * 0.05) * 1000;
 
-            return "Como peso " + peso + "kg, tenho que comer " + total + "g";
+            return "Como tenho " + peso + "kg, tenho que comer " + total + "g";
         }
     }
 
