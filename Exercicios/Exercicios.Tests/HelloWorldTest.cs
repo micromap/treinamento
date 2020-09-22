@@ -1,0 +1,20 @@
+using Exercicios.Domain;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+
+namespace Exercicios.Tests
+{
+    [TestClass]
+    public class HelloWorldTest
+    {
+        [TestMethod]
+        public void SayHello_Test()
+        {
+            string mensagem = HelloWorld.SayHello();
+
+            Assert.AreEqual("Hello World!", mensagem);
+
+            Console.WriteLine(mensagem);
+        }
+    }
+}
