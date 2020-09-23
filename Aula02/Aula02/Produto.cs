@@ -4,10 +4,6 @@ namespace Aula02
 {
     class Produto
     {
-        public int codigo;
-        public string nome;
-        public double preco;
-        public DateTime validade;
         
         public int Codigo { get; set; }
         public string Nome { get; set; }
@@ -21,9 +17,9 @@ namespace Aula02
 
         public Produto(int codigo, string nome, double preco)
         {
-            this.codigo = codigo;
-            this.nome   = nome;
-            this.preco  = preco;
+            Codigo = codigo;
+            Nome   = nome;
+            Preco  = preco;
          }
     }
 }

@@ -12,11 +12,11 @@ namespace Aula02
             produto1.Preco      = 1500.00;
             produto1.Validade   = DateTime.Now;
 
-            Produto produto2 = new Produto(1,"Corda", 15.50);
+            Produto produto2 = new Produto(2,"Corda", 15.50);
 
 
             Console.WriteLine(" O produto " + produto1.Codigo + " " + produto1.Nome + "\n Custa: R$" + produto1.Preco + "\n Valido até " + produto1.Validade);
-            Console.WriteLine("\n O produto " + produto2.codigo + " " + produto2.nome + "\n Custa: R$" + produto2.preco);
+            Console.WriteLine("\n O produto " + produto2.Codigo + " " + produto2.Nome + "\n Custa: R$" + produto2.Preco);
         }
     }
 }
