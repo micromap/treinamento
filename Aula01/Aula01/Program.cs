@@ -35,7 +35,7 @@ namespace Aula01
             Console.WriteLine("Preço de venda:" + p1.precoDeVenda);
             Console.WriteLine("Quantidade:" + p1.quantidade);
             Console.WriteLine("Ativo:" + p1.ativo);
-            Console.WriteLine("Categoria:");
+            Console.WriteLine("Categoria");
             Console.WriteLine("Código:" + p1.categoria.codigo);  //ou Console.WriteLine("Código:" + c1.codigo);
             Console.WriteLine("Nome:" + p1.categoria.nome);  //ou Console.WriteLine("Nome:" + c1.nome);
 
@@ -46,6 +46,10 @@ namespace Aula01
             Console.WriteLine("Preço de venda:" + p2.precoDeVenda);
             Console.WriteLine("Quantidade:" + p2.quantidade);
             Console.WriteLine("Ativo:" + p2.ativo);
+            Console.WriteLine("Categoria");
+            Console.WriteLine("Código:" + p2.categoria.codigo);
+            Console.WriteLine("Nome:" + p2.categoria.nome);
+
         }
     }
 }
