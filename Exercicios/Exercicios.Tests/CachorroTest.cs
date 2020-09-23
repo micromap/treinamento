@@ -27,7 +27,7 @@ namespace Exercicios.Tests
         [TestMethod]
         public void leia_quantoDevoComer_test()
         {
-            Cachorro leia           = new Cachorro();
+            Cachorro leia = new Cachorro();
             string quantoDevoComer = leia.QuandoDevoComer(1);
 
             Console.WriteLine(quantoDevoComer);
