@@ -11,7 +11,21 @@ namespace Exercicios.Domain
 
         public string QuantoDevoComer(int peso)
         {
-            return "Como tenho " + peso + "Kg, devo comer " + ((peso*1000)*0.05) +  "g por dia";
+            double qtdeRacao = peso * 0.10;
+            string mensagem = "Como tenho " + peso +
+                              "Kg, devo comer " + qtdeRacao +
+                              "kg por dia";
+            return mensagem;
+        }
+
+        public string QuantoIreiPesar(int peso)
+        {
+            double pesoFuturo =peso - (peso * 0.10);
+            string mensagem = "Como tenho " + peso +
+                              "Kg atualmente, daqui 10 anos irei pesar " + pesoFuturo + "kg";
+
+            return mensagem;
         }
     }
 }
+
