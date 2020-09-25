@@ -15,11 +15,12 @@ namespace Aula02
 
         }
 
-        public Produto(int codigo, string nome, double preco)
+        public Produto(int codigo, string nome, double preco, DateTime validade)
         {
             Codigo = codigo;
             Nome   = nome;
             Preco  = preco;
+            Validade = validade;
          }
     }
 }
