@@ -9,9 +9,10 @@ namespace Exercicios.Domain
             return "Au! Au!";
         }
 
-        public string QuantoDevoComer(int peso)
+        // Método para calcular 5% do Peso(kg) do cachorro em Gramas de Ração
+        public string QuantoDevoComer(int pesoKg)
         {
-            throw new NotImplementedException();
+            return $"Como tenho {pesoKg}kg, devo comer {pesoKg * 50}g por dia";
         }
     }
 }
