@@ -50,18 +50,18 @@ namespace Exercicios.Tests
 
 
             
-                        /*if (quantoDevoComer.Substring(0, 4) == "Leia")
-                        {
-                            Assert.AreEqual("Leia pesando 1Kg deve comer 50g diariamente.", quantoDevoComer);
-                        }
-                        else if (quantoDevoComer.Substring(0, 7) == "Tequila")
-                        {
-                            Assert.AreEqual("Tequila pesando 30Kg deve comer 1500g diariamente.", quantoDevoComer);
-                        }
-                        else
-                        {
-                            Assert.AreEqual("Yuri pesando 15Kg deve comer 750g diariamente.", quantoDevoComer);
-                        }*/
+            /*if (quantoDevoComer.Substring(0, 4) == "Leia")
+            {
+                Assert.AreEqual("Leia pesando 1Kg deve comer 50g diariamente.", quantoDevoComer);
+            }
+            else if (quantoDevoComer.Substring(0, 7) == "Tequila")
+            {
+                Assert.AreEqual("Tequila pesando 30Kg deve comer 1500g diariamente.", quantoDevoComer);
+            }
+            else
+            {
+                Assert.AreEqual("Yuri pesando 15Kg deve comer 750g diariamente.", quantoDevoComer);
+            }*/
         }
     }
 }
