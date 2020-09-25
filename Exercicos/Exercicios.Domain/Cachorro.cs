@@ -12,7 +12,7 @@ namespace Exercicios.Domain
 
         public double quantoDevoComer(int peso)
         {
-            double result = ((peso * 100) * 5 / 100);
+            double result = ((peso * 1000) * 5 / 100);
 
             return result;
         }

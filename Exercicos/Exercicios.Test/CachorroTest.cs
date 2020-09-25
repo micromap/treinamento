@@ -26,7 +26,7 @@ namespace Exercicios.Test
 
             double result = ((peso * 1000) * 5 / 100);
 
-            Console.WriteLine("Como tenho " + peso + " KG, devo comer " + quandoDevoComer + "g");
+            Console.WriteLine($"Como tenho {peso} KG, devo comer {quandoDevoComer}g");
 
             Assert.AreEqual(result, quandoDevoComer);
         }
@@ -40,7 +40,7 @@ namespace Exercicios.Test
 
             double result = ((peso * 1000) * 5 / 100);
 
-            Console.WriteLine("Como tenho " + peso + " KG, devo comer " + quandoDevoComer + "g");
+            Console.WriteLine($"Como tenho {peso} KG, devo comer {quandoDevoComer}g");
 
             Assert.AreEqual(result, quandoDevoComer);
         }
@@ -54,7 +54,7 @@ namespace Exercicios.Test
 
             double result = ((peso * 1000) * 5 / 100);
 
-            Console.WriteLine("Como tenho " + peso + " KG, devo comer " + quandoDevoComer + "g");
+            Console.WriteLine($"Como tenho {peso} KG, devo comer {quandoDevoComer}g");
 
             Assert.AreEqual(result, quandoDevoComer);
         }
