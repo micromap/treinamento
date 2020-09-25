@@ -27,5 +27,10 @@ namespace Aula2Sergio
         {
             return base.ToString();
         }
+
+        public double calculaPrecoTotal(double preco, int quantidade)
+        {
+            return preco * quantidade;
+        }
     }
 }
