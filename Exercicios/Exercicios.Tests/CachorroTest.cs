@@ -53,5 +53,14 @@ namespace Exercicios.Tests
 
 
         }
+        [TestMethod]
+        public void Preencher_Atributos_Test()
+        {
+            Cachorro cachorro = new Cachorro();
+
+
+            cachorro.SetNome("Rex");
+
+        }
     }
 }
