@@ -5,6 +5,13 @@ namespace Exercicios.Domain
 {
     public class Cachorro
     {
+        private string _nome;
+        private string _sexo;
+        private string _raca;
+        private string _porte;
+        private int _idade;
+        private double _peso;
+
         public string latir()
         {
             return "Au! Au! teste";
