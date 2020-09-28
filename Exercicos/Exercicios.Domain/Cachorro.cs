@@ -7,7 +7,7 @@ namespace Exercicios.Domain
     {
         public string latir()
         {
-            return "Au! Au!";
+            return "Au! Au! teste";
         }
 
         public double quantoDevoComer(int peso)
