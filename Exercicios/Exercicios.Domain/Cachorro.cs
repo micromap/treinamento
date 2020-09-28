@@ -13,6 +13,7 @@ namespace Exercicios.Domain
         {
             return nome + " pesando " + peso + "Kg deve comer " + (peso * 1000) * (0.05) + "g diariamente.";
 
+            // teste de concatenação
             //return string.Join("", nome, " pesando ", peso, "Kg deve comer ", (peso * 1000) * (0.05), "g diariamente.");
             //return $"{nome} pesando {peso}Kg deve comer {(peso * 1000) * (0.05)}g diariamente.";
             //return string.Format("{0}{1}{2}{3}{4}{5}", nome," pesando ", peso,"Kg deve comer ", (peso * 1000) * (0.05), "g diariamente.");
