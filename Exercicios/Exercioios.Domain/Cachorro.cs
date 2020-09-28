@@ -26,6 +26,14 @@ namespace Exercicios.Domain
 
             return mensagem;
         }
+
+        public string QualMinhaIdade(int idade)
+        {
+            int idadeFutura = idade + 5;
+            string mensagem = "Como tenho " + idade + " anos de idade, daqui 5 anos vou ter " + idadeFutura + " anos";
+
+            return mensagem;
+        }
     }
 }
 
