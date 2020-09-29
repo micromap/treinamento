@@ -62,7 +62,7 @@ namespace Exercicios.tests
         // para passar nesse teste
 
         [TestMethod]
-        public void LeiaQuantoIreiPesarTest()
+        public void LeiaQuantoIreiPesarTest()                    //LeiaPeso
         {
             Cachorro leia = new Cachorro();
             string quantoDevoComer = leia.QuantoIreiPesar(80);
@@ -73,7 +73,7 @@ namespace Exercicios.tests
         }
 
         [TestMethod]
-        public void TequilaQuantoIreiPesarTest()
+        public void TequilaQuantoIreiPesarTest()                 //TequilaPeso
         {
             Cachorro tequila = new Cachorro();
             string quantoDevoComer = tequila.QuantoIreiPesar(30);
@@ -84,7 +84,7 @@ namespace Exercicios.tests
         }
 
         [TestMethod]
-        public void YuriQuantoIreiPesarTest()
+        public void YuriQuantoIreiPesarTest()                     //YuriPeso
         {
             Cachorro yuri = new Cachorro();
             string quantoDevoComer = yuri.QuantoIreiPesar(150);
@@ -100,7 +100,7 @@ namespace Exercicios.tests
         // para passar nesse teste
 
         [TestMethod]
-        public void LeiaQualMinhaIdadeTest()
+        public void LeiaQualMinhaIdadeTest()                       //LeiaIdade
         {
             Cachorro leia = new Cachorro();
             string qualMinhaIdade = leia.QualMinhaIdade(10);
@@ -111,7 +111,7 @@ namespace Exercicios.tests
         }
 
         [TestMethod]
-        public void TequilaQualMinhaIdadeTest()
+        public void TequilaQualMinhaIdadeTest()                   //TequilaIdade
         {
             Cachorro tequila = new Cachorro();
             string qualMinhaIdade = tequila.QualMinhaIdade(8);
@@ -122,7 +122,7 @@ namespace Exercicios.tests
         }
 
         [TestMethod]
-        public void YuriQualMinhaIdadeTest()
+        public void YuriQualMinhaIdadeTest()                      //YuriIdade
         {
             Cachorro yuri = new Cachorro();
             string qualMinhaIdade = yuri.QualMinhaIdade(5);
@@ -130,6 +130,118 @@ namespace Exercicios.tests
             Console.WriteLine(qualMinhaIdade);
 
             Assert.AreEqual("Como tenho 5 anos de idade, daqui 5 anos vou ter 10 anos", qualMinhaIdade);
+        }
+
+        //EXERCÍCIOS AULA 14 RODRIGO
+        //private string _nome;
+        //private string _sexo;
+        //private string _raca;
+        //private string _porte;
+        //private int _idade;
+        //private double _peso
+
+        [TestMethod]                                                  //NOMES
+        public void CachorroGetSetNome()
+        {
+            Cachorro yuri = new Cachorro();
+            Cachorro tequila = new Cachorro();
+            Cachorro leia = new Cachorro();
+
+            yuri.SetNome("Yuri");
+            string nome = yuri.GetNome();
+
+            tequila.SetNome("Tequila");
+            string nome2 = tequila.GetNome();
+
+            leia.SetNome("Leia");
+            string nome3 = leia.GetNome();
+
+            Console.WriteLine(nome);
+            Assert.AreEqual("Yuri", nome);
+
+            Console.WriteLine(nome2);
+            Assert.AreEqual("Tequila", nome2);
+
+            Console.WriteLine(nome3);
+            Assert.AreEqual("Leia", nome3);
+        }
+
+        [TestMethod]
+        public void CachorroGetSetSexo()                                //SEXO
+        {
+            Cachorro yuri = new Cachorro();
+            Cachorro tequila = new Cachorro();
+            Cachorro leia = new Cachorro();
+
+            yuri.SetSexo("Masculino");                          
+            string sexo = yuri.GetSexo();
+
+            tequila.SetSexo("Feminino");
+            string sexo2 = tequila.GetSexo();
+
+            leia.SetSexo("Feminino");
+            string sexo3 = leia.GetSexo();
+
+            Console.WriteLine(sexo);
+            Assert.AreEqual("Masculino", sexo);
+
+            Console.WriteLine(sexo2);
+            Assert.AreEqual("Feminino", sexo2);
+
+            Console.WriteLine(sexo3);
+            Assert.AreEqual("Feminino", sexo3);
+        }
+
+        [TestMethod]
+        public void CachorroGetSetRaca()                                 //RAÇA
+        {
+            Cachorro yuri = new Cachorro();
+            Cachorro tequila = new Cachorro();
+            Cachorro leia = new Cachorro();
+
+            yuri.SetRaca("BullDog");
+            string raca = yuri.GetRaca();
+
+            tequila.SetRaca("Labrador");
+            string raca2 = tequila.GetRaca();
+
+            leia.SetRaca("Yorkshire");
+            string raca3 = leia.GetRaca();
+
+            Console.WriteLine(raca);
+            Assert.AreEqual("BullDog", raca);
+
+            Console.WriteLine(raca2);
+            Assert.AreEqual("Labrador", raca2);
+
+            Console.WriteLine(raca3);
+            Assert.AreEqual("Yorkshire", raca3);
+        }
+
+        [TestMethod]
+        public void CachorroGetSetPorte()               //PORTE
+        {
+            Cachorro yuri = new Cachorro();
+            Cachorro tequila = new Cachorro();
+            Cachorro leia = new Cachorro();
+
+            yuri.SetPorte("Médio");
+            string porte = yuri.GetPorte();
+
+            tequila.SetPorte("Grande");
+            string porte2 = yuri.GetPorte();
+
+            leia.SetPorte("Pequeno");
+            string porte3 = leia.GetPorte();
+
+            Console.WriteLine(porte);
+            Assert.AreEqual("Médio", porte);
+
+            Console.WriteLine(porte2);
+            Assert.AreEqual("Grande", porte2);
+
+            Console.WriteLine(porte3);
+            Assert.AreEqual("Pequeno", porte3);
         }
     }
 }
