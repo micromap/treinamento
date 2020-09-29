@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Dynamic;
 
 namespace Exercicios.Domain
 {
@@ -47,6 +48,45 @@ namespace Exercicios.Domain
             _sexo = sexo;
         }
 
+        public string GetRaca()
+        {
+            return _raca;
+        }
+
+        public void SetRaca(string raca)
+        {
+            _raca = raca;
+        }
+
+        public string GetPorte()
+        {
+            return _porte;
+        }
+
+        public void SetPorte(string porte)
+        {
+            _porte = porte;
+        }
+
+        public int GetIdade()
+        {
+            return _idade;
+        }
+
+        public void SetIdade(int idade)
+        {
+            _idade = idade;
+        }
+
+        public double GetPeso()
+        {
+            return _peso;
+        }
+
+        public void SetPeso(double peso)
+        {
+            _peso = peso;
+        }
 
     }
 }
