@@ -55,5 +55,77 @@ namespace Exercicios.Tests
 
             Assert.AreEqual("Como tenho 15kg, devo comer 750g por dia", quantoDevoComer);
         }
+
+        [TestMethod]
+        public void Cachorro_Set_Get_Nome_Test()
+        {
+            Cachorro leia = new Cachorro();
+
+            leia.SetNome("Leia");
+            string nome = leia.GetNome();
+
+            Console.WriteLine(nome);
+            Assert.AreEqual("Leia", nome);
+        }
+
+        [TestMethod]
+        public void Cachorro_Set_Get_Sexo_Test()
+        {
+            Cachorro leia = new Cachorro();
+
+            leia.SetSexo("Femea");
+            String sexo = leia.GetSexo();
+
+            Console.WriteLine(sexo);
+            Assert.AreEqual("Femea", sexo);
+        }
+
+        [TestMethod]
+        public void Cachorro_Set_Get_Raca_Test()
+        {
+            Cachorro leia = new Cachorro();
+
+            leia.SetRaca("Buldogue");
+            string raca = leia.GetRaca();
+
+            Console.WriteLine(raca);
+            Assert.AreEqual("Buldogue", raca);
+        }
+
+        [TestMethod]
+        public void Cachorro_Set_Get_Porte_Test()
+        {
+            Cachorro leia = new Cachorro();
+
+            leia.SetPorte("Pequeno");
+            string porte = leia.GetPorte();
+
+            Console.WriteLine(porte);
+            Assert.AreEqual("Pequeno", porte);
+        }
+
+        [TestMethod]
+        public void Cachorro_Set_Get_Idade_Test()
+        {
+            Cachorro leia = new Cachorro();
+
+            leia.SetIdade(4);
+            int idade = leia.GetIdade();
+
+            Console.WriteLine(idade);
+            Assert.AreEqual(4, idade);
+        }
+
+        [TestMethod]
+        public void Cachorro_Set_Get_PesoKg_Test()
+        {
+            Cachorro leia = new Cachorro();
+
+            leia.SetPesoKg(10.20);
+            double pesoKg = leia.GetPesoKg();
+
+            Console.WriteLine(pesoKg);
+            Assert.AreEqual(10.20, pesoKg);
+        }
     }
 }
