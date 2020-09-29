@@ -26,7 +26,7 @@ namespace Exercicios.Tests
             string quantoDevoComer = leia.QuantoDevoComer(1);
 
             Console.WriteLine(quantoDevoComer);
-            Assert.AreEqual("Como tenho 1kg, tenho que comer 50g", quantoDevoComer);
+            Assert.AreEqual("Como tenho 1kg, devo comer 50g por dia.", quantoDevoComer);
         }
 
         [TestMethod]
@@ -36,7 +36,7 @@ namespace Exercicios.Tests
             string quantoDevoComer = yuri.QuantoDevoComer(15);
 
             Console.WriteLine(quantoDevoComer);
-            Assert.AreEqual("Como tenho 15kg, tenho que comer 750g", quantoDevoComer);
+            Assert.AreEqual("Como tenho 15kg, devo comer 750g por dia.", quantoDevoComer);
         }
 
         [TestMethod]
@@ -46,7 +46,7 @@ namespace Exercicios.Tests
             string quantoDevoComer = tequila.QuantoDevoComer(30);
 
             Console.WriteLine(quantoDevoComer);
-            Assert.AreEqual("Como tenho 30kg, tenho que comer 1500g", quantoDevoComer);
+            Assert.AreEqual("Como tenho 30kg, devo comer 1500g por dia.", quantoDevoComer);
         }
     }
 }

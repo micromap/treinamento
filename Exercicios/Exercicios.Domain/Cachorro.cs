@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Xml.Schema;
-
-namespace Exercicios.Domain
+﻿namespace Exercicios.Domain
 {
     public class Cachorro
     {
@@ -12,12 +7,11 @@ namespace Exercicios.Domain
             return "Au Au!";
         }
 
-        public string QuantoDevoComer(int peso)
+        public string QuantoDevoComer(int pesoKg)
         {
-            double total;
-            total = (peso * 0.05) * 1000;
+            double qtdeRacaoGramas = pesoKg * 50;
 
-            return "Como tenho " + peso + "kg, tenho que comer " + total + "g";
+            return $"Como tenho {pesoKg}kg, devo comer {qtdeRacaoGramas}g por dia.";
         }
     }
 
