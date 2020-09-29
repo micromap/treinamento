@@ -8,8 +8,7 @@ namespace Exercicios.Tests
     public class CachorroTest
     {
          [TestMethod]
-
-         public void Cachorro_Latir_Test()
+        public void Cachorro_Latir_Test()
         {
             Cachorro leia = new Cachorro();
             string latido = leia.Latir();
@@ -47,6 +46,78 @@ namespace Exercicios.Tests
 
             Console.WriteLine(quantoDevoComer);
             Assert.AreEqual("Como tenho 30kg, devo comer 1500g por dia.", quantoDevoComer);
+        }
+
+        [TestMethod]
+        public void Cachorro_Get_Set_Nome_Test()
+        {
+            Cachorro yuri = new Cachorro();
+
+            yuri.SetNome("Yuri");
+            string nome = yuri.GetNome();
+
+            Console.WriteLine(nome);
+            Assert.AreEqual("Yuri", nome);
+        }
+
+        [TestMethod]
+        public void Cachorro_Get_Set_Sexo_Test()
+        {
+            Cachorro yuri = new Cachorro();
+
+            yuri.SetSexo("Masculino");
+            string sexo = yuri.GetSexo();
+
+            Console.WriteLine(sexo);
+            Assert.AreEqual("Masculino", sexo);
+        }
+
+        [TestMethod]
+        public void Cachorro_Get_Set_Raca_Test()
+        {
+            Cachorro yuri = new Cachorro();
+
+            yuri.SetRaca("Bulldog");
+            string raca = yuri.GetRaca();
+
+            Console.WriteLine(raca);
+            Assert.AreEqual("Bulldog", raca);
+        }
+
+        [TestMethod]
+        public void Cachorro_Get_Set_Porte_Teste()
+        {
+            Cachorro yuri = new Cachorro();
+
+            yuri.SetPorte("Pequeno");
+            string porte = yuri.GetPorte();
+
+            Console.WriteLine(porte);
+            Assert.AreEqual("Pequeno", porte);
+        }
+
+        [TestMethod]
+        public void Cachorro_Get_Set_Idade_Test()
+        {
+            Cachorro yuri = new Cachorro();
+
+            yuri.SetIdade(2);
+            int idade = yuri.GetIdade();
+
+            Console.WriteLine(idade);
+            Assert.AreEqual(2, idade);
+        }
+
+        [TestMethod]
+        public void Cachorro_Get_Set_Peso_Test()
+        {
+            Cachorro yuri = new Cachorro();
+
+            yuri.SetPeso(15);
+            double pesoKg = yuri.GetPeso();
+
+            Console.WriteLine(pesoKg);
+            Assert.AreEqual(15, pesoKg);
         }
     }
 }
