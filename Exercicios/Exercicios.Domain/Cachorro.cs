@@ -1,16 +1,20 @@
 ﻿using System;
 
 namespace Exercicios.Domain
-{
+{   
+
+    //Classe Cachorro
     public class Cachorro
-    {
+    {   
+        //Atributos privados da classe
         private string _nome;
         private string _sexo;
         private string _raca;
         private string _porte;
         private int _idade;
         private double _pesoKg;
-            
+       
+        //Metodo da classe, Latir()
         public string Latir()
         {
             return "Au! Au!";
@@ -21,6 +25,7 @@ namespace Exercicios.Domain
             return $"Como tenho {peso}kg, devo comer {(peso*1000)*0.05}g por dia";
         }
 
+        //Inicio dos metodos Get e Set para todos os atributos privados da classe Cachoro()
         public void SetNome(string nome)
         {
             _nome = nome;

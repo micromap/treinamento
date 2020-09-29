@@ -3,10 +3,12 @@ using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Exercicios.Tests
-{
+{   
+    //Classe de teste, da classe Cachorro()
     [TestClass]
    public  class CachorroTest
-    {
+    {   
+        //Metodo de teste 
         [TestMethod]
         public void Cachorro_Latir_Test()
         {
