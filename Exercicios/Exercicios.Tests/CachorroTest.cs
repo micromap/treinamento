@@ -85,7 +85,7 @@ namespace Exercicios.Tests
         }
 
         [TestMethod]
-        public void Cachorro_Get_Set_Porte_Teste()
+        public void Cachorro_Get_Set_Porte_Test()
         {
             Cachorro yuri = new Cachorro();
 
