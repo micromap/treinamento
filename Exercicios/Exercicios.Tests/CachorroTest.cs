@@ -58,16 +58,26 @@ namespace Exercicios.Tests
             Assert.AreEqual("Como tenho 15kg, devo comer 750g por dia", quantoDevoComer);
         }
 
+
+        //Testando mais de um retorno
         [TestMethod]
         public void Cachorro_Set_Get_Nome_Test()
         {
             Cachorro leia = new Cachorro();
+            Cachorro yuri = new Cachorro();
 
             leia.SetNome("Leia");
             string nome = leia.GetNome();
 
+
+            yuri.SetNome("Yuri");
+            string nome2 = yuri.GetNome();
+
             Console.WriteLine(nome);
             Assert.AreEqual("Leia", nome);
+
+            Console.WriteLine(nome2);
+            Assert.AreEqual("Yuri", nome2);
         }
 
         [TestMethod]
