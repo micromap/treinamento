@@ -14,7 +14,7 @@ namespace Exercicios.Domain
 
         public string latir()
         {
-            return "Au! Au! teste";
+            return "Au! Au!";
         }
 
         public double quantoDevoComer(int peso)
@@ -23,5 +23,66 @@ namespace Exercicios.Domain
 
             return result;
         }
+
+        public void SetNome(string nome)
+        {
+            _nome = nome;
+        }
+
+        public string GetNome()
+        {
+            return _nome;
+        }
+
+        public void SetSexo(string sexo)
+        {
+            _sexo = sexo;
+        }
+
+        public string GetSexo()
+        {
+            return _sexo;
+        }
+
+        public void SetRaca(string raca)
+        {
+            _raca = raca;
+        }
+
+        public string GetRaxa()
+        {
+            return _raca;
+        }
+
+        public void SetPorte(string porte)
+        {
+            _porte = porte;
+        }
+
+        public string GetPorte()
+        {
+            return _porte;
+        }
+
+        public void SetIdade(int idade)
+        {
+            _idade = idade;
+        }
+
+        public int GetIdade()
+        {
+            return _idade;
+        }
+
+        public void SetPeso(double peso)
+        {
+            _peso = peso;
+        }
+
+        public double GetPeso()
+        {
+            return _peso;
+        }
+       
     }
 }
