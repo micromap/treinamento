@@ -13,11 +13,10 @@ namespace Exercicios.Domain
 
       
 
-        public string QuantoDevoComer(int peso, double percentual)
+        public string QuantoDevoComer(int peso)
         {
-
-            double quantoComer =1000 * (peso * percentual);
-            return "Como tenho " + peso + "Kg, devo comer " + quantoComer + "g por dia";
+            //Método para Calcular 5% do peso do cachorro em gramas de ração.
+            return $"Como tenho { peso }Kg, devo comer { peso * 50}g por dia";
         }
 
     }

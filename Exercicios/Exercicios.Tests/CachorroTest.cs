@@ -30,10 +30,9 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Leia_QuantoDevoComer_Test()
         {
-            double percentual = 0.05;
             int peso = 1;
             Cachorro leia = new Cachorro();
-            String quantoDevoComer = leia.QuantoDevoComer(peso, percentual);
+            String quantoDevoComer = leia.QuantoDevoComer(peso);
             Console.WriteLine(quantoDevoComer);
             Assert.AreEqual("Como tenho " + peso + "Kg, devo comer 50g por dia", quantoDevoComer);
 
@@ -42,10 +41,10 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Tequila_QuantoDevoComer_Test()
         {
-           double percentual = 0.05;
+           
             int peso = 30;           
             Cachorro tequila = new Cachorro();
-            String quantoDevoComer= tequila.QuantoDevoComer(peso, percentual);
+            String quantoDevoComer= tequila.QuantoDevoComer(peso);
             Console.WriteLine(quantoDevoComer);
             Assert.AreEqual("Como tenho " + peso + "Kg, devo comer 1500g por dia", quantoDevoComer);
         }
@@ -53,10 +52,9 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Yuri_QuantoDevoComer_Test()
         {
-            double percentual = 0.05;
             int peso = 15;           
             Cachorro yuri = new Cachorro();
-            String quantoDevoComer = yuri.QuantoDevoComer(peso, percentual);
+            String quantoDevoComer = yuri.QuantoDevoComer(peso);
             Console.WriteLine(quantoDevoComer);
             Assert.AreEqual("Como tenho " + peso + "Kg, devo comer 750g por dia", quantoDevoComer);
         }
