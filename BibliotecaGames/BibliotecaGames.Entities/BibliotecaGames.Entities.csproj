@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0122FAED-808A-449B-A6B3-3734DBE9E60F}</ProjectGuid>
+    <ProjectGuid>{8D72E228-D701-4B99-BC61-F909DC984986}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BiblioteGames.BLL</RootNamespace>
-    <AssemblyName>BiblioteGames.BLL</AssemblyName>
+    <RootNamespace>BibliotecaGames.Entities</RootNamespace>
+    <AssemblyName>BibliotecaGames.Entities</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,17 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Editor.cs" />
+    <Compile Include="Genero.cs" />
+    <Compile Include="IntId.cs" />
+    <Compile Include="Jogo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BibliotecaGames.DAL\BibliotecaGames.DAL.csproj">
-      <Project>{ad056519-9859-4186-8580-b595e4697ff2}</Project>
-      <Name>BibliotecaGames.DAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BibliotecaGames.Entities\BibliotecaGames.Entities.csproj">
-      <Project>{8d72e228-d701-4b99-bc61-f909dc984986}</Project>
-      <Name>BibliotecaGames.Entities</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

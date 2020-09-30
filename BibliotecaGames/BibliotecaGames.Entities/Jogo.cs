@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BibliotecaGames.DAL.Modelo
+namespace BibliotecaGames.Entities
 {
     public class Jogo:IntId
     {

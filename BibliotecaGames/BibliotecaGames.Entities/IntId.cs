@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BibliotecaGames.DAL.Modelo
+namespace BibliotecaGames.Entities
 {
-    public class Editor:IntId
+    public class IntId
     {
-        public string Nome { get; set; }
+
     }
 }
