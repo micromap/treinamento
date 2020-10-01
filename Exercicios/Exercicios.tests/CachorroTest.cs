@@ -38,7 +38,7 @@ namespace Exercicios.tests
         }
 
 
-        /* criar metodos para os cachorros Tequila e Yuri */
+        /* criar metodos para os cachorros Tequila */
         [TestMethod]
         public void Tequila_QuantoDevoComer_test()
         {
@@ -51,6 +51,7 @@ namespace Exercicios.tests
 
         }
 
+        /* criar metodos para os cachorros Yuri */
         [TestMethod]
         public void Yuri_QuantoDevoComer_test()
         {
