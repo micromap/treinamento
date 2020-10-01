@@ -19,7 +19,7 @@ namespace Exercicios.tests
         }
 
         /*
-        Considerando que e Léia pesa 1kg,
+        Considerando que e Léia pesa 20kg,
         e come 5% do seu peso de ração,
         implemente o método "QuandoDevoComer"
         para passar nesse teste
