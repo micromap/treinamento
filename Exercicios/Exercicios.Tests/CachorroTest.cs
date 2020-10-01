@@ -56,5 +56,16 @@ namespace Exercicios.Tests
             Assert.AreEqual("Como tenho 15kg, devo comer 750g por dia", quantoDevoComer);
         }
 
+        [TestMethod]
+        public void Cachorro_Set_Get_Nome_Teste()
+        {
+            Cachorro yuri = new Cachorro();
+
+            yuri.SetNome("Yuri");
+            string nome = yuri.GetNome();
+
+            Console.WriteLine(nome);
+            Assert.AreEqual("Yuri", nome);
+        }
     }
 }
