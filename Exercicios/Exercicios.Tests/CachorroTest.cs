@@ -7,8 +7,9 @@ namespace Exercicios.Tests
     //Classe de teste, da classe Cachorro()
     [TestClass]
    public  class CachorroTest
-    {   
-        //Metodo de teste 
+    {
+        //Primeiro método de teste da classe Cachorro()
+        #region METODO TESTE LATIR()
         [TestMethod]
         public void Cachorro_Latir_Test()
         {
@@ -19,12 +20,15 @@ namespace Exercicios.Tests
 
             Assert.AreEqual("Au! Au!", latido);
         }
+        #endregion
 
         // Considerando que a Léia pesa 1Kg,
         // e come 5% do seu peso de ração,
         // implemente o Método "QuantoDevoComer"
-        // para passar nesse Teste
+        // para passar nesse Teste, e depois crie esse metodo para testar com outros cachorros
+        #region EXERCICIO AULA 13
 
+        #region LEIA QUANTO DEVE COMER
         [TestMethod]
         public void Leia_QuantoDevoComer_Test()
         {
@@ -35,7 +39,9 @@ namespace Exercicios.Tests
 
             Assert.AreEqual("Como tenho 1kg, devo comer 50g por dia", quantoDevoComer);
         }
+        #endregion
 
+        #region TEQUILA QUANTO DEVE COMER
         [TestMethod]
         public void Tequila_QuantoDevoComer_Test()
         {
@@ -46,7 +52,9 @@ namespace Exercicios.Tests
 
             Assert.AreEqual("Como tenho 30kg, devo comer 1500g por dia", quantoDevoComer);
         }
+        #endregion
 
+        #region YURI QUANTO DEVO COMER
         [TestMethod]
         public void Yuri_QuantoDevoComer_Test()
         {
@@ -57,9 +65,12 @@ namespace Exercicios.Tests
 
             Assert.AreEqual("Como tenho 15kg, devo comer 750g por dia", quantoDevoComer);
         }
+        #endregion
 
+        #endregion
 
-        //Testando mais de um retorno
+        //Criando metodos de teste, para testar os atributos da classe Cachorro()
+        #region EXERCICIO AULA 14
         [TestMethod]
         public void Cachorro_Set_Get_Nome_Test()
         {
@@ -139,5 +150,18 @@ namespace Exercicios.Tests
             Console.WriteLine(pesoKg);
             Assert.AreEqual(10.20, pesoKg);
         }
+
+        [TestMethod]
+        public void Cachorro_Peso_Nao_Pode_Ser_Negativo_Test()
+        {
+            Cachorro leia = new Cachorro();
+
+            leia.SetPesoKg(-1.0);
+            double pesoKg = leia.GetPesoKg();
+
+            Console.WriteLine(pesoKg);
+            Assert.AreEqual(0, pesoKg);
+        }
+        #endregion
     }
 }
