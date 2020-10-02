@@ -18,6 +18,12 @@ namespace Exercicios.tests
             Assert.AreEqual("AU! AU!", latido);
         }
 
+        
+        // Considerando que e Léia pesa 1kg,
+        // e come 5% do seu peso de ração,
+        // implemente o método "QuandoDevoComer"
+        // para passar nesse teste
+
         /*
         Considerando que e Léia pesa 30kg,
         e come 5% do seu peso de ração,
@@ -37,6 +43,7 @@ namespace Exercicios.tests
 
         }
 
+        // criar metodos para os cachorros Tequila e Yuri
 
         /* criar metodos para os cachorros Tequila */
         [TestMethod]
@@ -61,8 +68,31 @@ namespace Exercicios.tests
             Console.WriteLine(quantoDevoComer);
 
             Assert.AreEqual("Como tenho 15kg, devo comer 750g por dia", quantoDevoComer);
-
         }
 
+        [TestMethod]
+        public void Cachorro_Set_Get_Nome_Teste()
+        { 
+            Cachorro yuri = new Cachorro();
+            
+            yuri.SetNome("Yuri");
+            string nome = yuri.GetNome();
+
+            Console.WriteLine(nome);
+            Assert.AreEqual("Yuri",nome);
+          }
+        
+
+        [TestMethod]
+        public void Cachorro_Set_Get_Raca_Teste()
+        {
+            Cachorro yuri = new Cachorro();
+
+            yuri.SetRaca("buldog");
+            string raca = yuri.GetRaca();
+
+            Console.WriteLine(raca);
+            Assert.AreEqual("buldog", raca);
+        }
     }
 }
