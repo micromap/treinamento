@@ -41,8 +41,16 @@ namespace Exercicios.domain
             return _raca;
         }
 
+        public void SetPorte(string porte)
+        {
+            _porte = porte;
+        }
 
-
+        public string GetPorte()
+        {
+            return _porte;
+        }    
+        
     }
 
 

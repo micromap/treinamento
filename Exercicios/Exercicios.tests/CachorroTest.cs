@@ -94,5 +94,20 @@ namespace Exercicios.tests
             Console.WriteLine(raca);
             Assert.AreEqual("buldog", raca);
         }
+
+        [TestMethod]
+        public void Cachorro_Set_Get_Porte_Teste()
+        {
+            Cachorro yuri = new Cachorro();
+
+            yuri.SetPorte("medio");
+            string porte = yuri.GetPorte();
+
+            Console.WriteLine(porte);
+            Assert.AreEqual("medio", porte);
+
+        }
+
+        []
     }
 }
