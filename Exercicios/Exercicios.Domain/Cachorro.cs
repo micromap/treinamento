@@ -7,7 +7,7 @@ namespace Exercicios.Domain
     public class Cachorro
     {
         //Atributos privados da classe, com os gets e sets de cada atributos... todos dentro da região de codigos de cada um.
-        #region NOME
+        #region _nome
         private string _nome;
         public void SetNome(string nome)
         {
@@ -20,7 +20,7 @@ namespace Exercicios.Domain
         }
         #endregion
 
-        #region SEXO
+        #region _sexo
         private string _sexo;
         public string GetSexo()
         {
@@ -33,7 +33,7 @@ namespace Exercicios.Domain
         }
         #endregion
 
-        #region RACA
+        #region _raca
         private string _raca;
         public string GetRaca()
         {
@@ -46,7 +46,7 @@ namespace Exercicios.Domain
         }
         #endregion
 
-        #region PORTE
+        #region _porte
         private string _porte;
         public void SetPorte(string porte)
         {
@@ -58,7 +58,7 @@ namespace Exercicios.Domain
         }
         #endregion
 
-        #region IDADE
+        #region _idade
         private int _idade;
         public void SetIdade(int idade)
         {
@@ -71,7 +71,7 @@ namespace Exercicios.Domain
         }
         #endregion
 
-        #region PESOKG
+        #region _pesoKg
         private double _pesoKg;
         public void SetPesoKg(double pesoKg)
         {
