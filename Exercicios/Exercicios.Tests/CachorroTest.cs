@@ -75,6 +75,24 @@ namespace Exercicios.Tests
             int idade = cachorro.GetIdade();
             double pesoKg = cachorro.GetPesoKg();
 
+            Console.WriteLine(nome);
+            Assert.AreEqual("Leia", nome);
+
+            Console.WriteLine(sexo);
+            Assert.AreEqual("Fêmea", sexo);
+
+            Console.WriteLine(raca);
+            Assert.AreEqual("Yorkshire", raca);
+
+            Console.WriteLine(porte);
+            Assert.AreEqual("Pequena", porte);
+
+            Console.WriteLine(idade);
+            Assert.AreEqual(1, idade);
+
+            Console.WriteLine(pesoKg);
+            Assert.AreEqual(1.0, pesoKg);
+
 
         }
 
