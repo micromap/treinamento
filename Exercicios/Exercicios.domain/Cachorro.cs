@@ -72,17 +72,24 @@ namespace Exercicios.domain
 
         #region peso
         private double _peso;
+        public void SetPeso(Double peso)
+        {
+            if (peso < 0)
+            {
+                _peso = 0;
+            }
+            else
+            {
+                _peso = peso;
+            }
+        }
+        
         public double GetPeso()
         {
             return _peso;
         }
-        #endregion
-
-        #region peso
-        public void SetPeso(Double peso)
-        {
-            _peso = peso;
-        }
+        
+        
         #endregion
 
         #region latir

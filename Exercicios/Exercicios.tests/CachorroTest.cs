@@ -147,6 +147,20 @@ namespace Exercicios.tests
 
         }
 
+        [TestMethod]
+        public void Cachorro_Peso_Nao_Pode_Ser_Negativo_Teste()
+        {
+            Cachorro yuri = new Cachorro();
+
+            yuri.SetPeso(-1.2);
+            double peso = yuri.GetPeso();
+
+            Console.WriteLine(peso);
+            Assert.AreEqual(0, peso);
+
 
         }
+
+
     }
+}
