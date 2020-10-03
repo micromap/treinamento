@@ -2,11 +2,11 @@
 
 namespace Exercicios.Domain1
 {
-    class Program
+    class HelloWorld1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Olá povo do Visual Studio Community !");
         }
     }
 }
