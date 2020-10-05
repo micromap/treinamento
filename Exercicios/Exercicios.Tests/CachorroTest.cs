@@ -9,7 +9,7 @@ namespace Exercicios.Tests
    public  class CachorroTest
     {
         //Primeiro método de teste da classe Cachorro()
-        #region METODO TESTE LATIR()
+       /* #region METODO TESTE LATIR()
         [TestMethod]
         public void Cachorro_Latir_Test()
         {
@@ -21,7 +21,19 @@ namespace Exercicios.Tests
             Assert.AreEqual("Au! Au!", latido);
         }
         #endregion
+       */
 
+        [TestMethod]
+        public void Cachorro_Latir_Test()
+        {
+            Cachorro leia = new Cachorro();
+            short quantidadeLatidos = leia.Latir(10);
+
+            Console.WriteLine(quantidadeLatidos);
+
+            Assert.AreEqual(10, quantidadeLatidos);
+        }
+        
         // Considerando que a Léia pesa 1Kg,
         // e come 5% do seu peso de ração,
         // implemente o Método "QuantoDevoComer"

@@ -13,7 +13,6 @@ namespace Exercicios.Domain
         {
             _nome = nome;
         }
-
         public string GetNome()
         {
             return _nome;
@@ -90,15 +89,29 @@ namespace Exercicios.Domain
         }
         #endregion
 
-        //Metodo da classe, Latir(), QuantoDevoComer()
-        public string Latir()
+        #region _vacinado
+        private bool _vacinado;
+        public void SetVacinado(bool vacinado)
         {
-            return "Au! Au!";
+            _vacinado = vacinado;
+        }
+
+        public bool GetVacinado()
+        {
+            return _vacinado;
+        }
+        #endregion
+
+        //Metodo da classe, Latir(), QuantoDevoComer()
+        public short Latir(short quantidadeLatidos)
+        {
+            return quantidadeLatidos;
         }
 
         public string QuantoDevoComer(int peso)
         {
             return $"Como tenho {peso}kg, devo comer {(peso*1000)*0.05}g por dia";
         }
+        //teste
     }
 }
