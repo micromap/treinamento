@@ -96,7 +96,7 @@
 
         public string Latir(short qtdeLatidos)
         {
-            string latidos = "";
+            var latidos = "";
 
             for(short i = 1; i <= qtdeLatidos; i++)
                 latidos += "Au! ";
