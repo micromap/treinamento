@@ -113,11 +113,23 @@ namespace Exercicios.Tests
         {
             Cachorro yuri = new Cachorro();
 
-            yuri.SetPeso(15);
+            yuri.SetPeso(7);
             double pesoKg = yuri.GetPeso();
 
             Console.WriteLine(pesoKg);
-            Assert.AreEqual(15, pesoKg);
+            Assert.AreEqual(7, pesoKg);
+        }
+
+        [TestMethod]
+        public void Cachorro_Peso_Nao_Pode_Ser_Negativo_Test()
+        {
+            Cachorro yuri = new Cachorro();
+
+            yuri.SetPeso(-1.2);
+            double pesoKg = yuri.GetPeso();
+
+            Console.WriteLine(pesoKg);
+            Assert.AreEqual(0, pesoKg);
         }
     }
 }
