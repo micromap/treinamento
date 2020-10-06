@@ -105,10 +105,11 @@ namespace Exercicios.Tests
         public void Igualdade_entre_Tipos_de_Referencia_Test()
         {
             Cachorro cachorro1 = new Cachorro();
-            cachorro1.SetNome("Léia");
-
+            //cachorro1.SetNome("Léia");
             Cachorro cachorro2 = cachorro1;
 
+            Console.WriteLine(cachorro2);
+            Console.WriteLine(cachorro1);
             Assert.AreEqual(cachorro1, cachorro2);
         }
     }
