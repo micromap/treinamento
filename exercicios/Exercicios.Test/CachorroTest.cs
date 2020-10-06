@@ -6,6 +6,7 @@ namespace Exercicios.Test
 {
     [TestClass]
     public class CachorroTest
+
     {
         [TestMethod]
         public void CachorroLatirTest()
@@ -50,7 +51,14 @@ namespace Exercicios.Test
             Assert.AreEqual("Como tenho 15kg, devo comer 750g por dia", quantoDevoComer);
             Console.WriteLine(quantoDevoComer);
         }
-    }
 
+        [TestMethod]
+        public void YuriGetSetNomeTeste()
+        {
+            Cachorro yuri = new Cachorro();
+            yuri.SetNome("Yuri");
+            string nome = yuri.GetNome();
+            Assert.Equals("Yuri", nome);
+        }
+    }
 }
- 
