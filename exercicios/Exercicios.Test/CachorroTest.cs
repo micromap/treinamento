@@ -58,7 +58,7 @@ namespace Exercicios.Test
             Cachorro yuri = new Cachorro();
             yuri.SetNome("Yuri");
             string nome = yuri.GetNome();
-            Assert.Equals("Yuri", nome);
+            Assert.AreEqual("Yuri", nome);
         }
     }
 }
