@@ -18,8 +18,7 @@ namespace Exercicios.Test
 
         }
 
-        /* 
-         * Considerando quea Léia pesa 1KG,
+        /* Considerando quea Léia pesa 1KG,
          * e come 5% do seu peso em ração,
          * implemente m Método "QuantoDevoComer"
          * para passar neste teste
