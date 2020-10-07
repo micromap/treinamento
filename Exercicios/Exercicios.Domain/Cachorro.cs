@@ -63,11 +63,11 @@
         #endregion
 
         #region Peso
-        public void SetPeso(double peso)
+        public void SetPeso(double? peso)
         {
             if (peso < 0)
             {
-                _pesoKg = 0;
+                _pesoKg = null;
             }
             else
             {
@@ -75,11 +75,11 @@
             }
         }
 
-        public double GetPeso()
+        public double? GetPeso()
         {
             return _pesoKg;
         }
-        private double _pesoKg;
+        private double? _pesoKg;
         #endregion
 
         #region Vacinado
@@ -98,7 +98,7 @@
         {
             var latidos = "";
 
-            for(short i = 1; i <= qtdeLatidos; i++)
+            for(var i = 1; i <= qtdeLatidos; i++)
                 latidos += "Au! ";
 
             return latidos.TrimEnd();
