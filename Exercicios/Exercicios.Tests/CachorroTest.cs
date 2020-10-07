@@ -174,6 +174,18 @@ namespace Exercicios.Tests
             Console.WriteLine(pesoKg);
             Assert.AreEqual(0, pesoKg);
         }
+
+        [TestMethod]
+        public void Cachorro_Set_Get_Vacinado_Test()
+        {
+            Cachorro leia = new Cachorro();
+
+            leia.SetVacinado(true);
+            bool vacinado = leia.GetVacinado();
+
+            Console.WriteLine(vacinado);
+            Assert.AreEqual(true, vacinado);
+        }
         #endregion
     }
 }
