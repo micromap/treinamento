@@ -9,5 +9,10 @@
         public int quantidade;
         public bool ativo;
 
+
+
+
+        
+
     }
 }
