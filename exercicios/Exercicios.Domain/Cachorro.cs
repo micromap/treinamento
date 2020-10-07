@@ -5,7 +5,7 @@ namespace Exercicios.Domain
     public class Cachorro
     {
         private string nome;
-        private char sexo;
+        private string sexo;
         private string raca;
         private string porte;
         private int idade;
@@ -31,6 +31,16 @@ namespace Exercicios.Domain
         public string GetNome()
         {
             return this.nome;
+        }
+
+        public void SetSexo(string sexo)
+        {
+            this.sexo = sexo;
+        }
+
+        public string GetSexo()
+        {
+            return this.sexo;
         }
     }
 }

@@ -60,5 +60,14 @@ namespace Exercicios.Test
             string nome = yuri.GetNome();
             Assert.AreEqual("Yuri", nome);
         }
+
+        [TestMethod]
+        public void YuriGetSetSexoTeste()
+        {
+            Cachorro yuri = new Cachorro();
+            yuri.SetSexo("Macho");
+            string nome = yuri.GetSexo();
+            Assert.AreEqual("Macho", nome);
+        }
     }
 }
