@@ -16,7 +16,7 @@ namespace Exercicios.Domain
 
         public static void PassaReferencia(Cachorro cachorro)
         {
-            cachorro.SetNome("Léia");
+            cachorro.SetNome("Tequila");
         }
     }
 }

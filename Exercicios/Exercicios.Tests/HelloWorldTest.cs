@@ -50,6 +50,10 @@ namespace Exercicios.Tests
             cachorro.SetNome("Léia");
 
             HelloWorld.PassaReferencia(cachorro);
+            string nomeCachorro = cachorro.GetNome();
+
+            Console.WriteLine(nomeCachorro);
+            Assert.AreEqual("Tequila", nomeCachorro);
         }
     }
 
