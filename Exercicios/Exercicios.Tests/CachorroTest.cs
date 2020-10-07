@@ -174,7 +174,9 @@ namespace Exercicios.Tests
             Console.WriteLine(pesoKg);
             Assert.AreEqual(0, pesoKg);
         }
+        #endregion
 
+        #region EXERCICIO AULA 15
         [TestMethod]
         public void Cachorro_Set_Get_Vacinado_Test()
         {
