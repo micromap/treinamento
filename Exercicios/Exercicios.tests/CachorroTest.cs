@@ -160,6 +160,27 @@ namespace Exercicios.tests
 
 
         }
+        [TestMethod]
+        public void Cachorro_Set_Get_Vacinado_Teste()
+        {
+            Cachorro yuri = new Cachorro();
+
+            yuri.SetVacinado(false);
+            bool vacinado = yuri.GetVacinado();
+
+            if (vacinado)
+            {
+                Console.WriteLine("Já foi vacinado");
+            }
+            else
+            {
+                Console.WriteLine("Não foi vacinado");
+            }    
+
+            //Console.WriteLine(vacinado);
+            //Assert.AreEqual(true, vacinado);
+        }
+
 
 
     }

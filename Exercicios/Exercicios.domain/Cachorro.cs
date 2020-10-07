@@ -88,9 +88,21 @@ namespace Exercicios.domain
         {
             return _peso;
         }
-        
-        
         #endregion
+
+        #region vacinado
+        private bool _vacinado;
+        public void SetVacinado(bool vacinado)
+        {
+            _vacinado = vacinado;
+        }
+
+        public bool GetVacinado()
+        {
+            return _vacinado;
+        }
+        #endregion
+
 
         #region latir
         public string Latir()
