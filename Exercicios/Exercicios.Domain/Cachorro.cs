@@ -16,6 +16,11 @@ namespace Exercicios.Domain
         {
             return _nome;
         }
+
+        public void SetLatido(int v)
+        {
+            throw new NotImplementedException();
+        }
         #endregion
 
         #region Sexo
@@ -90,9 +95,27 @@ namespace Exercicios.Domain
         }
         #endregion
 
-        public string Latir()
+        #region Vacinado
+        private bool _vacinado;
+        public void SetVacinado(bool vacinado)
         {
-            return "Au Au!";
+            _vacinado = vacinado;
+        }
+
+        public bool GetVacinado()
+        {
+            return _vacinado;
+        }
+        #endregion
+
+        public string Latir(short quantidadeLatidos)
+        {
+            string latidos = "";
+
+            for(short i=1; i<=quantidadeLatidos; i++)
+                latidos +=  "Au! ";   //ou latidos = latidos + "Au! ";
+
+            return latidos.TrimEnd();
         }
 
         public string QuantoDevoComer(int pesoKg)
@@ -100,7 +123,7 @@ namespace Exercicios.Domain
             double qtdeRacaoGramas = pesoKg * 50;
 
             return $"Como tenho {pesoKg}kg, devo comer {qtdeRacaoGramas}g por dia.";
-        }        
+        }
     }
 
 }

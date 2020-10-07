@@ -11,11 +11,10 @@ namespace Exercicios.Tests
         public void Cachorro_Latir_Test()
         {
             Cachorro leia = new Cachorro();
-            string latido = leia.Latir();
+            string latido = leia.Latir(3);
 
             Console.WriteLine(latido);
-            Assert.AreEqual("Au Au!", latido);
-
+            Assert.AreEqual("Au! Au! Au!", latido);
         }
 
         [TestMethod]
@@ -106,6 +105,18 @@ namespace Exercicios.Tests
 
             Console.WriteLine(idade);
             Assert.AreEqual(2, idade);
+        }
+
+        [TestMethod]
+        public void Cachorro_Get_Set_Vacinado_Test()
+        {
+            Cachorro yuri = new Cachorro();
+
+            yuri.SetVacinado(true);
+            bool vacinado = yuri.GetVacinado();
+
+            Console.WriteLine(vacinado);
+            Assert.AreEqual(true, vacinado);
         }
 
         [TestMethod]

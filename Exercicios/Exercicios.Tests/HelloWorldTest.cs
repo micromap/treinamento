@@ -55,6 +55,27 @@ namespace Exercicios.Tests
             Console.WriteLine(nomeCachorro);
             Assert.AreEqual("Tequila", nomeCachorro);
         }
+        [TestMethod]
+        public void Desigualdade_entre_Tipos_de_Referencia_Test()
+        {
+            Cachorro cachorro1 = new Cachorro();
+            cachorro1.SetNome("Léia");
+
+            Cachorro cachorro2 = new Cachorro();
+            cachorro2.SetNome("Leia");
+
+            Assert.AreNotEqual(cachorro1, cachorro2);
+        }
+        [TestMethod]
+        public void Igualdade_entre_Tipos_de_Referencia_Test()
+        {
+            Cachorro cachorro1 = new Cachorro();
+            cachorro1.SetNome("Léia");
+
+            Cachorro cachorro2 = cachorro1;
+
+            Assert.AreEqual(cachorro1, cachorro2);
+        }
     }
 
 }
