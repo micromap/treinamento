@@ -1,7 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using Exercicios.Domain;
-using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities;
 
 namespace Exercicios.Tests
 {
