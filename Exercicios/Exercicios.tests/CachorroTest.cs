@@ -18,7 +18,6 @@ namespace Exercicios.tests
             Assert.AreEqual("AU! AU!", latido);
         }
 
-
         // Considerando que e Léia pesa 1kg,
         // e come 5% do seu peso de ração,
         // implemente o método "QuandoDevoComer"
@@ -82,7 +81,6 @@ namespace Exercicios.tests
             Assert.AreEqual("Yuri", nome);
         }
 
-
         [TestMethod]
         public void Cachorro_Set_Get_Raca_Teste()
         {
@@ -105,7 +103,6 @@ namespace Exercicios.tests
 
             Console.WriteLine(sexo);
             Assert.AreEqual("macho", sexo);
-
         }
 
         [TestMethod]
@@ -118,7 +115,6 @@ namespace Exercicios.tests
 
             Console.WriteLine(porte);
             Assert.AreEqual("medio", porte);
-
         }
 
         [TestMethod]
@@ -143,8 +139,6 @@ namespace Exercicios.tests
 
             Console.WriteLine(peso);
             Assert.AreEqual(15, peso);
-
-
         }
 
         [TestMethod]
@@ -157,8 +151,6 @@ namespace Exercicios.tests
 
             Console.WriteLine(peso);
             Assert.AreEqual(0, peso);
-
-
         }
         [TestMethod]
         public void Cachorro_Set_Get_Vacinado_Teste()
@@ -176,12 +168,9 @@ namespace Exercicios.tests
             {
                 Console.WriteLine("Não foi vacinado");
             }    
-
             //Console.WriteLine(vacinado);
             //Assert.AreEqual(true, vacinado);
         }
-
-
 
     }
 }

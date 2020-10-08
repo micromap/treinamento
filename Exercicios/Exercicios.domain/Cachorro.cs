@@ -103,20 +103,18 @@ namespace Exercicios.domain
         }
         #endregion
 
-
         #region latir
         public string Latir()
         {
             return "AU! AU!";
         }
+        #endregion
 
+        #region devo_comer
         public string QuantoDevoComer(int peso)
         {
             return $"Como tenho {peso}kg, devo comer {(peso*1000) * 0.05}g por dia";
         }
         #endregion
     }
-
-
-
 }
