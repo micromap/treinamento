@@ -6,38 +6,89 @@ namespace Exercicios.Domain
 {
     public class Cachorro
     {
+        private string _nome;
+        private string _sexo;
+        private string _raca;
+        private string _porte;
+        private int _idade;
+        private double _pesoKg;
+
         public string Latir()
         {
             return "Au! Au!";
         }
 
-        public string QuantoDevoComer(int peso)
+        // Método para Calcular 5% do Peso (Kg) do cachorro em gramas de ração
+        public string QuantoDevoComer(int pesoKg)
         {
             string saida = "";
-            int grama = peso * 1000;
+            int grama = pesoKg * 1000;
 
             double porcento = grama * 0.05;
 
             Console.WriteLine(porcento);
 
-            saida = "Como tenho "+ peso +"Kg,devo comer "+ porcento +"g por dia";
-
-            /*if (peso == 1)
-            { saida = "Como tenho 1Kg,devo comer 50g por dia";
-            }*/
-
-            /*if (peso == 30)
-            {
-                saida = "Como tenho 30Kg,devo comer 1500g por dia";
-            }*/
-
-            /*if (peso == 15)
-            {
-                saida = "Como tenho 15Kg,devo comer 750g por dia";
-            }*/
+            saida = "Como tenho "+ pesoKg +"Kg,devo comer "+ porcento +"g por dia";
 
             return saida;
         }
 
+        public void SetNome(string nome)
+        {
+            _nome = nome;
+        }
+
+        public string GetNome()
+        {
+            return _nome;
+        }
+
+        public void SetSexo(string sexo)
+        {
+            _sexo = sexo;
+        }
+
+        public string GetSexo()
+        {
+            return _sexo;
+        }
+
+        public void SetRaca(string raca)
+        {
+            _raca = raca;
+        }
+        
+        public string GetRaca()
+        {
+            return _raca;
+        }
+
+        public void SetPorte(string porte)
+        {
+            _porte = porte;
+        }
+
+        public string GetPorte()
+        {
+            return _porte;
+        }
+        public void SetIdade(int idade)
+        {
+            _idade = idade;
+        }
+
+        public int GetIdade()
+        {
+            return _idade;
+        }
+        public void SetPesoKg(double pesoKg)
+        {
+            _pesoKg = pesoKg;
+        }
+
+        public double GetPesoKg()
+        {
+            return _pesoKg;
+        }
     }
 }
