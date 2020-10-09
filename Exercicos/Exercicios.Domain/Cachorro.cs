@@ -19,7 +19,7 @@ namespace Exercicios.Domain
             
             for (int i = 0; i < quantidade; i++)
             {
-                result = result + "Au! ";
+                result += "Au! ";
             }
             
             return result;

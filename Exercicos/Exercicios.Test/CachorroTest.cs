@@ -17,7 +17,7 @@ namespace Exercicios.Test
 
             for (int i = 0; i < quantiade; i++)
             {
-                result = result + "Au! ";
+                result += "Au! ";
             }
 
             Console.WriteLine(latido);
