@@ -10,11 +10,19 @@ namespace Exercicios.Test
         public void Cachorro_Latir_Test()
         {
             Cachorro leia = new Cachorro();
-            string latido = leia.latir();
+            short quantiade = 3;
+            string latido = leia.latir(quantiade);
+
+            string result = "";
+
+            for (int i = 0; i < quantiade; i++)
+            {
+                result = result + "Au! ";
+            }
 
             Console.WriteLine(latido);
 
-            Assert.AreEqual("Au! Au!", latido);
+            Assert.AreEqual(result, latido);
         }
 
         [TestMethod]
@@ -82,7 +90,10 @@ namespace Exercicios.Test
             yuri.SetPeso(15.5);
             double peso = yuri.GetPeso();
 
-            Console.WriteLine($" Nome do Cachorro é {nome}, Sexo {sexo}, Raca {raca}, Porte {porte}, idade {idade} e seu Peso é {peso} KG ");
+            yuri.SetVacinado(false);
+            bool vacinado = yuri.GetVacinado();
+
+            Console.WriteLine($" Nome do Cachorro é {nome}, Sexo {sexo}, Raca {raca}, Porte {porte}, idade {idade} e seu Peso é {peso} KG, é vacinado {vacinado} ");
 
             Assert.AreEqual("Yuri", nome);
             Assert.AreEqual("Macho", sexo );
@@ -90,6 +101,7 @@ namespace Exercicios.Test
             Assert.AreEqual("Grande", porte);
             Assert.AreEqual(10, idade);
             Assert.AreEqual(15.5, peso);
+            Assert.AreEqual(false, vacinado);
         }
     }
 }

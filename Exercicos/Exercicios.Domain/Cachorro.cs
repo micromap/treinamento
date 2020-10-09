@@ -11,10 +11,18 @@ namespace Exercicios.Domain
         private string _porte;
         private int _idade;
         private double _peso;
+        private bool _vacinado;
 
-        public string latir()
+        public string latir(short quantidade)
         {
-            return "Au! Au!";
+            string result = "";
+            
+            for (int i = 0; i < quantidade; i++)
+            {
+                result = result + "Au! ";
+            }
+            
+            return result;
         }
 
         public double quantoDevoComer(int peso)
@@ -83,6 +91,15 @@ namespace Exercicios.Domain
         {
             return _peso;
         }
-       
+
+        public void SetVacinado(bool vacinado)
+        {
+            _vacinado = vacinado;
+        }
+
+        public bool GetVacinado()
+        {
+            return _vacinado;
+        }
     }
 }
