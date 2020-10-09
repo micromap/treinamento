@@ -4,6 +4,7 @@ namespace Exercicios.Domain
 {
     public class Cachorro
     {
+        #region Nome
         public void SetNome(string nome)
         {
             _nome = nome;
@@ -14,7 +15,9 @@ namespace Exercicios.Domain
             return _nome;
         }
         private string _nome;
+        #endregion
 
+        #region Sexo
         public void SetSexo(string sexo)
         {
             _sexo = sexo;
@@ -25,7 +28,9 @@ namespace Exercicios.Domain
             return _sexo;
         }
         private string _sexo;
+        #endregion
 
+        #region Raca
         public void SetRaca(string raca)
         {
             _raca = raca;
@@ -36,7 +41,9 @@ namespace Exercicios.Domain
             return _raca;
         }
         private string _raca;
+        #endregion
 
+        #region Porte
         public void SetPorte(string porte)
         {
             _porte = porte;
@@ -47,7 +54,9 @@ namespace Exercicios.Domain
             return _porte;
         }
         private string _porte;
+        #endregion
 
+        #region Idade
         public void SetIdade(int idade)
         {
             _idade = idade;
@@ -58,7 +67,9 @@ namespace Exercicios.Domain
             return _idade;
         }
         private int _idade;
+        #endregion
 
+        #region Peso
         public void SetPeso(double peso)
         {
             _peso = peso;
@@ -69,6 +80,7 @@ namespace Exercicios.Domain
             return _peso;
         }
         private double _peso;
+        #endregion
 
         public string Latir()
         {
@@ -79,10 +91,12 @@ namespace Exercicios.Domain
         {
             return $"{nome} pesando {peso}Kg deve comer {peso * 1000 * 0.05}g diariamente.";
 
+            #region TiposConcatenação
             // teste de concatenação
             //return string.Join("", nome, " pesando ", peso, "Kg deve comer ", (peso * 1000) * (0.05), "g diariamente.");
             //return $"{nome} pesando {peso}Kg deve comer {(peso * 1000) * (0.05)}g diariamente.";
             //return string.Format("{0}{1}{2}{3}{4}{5}", nome," pesando ", peso,"Kg deve comer ", (peso * 1000) * (0.05), "g diariamente.");
+            #endregion
         }
     }
 }
