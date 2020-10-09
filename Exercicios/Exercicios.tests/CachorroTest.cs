@@ -11,24 +11,12 @@ namespace Exercicios.tests
         public void Cachorro_latir_test()
         {
             Cachorro leia = new Cachorro();
-            string latido = leia.Latir();
+            string latido = leia.Latir(3);
 
             Console.WriteLine(latido);
 
-            Assert.AreEqual("AU! AU!", latido);
+            Assert.AreEqual("AU! AU! AU!", latido);
         }
-
-        // Considerando que e Léia pesa 1kg,
-        // e come 5% do seu peso de ração,
-        // implemente o método "QuandoDevoComer"
-        // para passar nesse teste
-
-        /*
-        Considerando que e Léia pesa 30kg,
-        e come 5% do seu peso de ração,
-        implemente o método "QuandoDevoComer"
-        para passar nesse teste
-        */
 
         [TestMethod]
         public void Leia_QuantoDevoComer_test()

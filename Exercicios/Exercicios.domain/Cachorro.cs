@@ -102,11 +102,17 @@ namespace Exercicios.domain
             return _vacinado;
         }
         #endregion
-
+        
         #region latir
-        public string Latir()
+        public string Latir(short qtdelatidos)
         {
-            return "AU! AU!";
+
+            string latidos = "";
+
+            for (short i = 1; i <= qtdelatidos;i++)
+                latidos += "AU! ";
+            
+            return latidos.TrimEnd();
         }
         #endregion
 
