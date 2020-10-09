@@ -27,11 +27,11 @@ namespace Exercicios.Tests
         public void Cachorro_Latir_Test()
         {
             Cachorro leia = new Cachorro();
-            short quantidadeLatidos = leia.Latir(10);
+            string latido = leia.Latir(3);
 
-            Console.WriteLine(quantidadeLatidos);
+            Console.WriteLine(latido);
 
-            Assert.AreEqual(10, quantidadeLatidos);
+            Assert.AreEqual("Au! Au! Au!", latido);
         }
         
         // Considerando que a Léia pesa 1Kg,

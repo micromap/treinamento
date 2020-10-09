@@ -103,15 +103,19 @@ namespace Exercicios.Domain
         #endregion
 
         //Metodo da classe, Latir(), QuantoDevoComer()
-        public short Latir(short quantidadeLatidos)
+        public string Latir(short quantidadeLatidos)
         {
-            return quantidadeLatidos;
+            string latidos = "";
+
+            for(short i = 1; i <= quantidadeLatidos; i++) // Caso dentro do for so tenha uma linha de comando, pode deixar sem as {}.       
+                latidos += "Au! "; //Atribuição composta, substitui latidos = latidos + "Au! "
+
+            return latidos.TrimEnd(); // Comando TrimEnd() tira o espaço em branco no final da string
         }
 
         public string QuantoDevoComer(int peso)
         {
             return $"Como tenho {peso}kg, devo comer {(peso*1000)*0.05}g por dia";
         }
-        //teste
     }
 }
