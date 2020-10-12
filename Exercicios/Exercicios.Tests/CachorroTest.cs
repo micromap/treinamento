@@ -62,45 +62,49 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Cachorro_Set_Get_Nome_Teste()
         {
+            String nome_cao = "Yuri";
             Cachorro yuri = new Cachorro();
 
-            yuri.SetNome("Yuri");
+            yuri.SetNome(nome_cao);
             string nome = yuri.GetNome();
             Console.WriteLine(nome);
-            Assert.AreEqual("Yuri",nome);
+            Assert.AreEqual(nome_cao, nome);
         }
 
         [TestMethod]
         public void Cachorro_Set_Get_Sexo_Teste()
         {
+            String sexo_cao = "Fêmea";
             Cachorro leia= new Cachorro();
 
-            leia.SetSexo("Fêmea");
+            leia.SetSexo(sexo_cao);
             string sexo = leia.GetSexo();
             Console.WriteLine(sexo);
-            Assert.AreEqual("Fêmea", sexo);
+            Assert.AreEqual(sexo_cao, sexo);
         }
 
         [TestMethod]
         public void Cachorro_Set_Get_Raca_Teste()
         {
+            String raca_cao = "Labrador";
             Cachorro tequila = new Cachorro();
 
-           tequila.SetRaca("Labrador");
+           tequila.SetRaca(raca_cao);
             string raca = tequila.GetRaca();
             Console.WriteLine(raca);
-            Assert.AreEqual("Labrador", raca);
+            Assert.AreEqual(raca_cao, raca);
         }
 
         [TestMethod]
         public void Cachorro_Set_Get_Porte_Teste()
         {
+            String porte_cao = "Médio";
             Cachorro yuri = new Cachorro();
 
-            yuri.SetPorte("Médio");
+            yuri.SetPorte(porte_cao);
             string porte = yuri.GetPorte();
             Console.WriteLine(porte);
-            Assert.AreEqual("Médio", porte);
+            Assert.AreEqual(porte_cao, porte);
         }
 
         [TestMethod]
@@ -113,6 +117,18 @@ namespace Exercicios.Tests
             int idade = tequila.GetIdade();
             Console.WriteLine(idade);
             Assert.AreEqual(idade_cao, idade);
+        }
+
+        [TestMethod]
+        public void Cachorro_Peso_Teste()
+        {
+            double peso_cao = 1.2;
+            Cachorro leia = new Cachorro();
+
+            leia.SetPeso(peso_cao);
+            double peso = leia.GetPeso();
+            Console.WriteLine(peso);
+            Assert.AreEqual(peso_cao, peso);
         }
 
         [TestMethod]

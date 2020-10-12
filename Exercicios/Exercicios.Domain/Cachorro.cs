@@ -21,9 +21,9 @@ namespace Exercicios.Domain
         #endregion
 
         #region Nome
-        public void SetNome(string nome)
+        public void SetNome(string nome_cao)
         {
-            _nome = nome;
+            _nome = nome_cao;
         }
 
         public string GetNome()
@@ -34,9 +34,9 @@ namespace Exercicios.Domain
         #endregion
 
         #region Sexo
-        public void SetSexo(string sexo)
+        public void SetSexo(string sexo_cao)
         {
-            _sexo = sexo;
+            _sexo = sexo_cao;
         }
 
         public string GetSexo()
@@ -47,9 +47,9 @@ namespace Exercicios.Domain
         #endregion
 
         #region Raça
-        public void SetRaca(string raca)
+        public void SetRaca(string raca_cao)
         {
-            _raca = raca;
+            _raca = raca_cao;
         }
 
         public string GetRaca()
@@ -60,9 +60,9 @@ namespace Exercicios.Domain
         #endregion
 
         #region Porte
-        public void SetPorte(string porte)
+        public void SetPorte(string porte_cao)
         {
-            _porte = porte;
+            _porte = porte_cao;
         }
 
         public string GetPorte()
