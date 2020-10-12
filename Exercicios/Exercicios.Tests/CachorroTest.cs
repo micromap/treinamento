@@ -76,18 +76,6 @@ namespace Exercicios.Tests
         }
 
         [TestMethod]
-        public void Cachorro_Set_Get_Raca_Teste()
-        {
-            var tequila = new Cachorro();
-
-            tequila.SetRaca("Labrador");
-            var raca = tequila.GetRaca();
-
-            Console.WriteLine(raca);
-            Assert.AreEqual("Labrador", raca);
-        }
-
-        [TestMethod]
         public void Cachorro_Set_Get_Porte_Teste()
         {
             var yuri = new Cachorro();
@@ -116,8 +104,8 @@ namespace Exercicios.Tests
         {
             var leia = new Cachorro();
 
-            leia.SetPeso(1.2);
-            var peso = leia.GetPeso();
+            leia.Peso = 1.2;
+            var peso = leia.Peso;
 
             Console.WriteLine(peso);
             Assert.AreEqual(1.2, peso);
@@ -128,8 +116,8 @@ namespace Exercicios.Tests
         {
             var leia = new Cachorro();
 
-            leia.SetPeso(-1.2);
-            var peso = leia.GetPeso();
+            leia.Peso = -1.2;
+            var peso = leia.Peso;
 
             Console.WriteLine(peso);
             Assert.AreEqual(null, peso);
@@ -140,8 +128,8 @@ namespace Exercicios.Tests
         {
             var leia = new Cachorro();
 
-            leia.SetPeso(null);
-            var peso = leia.GetPeso();
+            leia.Peso = null;
+            var peso = leia.Peso;
 
             Console.WriteLine(peso);
             Assert.AreEqual(null, peso);
