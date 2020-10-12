@@ -58,5 +58,74 @@ namespace Exercicios.Tests
             Console.WriteLine(quantoDevoComer);
             Assert.AreEqual("Como tenho " + peso + "Kg, devo comer 750g por dia", quantoDevoComer);
         }
+
+        [TestMethod]
+        public void Cachorro_Set_Get_Nome_Teste()
+        {
+            Cachorro yuri = new Cachorro();
+
+            yuri.SetNome("Yuri");
+            string nome = yuri.GetNome();
+            Console.WriteLine(nome);
+            Assert.AreEqual("Yuri",nome);
+        }
+
+        [TestMethod]
+        public void Cachorro_Set_Get_Sexo_Teste()
+        {
+            Cachorro yuri = new Cachorro();
+
+            yuri.SetSexo("Macho");
+            string sexo = yuri.GetSexo();
+            Console.WriteLine(sexo);
+            Assert.AreEqual("Macho", sexo);
+        }
+
+        [TestMethod]
+        public void Cachorro_Set_Get_Raca_Teste()
+        {
+            Cachorro yuri = new Cachorro();
+
+            yuri.SetRaca("Bulldog Francês");
+            string raca = yuri.GetRaca();
+            Console.WriteLine(raca);
+            Assert.AreEqual("Bulldog Francês", raca);
+        }
+
+        [TestMethod]
+        public void Cachorro_Set_Get_Porte_Teste()
+        {
+            Cachorro yuri = new Cachorro();
+
+            yuri.SetPorte("Médio");
+            string porte = yuri.GetPorte();
+            Console.WriteLine(porte);
+            Assert.AreEqual("Médio", porte);
+        }
+
+        [TestMethod]
+        public void Cachorro_Set_Get_Idade_Teste()
+        {
+            int idade_cao = 4;
+            Cachorro yuri = new Cachorro();
+            
+            yuri.SetIdade(idade_cao);
+            int idade = yuri.GetIdade();
+            Console.WriteLine(idade);
+            Assert.AreEqual(idade_cao, idade);
+        }
+
+        [TestMethod]
+        public void Cachorro_Set_Get_Peso_Teste()
+        {
+            double peso_cao = 15.5;
+            Cachorro yuri = new Cachorro();
+
+            yuri.SetPeso(peso_cao);
+            double peso = yuri.GetPeso();
+            Console.WriteLine(peso);
+            Assert.AreEqual(peso_cao, peso);
+        }
+
     }
 }
