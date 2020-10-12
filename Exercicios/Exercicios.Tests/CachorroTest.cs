@@ -73,23 +73,23 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Cachorro_Set_Get_Sexo_Teste()
         {
-            Cachorro yuri = new Cachorro();
+            Cachorro leia= new Cachorro();
 
-            yuri.SetSexo("Macho");
-            string sexo = yuri.GetSexo();
+            leia.SetSexo("Fêmea");
+            string sexo = leia.GetSexo();
             Console.WriteLine(sexo);
-            Assert.AreEqual("Macho", sexo);
+            Assert.AreEqual("Fêmea", sexo);
         }
 
         [TestMethod]
         public void Cachorro_Set_Get_Raca_Teste()
         {
-            Cachorro yuri = new Cachorro();
+            Cachorro tequila = new Cachorro();
 
-            yuri.SetRaca("Bulldog Francês");
-            string raca = yuri.GetRaca();
+           tequila.SetRaca("Labrador");
+            string raca = tequila.GetRaca();
             Console.WriteLine(raca);
-            Assert.AreEqual("Bulldog Francês", raca);
+            Assert.AreEqual("Labrador", raca);
         }
 
         [TestMethod]
@@ -107,24 +107,24 @@ namespace Exercicios.Tests
         public void Cachorro_Set_Get_Idade_Teste()
         {
             int idade_cao = 4;
-            Cachorro yuri = new Cachorro();
-            
-            yuri.SetIdade(idade_cao);
-            int idade = yuri.GetIdade();
+            Cachorro tequila = new Cachorro();
+
+            tequila.SetIdade(idade_cao);
+            int idade = tequila.GetIdade();
             Console.WriteLine(idade);
             Assert.AreEqual(idade_cao, idade);
         }
 
         [TestMethod]
-        public void Cachorro_Set_Get_Peso_Teste()
+        public void Cachorro_Peso_Nao_Pode_Ser_Negativo_Teste()
         {
-            double peso_cao = 15.5;
-            Cachorro yuri = new Cachorro();
+            double peso_cao = -1.2;
+            Cachorro leia = new Cachorro();
 
-            yuri.SetPeso(peso_cao);
-            double peso = yuri.GetPeso();
+            leia.SetPeso(peso_cao);
+            double peso = leia.GetPeso();
             Console.WriteLine(peso);
-            Assert.AreEqual(peso_cao, peso);
+            Assert.AreEqual(0, peso);
         }
 
     }
