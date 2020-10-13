@@ -45,7 +45,7 @@ namespace Exercicios.Tests
         public void Leia_QuantoDevoComer_Test()
         {
             Cachorro leia = new Cachorro();
-            string quantoDevoComer = leia.QuantoDevoComer(1);
+            var quantoDevoComer = leia.QuantoDevoComer(1);
 
             Console.WriteLine(quantoDevoComer);
 
@@ -58,7 +58,7 @@ namespace Exercicios.Tests
         public void Tequila_QuantoDevoComer_Test()
         {
             Cachorro tequila = new Cachorro();
-            string quantoDevoComer = tequila.QuantoDevoComer(30);
+            var quantoDevoComer = tequila.QuantoDevoComer(30);
 
             Console.WriteLine(quantoDevoComer);
 
@@ -71,7 +71,7 @@ namespace Exercicios.Tests
         public void Yuri_QuantoDevoComer_Test()
         {
             Cachorro yuri = new Cachorro();
-            string quantoDevoComer = yuri.QuantoDevoComer(15);
+            var quantoDevoComer = yuri.QuantoDevoComer(15);
 
             Console.WriteLine(quantoDevoComer);
 
@@ -90,11 +90,11 @@ namespace Exercicios.Tests
             Cachorro yuri = new Cachorro();
 
             leia.SetNome("Leia");
-            string nome = leia.GetNome();
+            var nome = leia.GetNome();
 
 
             yuri.SetNome("Yuri");
-            string nome2 = yuri.GetNome();
+            var nome2 = yuri.GetNome();
 
             Console.WriteLine(nome);
             Assert.AreEqual("Leia", nome);
@@ -109,7 +109,7 @@ namespace Exercicios.Tests
             Cachorro leia = new Cachorro();
 
             leia.SetSexo("Femea");
-            String sexo = leia.GetSexo();
+            var sexo = leia.GetSexo();
 
             Console.WriteLine(sexo);
             Assert.AreEqual("Femea", sexo);
@@ -121,7 +121,7 @@ namespace Exercicios.Tests
             Cachorro leia = new Cachorro();
 
             leia.SetRaca("Buldogue");
-            string raca = leia.GetRaca();
+            var raca = leia.GetRaca();
 
             Console.WriteLine(raca);
             Assert.AreEqual("Buldogue", raca);
@@ -133,7 +133,7 @@ namespace Exercicios.Tests
             Cachorro leia = new Cachorro();
 
             leia.SetPorte("Pequeno");
-            string porte = leia.GetPorte();
+            var porte = leia.GetPorte();
 
             Console.WriteLine(porte);
             Assert.AreEqual("Pequeno", porte);
