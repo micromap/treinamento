@@ -8,7 +8,7 @@ namespace Exercicios.Tests
     [TestClass]
    public  class CachorroTest
     {
-
+        // Classe de teste Latir(), testa quantidade de latidos do cachorro com variavel short...
         [TestMethod]
         public void Cachorro_Latir_Test()
         {
@@ -161,7 +161,7 @@ namespace Exercicios.Tests
             Assert.AreEqual(0, pesoKg);
         }
         #endregion
-
+        // Criando metodo com atributo boolean
         #region EXERCICIO AULA 15
         [TestMethod]
         public void Cachorro_Set_Get_Vacinado_Test()
