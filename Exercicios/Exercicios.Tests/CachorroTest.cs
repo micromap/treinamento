@@ -8,20 +8,6 @@ namespace Exercicios.Tests
     [TestClass]
    public  class CachorroTest
     {
-        //Primeiro método de teste da classe Cachorro()
-       /* #region METODO TESTE LATIR()
-        [TestMethod]
-        public void Cachorro_Latir_Test()
-        {
-            Cachorro leia = new Cachorro();
-            string latido = leia.Latir();
-
-            Console.WriteLine(latido);
-
-            Assert.AreEqual("Au! Au!", latido);
-        }
-        #endregion
-       */
 
         [TestMethod]
         public void Cachorro_Latir_Test()
@@ -145,7 +131,7 @@ namespace Exercicios.Tests
             Cachorro leia = new Cachorro();
 
             leia.SetIdade(4);
-            int idade = leia.GetIdade();
+            var idade = leia.GetIdade();
 
             Console.WriteLine(idade);
             Assert.AreEqual(4, idade);
@@ -157,7 +143,7 @@ namespace Exercicios.Tests
             Cachorro leia = new Cachorro();
 
             leia.SetPesoKg(10.25);
-            double pesoKg = leia.GetPesoKg();
+            var pesoKg = leia.GetPesoKg();
 
             Console.WriteLine(pesoKg);
             Assert.AreEqual(10.25, pesoKg);
@@ -169,7 +155,7 @@ namespace Exercicios.Tests
             Cachorro leia = new Cachorro();
 
             leia.SetPesoKg(-1.0);
-            double pesoKg = leia.GetPesoKg();
+            var pesoKg = leia.GetPesoKg();
 
             Console.WriteLine(pesoKg);
             Assert.AreEqual(0, pesoKg);
