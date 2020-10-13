@@ -156,11 +156,11 @@ namespace Exercicios.Tests
         {
             Cachorro leia = new Cachorro();
 
-            leia.SetPesoKg(10.20);
+            leia.SetPesoKg(10.25);
             double pesoKg = leia.GetPesoKg();
 
             Console.WriteLine(pesoKg);
-            Assert.AreEqual(10.20, pesoKg);
+            Assert.AreEqual(10.25, pesoKg);
         }
 
         [TestMethod]
