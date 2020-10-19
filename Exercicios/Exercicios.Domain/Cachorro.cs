@@ -72,7 +72,14 @@ namespace Exercicios.Domain
         #region Peso
         public void SetPeso(double peso)
         {
-            _peso = peso;
+            if (peso < 0)
+            {
+                _peso = 0;
+            }
+            else
+            {
+                _peso = peso;
+            }
         }
 
         public double GetPeso()
