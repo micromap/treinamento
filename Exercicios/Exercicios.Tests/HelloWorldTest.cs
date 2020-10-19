@@ -76,6 +76,20 @@ namespace Exercicios.Tests
 
             Assert.AreEqual(cachorro1, cachorro2);
         }
+
+        [TestMethod]
+        public void Tipos_Explicitos_Test()
+        {
+            string nome = "Leia";
+            int idade = 1;
+            double peso = 1.3;
+            Cachorro cachorro = new Cachorro();
+
+            Assert.AreEqual(typeof(string), nome.GetType());
+            Assert.AreEqual(typeof(int), idade.GetType());
+            Assert.AreEqual(typeof(double), peso.GetType());
+            Assert.AreEqual(typeof(Cachorro), cachorro.GetType());
+        }
     }
 
 }
