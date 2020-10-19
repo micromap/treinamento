@@ -8,72 +8,58 @@ namespace Exercicios.Tests
     [TestClass]
    public  class CachorroTest
     {
-        // Classe de teste Latir(), testa quantidade de latidos do cachorro com variavel short...
+        // Classe de teste Latir(), testa quantidade de latidos do cachorro com variavel short... 
         [TestMethod]
         public void Cachorro_Latir_Test()
         {
-            Cachorro leia = new Cachorro();
-            string latido = leia.Latir(3);
+            var leia = new Cachorro();
+            var latido = leia.Latir(3);
 
             Console.WriteLine(latido);
 
             Assert.AreEqual("Au! Au! Au!", latido);
         }
         
-        // Considerando que a Léia pesa 1Kg,
-        // e come 5% do seu peso de ração,
-        // implemente o Método "QuantoDevoComer"
-        // para passar nesse Teste, e depois crie esse metodo para testar com outros cachorros
-        #region EXERCICIO AULA 13
-
-        #region LEIA QUANTO DEVE COMER
         [TestMethod]
         public void Leia_QuantoDevoComer_Test()
         {
-            Cachorro leia = new Cachorro();
+            var leia = new Cachorro();
             var quantoDevoComer = leia.QuantoDevoComer(1);
 
             Console.WriteLine(quantoDevoComer);
 
             Assert.AreEqual("Como tenho 1kg, devo comer 50g por dia", quantoDevoComer);
         }
-        #endregion
 
-        #region TEQUILA QUANTO DEVE COMER
         [TestMethod]
         public void Tequila_QuantoDevoComer_Test()
         {
-            Cachorro tequila = new Cachorro();
+            var tequila = new Cachorro();
             var quantoDevoComer = tequila.QuantoDevoComer(30);
 
             Console.WriteLine(quantoDevoComer);
 
             Assert.AreEqual("Como tenho 30kg, devo comer 1500g por dia", quantoDevoComer);
         }
-        #endregion
-
-        #region YURI QUANTO DEVO COMER
+        
         [TestMethod]
         public void Yuri_QuantoDevoComer_Test()
         {
-            Cachorro yuri = new Cachorro();
+            var yuri = new Cachorro();
             var quantoDevoComer = yuri.QuantoDevoComer(15);
 
             Console.WriteLine(quantoDevoComer);
 
             Assert.AreEqual("Como tenho 15kg, devo comer 750g por dia", quantoDevoComer);
         }
-        #endregion
 
-        #endregion
 
-        //Criando metodos de teste, para testar os atributos da classe Cachorro()
-        #region EXERCICIO AULA 14
+        //Criando metodos de teste, para testar os atributos da classe Cachorro()4
         [TestMethod]
         public void Cachorro_Set_Get_Nome_Test()
         {
-            Cachorro leia = new Cachorro();
-            Cachorro yuri = new Cachorro();
+            var leia = new Cachorro();
+            var yuri = new Cachorro();
 
             leia.SetNome("Leia");
             var nome = leia.GetNome();
@@ -92,7 +78,7 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Cachorro_Set_Get_Sexo_Test()
         {
-            Cachorro leia = new Cachorro();
+            var leia = new Cachorro();
 
             leia.SetSexo("Femea");
             var sexo = leia.GetSexo();
@@ -104,7 +90,7 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Cachorro_Set_Get_Raca_Test()
         {
-            Cachorro leia = new Cachorro();
+            var leia = new Cachorro();
 
             leia.SetRaca("Buldogue");
             var raca = leia.GetRaca();
@@ -116,7 +102,7 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Cachorro_Set_Get_Porte_Test()
         {
-            Cachorro leia = new Cachorro();
+            var leia = new Cachorro();
 
             leia.SetPorte("Pequeno");
             var porte = leia.GetPorte();
@@ -128,7 +114,7 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Cachorro_Set_Get_Idade_Test()
         {
-            Cachorro leia = new Cachorro();
+            var leia = new Cachorro();
 
             leia.SetIdade(4);
             var idade = leia.GetIdade();
@@ -140,7 +126,7 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Cachorro_Set_Get_PesoKg_Test()
         {
-            Cachorro leia = new Cachorro();
+            var leia = new Cachorro();
 
             leia.SetPesoKg(10.25);
             var pesoKg = leia.GetPesoKg();
@@ -152,21 +138,30 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Cachorro_Peso_Nao_Pode_Ser_Negativo_Test()
         {
-            Cachorro leia = new Cachorro();
+            var leia = new Cachorro();
 
             leia.SetPesoKg(-1.0);
             var pesoKg = leia.GetPesoKg();
 
             Console.WriteLine(pesoKg);
-            Assert.AreEqual(0, pesoKg);
+            Assert.AreEqual(null, pesoKg);
         }
-        #endregion
+
+        public void Cachorro_Peso_Deve_Aceitar_Null_Test()
+        {
+            var leia = new Cachorro();
+
+            leia.SetPesoKg(null);
+            var peso = leia.GetPesoKg();
+
+            Console.WriteLine(peso);
+            Assert.AreEqual(null, peso);
+        }
         // Criando metodo com atributo boolean
-        #region EXERCICIO AULA 15
         [TestMethod]
         public void Cachorro_Set_Get_Vacinado_Test()
         {
-            Cachorro leia = new Cachorro();
+            var leia = new Cachorro();
 
             leia.SetVacinado(true);
             bool vacinado = leia.GetVacinado();
@@ -174,6 +169,6 @@ namespace Exercicios.Tests
             Console.WriteLine(vacinado);
             Assert.AreEqual(true, vacinado);
         }
-        #endregion
+
     }
 }

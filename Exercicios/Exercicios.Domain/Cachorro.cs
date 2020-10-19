@@ -71,19 +71,19 @@ namespace Exercicios.Domain
         #endregion
 
         #region _pesoKg
-        private double _pesoKg;
-        public void SetPesoKg(double pesoKg)
+        private double? _pesoKg;
+        public void SetPesoKg(double? pesoKg)
         {
             if (pesoKg < 0)
             {
-                _pesoKg = 0;
+                _pesoKg = null;
             }
             else
             {
                 _pesoKg = pesoKg;
             }
         }
-        public double GetPesoKg()
+        public double? GetPesoKg()
         {
             return _pesoKg;
         }
@@ -105,9 +105,9 @@ namespace Exercicios.Domain
         //Metodo da classe, Latir(), QuantoDevoComer()
         public string Latir(short quantidadeLatidos)
         {
-            string latidos = "";
+            var latidos = "";
 
-            for(short i = 1; i <= quantidadeLatidos; i++) // Caso dentro do for so tenha uma linha de comando, pode deixar sem as {}.       
+            for(var i = 1; i <= quantidadeLatidos; i++) // Caso dentro do for so tenha uma linha de comando, pode deixar sem as {}.       
                 latidos += "Au! "; //Atribuição composta, substitui latidos = latidos + "Au! "
 
             return latidos.TrimEnd(); // Comando TrimEnd() tira o espaço em branco no final da string
