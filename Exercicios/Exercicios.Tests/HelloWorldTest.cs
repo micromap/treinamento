@@ -5,14 +5,16 @@ using Exercicios.Domain;
 namespace Exercicios.Tests
 {
     [TestClass]
-    public class HelloWorldTest
+    public class HelloworldTest
     {
         [TestMethod]
-        public void Test_SayHello()
+        public void SayHello_Test()
         {
-            var mensagem = HelloWorld.SayHello();
-            Console.WriteLine(mensagem);
+            string mensagem = HelloWorld.SayHello();
+
             Assert.AreEqual("Hello World!", mensagem);
+
+            Console.WriteLine(mensagem);
         }
     }
 }
