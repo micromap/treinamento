@@ -18,5 +18,10 @@ namespace Exercicios.Domain
         {
             cachorro.SetNome("Tequila");
         }
+
+        public static void AcessoMinhaClasse()
+        {
+            var obj = new MinhaClasse();
+        }
     }
 }
