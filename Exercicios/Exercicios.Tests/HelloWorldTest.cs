@@ -108,6 +108,5 @@ namespace Exercicios.Tests
 
             Assert.AreEqual(cachorro1, cachorro2);
         }
-
     }
 }

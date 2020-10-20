@@ -89,9 +89,29 @@ namespace Exercicios.Domain
         private double _peso;
         #endregion
 
-        public string Latir()
+        #region Vacinado
+        public void SetVacinado(bool vacinado)
         {
-            return "Au! Au!";
+            _vacinado = vacinado;
+        }
+
+        public bool GetVacinado()
+        {
+            return _vacinado;
+        }
+        private bool _vacinado;
+        #endregion
+
+        public string Latir(short quantidadeLatidos)
+        {
+            string latidos = "";
+
+            for (short i = 1; i <= quantidadeLatidos; i++) 
+            { 
+                latidos += "Au! ";
+            }
+            
+            return latidos.TrimEnd();
         }
 
         public string QuantoDevoComer(int peso, string nome)
