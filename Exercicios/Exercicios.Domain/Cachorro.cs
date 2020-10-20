@@ -76,19 +76,19 @@ namespace Exercicios.Domain
         #endregion
 
         #region Peso
-        private double _pesoKg;
-        public void SetPeso(double pesoKg)
+        private double? _pesoKg;
+        public void SetPeso(double? pesoKg)
         {
             if (pesoKg < 0)
             {
-                _pesoKg = 0;
+                _pesoKg = null;
             }
             else
             {
                 _pesoKg = pesoKg;
             }
         }
-        public double GetPeso()
+        public double? GetPeso()
         {
             return _pesoKg;
 
@@ -110,9 +110,9 @@ namespace Exercicios.Domain
 
         public string Latir(short quantidadeLatidos)
         {
-            string latidos = "";
+            var latidos = "";
 
-            for(short i=1; i<=quantidadeLatidos; i++)
+            for(var i=1; i<=quantidadeLatidos; i++)
                 latidos +=  "Au! ";   //ou latidos = latidos + "Au! ";
 
             return latidos.TrimEnd();
