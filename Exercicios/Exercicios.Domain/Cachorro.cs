@@ -6,101 +6,36 @@ namespace Exercicios.Domain
     //Classe Cachorro
     public class Cachorro
     {
-        //Atributos privados da classe, com os gets e sets de cada atributos... todos dentro da região de codigos de cada um.
-        #region _nome
-        private string _nome;
-        public void SetNome(string nome)
-        {
-            _nome = nome;
-        }
-        public string GetNome()
-        {
-            return _nome;
-        }
-        #endregion
+        //Propriedades da Classe 
+        public string Nome { set; get; }
 
-        #region _sexo
-        private string _sexo;
-        public string GetSexo()
-        {
-            return _sexo;
-        }
+        public string Sexo { set; get; }
 
-        public void SetSexo(string sexo)
-        {
-            _sexo = sexo;
-        }
-        #endregion
+        public string Raca { set; get; }
 
-        #region _raca
-        private string _raca;
-        public string GetRaca()
-        {
-            return _raca;
-        }
+        public string Porte { set; get; }
 
-        public void SetRaca(string raca)
-        {
-            _raca = raca;
-        }
-        #endregion
+        public int Idade { set; get; }
 
-        #region _porte
-        private string _porte;
-        public void SetPorte(string porte)
+        public bool Vacinado { set; get; }
+        
+        #region PesoKG
+        public double? PesoKg
         {
-            _porte = porte;
+            set
+            {
+                if (value < 0)
+                    _pesoKg = null;
+                else
+                    _pesoKg = value;
+            }
+            get
+            {
+                return _pesoKg;
+            }
         }
-        public string GetPorte()
-        {
-            return _porte;
-        }
-        #endregion
-
-        #region _idade
-        private int _idade;
-        public void SetIdade(int idade)
-        {
-            _idade = idade;
-        }
-
-        public int GetIdade()
-        {
-            return _idade;
-        }
-        #endregion
-
-        #region _pesoKg
         private double? _pesoKg;
-        public void SetPesoKg(double? pesoKg)
-        {
-            if (pesoKg < 0)
-            {
-                _pesoKg = null;
-            }
-            else
-            {
-                _pesoKg = pesoKg;
-            }
-        }
-        public double? GetPesoKg()
-        {
-            return _pesoKg;
-        }
-        #endregion
-
-        #region _vacinado
-        private bool _vacinado;
-        public void SetVacinado(bool vacinado)
-        {
-            _vacinado = vacinado;
-        }
-
-        public bool GetVacinado()
-        {
-            return _vacinado;
-        }
-        #endregion
+        #endregion _pesoKg
 
         //Metodo da classe, Latir(), QuantoDevoComer()
         public string Latir(short quantidadeLatidos)
