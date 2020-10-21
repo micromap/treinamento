@@ -16,7 +16,7 @@ namespace Exercicios.Tests
             Console.WriteLine(latido);
 
             Assert.AreEqual("Au! Au!", latido);
-                  
+
         }
 
         // Considerando que a Leia pesa 1Kg
@@ -36,6 +36,28 @@ namespace Exercicios.Tests
         }
 
         // Criar os métodos de teste, para a Tequila e para o Yuri
+        [TestMethod]
+        public void Tequila_QuantoDevoComer_Test()
+        {
+            Cachorro tequila = new Cachorro();
+            string quantoDevoComer = tequila.QuantoDevoComer(30);
 
+            Console.WriteLine(quantoDevoComer);
+
+            Assert.AreEqual("Como tenho 30Kg, devo comer 1500g por dia", quantoDevoComer);
+
+        }
+        [TestMethod]
+        public void Yuri_QuantoDevoComer_Test()
+        {
+            Cachorro yuri = new Cachorro();
+            string quantoDevoComer = yuri.QuantoDevoComer(15);
+
+            Console.WriteLine(quantoDevoComer);
+
+            Assert.AreEqual("Como tenho 15Kg, devo comer 750g por dia", quantoDevoComer);
+
+        }
     }
 }
+
