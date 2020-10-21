@@ -25,14 +25,14 @@ namespace Exercicios.Tests
         // para passar nesse teste
 
         [TestMethod]
-        public void Leia_QuandoDevoComer_Test()
+        public void Leia_QuantoDevoComer_Test()
         {
             Cachorro leia = new Cachorro();
-            string QuantoDevoComer = leia.QuantoDevoComer(1);
+            string quantoDevoComer = leia.QuantoDevoComer(1);
 
-            Console.WriteLine(QuantoDevoComer);
+            Console.WriteLine(quantoDevoComer);
 
-            Assert.AreEqual("Como tenho 1Kg, devo comer 50g por dia", QuantoDevoComer);
+            Assert.AreEqual("Como tenho 1Kg, devo comer 50g por dia", quantoDevoComer);
         }
 
         // Criar os métodos de teste, para a Tequila e para o Yuri
