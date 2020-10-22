@@ -58,6 +58,29 @@ namespace Exercicios.Tests
             Assert.AreEqual("Como tenho 15Kg, devo comer 750g por dia", quantoDevoComer);
 
         }
+        [TestMethod]
+        public void Cachorro_Set_Get_Nome_Teste()
+        {
+            Cachorro yuri = new Cachorro();
+            yuri.SetNome("Yuri");
+            string nome = yuri.GetNome();
+
+            Console.WriteLine(nome);
+            Assert.AreEqual("Yuri", nome);
+
+        }
+        [TestMethod]
+        public void Cachorro_Set_Get_Sexo_Teste()
+        {
+            Cachorro yuri = new Cachorro();
+            yuri.SetSexo("Macho");
+            string sexo = yuri.GetSexo();
+
+            Console.WriteLine(sexo);
+            Assert.AreEqual("Macho", sexo);
+
+        }
+        
     }
 }
 

@@ -4,6 +4,32 @@ namespace Exercicios.Domain
 {
     public class Cachorro
     {
+        public void SetNome(string nome)
+        {
+            _nome = nome;
+        }
+        public string GetNome()
+        {
+            return _nome;
+        }
+        private string _nome;
+
+
+        public void SetSexo(string sexo)
+        {
+            _sexo = sexo;
+        }
+        public string GetSexo()
+        {
+            return _sexo;
+        }
+        
+        private string _sexo;
+        private string _raca;
+        private string _porte;
+        private int _idade;
+        private double _peso;
+
         public string Latir()
         {
             return "Au! Au!";
@@ -22,6 +48,8 @@ namespace Exercicios.Domain
             //                  "Kg, devo comer " +  qtdeRacaoGramas.ToString() +
             //                  "g por dia";
         }
+
+        
     }
-    
+  
 }
