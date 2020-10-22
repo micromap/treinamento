@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace ConsoleApp1
+namespace ConsoleApp2
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Olá Povo do Visual Studio community!");
+            Console.WriteLine("Hello World!");
         }
     }
 }
