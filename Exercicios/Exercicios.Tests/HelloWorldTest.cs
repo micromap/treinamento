@@ -12,7 +12,7 @@ namespace Exercicios.Tests
         {
             var mensagem = HelloWorld.SayHello();
             Console.WriteLine(mensagem);
-            Assert.AreEqual("Hello World!", mensagem);
+            Assert.AreEqual("Hello World! skjfsjfljdsf", mensagem);
         }
 
         [TestMethod]
