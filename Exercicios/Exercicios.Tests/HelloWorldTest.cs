@@ -108,5 +108,81 @@ namespace Exercicios.Tests
 
             Assert.AreEqual(cachorro1, cachorro2);
         }
+
+        [TestMethod]
+        public void Tipos_Explicitos_Test()
+        {
+            string nome = "Léia";
+            int idade = 1;
+            double peso = 1.3;
+            Cachorro cachorro = new Cachorro();
+
+            Console.WriteLine(nome);
+            Console.WriteLine(idade);
+            Console.WriteLine(peso);
+            Console.WriteLine(cachorro);
+
+            Assert.AreEqual(typeof(string), nome.GetType());
+            Assert.AreEqual(typeof(int), idade.GetType());
+            Assert.AreEqual(typeof(double), peso.GetType());
+            Assert.AreEqual(typeof(Cachorro), cachorro.GetType());
+
+        }
+
+        [TestMethod]
+        public void Tipos_Implicitos_Test()
+        {
+            var nome = "Léia";
+            var idade = 1;
+            var peso = 1.3;
+            var cachorro = new Cachorro();
+
+            Console.WriteLine(nome);
+            Console.WriteLine(idade);
+            Console.WriteLine(peso);
+            Console.WriteLine(cachorro);
+
+            Assert.AreEqual(typeof(string), nome.GetType());
+            Assert.AreEqual(typeof(int), idade.GetType());
+            Assert.AreEqual(typeof(double), peso.GetType());
+            Assert.AreEqual(typeof(Cachorro), cachorro.GetType());
+
+        }
+
+        [TestMethod]
+        public void Declarar_Sem_Inicializar_Test()
+        {
+            // Não se pode declarar variáveis Implicitas sem atribuir o Valor
+            // var nome;
+            // nome = "Léia";
+            // Assert.AreEqual(typeof(string), nome.GetType());
+
+            Cachorro cachorro;
+            cachorro = new Cachorro();
+            Assert.AreEqual(typeof(Cachorro), cachorro.GetType());
+        }
+
+        [TestMethod]
+        public void Tipos_Que_Aceitam_Null_Test()
+        {
+            string nome = null;
+            Cachorro cachorro = null;
+
+            Assert.AreEqual(null, nome);
+            Assert.AreEqual(null, cachorro);
+
+            // Não aceitam NULL
+            // int idade = null;
+            // double peso = null;
+
+            // Não aceitam NULL, mas posso fazer com que ele aceite usando o "?", mas utilizar isso em casos muitos específicos
+            int? idade = null;
+            double? peso = null;
+            bool? vacinado = null;
+
+            Assert.AreEqual(null, idade);
+            Assert.AreEqual(null, peso);
+            Assert.AreEqual(null, vacinado);
+        }
     }
 }
