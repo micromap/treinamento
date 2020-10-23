@@ -80,7 +80,66 @@ namespace Exercicios.Tests
             Assert.AreEqual("Macho", sexo);
 
         }
-        
+
+        [TestMethod]
+        public void Cachorro_Set_Get_Raca_Teste()
+        {
+            Cachorro tequila = new Cachorro();
+            tequila.SetRaca("Labrador");
+            string raca = tequila.GetRaca();
+
+            Console.WriteLine(raca);
+            Assert.AreEqual("Labrador", raca);
+
+        }
+
+        [TestMethod]
+        public void Cachorro_Set_Get_Porte_Teste()
+        {
+            Cachorro leia = new Cachorro();
+            leia.SetPorte("Pequeno");
+            string porte = leia.GetPorte();
+
+            Console.WriteLine(porte);
+            Assert.AreEqual("Pequeno", porte);
+
+        }
+
+        [TestMethod]
+        public void Cachorro_Set_Get_Idade_Teste()
+        {
+            Cachorro tequila = new Cachorro();
+            tequila.SetIdade(4);
+            int idade = tequila.GetIdade();
+
+            Console.WriteLine(idade);
+            Assert.AreEqual(4, idade);
+
+        }
+
+        [TestMethod]
+        public void Cachorro_Set_Get_Peso_Teste()
+        {
+            Cachorro leia = new Cachorro();
+            leia.SetPeso(1.2);
+            double peso = leia.GetPeso();
+
+            Console.WriteLine(peso);
+            Assert.AreEqual(1.2, peso);
+
+        }
+
+        [TestMethod]
+        public void Cachorro_Peso_Nao_Pode_Ser_Negativo_Teste()
+        {
+            Cachorro leia = new Cachorro();
+            leia.SetPeso(-1.2);
+            double peso = leia.GetPeso();
+
+            Console.WriteLine(peso);
+            Assert.AreEqual(0, peso);
+
+        }
     }
 }
 
