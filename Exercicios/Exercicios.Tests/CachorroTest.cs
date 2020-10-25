@@ -14,13 +14,13 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Cachorro_Latir_Test()
         {
-            int q_latidos = 3;
+            short q_latidos = 5;
             Cachorro leia = new Cachorro();
-            string latido = leia.Latir((short)q_latidos);
+            string latido = leia.Latir(q_latidos);
 
             Console.WriteLine(latido);
 
-            Assert.AreEqual("Au! Au! Au! ", latido);
+            Assert.AreEqual("Au! Au! Au! Au! Au!", latido);
         }
 
      

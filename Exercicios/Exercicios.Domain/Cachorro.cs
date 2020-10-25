@@ -10,10 +10,8 @@ namespace Exercicios.Domain
         {
             string latidos = "";
             for(short i= 1; i <= q_latidos; i++)
-            {
                 latidos += "Au! ";
-            }
-            return latidos;
+            return latidos.TrimEnd();
         }
         #endregion
 
