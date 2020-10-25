@@ -14,18 +14,16 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Cachorro_Latir_Test()
         {
+            int q_latidos = 3;
             Cachorro leia = new Cachorro();
-            string latido = leia.Latir();
+            string latido = leia.Latir((short)q_latidos);
 
             Console.WriteLine(latido);
 
-            Assert.AreEqual("Au! Au!", latido);
+            Assert.AreEqual("Au! Au! Au! ", latido);
         }
 
-        /*
-         Considerando que a Léia pese 1Kg e come 5% do seu peso em ração,
-         Implemente o metodo "Quanto devo comer" para passar nesse Teste.
-         */
+     
 
         [TestMethod]
         public void Leia_QuantoDevoComer_Test()
@@ -143,5 +141,19 @@ namespace Exercicios.Tests
             Assert.AreEqual(0, peso);
         }
 
+        [TestMethod]
+        public void Cachorro_Set_Get_Vacinado_Teste()
+        {
+            bool vacinado = true;
+            Cachorro tequila = new Cachorro();
+
+            tequila.SetVacinado(vacinado);
+            vacinado = tequila.GetVacinado();
+            Console.WriteLine(vacinado);
+            Assert.AreEqual(true, vacinado);
+        }
+
     }
+
+        
 }

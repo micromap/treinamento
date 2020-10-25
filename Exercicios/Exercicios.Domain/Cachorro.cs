@@ -6,9 +6,14 @@ namespace Exercicios.Domain
     public class Cachorro
     {
         #region Latir
-        public string Latir()
+        public string Latir(short q_latidos)
         {
-            return "Au! Au!";
+            string latidos = "";
+            for(short i= 1; i <= q_latidos; i++)
+            {
+                latidos += "Au! ";
+            }
+            return latidos;
         }
         #endregion
 
@@ -104,6 +109,19 @@ namespace Exercicios.Domain
             return _peso;
         }
         private double _peso;
+        #endregion
+
+        #region Vacinado
+        public void SetVacinado(bool vacinado)
+        {
+            _vacinado = vacinado;
+        }
+
+        public bool GetVacinado()
+        {
+            return _vacinado;
+        }
+        private bool _vacinado;
         #endregion
     }
 }
