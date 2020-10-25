@@ -9,7 +9,7 @@ namespace Exercicios.Domain
         public string Latir(short q_latidos)
         {
             string latidos = "";
-            for(short i= 1; i <= q_latidos; i++)
+            for(var i= 1; i <= q_latidos; i++)
                 latidos += "Au! ";
             return latidos.TrimEnd();
         }
@@ -89,24 +89,24 @@ namespace Exercicios.Domain
         #endregion
 
         #region Peso
-        public void SetPeso(double peso_cao)
+        public void SetPeso(double? peso)
         {
-            if(peso_cao < 0)
+            if(peso < 0)
             {
-                _peso = 0;
+                _peso = null;
             }
             else
             {
-                _peso = peso_cao;
+                _peso = peso;
             }
             
         }
 
-        public double GetPeso()
+        public double? GetPeso()
         {
             return _peso;
         }
-        private double _peso;
+        private double? _peso;
         #endregion
 
         #region Vacinado
