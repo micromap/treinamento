@@ -78,7 +78,6 @@ namespace Exercicios.Tests
             Assert.AreEqual("Tequila", nomeCachorro);
         }
 
-
         [TestMethod]
         public void Igualdade_entre_Tipos_de_Valor_Test()
         {
@@ -190,10 +189,19 @@ namespace Exercicios.Tests
             Assert.AreEqual(null, vacinado);
         }
 
+        [TestMethod]
+        public void MinhaClasse_Test()
+        {
+            var obj = new MinhaClasse();
+           // obj.MeuMetodo();
+        }
+    }
 
-
-
-
-
+    public class ClasseFilha2 : MinhaClasse
+    {
+        public void MetodoFilho2()
+        {
+            this.MeuMetodo();
+        }
     }
 }

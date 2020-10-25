@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace Exercicios.Domain
 {
     public static class HelloWorld
@@ -19,6 +20,12 @@ namespace Exercicios.Domain
         public static void PassaReferencia(Cachorro cachorro)
         {
             cachorro.SetNome("Tequila");
+        }
+
+        public static void AcessoMinhaClasse()
+        {
+            var obj = new MinhaClasse();
+            obj.MeuMetodo();
         }
     }
 }
