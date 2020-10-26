@@ -148,7 +148,8 @@ namespace Exercicios.Tests
         [TestMethod]
         public void MinhaClasse_Test()
         {
-          // var obj = new MinhaClasse();
+          var obj = new MinhaClasse();
+          obj.MeuMetodo();
         }
     }
 

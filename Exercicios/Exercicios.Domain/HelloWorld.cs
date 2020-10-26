@@ -22,6 +22,7 @@ namespace Exercicios.Domain
         public static void AcessoMinhaClasse()
         {
             var obj = new MinhaClasse();
+            obj.MeuMetodo();
         }
     }
 }
