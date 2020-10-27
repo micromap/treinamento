@@ -5,50 +5,14 @@ namespace Exercicios.Domain
 {
     public class Cachorro
     {
-        #region Latir
-        public string Latir(short q_latidos)
-        {
-            string latidos = "";
-            for(var i= 1; i <= q_latidos; i++)
-                latidos += "Au! ";
-            return latidos.TrimEnd();
-        }
-        #endregion
-
-        #region Quanto Devo Comer
-        public string QuantoDevoComer(int peso)
-        {
-            //Método para Calcular 5% do peso do cachorro em gramas de ração.
-            return $"Como tenho { peso }Kg, devo comer { peso * 50}g por dia";
-        }
-        #endregion
-
-        #region Nome
-        public string Nome { set; get; }
-        #endregion
-
-        #region Sexo
-
-        public string Sexo { set; get; }
-        #endregion
-
-        #region Raça
         //ESTRUTURA DE PROPRIEDADES
+
+        public string Nome { set; get; } 
+        public string Sexo { set; get; }     
         public string Raca { set; get; }
-        #endregion
-
-        #region Porte
-
         public string Porte { set; get; }
-        #endregion
-
-        #region Idade
-
         public int Idade { set; get; }
-     
-        #endregion
-
-        #region Peso
+        public bool Vacinado { set; get; }
 
         public double? Peso
         {
@@ -65,10 +29,20 @@ namespace Exercicios.Domain
             }
         }
         private double? _peso;
-        #endregion
+          
+        public string Latir(short q_latidos)
+        {
+            string latidos = "";
+            for(var i= 1; i <= q_latidos; i++)
+                latidos += "Au! ";
+            return latidos.TrimEnd();
+        }
 
-        #region Vacinado
-        public bool Vacinado { set; get; }
-        #endregion
+        public string QuantoDevoComer(int peso)
+        {
+            //Método para Calcular 5% do peso do cachorro em gramas de ração.
+            return $"Como tenho { peso }Kg, devo comer { peso * 50}g por dia";
+        }
+       
     }
 }
