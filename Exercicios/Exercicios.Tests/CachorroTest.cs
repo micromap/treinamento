@@ -11,14 +11,15 @@ namespace Exercicios.Tests
         public void Cachorro_Latir_Test()
         {
             Cachorro leia = new Cachorro();
-            string latido = leia.Latir();
+            string latido = leia.Latir(6);
 
             Console.WriteLine(latido);
 
-            Assert.AreEqual("Au! Au!", latido);
+            Assert.AreEqual("Au! Au! Au! Au! Au! Au!", latido);
 
         }
 
+                
         // Considerando que a Leia pesa 1Kg
         // e come 5% do seu peso de ração,
         // Implemente o método "QuantoDevoComer"
@@ -138,6 +139,18 @@ namespace Exercicios.Tests
 
             Console.WriteLine(peso);
             Assert.AreEqual(0, peso);
+
+        }
+
+        [TestMethod]
+        public void Cachorro_Set_Get_Vacinado_Teste()
+        {
+            Cachorro leia = new Cachorro();
+            leia.SetVacinado(true);
+            bool vacinado = leia.GetVacinado();
+
+            Console.WriteLine(vacinado);
+            Assert.AreEqual(true, vacinado);
 
         }
     }

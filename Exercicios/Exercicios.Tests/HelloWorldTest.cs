@@ -89,7 +89,19 @@ namespace Exercicios.Tests
             Assert.AreEqual(valor1, valor2);
         }
 
+        [TestMethod]
+        public void Igualdade_entre_Tipos_de_Referencia_Test()
+        {
+            Cachorro cachorro1 = new Cachorro();
+            cachorro1.SetNome("Léia");
+
+            Cachorro cachorro2 = cachorro1;
             
+
+            Assert.AreEqual(cachorro1, cachorro2);
+        }
+
+
 
     }
 }

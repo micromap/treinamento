@@ -86,10 +86,32 @@ namespace Exercicios.Domain
         }
         private double _peso;
         #endregion
-
-        public string Latir()
+        
+        #region Vacinado
+        public void SetVacinado(bool vacinado)
         {
-            return "Au! Au!";
+            _vacinado = vacinado;
+        }
+
+        public bool GetVacinado()
+        {
+            
+            return _vacinado;
+        }
+
+        private bool _vacinado;
+        #endregion
+
+        public string Latir(short qtdeLatidos)
+        {
+            string latidos = "";
+
+            for(short i = 1; i <= qtdeLatidos; i++)
+            //{ se o for tiver somente uma linha de comando pode-se omitir as chaves {}
+                //latidos = latidos + "Au! "; abaixo outra forma de escrever essa linha
+                latidos += "Au! ";
+            //} se o for tiver somente uma linha de comando pode-se omitir as chaves {}
+            return latidos.TrimEnd();
         }
 
         public string QuantoDevoComer(int pesoKg)
@@ -106,6 +128,7 @@ namespace Exercicios.Domain
             //                  "g por dia";
         }
 
+        
     }
   
 }
