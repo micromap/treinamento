@@ -48,84 +48,12 @@ namespace Exercicios.Tests
         }
 
         [TestMethod]
-        public void Cachorro_Get_Set_Nome_Test()
-        {
-            var yuri = new Cachorro();
-
-            yuri.SetNome("Yuri");
-            var nome = yuri.GetNome();
-
-            Console.WriteLine(nome);
-            Assert.AreEqual("Yuri", nome);
-        }
-
-        [TestMethod]
-        public void Cachorro_Get_Set_Sexo_Test()
-        {
-            var yuri = new Cachorro();
-
-            yuri.SetSexo("Masculino");
-            var sexo = yuri.GetSexo();
-
-            Console.WriteLine(sexo);
-            Assert.AreEqual("Masculino", sexo);
-        }
-
-        [TestMethod]
-        public void Cachorro_Get_Set_Raca_Test()
-        {
-            var yuri = new Cachorro();
-
-            yuri.SetRaca("Bulldog");
-            var raca = yuri.GetRaca();
-
-            Console.WriteLine(raca);
-            Assert.AreEqual("Bulldog", raca);
-        }
-
-        [TestMethod]
-        public void Cachorro_Get_Set_Porte_Test()
-        {
-            var yuri = new Cachorro();
-
-            yuri.SetPorte("Pequeno");
-            var porte = yuri.GetPorte();
-
-            Console.WriteLine(porte);
-            Assert.AreEqual("Pequeno", porte);
-        }
-
-        [TestMethod]
-        public void Cachorro_Get_Set_Idade_Test()
-        {
-            var yuri = new Cachorro();
-
-            yuri.SetIdade(2);
-            var idade = yuri.GetIdade();
-
-            Console.WriteLine(idade);
-            Assert.AreEqual(2, idade);
-        }
-
-        [TestMethod]
-        public void Cachorro_Get_Set_Vacinado_Test()
-        {
-            var yuri = new Cachorro();
-
-            yuri.SetVacinado(true);
-            var vacinado = yuri.GetVacinado();
-
-            Console.WriteLine(vacinado);
-            Assert.AreEqual(true, vacinado);
-        }
-
-        [TestMethod]
         public void Cachorro_Get_Set_Peso_Test()
         {
             var yuri = new Cachorro();
 
-            yuri.SetPeso(7);
-            var pesoKg = yuri.GetPeso();
+            yuri.Peso = 7;
+            var pesoKg = yuri.Peso;
 
             Console.WriteLine(pesoKg);
             Assert.AreEqual(7, pesoKg);
@@ -136,8 +64,8 @@ namespace Exercicios.Tests
         {
             var yuri = new Cachorro();
 
-            yuri.SetPeso(-1.2);
-            var pesoKg = yuri.GetPeso();
+            yuri.Peso = -1.2;
+            var pesoKg = yuri.Peso;
 
             Console.WriteLine(pesoKg);
             Assert.AreEqual(null, pesoKg);
@@ -148,8 +76,8 @@ namespace Exercicios.Tests
         {
             var yuri = new Cachorro();
 
-            yuri.SetPeso(null);
-            var pesoKg = yuri.GetPeso();
+            yuri.Peso = null;
+            var pesoKg = yuri.Peso;
 
             Console.WriteLine(pesoKg);
             Assert.AreEqual(null, pesoKg);
