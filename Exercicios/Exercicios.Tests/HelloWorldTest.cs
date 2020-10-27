@@ -49,7 +49,7 @@ namespace Exercicios.Tests
         {
             double valor = 1.23;
             int inteiro = (int)valor;
-            
+
 
             Console.WriteLine(inteiro);
             Assert.AreNotEqual(valor, inteiro);
@@ -76,7 +76,7 @@ namespace Exercicios.Tests
             HelloWorld.PassaReferencia(cachorro);
 
             string nomeCachorro = cachorro.GetNome();
-            
+
             Console.WriteLine(nomeCachorro);
             Assert.AreEqual("Tequila", nomeCachorro);
         }
@@ -107,12 +107,74 @@ namespace Exercicios.Tests
             cachorro1.SetNome("Léia");
 
             Cachorro cachorro2 = cachorro1;
-            
+
 
             Assert.AreEqual(cachorro1, cachorro2);
         }
 
+        [TestMethod]
+        public void Tipos_Explicitos_test()
+        {
+            string nome = "Léia";
+            int idade = 1;
+            double peso = 1.3;
+            Cachorro cachorro = new Cachorro();
 
+            Assert.AreEqual(typeof(string), nome.GetType());
+            Assert.AreEqual(typeof(int), idade.GetType());
+            Assert.AreEqual(typeof(double), peso.GetType());
+            Assert.AreEqual(typeof(Cachorro), cachorro.GetType());
+        }
 
+        [TestMethod]
+        public void Tipos_Implicitos_test()
+        {
+            var nome = "Léia";
+            var idade = 1;
+            var peso = 1.3;
+            var cachorro = new Cachorro();
+
+            Assert.AreEqual(typeof(string), nome.GetType());
+            Assert.AreEqual(typeof(int), idade.GetType());
+            Assert.AreEqual(typeof(double), peso.GetType());
+            Assert.AreEqual(typeof(Cachorro), cachorro.GetType());
+        }
+
+        [TestMethod]
+        public void Declarar_sem_Inicializar_Test()
+        {
+            Cachorro cachorro;
+            cachorro = new Cachorro();
+            Assert.AreEqual(typeof(Cachorro), cachorro.GetType());
+
+            int idade;
+            idade = 1;
+            Assert.AreEqual(typeof(int), idade.GetType());
+
+            // Não podemos declarar variável implícita sem atribuir valor 
+            //var nome;
+            //nome = "Léia";            
+            //Assert.AreEqual(typeof(string), nome.GetType());
+        }
+        [TestMethod]
+        public void Tipos_que_Aceitam_Null_Test()
+        {
+            string nome = null;
+            Cachorro cachorro = null;
+
+            Assert.AreEqual(null, nome);
+            Assert.AreEqual(null, cachorro);
+        }
+        [TestMethod]
+        public void Tipos_Nulaveis_test()
+        {            
+            int? idade = null;
+            double? peso = null;
+            bool? vacinado = null;
+            
+            Assert.AreEqual(null, idade);
+            Assert.AreEqual(null, peso);
+            Assert.AreEqual(null, vacinado);
+        }
     }
 }
