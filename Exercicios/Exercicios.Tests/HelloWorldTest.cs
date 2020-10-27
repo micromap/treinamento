@@ -177,7 +177,7 @@ namespace Exercicios.Tests
         public void MinhaClasse_Test()
         {
             var obj = new MinhaClasse();
-            obj.MeuMetodo();
+            //obj.MeuMetodo();
         }
     }
 
@@ -185,7 +185,7 @@ namespace Exercicios.Tests
     {
         public void MetodoFilho2()
         {
-            this.MeuMetodo();
+            //this.MeuMetodo();
         }
     }
 }

@@ -29,18 +29,8 @@ namespace Exercicios.Domain
         private string _sexo;
         #endregion
 
-        #region Raca
-        public void SetRaca(string raca)
-        {
-            _raca = raca;
-        }
 
-        public string GetRaca()
-        {
-            return _raca;
-        }
-        private string _raca;
-        #endregion
+        public string Raca { set; get; }
 
         #region Porte
         public void SetPorte(string porte)
@@ -69,21 +59,20 @@ namespace Exercicios.Domain
         #endregion
 
         #region Peso
-        public void SetPeso(double? peso)
+        public double? Peso
         {
-            if (peso < 0)
+            set
             {
-                _pesoKg = null;
-            }
-            else
-            {
-                _pesoKg = peso;
-            }
-        }
 
-        public double? GetPeso()
-        {
-            return _pesoKg;
+                if (value < 0)
+                    _pesoKg = null;
+                else
+                    _pesoKg = value;
+            }
+            get
+            {
+                return _pesoKg;
+            }
         }
         private double? _pesoKg;
         #endregion
