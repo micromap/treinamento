@@ -104,7 +104,7 @@ namespace Exercicios.Domain
 
         public string Latir(short qtdeLatidos)
         {
-            string latidos = "";
+            var latidos = "";
 
             for(short i = 1; i <= qtdeLatidos; i++)
             //{ se o for tiver somente uma linha de comando pode-se omitir as chaves {}
