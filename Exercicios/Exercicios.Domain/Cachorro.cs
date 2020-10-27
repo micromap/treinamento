@@ -24,102 +24,51 @@ namespace Exercicios.Domain
         #endregion
 
         #region Nome
-        public void SetNome(string nome_cao)
-        {
-            _nome = nome_cao;
-        }
-
-        public string GetNome()
-        {
-            return _nome;
-        }
-        private string _nome;
+        public string Nome { set; get; }
         #endregion
 
         #region Sexo
-        public void SetSexo(string sexo_cao)
-        {
-            _sexo = sexo_cao;
-        }
 
-        public string GetSexo()
-        {
-            return _sexo;
-        }
-        private string _sexo;
+        public string Sexo { set; get; }
         #endregion
 
         #region Raça
-        public void SetRaca(string raca_cao)
-        {
-            _raca = raca_cao;
-        }
-
-        public string GetRaca()
-        {
-            return _raca;
-        }
-        private string _raca;
+        //ESTRUTURA DE PROPRIEDADES
+        public string Raca { set; get; }
         #endregion
 
         #region Porte
-        public void SetPorte(string porte_cao)
-        {
-            _porte = porte_cao;
-        }
 
-        public string GetPorte()
-        {
-            return _porte;
-        }
-        private string _porte;
+        public string Porte { set; get; }
         #endregion
 
         #region Idade
-        public void SetIdade(int idade_cao)
-        {
-            _idade = idade_cao;
-        }
 
-        public int GetIdade()
-        {
-            return _idade;
-        }
-        private int _idade;
+        public int Idade { set; get; }
+     
         #endregion
 
         #region Peso
-        public void SetPeso(double? peso)
-        {
-            if(peso < 0)
-            {
-                _peso = null;
-            }
-            else
-            {
-                _peso = peso;
-            }
-            
-        }
 
-        public double? GetPeso()
+        public double? Peso
         {
-            return _peso;
+            set
+            {
+                if (value < 0)
+                    _peso = null;
+                else
+                    _peso = value;
+            }
+            get
+            {
+                return _peso;
+            }
         }
         private double? _peso;
         #endregion
 
         #region Vacinado
-        public void SetVacinado(bool vacinado)
-        {
-            _vacinado = vacinado;
-        }
-
-        public bool GetVacinado()
-        {
-            return _vacinado;
-        }
-        private bool _vacinado;
+        public bool Vacinado { set; get; }
         #endregion
     }
 }
