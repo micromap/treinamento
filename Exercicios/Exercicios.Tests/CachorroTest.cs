@@ -68,6 +68,7 @@ namespace Exercicios.Tests
         public void Cachorro_Set_Get_Nome_Teste()
         {
             var yuri = new Cachorro();
+
             yuri.SetNome("Yuri");
             var nome = yuri.GetNome();
 
@@ -79,6 +80,7 @@ namespace Exercicios.Tests
         public void Cachorro_Set_Get_Sexo_Teste()
         {
             var yuri = new Cachorro();
+
             yuri.SetSexo("Macho");
             var sexo = yuri.GetSexo();
 
@@ -91,6 +93,7 @@ namespace Exercicios.Tests
         public void Cachorro_Set_Get_Raca_Teste()
         {
             var tequila = new Cachorro();
+
             tequila.SetRaca("Labrador");
             var raca = tequila.GetRaca();
 
@@ -103,6 +106,7 @@ namespace Exercicios.Tests
         public void Cachorro_Set_Get_Porte_Teste()
         {
             var leia = new Cachorro();
+
             leia.SetPorte("Pequeno");
             var porte = leia.GetPorte();
 
@@ -115,6 +119,7 @@ namespace Exercicios.Tests
         public void Cachorro_Set_Get_Idade_Teste()
         {
             var tequila = new Cachorro();
+
             tequila.SetIdade(4);
             var idade = tequila.GetIdade();
 
@@ -127,6 +132,7 @@ namespace Exercicios.Tests
         public void Cachorro_Set_Get_Peso_Teste()
         {
             var leia = new Cachorro();
+
             leia.SetPeso(1.2);
             var peso = leia.GetPeso();
 
@@ -139,18 +145,32 @@ namespace Exercicios.Tests
         public void Cachorro_Peso_Nao_Pode_Ser_Negativo_Teste()
         {
             var leia = new Cachorro();
+
             leia.SetPeso(-1.2);
             var peso = leia.GetPeso();
 
             Console.WriteLine(peso);
-            Assert.AreEqual(0, peso);
+            Assert.AreEqual(null, peso);
 
         }
 
         [TestMethod]
+        public void Cachorro_Peso_Deve_Aceitar_Null_Teste()
+        {
+            var leia = new Cachorro();
+
+            leia.SetPeso(null);
+            var peso = leia.GetPeso();
+
+            Console.WriteLine(peso);
+            Assert.AreEqual(null, peso);
+
+        }
+        [TestMethod]
         public void Cachorro_Set_Get_Vacinado_Teste()
         {
             var leia = new Cachorro();
+
             leia.SetVacinado(true);
             var vacinado = leia.GetVacinado();
 

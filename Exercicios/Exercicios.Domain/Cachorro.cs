@@ -68,11 +68,11 @@ namespace Exercicios.Domain
         #endregion
 
         #region Peso
-        public void SetPeso(double peso)
+        public void SetPeso(double? peso)
         {
             if (peso < 0)
             {
-                _peso = 0;
+                _peso = null;
             }
             else
             {
@@ -80,11 +80,11 @@ namespace Exercicios.Domain
             }
         }
 
-        public double GetPeso()
+        public double? GetPeso()
         {
             return _peso;
         }
-        private double _peso;
+        private double? _peso;
         #endregion
         
         #region Vacinado
@@ -106,7 +106,7 @@ namespace Exercicios.Domain
         {
             var latidos = "";
 
-            for(short i = 1; i <= qtdeLatidos; i++)
+            for(var i = 1; i <= qtdeLatidos; i++)
             //{ se o for tiver somente uma linha de comando pode-se omitir as chaves {}
                 //latidos = latidos + "Au! "; abaixo outra forma de escrever essa linha
                 latidos += "Au! ";
