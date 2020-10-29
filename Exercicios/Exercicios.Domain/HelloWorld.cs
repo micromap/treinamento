@@ -1,14 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Exercicios.Domain
 {
     public static class HelloWorld
     {
-        public static String SayHello()
+        public static string SayHello()
         {
-            return "HelloWorld!";
+            return "Hello World!";
+        }
+
+        public static void PassaValor(int valor)
+        {
+            valor = 999;
+        }
+
+        public static void PassaReferencia(Cachorro cachorro)
+        {
+            cachorro.Nome = "Tequila";
         }
     }
 }

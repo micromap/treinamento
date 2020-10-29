@@ -1,8 +1,6 @@
 ﻿using Exercicios.Domain;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Exercicios.Tests
 {
@@ -12,25 +10,81 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Cachorro_Latir_Test()
         {
-            Cachorro leia = new Cachorro();
-            string latido = leia.Latir();
+            var leia = new Cachorro();
+            var latido = leia.Latir(6);
 
             Console.WriteLine(latido);
 
-            Assert.AreEqual("Au! Au!", latido);
+            Assert.AreEqual("Au! Au! Au! Au! Au! Au!", latido);
         }
 
         [TestMethod]
-        public void Cachorro_QuantoDevoComer_Test()
+        public void Leia_QuantoDevoComer_Test()
         {
-            int peso = 10;
-
-            Cachorro leia = new Cachorro();
-            string quantoDevoComer = leia.QuantoDevoComer(peso);
+            var leia = new Cachorro();
+            var quantoDevoComer = leia.QuantoDevoComer(1);
 
             Console.WriteLine(quantoDevoComer);
 
-            Assert.AreEqual("Como tenho " + peso + "kg, devo comer 500g por dia", quantoDevoComer);
+            Assert.AreEqual("Como tenho 1kg, devo comer 50g por dia", quantoDevoComer);
+        }
+
+        [TestMethod]
+        public void Tequila_QuantoDevoComer_Test()
+        {
+            var tequila = new Cachorro();
+            var quantoDevoComer = tequila.QuantoDevoComer(30);
+
+            Console.WriteLine(quantoDevoComer);
+
+            Assert.AreEqual("Como tenho 30kg, devo comer 1500g por dia", quantoDevoComer);
+        }
+
+        [TestMethod]
+        public void Yuri_QuantoDevoComer_Test()
+        {
+            var yuri = new Cachorro();
+            var quantoDevoComer = yuri.QuantoDevoComer(15);
+
+            Console.WriteLine(quantoDevoComer);
+
+            Assert.AreEqual("Como tenho 15kg, devo comer 750g por dia", quantoDevoComer);
+        }
+
+        [TestMethod]
+        public void Cachorro_Set_Get_Peso_Teste()
+        {
+            var leia = new Cachorro();
+
+            leia.Peso = 1.2;
+            var peso = leia.Peso;
+
+            Console.WriteLine(peso);
+            Assert.AreEqual(1.2, peso);
+        }
+
+        [TestMethod]
+        public void Cachorro_Peso_Nao_Pode_Ser_Negativo_Teste()
+        {
+            var leia = new Cachorro();
+
+            leia.Peso = -1.2;
+            var peso = leia.Peso;
+
+            Console.WriteLine(peso);
+            Assert.AreEqual(null, peso);
+        }
+
+        [TestMethod]
+        public void Cachorro_Peso_Deve_Aceitar_Null_Teste()
+        {
+            var leia = new Cachorro();
+
+            leia.Peso = null;
+            var peso = leia.Peso;
+
+            Console.WriteLine(peso);
+            Assert.AreEqual(null, peso);
         }
     }
 }
