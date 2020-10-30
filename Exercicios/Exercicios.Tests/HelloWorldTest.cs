@@ -1,6 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using Exercicios.Domain;
+using System.Globalization;
 
 namespace Exercicios.Tests
 {
@@ -44,7 +45,7 @@ namespace Exercicios.Tests
 
         [TestMethod]
         public void Conversao_Explicita_Test()
-        {            
+        {
             double valor = 1.23;
             int inteiro = (int)valor;
 
@@ -152,7 +153,7 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Tipos_Que_Aceitam_Null_Test()
         {
-            string nome = null;            
+            string nome = null;
             Cachorro cachorro = null;
 
             Assert.AreEqual(null, nome);
@@ -170,5 +171,112 @@ namespace Exercicios.Tests
             Assert.AreEqual(null, peso);
             Assert.AreEqual(null, vacinado);
         }
+
+        [TestMethod]
+        public void DateTime_Test()
+        {
+            var hoje = DateTime.Today;
+            Console.WriteLine(hoje);
+
+            var agora = DateTime.Now;
+            Console.WriteLine(agora);
+        }
+
+        [TestMethod]
+        public void DateTime_Desmembrando_Test()
+        {
+            var agora = DateTime.Now;
+            Console.WriteLine(agora);
+            Console.WriteLine(agora.Year);
+            Console.WriteLine(agora.Month);
+            Console.WriteLine(agora.Day);
+            Console.WriteLine(agora.Hour);
+            Console.WriteLine(agora.Minute);
+            Console.WriteLine(agora.Second);
+            Console.WriteLine(agora.Millisecond);
+            Console.WriteLine(agora.DayOfWeek);
+            Console.WriteLine(agora.DayOfYear);
+        }
+
+        [TestMethod]
+        public void DateTime_Add_Test()
+        {
+            var agora = DateTime.Now;
+            Console.WriteLine(agora);
+
+            var mais5horas = agora.AddHours(5);
+            Console.WriteLine(mais5horas);
+
+            var amanha = agora.AddDays(1);
+            Console.WriteLine(amanha);
+
+            var ontem = agora.AddDays(-1);
+            Console.WriteLine(ontem);
+
+            var mesQueVem = agora.AddMonths(1);
+            Console.WriteLine(mesQueVem);
+        }
+
+        [TestMethod]
+        public void DateTime_Inicializacao_Test()
+        {
+            var data = new DateTime(2020, 10, 30);
+            Console.WriteLine(data);
+
+            var dataHora = new DateTime(2020, 10, 30, 16, 36, 0);
+            Console.WriteLine(dataHora);
+        }
+
+        [TestMethod]
+        public void DateTime_Convertendo_de_String_Test()
+        {
+            var data = DateTime.Parse("30/10/2020");
+            Console.WriteLine(data);
+
+            var dataHora = DateTime.Parse("30/10/2020 10:53");
+            Console.WriteLine(dataHora);
+        }
+
+        [TestMethod]
+        public void DateTime_Quantidade_Dias_Mes_Test()
+        {
+            var diasMes = DateTime.DaysInMonth(2020, 10);
+            Console.WriteLine(diasMes);
+
+            var ultimoDiaMes = new DateTime(2020, 10, diasMes);
+            Console.WriteLine(ultimoDiaMes);
+        }
+
+        [TestMethod]
+        public void DateTime_Formatacoes_Test()
+        {
+            var agora = DateTime.Now;
+            Console.WriteLine(agora.ToString("d"));
+            Console.WriteLine(agora.ToString("G"));
+            Console.WriteLine(agora.ToString("f"));
+            Console.WriteLine(agora.ToString("dd/mm/yyyy"));
+            Console.WriteLine(agora.ToString("dd/mm/yyyy HH:mm"));
+            Console.WriteLine(agora.ToString("MMMM/yy"));
+            Console.WriteLine(agora.ToString("MM/yyyy"));
+        }
+
+        [TestMethod]
+        public void TimeSpan_Test()
+        {
+            var hoje = DateTime.Today;
+            var amanha = hoje.AddDays(1);
+
+            var data1 = new DateTime(2020, 10, 30, 18, 30, 00);
+            var data2 = new DateTime(2022, 10, 30, 18, 30, 00);
+
+            var dif = data2.Subtract(data1);
+
+            Console.WriteLine(dif);
+            Console.WriteLine(dif.TotalSeconds);
+            Console.WriteLine(dif.TotalMinutes);
+            Console.WriteLine(dif.TotalHours);
+            Console.WriteLine(dif.TotalDays);
+        }
+
     }
 }
