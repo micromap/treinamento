@@ -17,6 +17,7 @@ namespace Aula5
 
             objetoProdutoDAO.InserirProduto(produtos);
 
+
             List<Produtos> carrinho = objetoProdutoDAO.ListarProdutos();
 
             foreach(Produtos item in carrinho)

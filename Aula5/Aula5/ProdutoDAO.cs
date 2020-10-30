@@ -57,8 +57,6 @@ namespace Aula5
             }
 
             return listaprodutos;
-
         }
-
     }
 }

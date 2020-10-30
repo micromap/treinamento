@@ -11,10 +11,16 @@ namespace Exercicios.Domain
         public string Porte { get; set; }
         public int Idade { get; set; }
         public double Peso { get; set; }
+        public bool Vacinado { get; set; }
 
-        public string Latir()
+        public string Latir(short qtdeLatidos)
         {
-            return "Au! Au!";
+            string latidos = "";
+
+            for(short i = 1; i <= qtdeLatidos; i++)
+                latidos += "Au! ";
+
+            return latidos.TrimEnd();
         }
 
         public string QuandoDevoComer(int peso)
@@ -36,6 +42,7 @@ namespace Exercicios.Domain
             Idade = idade;
             Peso  = peso;
         }
+
     }
 }
 
