@@ -66,5 +66,31 @@ namespace Exercicios.Test
 
             Assert.AreEqual(result, quandoDevoComer);
         }
+
+        [TestMethod]
+        public void Idade_Cachorro_Test()
+        {
+            String result = "";
+            var dataNascimento = new DateTime(1998, 10, 25);
+
+            Cachorro cachorro = new Cachorro();
+            String cachorroIdade = cachorro.idade(dataNascimento);
+            
+            Console.WriteLine($"Data de Nascimento {dataNascimento}");
+            Console.WriteLine($"Data Atual {DateTime.Today}");
+
+            TimeSpan dataaux = DateTime.Today.Subtract(dataNascimento);
+
+            double idade = Math.Truncate(dataaux.TotalDays / 365);
+
+            if (idade < 1)
+                result = $"Cachorro tem {idade} Mese(s)";
+            else
+                result = $"Cachorro tem {idade} Ano(s)";
+
+            Console.WriteLine(result);
+
+            Assert.AreEqual(result, cachorroIdade);
+        }
     }
 }
