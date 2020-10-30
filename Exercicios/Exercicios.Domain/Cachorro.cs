@@ -15,7 +15,7 @@ namespace Exercicios.Domain
 
         public string Porte { set; get; }
 
-        public int Idade { set; get; }
+        public DateTime DataNascimento { get; set; }
 
         public bool Vacinado { set; get; }
         
@@ -51,6 +51,17 @@ namespace Exercicios.Domain
         public string QuantoDevoComer(int peso)
         {
             return $"Como tenho {peso}kg, devo comer {(peso*1000)*0.05}g por dia";
+        }
+
+        public object GetIdade()
+        {
+            var anos = DateTime.Today.Year - DataNascimento.Year;
+            var meses = DateTime.Today.Month - DataNascimento.Month + (12 * anos);
+
+            if (meses < 12)
+                return meses > 1 ? $"{meses} meses" : $"{meses} mes";
+            else
+                return anos > 1 ? $"{anos} anos" : $"{anos} ano";
         }
     }
 }
