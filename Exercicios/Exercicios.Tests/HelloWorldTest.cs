@@ -454,7 +454,7 @@ namespace Exercicios.Tests
                 if (cachorro == null)
                     throw new Exception("O cachorro não foi instanciado!");
 
-                var mensagens = cachorro.Validar();
+                cachorro.Validar();
 
                 var x = 10;
                 var y = 0;
