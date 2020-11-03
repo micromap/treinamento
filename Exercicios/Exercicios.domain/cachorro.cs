@@ -17,10 +17,10 @@ namespace Exercicios.domain
             return "Au Au!";         
         }
 
-        public string QuantoDevoComer(int peso)
+        public string QuantoDevoComer(string peso)
         {
-            double quantidade = peso * 1000 * 0.05;
-            return "Devo Comer : " + quantidade;
+            int ?quantidade = null;
+            return "Devo Comer" + null;
         }
 
 

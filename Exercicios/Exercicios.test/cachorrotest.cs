@@ -4,11 +4,11 @@ using System;
 
 namespace Exercicios.test
 {
-  
-   [TestClass]
-        public class Cachorrotest
+
+    [TestClass]
+    public class Cachorrotest
     {
-         private object leia;
+        private object leia;
 
         public Cachorrotest(object leia)
         {
@@ -16,23 +16,23 @@ namespace Exercicios.test
         }
 
         [TestMethod]
-       public void cachorro_latir_test()
+        public void cachorro_latir_test()
         {
-            string latido = Latir();
+            var latido = Latir();
 
 
-           Console.WriteLine(latido);
-            
-           Assert.AreEqual("Au, AU!", latido);       
-            
-         }
+            Console.WriteLine(latido);
+
+            Assert.AreEqual("Au, AU!", latido);
+
+        }
 
         private string Latir()
         {
             throw new NotImplementedException();
         }
 
-         //Considerando que a Léia pesa 1kg,
+        //Considerando que a Léia pesa 1kg,
         // e come 5% do seu peso de ração,
         // implemente o método "quanto devo comer"
         // para passar neste teste
@@ -40,21 +40,21 @@ namespace Exercicios.test
         [TestMethod]
         public void Cachorro_QuantoDevoComer_Test()
         {
-            Cachorro leia = new Cachorro();
-            string quantoDevoComer = leia.QuantoDevoComer(1);
+            string leia = null;
+            int?quantoDevoComer =null;
 
-            Console.WriteLine(quantoDevoComer);
-
-            Assert.AreEqual("Devo Comer : 50", quantoDevoComer);
-           }
+            
+            Assert.AreEqual(null,leia);
+            Assert.AreEqual(null,quantoDevoComer);
+        }
 
         [TestMethod]
 
         public void Cachorro_Set_Get_Nome_Test()
         {
-            Cachorro leia = new Cachorro();
+            var leia = new Cachorro();
             leia.SetNome("Leia");
-            string nome = leia.GetNome();
+            var nome = leia.GetNome();
 
             Console.WriteLine(nome);
             Assert.AreEqual("Leia", nome);
@@ -63,24 +63,24 @@ namespace Exercicios.test
         [TestMethod]
         public void Cachorro_Set_Get_Raca_test()
         {
-            Cachorro leia = new Cachorro();
+            var leia = new Cachorro();
             leia.SetRaca("Femea");
-            string raca = leia.GetRaca();
+            var raca = leia.GetRaca();
 
             Console.WriteLine(raca);
-            Assert.AreEqual("Femea",raca);
-          }
+            Assert.AreEqual("Femea", raca);
+        }
 
-         [TestMethod]
-            public void Cahorro_Set_Get_Porte_test()
+        [TestMethod]
+        public void Cahorro_Set_Get_Porte_test()
         {
-            Cachorro leia = new Cachorro();
+            var leia = new Cachorro();
             leia.SetPorte("Pequeno");
-            string porte = leia.GetPorte();
+            var porte = leia.GetPorte();
 
             Console.WriteLine(porte);
             Assert.AreEqual("Pequeno", porte);
         }
     }
 
-  }
+}
