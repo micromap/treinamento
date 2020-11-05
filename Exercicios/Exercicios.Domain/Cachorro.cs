@@ -39,13 +39,9 @@ namespace Exercicios.Domain
         //#endregion
 
         public string Raca { set; get; }        
-
-        public string Porte { set; get; }
-                
-        public int Idade { set; get; }
-        
+        public string Porte { set; get; }                
+        public int Idade { set; get; }        
         public bool Vacinado { set; get; }
-
         // como nesse método tem regras de negócio não da para simplificar como nas propriedades acima. não da pra ser uma propriedade automática
         #region Peso
         public double? Peso
