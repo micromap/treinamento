@@ -82,9 +82,26 @@
         private double _pesoKg;
         #endregion
 
-        public string Latir()
+        #region Vacinado
+        public void SetVacinado(bool vacinado)
         {
-            return "Au! Au!";
+            _vacinado = vacinado;
+        }
+        public bool GetVacinado()
+        {
+            return _vacinado;
+        }
+        private bool _vacinado;
+        #endregion
+
+        public string Latir(short qtdeLatidos)
+        {
+            string latidos = "";
+
+            for (short i = 1; i <= qtdeLatidos; i++)
+                latidos += "Au! ";
+
+            return latidos.TrimEnd();
         }
 
         // Método para calcular 5% do Peso(Kg) do cachorro em Gramas de Ração
