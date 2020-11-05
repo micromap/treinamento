@@ -86,5 +86,37 @@ namespace Exercicios.Tests
             Console.WriteLine(peso);
             Assert.AreEqual(null, peso);
         }
+
+        [TestMethod]
+        public void  Cachorro_GetIdade_em_Anos_Test()
+        {
+            var cachorro = new Cachorro();
+            var idade_Anos = cachorro.CalcularIdade(DateTime.Today.AddYears(-4));
+
+            Console.WriteLine(idade_Anos);
+            Assert.AreEqual("4 anos", idade_Anos);
+
+            var idade_Ano = cachorro.CalcularIdade(DateTime.Today.AddYears(-1));
+
+            Console.WriteLine(idade_Ano);
+            Assert.AreEqual("1 ano", idade_Ano);
+
+        }
+
+        [TestMethod]
+        public void Cachorro_GetIdade_em_Meses_Test()
+        {
+            var cachorro = new Cachorro();
+            var idade_Meses = cachorro.CalcularIdade(DateTime.Today.AddMonths(-11));
+
+            Console.WriteLine(idade_Meses);
+            Assert.AreEqual("11 meses", idade_Meses);
+
+            var idade_Mes = cachorro.CalcularIdade(DateTime.Today.AddMonths(-1));
+
+            Console.WriteLine(idade_Mes);
+            Assert.AreEqual("1 mês", idade_Mes);
+
+        }
     }
 }
