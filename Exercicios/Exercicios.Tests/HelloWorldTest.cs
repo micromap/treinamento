@@ -147,9 +147,36 @@ namespace Exercicios.Tests
             cachorro = new Cachorro();
             Assert.AreEqual(typeof(Cachorro), cachorro.GetType());
 
-            string nome;
-            nome = "Léia";
-            Assert.AreEqual(typeof(string), nome.GetType()); 
+            // Não podemos declarar variaveis do tipo implicitas sem atribuis valor 
+            //string nome;
+            // nome = "Léia";
+            //Assert.AreEqual(typeof(string), nome.GetType()); 
+        }
+
+        [TestMethod]
+        public void Tipos_Que_aceitam_NullTest()
+        {
+            string nome = null;
+            Cachorro cachorro = null;
+
+            Assert.AreEqual(null,nome);
+            Assert.AreEqual(null,cachorro);
+
+            //int idade = null;
+            //double peso = null;
+            //Assert.AreEqual(null, idade);
+            //Assert.AreEqual(null, peso);
+        }
+
+        [TestMethod]
+        public void Tipos_NulaveisTest()
+        {
+            int? idade = null;
+            double? peso = null;
+            bool? vacinado = null;
+            Assert.AreEqual(null, idade);
+            Assert.AreEqual(null, peso);
+            Assert.AreEqual(null, vacinado);
         }
     }
 }
