@@ -8,13 +8,11 @@ namespace Exercicios.Tests
     public class HelloWorldTest
     {
         [TestMethod]
-        public void SayHello_Test()
+        public void Test_SayHello()
         {
-            string mensagem = HelloWorld.SayHello();
-            
-            Assert.AreEqual("Hello World!", mensagem);
-
+            var mensagem = HelloWorld.SayHello();
             Console.WriteLine(mensagem);
+            Assert.AreEqual("Hello World!", mensagem);
         }
     }
 }
