@@ -71,11 +71,13 @@ namespace Exercicios.Tests
         public void Tipo_de_Referencia_Test()
         {
             Cachorro cachorro = new Cachorro();
-            cachorro.SetNome("Léia");
-
+            //cachorro.SetNome("Léia");
+            cachorro.Nome = "Léia";
+            
             HelloWorld.PassaReferencia(cachorro);
 
-            string nomeCachorro = cachorro.GetNome();
+            //string nomeCachorro = cachorro.GetNome();
+            string nomeCachorro = cachorro.Nome;
 
             Console.WriteLine(nomeCachorro);
             Assert.AreEqual("Tequila", nomeCachorro);
@@ -93,10 +95,12 @@ namespace Exercicios.Tests
         public void Desigualdade_entre_Tipos_de_Referencia_Test()
         {
             Cachorro cachorro1 = new Cachorro();
-            cachorro1.SetNome("Léia");
+            //cachorro1.SetNome("Léia");
+            cachorro1.Nome = "Léia";
 
             Cachorro cachorro2 = new Cachorro();
-            cachorro2.SetNome("Léia");
+            //cachorro2.SetNome("Léia");
+            cachorro2.Nome = "Léia";
 
             Assert.AreNotEqual(cachorro1, cachorro2);
         }
@@ -104,7 +108,7 @@ namespace Exercicios.Tests
         public void Igualdade_entre_Tipos_de_Referencia_Test()
         {
             Cachorro cachorro1 = new Cachorro();
-            cachorro1.SetNome("Léia");
+            cachorro1.Nome = "Léia";
 
             Cachorro cachorro2 = cachorro1;
 

@@ -64,77 +64,29 @@ namespace Exercicios.Tests
             Assert.AreEqual("Como tenho 15Kg, devo comer 750g por dia", quantoDevoComer);
 
         }
-        [TestMethod]
+        
+        //para propriedades automaticas não precisamos de testes unitários. podemos exluí-los. só deixei esse como exemplo
+        /*[TestMethod]
         public void Cachorro_Set_Get_Nome_Teste()
         {
             var yuri = new Cachorro();
 
-            yuri.SetNome("Yuri");
-            var nome = yuri.GetNome();
+            yuri.Nome = "Yuri";
+            var nome = yuri.Nome;
 
             Console.WriteLine(nome);
             Assert.AreEqual("Yuri", nome);
 
-        }
-        [TestMethod]
-        public void Cachorro_Set_Get_Sexo_Teste()
-        {
-            var yuri = new Cachorro();
-
-            yuri.SetSexo("Macho");
-            var sexo = yuri.GetSexo();
-
-            Console.WriteLine(sexo);
-            Assert.AreEqual("Macho", sexo);
-
-        }
-
-        [TestMethod]
-        public void Cachorro_Set_Get_Raca_Teste()
-        {
-            var tequila = new Cachorro();
-
-            tequila.SetRaca("Labrador");
-            var raca = tequila.GetRaca();
-
-            Console.WriteLine(raca);
-            Assert.AreEqual("Labrador", raca);
-
-        }
-
-        [TestMethod]
-        public void Cachorro_Set_Get_Porte_Teste()
-        {
-            var leia = new Cachorro();
-
-            leia.SetPorte("Pequeno");
-            var porte = leia.GetPorte();
-
-            Console.WriteLine(porte);
-            Assert.AreEqual("Pequeno", porte);
-
-        }
-
-        [TestMethod]
-        public void Cachorro_Set_Get_Idade_Teste()
-        {
-            var tequila = new Cachorro();
-
-            tequila.SetIdade(4);
-            var idade = tequila.GetIdade();
-
-            Console.WriteLine(idade);
-            Assert.AreEqual(4, idade);
-
-        }
-
+        }*/
+        
+        
         [TestMethod]
         public void Cachorro_Set_Get_Peso_Teste()
         {
             var leia = new Cachorro();
 
-            leia.SetPeso(1.2);
-            var peso = leia.GetPeso();
+            leia.Peso = 1.2;
+            var peso = leia.Peso;
 
             Console.WriteLine(peso);
             Assert.AreEqual(1.2, peso);
@@ -146,8 +98,8 @@ namespace Exercicios.Tests
         {
             var leia = new Cachorro();
 
-            leia.SetPeso(-1.2);
-            var peso = leia.GetPeso();
+            leia.Peso = -1.2;
+            var peso = leia.Peso;
 
             Console.WriteLine(peso);
             Assert.AreEqual(null, peso);
@@ -159,25 +111,14 @@ namespace Exercicios.Tests
         {
             var leia = new Cachorro();
 
-            leia.SetPeso(null);
-            var peso = leia.GetPeso();
+            leia.Peso = null;
+            var peso = leia.Peso;
 
             Console.WriteLine(peso);
             Assert.AreEqual(null, peso);
 
         }
-        [TestMethod]
-        public void Cachorro_Set_Get_Vacinado_Teste()
-        {
-            var leia = new Cachorro();
-
-            leia.SetVacinado(true);
-            var vacinado = leia.GetVacinado();
-
-            Console.WriteLine(vacinado);
-            Assert.AreEqual(true, vacinado);
-
-        }
+        
     }
 }
 

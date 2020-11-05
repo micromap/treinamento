@@ -1,107 +1,71 @@
 ﻿using System;
+using System.Dynamic;
 
 namespace Exercicios.Domain
 {
     public class Cachorro
     {
-        #region Nome
-        public void SetNome(string nome)
-        {
-            _nome = nome;
-        }
-        public string GetNome()
-        {
-            return _nome;
-        }
-        private string _nome;
-        #endregion
 
-        #region Sexo
-        public void SetSexo(string sexo)
-        {
-            _sexo = sexo;
-        }
-        public string GetSexo()
-        {
-            return _sexo;
-        }
-        private string _sexo;
-        #endregion
+        //para gerar uma propriedade automatica usar esse comando : prop<TAB> <TAB> ai vai escrever o comando abaixo
+        //public string MyProperty { get; set; } 
 
-        #region Raca
-        public void SetRaca(string raca)
-        {
-            _raca = raca;
-        }
+        //Essa é uma propriedade automática
+        public string Nome { set; get; }
 
-        public string GetRaca()
-        {
-            return _raca;
-        }
-        private string _raca;
-        #endregion
+        //#region Nome essa forma é a mais analítica para escrever esse comando e acima é usando propriedades fica mais sintetico economiza linhas de códigos
+        //public void SetNome(string nome)
+        //{
+        //    _nome = nome;
+        //}
+        //public string GetNome()
+        //{
+        //    return _nome;
+        //}
+        //private string _nome;
+        //#endregion
+      
+        public string Sexo { set; get; }
+        
+        //#region Sexo
+        //public void SetSexo(string sexo)
+        //{
+        //    _sexo = sexo;
+        //}
+        //public string GetSexo()
+        //{
+        //    return _sexo;
+        //}
+        //private string _sexo;
+        //#endregion
 
-        #region Porte
-        public void SetPorte(string porte)
-        {
-            _porte = porte;
-        }
+        public string Raca { set; get; }        
 
-        public string GetPorte()
-        {
-            return _porte;
-        }
-        private string _porte;
-        #endregion
+        public string Porte { set; get; }
+                
+        public int Idade { set; get; }
+        
+        public bool Vacinado { set; get; }
 
-        #region Idade
-        public void SetIdade(int idade)
-        {
-            _idade = idade;
-        }
-
-        public int GetIdade()
-        {
-            return _idade;
-        }
-        private int _idade;
-        #endregion
-
+        // como nesse método tem regras de negócio não da para simplificar como nas propriedades acima. não da pra ser uma propriedade automática
         #region Peso
-        public void SetPeso(double? peso)
+        public double? Peso
         {
-            if (peso < 0)
+            set
             {
-                _peso = null;
+                if (value < 0)                
+                    _peso = null;                
+                else                
+                    _peso = value;                
             }
-            else
+            get
             {
-                _peso = peso;
+                return _peso;
             }
-        }
-
-        public double? GetPeso()
-        {
-            return _peso;
-        }
+        }        
         private double? _peso;
         #endregion
         
-        #region Vacinado
-        public void SetVacinado(bool vacinado)
-        {
-            _vacinado = vacinado;
-        }
-
-        public bool GetVacinado()
-        {
-            
-            return _vacinado;
-        }
-
-        private bool _vacinado;
-        #endregion
-
+                
         public string Latir(short qtdeLatidos)
         {
             var latidos = "";
