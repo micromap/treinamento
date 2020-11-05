@@ -26,17 +26,7 @@
         private string _sexo;
         #endregion
 
-        #region Raça
-        public void SetRaca(string raca)
-        {
-            _raca = raca;
-        }
-        public string GetRaca()
-        {
-            return _raca;
-        }
-        private string _raca;
-        #endregion
+        public string Raca { set; get; }
 
         #region Porte
         public void SetPorte(string porte)
@@ -63,21 +53,19 @@
         #endregion
 
         #region Peso
-        public void SetPeso(double? peso)
+        public double? Peso
         {
-            if (peso < 0)
+            set
             {
-                _pesoKg = null;
+                if (value < 0)
+                    _pesoKg = null;
+                else
+                    _pesoKg = value;
             }
-            else
+            get
             {
-                _pesoKg = peso;
+                return _pesoKg;
             }
-        }
-
-        public double? GetPeso()
-        {
-            return _pesoKg;
         }
         private double? _pesoKg;
         #endregion
