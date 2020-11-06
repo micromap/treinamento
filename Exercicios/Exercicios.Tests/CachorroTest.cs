@@ -82,5 +82,27 @@ namespace Exercicios.Tests
             Console.WriteLine(pesoKg);
             Assert.AreEqual(null, pesoKg);
         }
+
+        [TestMethod]
+        public void Cachorro_GetIdade_em_Anos_Test()
+        {
+            var cachorro = new Cachorro();
+            cachorro.DataNascimento = new DateTime(2016, 1, 10);
+            var idade = cachorro.GetIdade();
+
+            Assert.AreEqual("4 anos", idade);
+            Console.WriteLine(idade);           
+        }
+
+        [TestMethod]
+        public void Cachorro_GetIdade_um_Ano_Test()
+        {
+            var cachorro = new Cachorro();
+            cachorro.DataNascimento = new DateTime(2019, 1, 10);
+            var idade = cachorro.GetIdade();
+
+            Assert.AreEqual("1 ano", idade);
+            Console.WriteLine(idade);
+        }
     }
 }

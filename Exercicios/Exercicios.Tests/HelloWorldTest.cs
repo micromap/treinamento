@@ -256,9 +256,6 @@ namespace Exercicios.Tests
             Console.WriteLine(dif.TotalHours);
             Console.WriteLine(dif.TotalDays);
 
-
-
-
         }
 
     }

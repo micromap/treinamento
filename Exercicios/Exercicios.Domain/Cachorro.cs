@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO.Pipes;
 
 namespace Exercicios.Domain
 {
@@ -8,7 +9,7 @@ namespace Exercicios.Domain
         public string Sexo { get; set; }
         public string Raca { get; set; }
         public string Porte { get; set; }
-        public int Idade { get; set; }
+        public DateTime DataNascimento { get; set; }
         public bool Vacinado { get; set; }
 
         private double? _pesoKg;
@@ -42,6 +43,18 @@ namespace Exercicios.Domain
             double qtdeRacaoGramas = pesoKg * 50;
 
             return $"Como tenho {pesoKg}kg, devo comer {qtdeRacaoGramas}g por dia.";
+        }
+        public string GetIdade()
+        {
+            var idade = DateTime.Now.Year - DataNascimento.Year;
+            if (idade == 1)
+            {
+                return $"{idade} ano";
+            }
+            else
+            {
+                return $"{idade} anos";
+            }
         }
     }
 
