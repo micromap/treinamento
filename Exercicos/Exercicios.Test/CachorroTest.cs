@@ -71,7 +71,7 @@ namespace Exercicios.Test
         public void Idade_Cachorro_Test()
         {
             String result = "";
-            var dataNascimento = new DateTime(1998, 10, 25);
+            var dataNascimento = new DateTime(1999, 10, 25);
 
             Cachorro cachorro = new Cachorro();
             String cachorroIdade = cachorro.idade(dataNascimento);
@@ -79,14 +79,17 @@ namespace Exercicios.Test
             Console.WriteLine($"Data de Nascimento {dataNascimento}");
             Console.WriteLine($"Data Atual {DateTime.Today}");
 
-            TimeSpan dataaux = DateTime.Today.Subtract(dataNascimento);
+            var anos = DateTime.Today.Year - dataNascimento.Year;
+            var meses = DateTime.Today.Month - dataNascimento.Month + (12 * anos);
 
-            double idade = Math.Truncate(dataaux.TotalDays / 365);
-
-            if (idade < 1)
-                result = $"Cachorro tem {idade} Mese(s)";
+            if (meses == 1)
+                result = $"Cachorro tem {meses} Mês";
+            else if (meses < 12)
+                result = $"Cachorro tem {meses} Meses";
+            else if (anos == 1)
+                result = $"Cachorro tem {anos} Ano";
             else
-                result = $"Cachorro tem {idade} Ano(s)";
+                result = $"Cachorro tem {anos} Anos";
 
             Console.WriteLine(result);
 

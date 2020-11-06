@@ -36,15 +36,18 @@ namespace Exercicios.Domain
         public string idade(DateTime dataNascimento)
         {
             string result = "";
-            
-            TimeSpan dataaux = DateTime.Today.Subtract(dataNascimento);
 
-            double idade = Math.Truncate(dataaux.TotalDays / 365);
+            var anos = DateTime.Today.Year - dataNascimento.Year;
+            var meses = DateTime.Today.Month - dataNascimento.Month + (12 * anos);
 
-            if (idade < 1)
-                result = $"Cachorro tem {idade} Mese(s)";
+            if (meses == 1)
+                result = $"Cachorro tem {meses} Mês";
+            else if (meses < 12)
+                result = $"Cachorro tem {meses} Meses";
+            else if (anos == 1)
+                result = $"Cachorro tem {anos} Ano";
             else
-                result = $"Cachorro tem {idade} Ano(s)";
+                result = $"Cachorro tem {anos} Anos";
 
             return result;
         }
