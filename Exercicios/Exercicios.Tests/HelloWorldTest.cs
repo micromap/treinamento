@@ -151,6 +151,116 @@ namespace Exercicios.Tests
           var obj = new MinhaClasse();
           obj.MeuMetodo();
         }
+
+        [TestMethod]
+        public void DateTime_Test()
+        {
+            var hoje = DateTime.Today;
+            Console.WriteLine(hoje);
+
+            var agora = DateTime.Now;
+            Console.WriteLine(agora);
+        }
+
+        [TestMethod]
+        public void DateTime_Desmebrando_Test()
+        {
+            var agora = DateTime.Now;
+            Console.WriteLine(agora);
+            Console.WriteLine(agora.Year);
+            Console.WriteLine(agora.Month);
+            Console.WriteLine(agora.Day);
+            Console.WriteLine(agora.Hour);
+            Console.WriteLine(agora.Minute);
+            Console.WriteLine(agora.Second);
+            Console.WriteLine(agora.Millisecond);
+            Console.WriteLine(agora.DayOfWeek);
+            Console.WriteLine(agora.DayOfYear);
+        }
+
+        [TestMethod]
+        public void DateTime_Add_Test()
+        {
+            var agora = DateTime.Now;
+            Console.WriteLine(agora);
+
+            var mais5Horas = agora.AddHours(5);
+            Console.WriteLine(mais5Horas);
+
+            var amanha = agora.AddDays(1);
+            Console.WriteLine(amanha);
+
+            var ontem = agora.AddDays(-1);
+            Console.WriteLine(ontem);
+
+            var mesQueVem = agora.AddMonths(1);
+            Console.WriteLine(mesQueVem);
+        }
+
+        [TestMethod]
+        public void DateTime_Inicializacao_Test()
+        {
+            var data = new DateTime(2020, 11, 06);
+            Console.WriteLine(data);
+
+            var dataHora = new DateTime(2020, 11, 06, 12, 25, 0);
+            Console.WriteLine(dataHora);
+
+        }
+
+        [TestMethod]
+        public void DateTime_Convertendo_de_String_Test()
+        {
+            var data = DateTime.Parse("06/11/2020");
+            Console.WriteLine(data);
+
+            var dataHora = DateTime.Parse("06/11/2020 12:32");
+            Console.WriteLine(dataHora);
+        }
+
+        [TestMethod]
+        public void DateTime_Quantidade_Dia_Mes_Test()
+        {
+            var diaMes = DateTime.DaysInMonth(2020, 11);
+            Console.WriteLine(diaMes);
+
+            var ultimoDiaMes = new DateTime(2020, 11, diaMes);
+            Console.WriteLine(diaMes);
+        }
+
+        [TestMethod]
+        public void DateTime_Formatacoes_Test()
+        {
+            var agora = DateTime.Now;
+            Console.WriteLine(agora);
+            Console.WriteLine(agora.ToString("d"));
+            Console.WriteLine(agora.ToString("G"));
+            Console.WriteLine(agora.ToString("f"));
+            Console.WriteLine(agora.ToString("dd/MM/yyyy"));
+            Console.WriteLine(agora.ToString("dd/MM/yyyy HH:mm"));
+            Console.WriteLine(agora.ToString("MMMM/yy"));
+            Console.WriteLine(agora.ToString("MMM/yyyy"));
+        }
+
+        [TestMethod]
+        public void TimeSpan_Test()
+        {
+            var data1 = new DateTime(2020, 11, 06, 15, 40, 12);
+            var data2 = new DateTime(2020, 11, 07, 18, 10, 25);
+
+            var dif = data2.Subtract(data1);
+
+            Console.WriteLine(dif);
+            Console.WriteLine(dif.TotalSeconds);
+            Console.WriteLine(dif.TotalMinutes);
+            Console.WriteLine(dif.TotalHours);
+            Console.WriteLine(dif.TotalDays);
+
+
+
+
+        }
+
     }
 
 }
