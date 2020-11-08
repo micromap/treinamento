@@ -90,7 +90,58 @@ namespace Exercicios.Tests
             Assert.AreEqual(null, peso);
         }
 
+
+        [TestMethod]
+        public void Dt_Nascimento_Ano_Test()
+        {
+            var dtnascimento = new Cachorro();
+
+            dtnascimento.Nascimento = new DateTime(2016, 03, 16);
+            var idade = dtnascimento.GetIdade();
+           Assert.AreEqual("4 anos", idade);
+            Console.WriteLine(idade);
+        }
+
+
+        [TestMethod]
+        public void Dt_Nascimento_Um_Ano_Test()
+        {
+            var dtnascimento = new Cachorro();
+
+            dtnascimento.Nascimento = new DateTime(2019, 03, 16);
+            var idade = dtnascimento.GetIdade();
+            Assert.AreEqual("1 ano", idade);
+            Console.WriteLine(idade);
+        }
+
+        [TestMethod]
+        public void Dt_Nascimento_Meses_Test()
+        {
+            var dtnascimento = new Cachorro();
+
+            dtnascimento.Nascimento = new DateTime(2020, 08, 10);
+            var idade = dtnascimento.GetIdade();
+            Assert.AreEqual("3 meses", idade);
+            Console.WriteLine(idade);
+        }
+
+        [TestMethod]
+        public void Dt_Nascimento_Mes_Test()
+        {
+            var dtnascimento = new Cachorro();
+
+            dtnascimento.Nascimento = new DateTime(2020,10, 8);
+            var idade = dtnascimento.GetIdade();
+            Assert.AreEqual("1 mês", idade);
+            Console.WriteLine(idade);
+        }
+
+
+
+
+
+
     }
 
-        
+
 }

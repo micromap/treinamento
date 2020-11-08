@@ -11,7 +11,7 @@ namespace Exercicios.Domain
         public string Sexo { set; get; }     
         public string Raca { set; get; }
         public string Porte { set; get; }
-        public int Idade { set; get; }
+        public DateTime Nascimento { set; get; }
         public bool Vacinado { set; get; }
 
         public double? Peso
@@ -43,6 +43,24 @@ namespace Exercicios.Domain
             //Método para Calcular 5% do peso do cachorro em gramas de ração.
             return $"Como tenho { peso }Kg, devo comer { peso * 50}g por dia";
         }
-       
+
+        public String GetIdade()
+        {
+            var anos = DateTime.Today.Year - Nascimento.Year;
+            var meses = DateTime.Today.Month - Nascimento.Month+(12 * anos);
+            /*  if (idade > 1)
+                  return $"{idade} anos";
+                else
+                  return $"{idade} ano"; */
+
+            if (meses < 2)
+                return $"{meses} mês";
+            if (meses < 12)
+                return $"{meses} meses";
+            else
+            return anos > 1? $"{anos} anos": $"{anos} ano";
+            
+
+        }
     }
 }
