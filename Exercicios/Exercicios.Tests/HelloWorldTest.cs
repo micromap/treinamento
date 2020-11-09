@@ -2,6 +2,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using Exercicios.Domain;
 using System.Runtime.InteropServices;
+using System.Collections.Generic;
 
 namespace Exercicios.Tests
 {
@@ -283,6 +284,194 @@ namespace Exercicios.Tests
             Console.WriteLine(dif.TotalMinutes);
             Console.WriteLine(dif.TotalHours);
             Console.WriteLine(dif.TotalDays);
+        }
+        
+        [TestMethod]
+        public void Array_While_Test()
+        {
+            var array = new int[3];
+            array[0] = 10;
+            array[1] = 20;
+            array[2] = 30;
+
+            var i = 0;
+            while (i < array.Length)
+            {
+                Console.WriteLine(array[i]);
+                i++;
+            }
+        }
+
+        [TestMethod]
+        public void Array_Do_While_Test()
+        {
+            var array = new string [] {"Léia", "Tequila", "Yuri"}; 
+            
+            var i = 0;
+            do
+            {
+                Console.WriteLine(array[i++]);
+            } while (i < array.Length);
+        }
+
+        [TestMethod]
+        public void Array_For_Test()
+        {
+            var array = new string[] { "Léia", "Tequila", "Yuri" };
+
+            for (var i = 0; i < array.Length; i ++)
+                Console.WriteLine(array[i]);
+        }
+
+        [TestMethod]
+        public void Array_For_Invertido_Test()
+        {
+            var array = new[] { "Léia", "Tequila", "Yuri" };
+
+            for (var i = array.Length - 1; i >=0; i--)
+                Console.WriteLine(array[i]);
+        }
+
+        [TestMethod]
+        public void Array_Foreach_Test()
+        {
+            var lista = new List<string> { "Léia", "Tequila", "Yuri" };
+            lista.Add("Xyz");
+            lista.Remove("Yuri");
+
+            foreach (var i in lista)
+                Console.WriteLine(i);
+        }
+
+        [TestMethod]
+        public void Dicionary_Test()
+        {
+            var dic = new Dictionary<int, string>();
+            dic.Add(1, "Léia");
+            dic.Add(2, "yuri");
+            dic.Add(3, "Tequila");
+
+            dic.Remove(2);
+
+            foreach (var i in dic)
+                Console.WriteLine($"{i.Key}: {i.Value}");
+        }
+
+        [TestMethod]
+        public void If_Else_Test()
+        {
+            var agora = DateTime.Now;
+            var numero = agora.Second;
+
+            string mensagem;
+            if (numero % 2 == 0)
+                mensagem = $"{numero} é par";
+            else
+                mensagem = $"{numero} é ímpar";
+
+            Console.WriteLine(mensagem);
+        }
+
+        [TestMethod]
+        public void If_Inline_Test()
+        {
+            var agora = DateTime.Now;
+            var numero = agora.Second;
+
+            var mensagem = numero % 2 == 0
+                ? $"{numero} é par"
+                : $"{numero} é ímpar";
+
+            Console.WriteLine(mensagem);
+        }
+
+        [TestMethod]
+        public void Else_If_Test()
+        {
+            var hoje = DateTime.Today;
+
+            string mensagem;
+
+            if (hoje.DayOfWeek == DayOfWeek.Sunday)
+                mensagem = "Hoje é domingo";
+            else if (hoje.DayOfWeek == DayOfWeek.Monday)
+                mensagem = "Hoje é segunda";
+            else if (hoje.DayOfWeek == DayOfWeek.Tuesday)
+                mensagem = "Hoje é terça";
+            else if (hoje.DayOfWeek == DayOfWeek.Wednesday)
+                mensagem = "Hoje é quarta";
+            else if (hoje.DayOfWeek == DayOfWeek.Thursday)
+                mensagem = "Hoje é quinta";
+            else if (hoje.DayOfWeek == DayOfWeek.Friday)
+                mensagem = "Hoje é sexta";
+            else
+                mensagem = "Hoje é sabado";
+
+            Console.WriteLine(mensagem);
+        }
+
+        [TestMethod]
+        public void Switch_Case_Test()
+        {
+            var hoje = DateTime.Today;
+
+            string mensagem;
+            
+            switch (hoje.DayOfWeek)
+            {
+                case DayOfWeek.Sunday:
+                    mensagem = "Hoje é domingo";
+                    break;
+                case DayOfWeek.Monday:
+                    mensagem = "Hoje é segunda";
+                    break;
+                case DayOfWeek.Tuesday:
+                    mensagem = "Hoje é terça";
+                    break;
+                case DayOfWeek.Wednesday:
+                    mensagem = "Hoje é quarta";
+                    break;
+                case DayOfWeek.Thursday:
+                    mensagem = "Hoje é quinta";
+                    break;
+                case DayOfWeek.Friday:
+                    mensagem = "Hoje é sexta";
+                    break;
+                default:
+                    mensagem = "Hoje é sabado";
+                    break;
+            }
+            Console.WriteLine(mensagem);
+        }
+
+        [TestMethod]
+        public void Exception_Test()
+        {
+            try
+            {
+                Cachorro cachorro = null;
+                if (cachorro == null)
+                    throw new Exception("O cachorro não foi instanciado");
+
+                cachorro.Validar();
+
+                var x = 10;
+                var y = 0;
+                var resultado = x / y;
+                Console.WriteLine(resultado);
+            }
+            catch (DivideByZeroException)
+            {
+                Console.WriteLine("Erro de divisão por zero");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                Console.WriteLine("Fim do teste!");
+            }
         }
     }
 }

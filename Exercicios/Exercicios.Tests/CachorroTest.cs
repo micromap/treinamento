@@ -1,6 +1,7 @@
 ﻿using Exercicios.Domain;
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Linq.Expressions;
 
 namespace Exercicios.Tests
 {   
@@ -129,6 +130,36 @@ namespace Exercicios.Tests
             var idade = cachorro.GetIdade();
             Assert.AreEqual("1 mes", idade);
             Console.WriteLine(idade);
+        }
+
+        [TestMethod]
+        public void Cachorro_Nome_Obrigatorio_Test()
+        {
+            try
+            {
+                var cachorro = new Cachorro
+                {
+                    Nome = "",
+                    Sexo = "Xyz",
+                    DataNascimento = DateTime.Today.AddMonths(5),
+                    PesoKg = 0
+
+                };
+                
+                cachorro.Validar();
+
+                Assert.Fail();
+            }
+            catch (Exception ex)
+            {
+                var ok = ex.Message.Contains("Nome do cachorro é obrigatório!!") &&
+                         ex.Message.Contains("Sexo do cachorro deve ser Femea ou Macho!!") &&
+                         ex.Message.Contains("A data de nascimento do cachorro, deve menor que hoje!!") &&
+                         ex.Message.Contains("Peso do cachorro deve ser maior que zero!!");
+
+                Assert.AreEqual(true, ok);
+                Console.WriteLine(ex.Message);
+            }    
         }
     }
 }
