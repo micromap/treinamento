@@ -56,8 +56,8 @@ namespace Exercicios.Test
         public void YuriGetSetNomeTeste()
         {
             Cachorro yuri = new Cachorro();
-            yuri.SetNome("Yuri");
-            string nome = yuri.GetNome();
+            yuri.Nome = "Yuri";
+            string nome = yuri.Nome;
             Assert.AreEqual("Yuri", nome);
         }
 
@@ -65,8 +65,8 @@ namespace Exercicios.Test
         public void YuriGetSetSexoTeste()
         {
             Cachorro yuri = new Cachorro();
-            yuri.SetSexo("Macho");
-            string nome = yuri.GetSexo();
+            yuri.Sexo = "Macho";
+            string nome = yuri.Sexo;
             Assert.AreEqual("Macho", nome);
         }
     }

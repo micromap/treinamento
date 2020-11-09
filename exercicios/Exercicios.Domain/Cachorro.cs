@@ -4,13 +4,12 @@ namespace Exercicios.Domain
 {
     public class Cachorro
     {
-        private string nome;
-        private string sexo;
-        private string raca;
-        private string porte;
-        private int idade;
-        private double peso;
-
+        public string Nome { get; set; }
+        public string Sexo { get; set; }
+        public string  Raca {get; set;}
+        public string Porte { get; set; }
+        public int Idata { get; set; }
+        public double Peso { get; set; }
 
         public string Latir()
         {
@@ -21,26 +20,6 @@ namespace Exercicios.Domain
         // metrodo para calcular 5% do peso (Kg) do cachorro em gramas de Ração;
         {
             return $"Como tenho {pesoKg}kg, devo comer {pesoKg * 50.0}g por dia";           
-        }
-
-        public void SetNome(string nome)
-        {
-            this.nome = nome;
-        }
-
-        public string GetNome()
-        {
-            return this.nome;
-        }
-
-        public void SetSexo(string sexo)
-        {
-            this.sexo = sexo;
-        }
-
-        public string GetSexo()
-        {
-            return this.sexo;
-        }
+        }     
     }
 }
