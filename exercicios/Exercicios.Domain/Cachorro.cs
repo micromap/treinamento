@@ -11,6 +11,7 @@ namespace Exercicios.Domain
         public string  Raca {get; set;}
         public string Porte { get; set; }
         public int Idata { get; set;  }
+        public string DataNascimento { get; set; }
         public double Peso { get; set; }
         public bool Vacinado { get; set; }
 
@@ -40,12 +41,10 @@ namespace Exercicios.Domain
 
         public List<string> Valida()
         {
-            List<string> message = new List<string>();
+           List<string> message = new List<string>();
 
             if (string.IsNullOrWhiteSpace(Nome))
-            {
                 message.Add("Nome do cachorro é obrigatório!");
-            }
 
             return message.Count == 0 ? message : null;
         }

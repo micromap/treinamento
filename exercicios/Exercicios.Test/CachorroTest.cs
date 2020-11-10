@@ -1,6 +1,7 @@
 ﻿using Exercicios.Domain;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
 
 namespace Exercicios.Test
 {
@@ -67,23 +68,17 @@ namespace Exercicios.Test
             string nome = yuri.Sexo;
             Assert.AreEqual("Macho", nome);
         }
-        
+
         [TestMethod]
         public void Cachorro_Nome_Obrigatorio_Teste()
         {
             var cachorro = new Cachorro();
+            cachorro.Nome = "";
+            cachorro.Sexo = "Femea";
             var message = cachorro.Valida();
-            Assert.AreNotEqual("Nome do cachorro é obrigatório!", message[0]);
+            Assert.AreEqual("Nome do cachorro é obrigatório!", message[0]);
+
             Console.WriteLine(message[0]);
         }
-
-        [TestMethod]
-        public void Cachorro_Macho_Femea_Teste()
-        {
-            var cachorro = new Cachorro();
-            Console.WriteLine("");
-            
-        }
-      
     }
 }
