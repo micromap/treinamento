@@ -49,7 +49,7 @@ namespace Exercicios.Domain
             var idade = DateTime.Now.Year - DataNascimento.Year;
             if (idade == 1)
             {
-                return $"{idade} ano";
+                return "1 ano";
             }
             else
             {
