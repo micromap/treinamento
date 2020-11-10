@@ -46,16 +46,27 @@ namespace Exercicios.Domain
         }
         public string GetIdade()
         {
-            var idade = DateTime.Now.Year - DataNascimento.Year;
-            if (idade == 1)
+            var anos = DateTime.Now.Year - DataNascimento.Year;
+            var meses = DateTime.Now.Month - DataNascimento.Month + (12 * anos);
+
+           // return (idade > 1) ? $"{idade} anos" : "1 ano";  //se verdade ? retorna : se não
+
+            if (anos < 1 && meses != 1)
             {
-                return "1 ano";
+                return $"{meses} meses";
+            }
+            else if (anos < 1 && meses == 1)
+            {
+                return "1 mês";
+            } 
+            else if(anos > 1)
+            {
+                return $"{anos} anos";
             }
             else
             {
-                return $"{idade} anos";
+                return "1 ano";
             }
         }
     }
-
 }
