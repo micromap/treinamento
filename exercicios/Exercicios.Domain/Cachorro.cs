@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 
 namespace Exercicios.Domain
 {
@@ -8,45 +7,78 @@ namespace Exercicios.Domain
     {
         public string Nome { get; set; }
         public string Sexo { get; set; }
-        public string  Raca {get; set;}
+        public string Raca { set; get; }
         public string Porte { get; set; }
-        public int Idata { get; set;  }
-        public string DataNascimento { get; set; }
-        public double Peso { get; set; }
+        public DateTime DataNascimento { get; set; }
         public bool Vacinado { get; set; }
 
-        /*
-         public string Latir(string latir)
-         { 
-             return "Au! Au!"; 
-         }
-        */ 
-
-        public string Latir(short quantidadeDeLatidos)
+        public double? Peso
         {
-            string latidos = "";
-            for(short i =1; 1 <= quantidadeDeLatidos; i++)
+            set
             {
-                latidos = latidos + "Au!";
+                if (value < 0)
+                    _pesoKg = null;
+                else
+                    _pesoKg = value;
             }
-            return latidos;
+            get
+            {
+                return _pesoKg;
+            }
+        }        
+        private double? _pesoKg;
+
+        public string Latir(short qtdeLatidos)
+        {
+            var latidos = "";
+
+            for(var i = 1; i <= qtdeLatidos; i++)
+                latidos += "Au! ";
+
+            return latidos.TrimEnd();
         }
 
-
-        public string QuantoDeveComer(int pesoKg)
-        // metrodo para calcular 5% do peso (Kg) do cachorro em gramas de Ração;
+        // Método para calcular 5% do Peso(Kg) do cachorro em Gramas de Ração
+        public string QuantoDevoComer(int pesoKg)
         {
-            return $"Como tenho {pesoKg}kg, devo comer {pesoKg * 50.0}g por dia";           
+            return $"Como tenho {pesoKg}kg, devo comer {pesoKg * 50}g por dia";
         }
 
-        public List<string> Valida()
+        public string GetIdade()
         {
-           List<string> message = new List<string>();
+            var anos = DateTime.Today.Year - DataNascimento.Year;
+            var meses = DateTime.Today.Month - DataNascimento.Month + (12 * anos);
+
+            if (meses < 12)
+                return meses > 1 ? $"{meses} meses" : "1 mês";
+            else
+                return anos > 1 ? $"{anos} anos" : "1 ano";
+        }
+
+        public void Validar()
+        {
+            var mensagens = new List<string>();
 
             if (string.IsNullOrWhiteSpace(Nome))
-                message.Add("Nome do cachorro é obrigatório!");
+                mensagens.Add("Nome do Cachorro é Obrigatório!");
 
-            return message.Count == 0 ? message : null;
+            if (Sexo != "Fêmea" && Sexo != "Macho")
+                mensagens.Add("Sexo do Cachorro deve ser Fêmea ou Macho!");
+
+            if (DataNascimento > DateTime.Today)
+                mensagens.Add("Data de Nascimento do Cachorro deve ser menor que Hoje!");
+
+            if (Peso <= 0)
+                mensagens.Add("Peso do Cachorro deve ser maior que zero!");
+
+            if(mensagens.Count > 0)
+            {
+                var exceptionMessage = "";
+                foreach (var msg in mensagens)
+                    exceptionMessage += msg + Environment.NewLine;
+
+                throw new Exception(exceptionMessage);
+            }
         }
     }
 }
