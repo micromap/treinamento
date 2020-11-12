@@ -118,5 +118,66 @@ namespace Exercicios.Tests
             Assert.AreEqual("1 mês", idade_Mes);
 
         }
+
+        [TestMethod]
+        public void Cachorro_Valida_Nome_Test()
+        {
+            var cachorro = new Cachorro();
+            cachorro.Nome = null;
+            cachorro.Sexo = "Teste";
+            cachorro.DataDeNascimento = DateTime.Parse("12/11/2020");
+            cachorro.Peso = 10;
+
+            var resultado = cachorro.ValidarCampos(cachorro);
+
+            Console.WriteLine(resultado[0]);
+            Assert.AreEqual("Nome do cachorro é obrigatório", resultado[0]);
+
+        }
+
+        [TestMethod]
+        public void Cachorro_Valida_Sexo_Test()
+        {
+            var cachorro = new Cachorro();
+            cachorro.Nome = null;
+            cachorro.Sexo = "Teste";
+            cachorro.DataDeNascimento = DateTime.Parse("12/11/2020");
+            cachorro.Peso = 10;
+
+            var resultado = cachorro.ValidarCampos(cachorro);
+
+            Console.WriteLine(resultado[1]);
+            Assert.AreEqual("Sexo Inválido", resultado[1]);
+        }
+
+        [TestMethod]
+        public void Cachorro_Valida_Nascimento_Test()
+        {
+            var cachorro = new Cachorro();
+            cachorro.Nome = null;
+            cachorro.Sexo = "Fêmea";
+            cachorro.DataDeNascimento = DateTime.Parse("13/11/2020");
+            cachorro.Peso = 10;
+
+            var resultado = cachorro.ValidarCampos(cachorro);
+
+            Console.WriteLine(resultado[2]);
+            Assert.AreEqual("Data de Nascimento deve ser anterior ou igual a data de hoje", resultado[2]);
+        }
+
+        [TestMethod]
+        public void Cachorro_Valida_Peso_Test()
+        {
+            var cachorro = new Cachorro();
+            cachorro.Nome = null;
+            cachorro.Sexo = "Fêmea";
+            cachorro.DataDeNascimento = DateTime.Parse("12/11/2020");
+            cachorro.Peso = 0;
+
+            var resultado = cachorro.ValidarCampos(cachorro);
+
+            Console.WriteLine(resultado[3]);
+            Assert.AreEqual("Peso deve ser maior que 0", resultado[3]);
+        }
     }
 }
