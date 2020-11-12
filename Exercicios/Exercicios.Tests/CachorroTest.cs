@@ -117,7 +117,7 @@ namespace Exercicios.Tests
 
         }
 
-        [TestMethod]
+        //[TestMethod]
         public void Gerar_Latidos_Test()
         {
 
