@@ -6,7 +6,7 @@ namespace Exercicios.Domain
     public class Cachorro
     {
         public string Nome { get; set; }
-        public string Sexo { get; set; }
+        public Sexo Sexo { get; set; }
         public Raca Raca { set; get; }
         public Dono Dono { set; get; }
         public string Porte { get; set; }
@@ -62,9 +62,6 @@ namespace Exercicios.Domain
 
             if (string.IsNullOrWhiteSpace(Nome))
                 mensagens.Add("Nome do Cachorro é Obrigatório!");
-
-            if (Sexo != "Fêmea" && Sexo != "Macho")
-                mensagens.Add("Sexo do Cachorro deve ser Fêmea ou Macho!");
 
             if (DataNascimento > DateTime.Today)
                 mensagens.Add("Data de Nascimento do Cachorro deve ser menor que Hoje!");
