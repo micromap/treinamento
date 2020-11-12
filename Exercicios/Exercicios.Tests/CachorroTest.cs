@@ -14,11 +14,11 @@ namespace Exercicios.Tests
         {
 
             Cachorro leia = new Cachorro();
-            string latido = leia.Latir();
+            //string latido = leia.Latir();
 
-            Console.WriteLine(latido);
+            //Console.WriteLine(latido);
 
-            Assert.AreEqual("Au! Au!", latido);
+            //Assert.AreEqual("Au! Au!", latido);
         }
 
         //Considerando que leia pesa 1Kg
@@ -65,7 +65,7 @@ namespace Exercicios.Tests
 
         }
 
-        [TestMethod]
+        //[TestMethod]
         public void Instanciando_Cachorros_Test()
         {
 
@@ -114,6 +114,16 @@ namespace Exercicios.Tests
                                   "-----------------------------------------------\n");
             }
 
+
+        }
+
+        [TestMethod]
+        public void Gerar_Latidos_Test()
+        {
+
+            Cachorro cachorro = new Cachorro();
+
+            Console.WriteLine(cachorro.Latir(5));
 
         }
 

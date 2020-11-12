@@ -12,13 +12,19 @@ namespace Exercicios.Domain
         private string _porte;
         private int _idade;
         private double _peso;
-
-       
+        private bool _vacinado;
 
         //Metodo criado pelo VS a partir do auto sugestao.
-        public string Latir()
+        public string Latir(short quantidade_latidos)
         {
-            return "Au! Au!";
+            string latidos = "";
+
+            for(int i = 0; i < quantidade_latidos; i++)
+            {
+                latidos += "Au! ";
+            }
+
+            return latidos;
         }
 
         public double QuantoDevoComer(int peso, double porcIdeal)
@@ -88,5 +94,19 @@ namespace Exercicios.Domain
             _peso = peso;
         }
 
+        public bool GetVacinado()
+        {
+            return _vacinado;
+        }
+
+        public void SetVacinado(bool vacinado)
+        {
+            _vacinado = vacinado;
+        }
+
+        public string GetVacinadoFormatado()
+        {
+            return (_vacinado == true ? "Sim" : "Não");
+        }
     }
 }

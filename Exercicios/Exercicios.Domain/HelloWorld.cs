@@ -8,5 +8,10 @@
             return "HelloWorld";
         }
 
+        public static void Passa_Valor(int valor)
+        {
+            valor = 999;
+        }
+
     }
 }
