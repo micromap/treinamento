@@ -10,11 +10,9 @@ namespace Exercicios.Domain
         //Propriedades da Classe 
         public string Nome { set; get; }
 
-        public string Sexo { set; get; }
+        public Sexo Sexo { set; get; }
 
         public Raca Raca { set; get; }
-
-        public string Porte { set; get; }
 
         public DateTime DataNascimento { get; set; }
 
@@ -73,9 +71,6 @@ namespace Exercicios.Domain
 
             if(string.IsNullOrWhiteSpace(Nome))
                 mensagens.Add("Nome do cachorro é obrigatório!!");
-
-            if(Sexo != "Femea" && Sexo != "Macho")
-                mensagens.Add("Sexo do cachorro deve ser Femea ou Macho!!");
 
             if (DataNascimento > DateTime.Today)
                 mensagens.Add("A data de nascimento do cachorro, deve menor que hoje!!");

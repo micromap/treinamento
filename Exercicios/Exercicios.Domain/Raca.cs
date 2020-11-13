@@ -6,6 +6,7 @@ namespace Exercicios.Domain
     {
         public string Nome { get; set; }
 
+        public Porte Porte { set; get; }
 
     }
 }

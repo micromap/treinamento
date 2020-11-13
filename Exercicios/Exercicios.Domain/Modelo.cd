@@ -3,10 +3,11 @@
   <Class Name="Exercicios.Domain.Cachorro">
     <Position X="6.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AASAAAGAAAAAABAAgAAAAAIAAAIAUQEAAAAAAAEAAAA=</HashCode>
+      <HashCode>AASAAAGAAAAAABAAgAAAAAIAAAIAQQEAAAAAAAEAAAA=</HashCode>
       <FileName>Cachorro.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
+      <Property Name="Sexo" />
       <Property Name="Raca" />
       <Property Name="Dono" />
     </ShowAsAssociation>
@@ -14,9 +15,12 @@
   <Class Name="Exercicios.Domain.Raca">
     <Position X="9.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAEAAAA=</HashCode>
       <FileName>Raca.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Porte" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="Exercicios.Domain.Dono">
     <Position X="3.75" Y="0.5" Width="1.5" />
@@ -25,5 +29,19 @@
       <FileName>Dono.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Enum Name="Exercicios.Domain.Sexo">
+    <Position X="9.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sexo.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Exercicios.Domain.Porte">
+    <Position X="11.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAIAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Porte.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
