@@ -57,20 +57,20 @@ namespace Exercicios.Domain
                 return (anos > 1) ? $"{anos} anos" : $"{anos} ano";
         }
 
-        public List<string>  ValidarCampos(Cachorro cachorro)
+        public List<string>  ValidarCampos()
         {
             var lista = new List<string> {};
 
-            if (cachorro.Nome is null)
+            if (string.IsNullOrWhiteSpace(Nome))
                 lista.Add("Nome do cachorro é obrigatório");                
             
-            if (cachorro.Sexo != "Macho" && cachorro.Sexo != "Fêmea")
+            if (Sexo != "Macho" && Sexo != "Fêmea")
                 lista.Add("Sexo Inválido");
             
-            if (cachorro.DataDeNascimento > DateTime.Today)
+            if (DataDeNascimento > DateTime.Today)
                 lista.Add("Data de Nascimento deve ser anterior ou igual a data de hoje");
             
-            if (cachorro.Peso <= 0)
+            if (Peso <= 0)
                 lista.Add("Peso deve ser maior que 0");
 
             return lista;

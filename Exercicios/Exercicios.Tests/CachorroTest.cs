@@ -128,7 +128,7 @@ namespace Exercicios.Tests
             cachorro.DataDeNascimento = DateTime.Parse("12/11/2020");
             cachorro.Peso = 10;
 
-            var resultado = cachorro.ValidarCampos(cachorro);
+            var resultado = cachorro.ValidarCampos();
 
             Console.WriteLine(resultado[0]);
             Assert.AreEqual("Nome do cachorro é obrigatório", resultado[0]);
@@ -144,7 +144,7 @@ namespace Exercicios.Tests
             cachorro.DataDeNascimento = DateTime.Parse("12/11/2020");
             cachorro.Peso = 10;
 
-            var resultado = cachorro.ValidarCampos(cachorro);
+            var resultado = cachorro.ValidarCampos();
 
             Console.WriteLine(resultado[0]);
             Assert.AreEqual("Sexo Inválido", resultado[0]);
@@ -159,7 +159,7 @@ namespace Exercicios.Tests
             cachorro.DataDeNascimento = DateTime.Parse("14/11/2020");
             cachorro.Peso = 10;
 
-            var resultado = cachorro.ValidarCampos(cachorro);
+            var resultado = cachorro.ValidarCampos();
 
             Console.WriteLine(resultado[0]);
             Assert.AreEqual("Data de Nascimento deve ser anterior ou igual a data de hoje", resultado[0]);
@@ -174,7 +174,7 @@ namespace Exercicios.Tests
             cachorro.DataDeNascimento = DateTime.Parse("12/11/2020");
             cachorro.Peso = 0;
 
-            var resultado = cachorro.ValidarCampos(cachorro);
+            var resultado = cachorro.ValidarCampos();
 
             Console.WriteLine(resultado[0]);
             Assert.AreEqual("Peso deve ser maior que 0", resultado[0]);
