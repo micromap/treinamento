@@ -113,9 +113,9 @@ namespace Exercicios.Domain
             string latidos = "";
             for (int i = 0; i<qtdLatidos; i++)
             {
-                latidos = latidos + "AU ";
+                latidos += "AU ";
             }
-            return latidos;
+            return latidos.TrimEnd();
         }
 
 
