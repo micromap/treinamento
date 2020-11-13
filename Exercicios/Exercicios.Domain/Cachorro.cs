@@ -75,5 +75,30 @@ namespace Exercicios.Domain
 
             return lista;
         }
+
+        public string ValidarCamposException()
+        {
+            if (string.IsNullOrWhiteSpace(Nome))
+            {
+                throw new Exception("Nome do cachorro é obrigatório");
+            }
+            
+            if (Sexo != "Macho" && Sexo != "Fêmea")
+            {
+                throw new Exception("Sexo Inválido");
+            }
+
+            if (DataDeNascimento > DateTime.Today)
+            {
+                throw new Exception("Data de Nascimento deve ser anterior ou igual a data de hoje");
+            }
+
+            if (Peso <= 0)
+            {
+                throw new Exception ("Peso deve ser maior que 0");
+            }                
+
+            return "";            
+        }
     }
 }

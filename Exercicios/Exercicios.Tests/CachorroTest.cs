@@ -130,8 +130,8 @@ namespace Exercicios.Tests
 
             var resultado = cachorro.ValidarCampos();
 
-            Console.WriteLine(resultado[0]);
-            Assert.AreEqual("Nome do cachorro é obrigatório", resultado[0]);
+            Console.WriteLine(resultado);
+            Assert.AreEqual("Nome do cachorro é obrigatório", resultado);
 
         }
 
@@ -178,6 +178,87 @@ namespace Exercicios.Tests
 
             Console.WriteLine(resultado[0]);
             Assert.AreEqual("Peso deve ser maior que 0", resultado[0]);
+        }
+
+        [TestMethod]
+        public void Cachorro_Valida_Nome_Exception_Test()
+        {
+            var cachorro = new Cachorro();
+            cachorro.Nome = null;
+            cachorro.Sexo = "Teste";
+            cachorro.DataDeNascimento = DateTime.Parse("12/11/2020");
+            cachorro.Peso = 10;
+
+
+            try
+            {
+                cachorro.ValidarCamposException();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Assert.AreEqual("Nome do cachorro é obrigatório", e.Message);
+            }
+        }
+
+        [TestMethod]
+        public void Cachorro_Valida_Sexo_Exception_Test()
+        {
+            var cachorro = new Cachorro();
+            cachorro.Nome = "Yuri";
+            cachorro.Sexo = "Outros";
+            cachorro.DataDeNascimento = DateTime.Parse("12/11/2020");
+            cachorro.Peso = 10;
+
+            try
+            {
+                cachorro.ValidarCamposException();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Assert.AreEqual("Sexo Inválido", e.Message);
+            }
+        }
+
+        [TestMethod]
+        public void Cachorro_Valida_Nascimento_Exception_Test()
+        {
+            var cachorro = new Cachorro();
+            cachorro.Nome = "Yuri";
+            cachorro.Sexo = "Fêmea";
+            cachorro.DataDeNascimento = DateTime.Parse("14/11/2020");
+            cachorro.Peso = 10;
+
+            try
+            {
+                cachorro.ValidarCamposException();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Assert.AreEqual("Data de Nascimento deve ser anterior ou igual a data de hoje", e.Message);
+            }            
+        }
+
+        [TestMethod]
+        public void Cachorro_Valida_Peso_Exception_Test()
+        {
+            var cachorro = new Cachorro();
+            cachorro.Nome = "Yuri";
+            cachorro.Sexo = "Fêmea";
+            cachorro.DataDeNascimento = DateTime.Parse("12/11/2020");
+            cachorro.Peso = 0;
+
+            try
+            {
+                cachorro.ValidarCamposException();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Assert.AreEqual("Peso deve ser maior que 0", e.Message);
+            }
         }
     }
 }
