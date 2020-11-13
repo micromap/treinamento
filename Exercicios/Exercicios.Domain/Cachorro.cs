@@ -7,7 +7,7 @@ namespace Exercicios.Domain
     {
         public string Nome { get; set; }
         public string Sexo { get; set; }
-        public string Raca { set; get; }
+        public Raca Raca { set; get; }
         public string Porte { get; set; }
         public DateTime DataDeNascimento { get; set; }
         public bool Vacinado { get; set; }
@@ -76,7 +76,7 @@ namespace Exercicios.Domain
             return lista;
         }
 
-        public string ValidarCamposException()
+        public void ValidarCamposException()
         {
             if (string.IsNullOrWhiteSpace(Nome))
             {
@@ -96,9 +96,8 @@ namespace Exercicios.Domain
             if (Peso <= 0)
             {
                 throw new Exception ("Peso deve ser maior que 0");
-            }                
-
-            return "";            
+            }               
+            
         }
     }
 }
