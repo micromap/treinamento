@@ -86,5 +86,59 @@ namespace Exercicios.Tests
             Console.WriteLine(peso);
             Assert.AreEqual(null, peso);
         }
+
+        [TestMethod]
+        public void Cachorro_GetIdade_um_Mes_Test()
+        {
+            // Idade igual a 1 mês
+            var cachorro = new Cachorro();
+            cachorro.DataNascimento = DateTime.Now;
+
+            Console.WriteLine("Data Nascimento: " + cachorro.DataNascimento);
+            Assert.AreEqual("1 mês", cachorro.GetIdade());
+            Console.WriteLine(cachorro.GetIdade());
+
+        }
+
+        [TestMethod]
+        public void Cachorro_GetIdade_em_Meses_Test()
+        {
+            // Idade maior que 1 mês
+            var cachorro = new Cachorro();
+            cachorro.DataNascimento = new DateTime(2020, 05, 01);
+
+            Console.WriteLine("Data Nascimento: " + cachorro.DataNascimento);
+            Assert.AreEqual("6 meses", cachorro.GetIdade());
+            Console.WriteLine(cachorro.GetIdade());
+
+        }
+
+        [TestMethod]
+        public void Cachorro_GetIdade_um_Ano_Test()
+        {
+            // Idade igual a 1 ano
+            var cachorro = new Cachorro();
+            cachorro.DataNascimento = DateTime.Now.AddYears(-1);
+
+            Console.WriteLine("Data Nascimento: " + cachorro.DataNascimento);
+            Assert.AreEqual("1 ano", cachorro.GetIdade());
+            Console.WriteLine(cachorro.GetIdade());
+
+        }
+
+        [TestMethod]
+        public void Cachorro_GetIdade_em_Anos_Test()
+        {
+            // Idade maior que 2 anos
+            var cachorro = new Cachorro();
+            cachorro.DataNascimento = new DateTime(2017, 07, 03);
+
+            Console.WriteLine("Data Nascimento: " + cachorro.DataNascimento);
+            Assert.AreEqual("3 anos", cachorro.GetIdade());
+            Console.WriteLine(cachorro.GetIdade());
+
+        }
+
+
     }
 }
