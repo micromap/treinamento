@@ -6,13 +6,13 @@ namespace Exercicios.Domain
     public class Cachorro
     {
 
-        private string _nome;
-        private string _sexo;
-        private string _raca;
-        private string _porte;
-        private int _idade;
-        private double _peso;
-        private bool _vacinado;
+        public string Nome  { set; get; }
+        public string Sexo  { set; get; }
+        public string Raca  { private set; get; }
+        public string Porte { set; get; }
+        public int Idade    { set; get; }
+        public double Peso  { set; get; }
+        public bool Vacinado { set; get; }
 
         //Metodo criado pelo VS a partir do auto sugestao.
         public string Latir(short quantidade_latidos)
@@ -32,81 +32,10 @@ namespace Exercicios.Domain
             return peso * (1+(porcIdeal/100));
         }
 
-        //Getters and Setters
-
-        public string GetNome()
-        {
-            return _nome;
-        }
-
-        public void SetNome(string nome)
-        {
-            _nome = nome;
-        }
-        
-        public string GetSexo()
-        {
-            return _sexo;
-        }
-
-        public void SetSexo(string sexo)
-        {
-            _sexo = sexo;
-        }
-
-        public string GetRaca()
-        {
-            return _raca;
-        }
-
-        public void SetRaca(string raca)
-        {
-            _raca = raca;
-        }
-
-        public string GetPorte()
-        {
-            return _porte;
-        }
-
-        public void SetPorte(string porte)
-        {
-            _porte = porte;
-        }
-
-        public int GetIdade()
-        {
-            return _idade;
-        }
-
-        public void SetIdade(int idade)
-        {
-            _idade = idade;
-        }
-
-        public double GetPeso()
-        {
-            return _peso;
-        }
-
-        public void SetPeso(double peso)
-        {
-            _peso = peso;
-        }
-
-        public bool GetVacinado()
-        {
-            return _vacinado;
-        }
-
-        public void SetVacinado(bool vacinado)
-        {
-            _vacinado = vacinado;
-        }
-
+        //Getters and Setters personalizados
         public string GetVacinadoFormatado()
         {
-            return (_vacinado == true ? "Sim" : "Não");
+            return (Vacinado == true ? "Sim" : "Não");
         }
     }
 }
