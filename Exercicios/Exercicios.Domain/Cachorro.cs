@@ -12,13 +12,15 @@ namespace Exercicios.Domain
 
         public string Sexo { set; get; }
 
-        public string Raca { set; get; }
+        public Raca Raca { set; get; }
 
         public string Porte { set; get; }
 
         public DateTime DataNascimento { get; set; }
 
         public bool Vacinado { set; get; }
+
+        public Dono Dono { set; get; }
         
         #region PesoKG
         public double? PesoKg

@@ -161,5 +161,37 @@ namespace Exercicios.Tests
                 Console.WriteLine(ex.Message);
             }    
         }
+
+        [TestMethod]
+        public void Cachorro_Associação_Raca_Test()
+        {
+            var labrador = new Raca { Nome = "Labrador" };
+
+            var tequila = new Cachorro
+            {
+                Nome = "Tequila",
+                Raca = labrador
+            };
+
+            Console.WriteLine(tequila.Raca.Nome);
+
+            Assert.AreEqual("Labrador", tequila.Raca.Nome);
+        }
+
+        [TestMethod]
+        public void Cachorro_Associação_Dono_Test()
+        {
+            var matheus = new Dono { Nome = "Matheus", Email = "matheus@gemmap.com.br", Telefone = "(14) 99835-5969" };
+
+            var tequila = new Cachorro
+            {
+                Nome = "Tequila",
+                Dono = matheus
+            };
+
+            Console.WriteLine(tequila.Dono.Nome);
+
+            Assert.AreEqual("Matheus", tequila.Dono.Nome);
+        }
     }
 }
