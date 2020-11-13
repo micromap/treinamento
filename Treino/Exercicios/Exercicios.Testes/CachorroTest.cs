@@ -70,10 +70,10 @@ namespace Exercicios.Tests
         public void Cachorro_Set_Get_Sexo_Test()
         {
             Cachorro leia = new Cachorro();
-            leia.SetSexo("Femea");
+            leia.SetSexo("Fêmea");
             string novoSexo = "O sexo do cachorro agora é " + leia.GetSexo();
             Console.WriteLine(novoSexo);
-            Assert.AreEqual("O sexo do cachorro agora é "+leia.GetSexo(), novoSexo);
+            Assert.AreEqual("O sexo do cachorro agora é Fêmea", novoSexo);
 
 
         }
@@ -85,7 +85,7 @@ namespace Exercicios.Tests
             leia.SetRaca("Vira Lata");
             string novaRaca = "A raça do cachorro agora é " + leia.GetRaca();
             Console.WriteLine(novaRaca);
-            Assert.AreEqual("A raça do cachorro agora é "+leia.GetRaca(), novaRaca);
+            Assert.AreEqual("A raça do cachorro agora é Vira Lata", novaRaca);
 
 
         }
@@ -97,7 +97,7 @@ namespace Exercicios.Tests
             leia.SetPorte("Pequeno");
             string novoPorte = "O porte do cachorro agora é " + leia.GetPorte();
             Console.WriteLine(novoPorte);
-            Assert.AreEqual("O porte do cachorro agora é "+leia.GetPorte(), novoPorte);
+            Assert.AreEqual("O porte do cachorro agora é Pequeno", novoPorte);
 
 
         }
@@ -109,7 +109,7 @@ namespace Exercicios.Tests
             leia.SetIdade(2);
             string novaIdade = "A idade do cachorro agora é " + leia.GetIdade();
             Console.WriteLine(novaIdade);
-            Assert.AreEqual("A idade do cachorro agora é "+leia.GetIdade(), novaIdade);
+            Assert.AreEqual("A idade do cachorro agora é 2", novaIdade);
 
 
         }
@@ -121,7 +121,7 @@ namespace Exercicios.Tests
             leia.SetPeso(1);
             string novoPeso = "O peso do cachorro agora é " + leia.GetPeso();
             Console.WriteLine(novoPeso);
-            Assert.AreEqual("O peso do cachorro agora é "+leia.GetPeso(), novoPeso);
+            Assert.AreEqual("O peso do cachorro agora é 1", novoPeso);
 
 
         }
