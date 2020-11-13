@@ -37,7 +37,7 @@ namespace Exercicios.Tests
         {
 
             int valor = 10;
-            HelloWorld.Passa_Valor(valor);
+            HelloWorld.PassaValor(valor);
 
             Console.WriteLine(valor);
             Assert.AreNotEqual(10, valor);
@@ -120,7 +120,7 @@ namespace Exercicios.Tests
             Assert.AreEqual(null, cachorro.GetType());
         }
 
-        [TestMethod]
+        //[TestMethod]
         public void Tipos_Nulaveis_Test()
         {
 
@@ -131,6 +131,12 @@ namespace Exercicios.Tests
             Assert.AreEqual(null, idade);
             Assert.AreEqual(null, peso);
             Assert.AreEqual(null, vacinado);
+        }
+
+        [TestMethod]
+        public void MinhaClasse_Test()
+        {
+            var obj = new MinhaClasse();
         }
 
     }

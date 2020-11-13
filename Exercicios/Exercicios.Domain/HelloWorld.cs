@@ -8,9 +8,15 @@
             return "HelloWorld";
         }
 
-        public static void Passa_Valor(int valor)
+        public static void PassaValor(int valor)
         {
             valor = 999;
+        }
+
+        public static void AcessaMinhaClasse()
+        {
+            var obj = new MinhaClasse();
+            //obj.MeuMetodo();
         }
 
     }
