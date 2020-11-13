@@ -5,13 +5,88 @@ namespace Exercicios.Domain
 {
     public class Cachorro
     {
-        private string _nome;
-        private string _sexo;
-        private string _raca;
-        private string _porte;
-        private int    _idade;
-        private double _peso;
+        #region Nome
 
+        public void SetNome(string nome)
+        {
+            _nome = nome;
+        }
+
+        public string GetNome()
+        {
+            return _nome;
+        }
+        private string _nome;
+
+        #endregion
+        #region Sexo
+        public void SetSexo(string sexo)
+        {
+            this._sexo = sexo;
+        }
+
+        public string GetSexo()
+        {
+            return this._sexo;
+        }
+        private string _sexo;
+        #endregion
+        #region Raca
+        public void SetRaca(string raca)
+        {
+            this._raca = raca;
+        }
+
+        public string GetRaca()
+        {
+            return this._raca;
+        }
+        private string _raca;
+        #endregion
+        #region Porte
+        public void SetPorte(string porte)
+        {
+            this._porte = porte;
+        }
+
+        public string GetPorte()
+        {
+            return this._porte;
+        }
+
+        private string _porte;
+        #endregion
+        #region Idade
+        public void SetIdade(int idade)
+        {
+            this._idade = idade;
+        }
+
+        public int GetIdade()
+        {
+            return this._idade;
+        }
+        private int    _idade;
+        #endregion
+        #region Peso
+        public double GetPeso()
+        {
+            return _peso;
+        }
+
+        public void SetPeso(int peso)
+        {
+            if(peso < 0)
+            {
+                this._peso = 0;
+            }
+            else
+            { 
+                this._peso = peso;
+            }
+        }
+        private double _peso;
+        #endregion
 
 
 
@@ -33,64 +108,15 @@ namespace Exercicios.Domain
             return $"Como tenho {pesoCachorro}Kg, devo comer {PesoAComer}g por dia";
         }
 
-        public double GetPeso()
-        {
-            return _peso;
-        }
+       
 
-        public void SetPeso(int peso)
-        {
-            this._peso = peso;
-        }
+       
 
-        public void SetNome(string nome)
-        {
-            _nome = nome;
-        }
+       
 
-        public string GetNome()
-        {
-            return _nome;
-        }
+       
 
-        public void SetSexo(string sexo)
-        {
-            this._sexo = sexo;
-        }
-
-        public string GetSexo()
-        {
-            return this._sexo;
-        }
-
-        public void SetRaca(string raca)
-        {
-            this._raca = raca;
-        }
-
-        public string GetRaca()
-        {
-            return this._raca;
-        }
-
-        public void SetPorte(string porte)
-        {
-            this._porte = porte;
-        }
-
-        public string GetPorte()
-        {
-            return this._porte;
-        }
-
-        public void SetIdade(int idade)
-        {
-            this._idade = idade;
-        }
-
-        public int GetIdade()
-        {
-            return this._idade;
-        }
+        
+      
     }
 }
