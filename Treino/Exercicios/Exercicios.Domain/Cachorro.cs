@@ -18,6 +18,8 @@ namespace Exercicios.Domain
         }
         private string _nome;
 
+       
+
         #endregion
         #region Sexo
         public void SetSexo(string sexo)
@@ -68,6 +70,16 @@ namespace Exercicios.Domain
         }
         private int    _idade;
         #endregion
+        #region Vacinado
+
+
+
+        public void SetVacinado(bool vacinado)
+        {
+            this._vacinado = vacinado;
+        }
+        private bool _vacinado;
+        #endregion
         #region Peso
         public double GetPeso()
         {
@@ -96,6 +108,15 @@ namespace Exercicios.Domain
             return "au au au au!";
         }
 
+        public string Latir(short qtdLatidos)
+        {
+            string latidos = "";
+            for (int i = 0; i<qtdLatidos; i++)
+            {
+                latidos = latidos + "AU ";
+            }
+            return latidos;
+        }
 
 
         //Método para calcular 5% do peso do cachorro em ração, é o que ele deve comer.
@@ -108,15 +129,16 @@ namespace Exercicios.Domain
             return $"Como tenho {pesoCachorro}Kg, devo comer {PesoAComer}g por dia";
         }
 
-       
-
-       
-
-       
-
-       
-
-        
-      
+        public string GetVacinado()
+        {
+            if(this._vacinado == true)
+            {
+                return "";
+            }
+            else 
+            { 
+                return "NÃO ";
+            }
+        }
     }
 }
