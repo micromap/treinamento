@@ -9,10 +9,17 @@ namespace Exercicios.Domain
         //ESTRUTURA DE PROPRIEDADES
 
         public string Nome { set; get; } 
-        public string Sexo { set; get; }     
-        public string Raca { set; get; }
+
+        public string Sexo { set; get; }  
+        
+        public Raca Raca { set; get; }
+
+        public Dono Dono { set; get; }
+
         public string Porte { set; get; }
+
         public DateTime Nascimento { set; get; }
+
         public bool Vacinado { set; get; }
 
         public double? Peso
