@@ -10,7 +10,7 @@ namespace Exercicios.Domain
 
         public string Nome { set; get; } 
 
-        public string Sexo { set; get; }  
+        public Sexo Sexo { set; get; }  
         
         public Raca Raca { set; get; }
 
@@ -71,15 +71,12 @@ namespace Exercicios.Domain
 
         }
 
-        public List<String> Validar()
+        public void Validar()
         {
             var mensagens = new List<string>();       
 
             if (string.IsNullOrWhiteSpace(Nome))
                 mensagens.Add("Nome do cachorro é obrigatório!");
-
-            if (Sexo != "Fêmea" && Sexo != "Macho")
-                mensagens.Add("Sexo do cachorro deve ser Fêmea ou Macho!");
 
             if (Nascimento >DateTime.Today)
                 mensagens.Add("Data de nascimento do cão deve ser menor que hoje!");
@@ -87,7 +84,15 @@ namespace Exercicios.Domain
             if (Peso <= 0)
                 mensagens.Add("Peso do cachorro deve ser maior que zero!");
 
-            return mensagens.Count == 0 ? (List<string>)null : mensagens;
+            if (mensagens.Count > 0)
+            {
+                var exceptionMessage = "";
+                foreach (var msg in mensagens)
+                    exceptionMessage += msg + Environment.NewLine;
+
+                throw new Exception(exceptionMessage);
+            }
+            
         }
 
 
