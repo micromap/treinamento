@@ -142,16 +142,17 @@ namespace Exercicios.Tests
             var dtnasc = new DateTime (2020, 11, 14);
             var peso = 2;
 
-            var cachorro = new Cachorro();
-            cachorro.Nome = nome_cao;
-            cachorro.Sexo = sexo;
-            cachorro.Nascimento = dtnasc;
-            cachorro.Peso = peso;
-
+            var cachorro = new Cachorro()
+            {
+                Nome = nome_cao,
+                Sexo = sexo,
+                Nascimento = dtnasc,
+                Peso = peso
+            };
+          
             var mensagens = cachorro.Validar();
             Assert.AreEqual("Nome do cachorro é obrigatório!", mensagens[0]);
             Console.WriteLine(mensagens[0]);
-           
         }
 
         [TestMethod]
@@ -162,11 +163,13 @@ namespace Exercicios.Tests
             var dtnasc = new DateTime(2020, 11, 14);
             var peso = 15;
 
-            var cachorro = new Cachorro();
-            cachorro.Nome = nome_cao;
-            cachorro.Sexo = sexo;
-            cachorro.Nascimento = dtnasc;
-            cachorro.Peso = peso;
+            var cachorro = new Cachorro()
+            {
+             Nome = nome_cao,
+             Sexo = sexo,
+             Nascimento = dtnasc,
+             Peso = peso,
+            };    
 
             var mensagens = cachorro.Validar();
             Assert.AreEqual("Sexo do cachorro deve ser Fêmea ou Macho!", mensagens[0]);
@@ -181,11 +184,14 @@ namespace Exercicios.Tests
             var dtnasc = DateTime.Today.AddMonths(4);
             var peso = 10;
 
-            var cachorro = new Cachorro();
-            cachorro.Nome = nome_cao;
-            cachorro.Sexo = sexo;
-            cachorro.Nascimento = dtnasc;
-            cachorro.Peso = peso;
+            var cachorro = new Cachorro() 
+            {
+             Nome = nome_cao,
+             Sexo = sexo,
+             Nascimento = dtnasc,
+             Peso = peso,
+            };
+            
 
             var mensagens = cachorro.Validar();
             Assert.AreEqual("Data de nascimento do cão deve ser menor que hoje!", mensagens[0]);
@@ -197,15 +203,17 @@ namespace Exercicios.Tests
         {
             var nome_cao = "Yuri";
             var sexo = "Macho";
-            var dtnasc =  new DateTime(2020, 11, 14);
+            var dtnasc = new DateTime(2020, 11, 14);
             var peso = 0;
 
-            var cachorro = new Cachorro();
-            cachorro.Nome = nome_cao;
-            cachorro.Sexo = sexo;
-            cachorro.Nascimento = dtnasc;
-            cachorro.Peso = peso;
-
+            var cachorro = new Cachorro()
+            {
+                Nome = nome_cao,
+                Sexo = sexo,
+                Nascimento = dtnasc,
+                Peso = peso,
+            };
+          
             var mensagens = cachorro.Validar();
             Assert.AreEqual("Peso do cachorro deve ser maior que zero!", mensagens[0]);
             Console.WriteLine(mensagens[0]);
