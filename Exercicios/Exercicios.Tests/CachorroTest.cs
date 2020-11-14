@@ -126,97 +126,127 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Dt_Nascimento_Mes_Test()
         {
-            var dtnascimento = new Cachorro();
+            
+           var dtnascimento = new Cachorro();
 
-            dtnascimento.Nascimento = new DateTime(2020,10, 8);
-            var idade = dtnascimento.GetIdade();
-            Assert.AreEqual("1 mês", idade);
-            Console.WriteLine(idade);
+           dtnascimento.Nascimento = new DateTime(2020, 10, 8);
+           var idade = dtnascimento.GetIdade();
+           Console.WriteLine(idade);
+
+           Assert.AreEqual("1 mês", idade);
+           Console.WriteLine(idade);
+      
         }
 
         [TestMethod]
         public void Cachorro_Nome_Obrigatorio_Test()
         {
-            var nome_cao = "";
-            var sexo = "Fêmea";
-            var dtnasc = new DateTime (2020, 11, 14);
-            var peso = 2;
-
-            var cachorro = new Cachorro()
+            try
             {
-                Nome = nome_cao,
-                Sexo = sexo,
-                Nascimento = dtnasc,
-                Peso = peso
-            };
-          
-            var mensagens = cachorro.Validar();
-            Assert.AreEqual("Nome do cachorro é obrigatório!", mensagens[0]);
-            Console.WriteLine(mensagens[0]);
+                var nome_cao = "";
+                var sexo = "Fêmea";
+                var dtnasc = new DateTime(2020, 11, 14);
+                var peso = 2;
+
+                var cachorro = new Cachorro()
+                {
+                    Nome = nome_cao,
+                    Sexo = sexo,
+                    Nascimento = dtnasc,
+                    Peso = peso
+                };
+
+                cachorro.Validar();
+            }
+            catch (Exception ex)
+            {
+                Assert.AreEqual("Nome do cachorro é obrigatório!", ex.Message);
+                Console.WriteLine(ex.Message);
+            }
         }
 
         [TestMethod]
         public void Cachorro_Sexo_Deve_Ser_Femea_Ou_Macho_Test()
         {
-            var nome_cao = "Tequila";
-            var sexo = "Não Definido";
-            var dtnasc = new DateTime(2020, 11, 14);
-            var peso = 15;
-
-            var cachorro = new Cachorro()
+            try
             {
-             Nome = nome_cao,
-             Sexo = sexo,
-             Nascimento = dtnasc,
-             Peso = peso,
-            };    
+                var nome_cao = "Tequila";
+                var sexo = "Não Definido";
+                var dtnasc = new DateTime(2020, 11, 14);
+                var peso = 15;
 
-            var mensagens = cachorro.Validar();
-            Assert.AreEqual("Sexo do cachorro deve ser Fêmea ou Macho!", mensagens[0]);
-            Console.WriteLine(mensagens[0]);
+                var cachorro = new Cachorro()
+                {
+                    Nome = nome_cao,
+                    Sexo = sexo,
+                    Nascimento = dtnasc,
+                    Peso = peso,
+                };
+
+                cachorro.Validar();
+            }
+            catch (Exception ex)
+            {
+                Assert.AreEqual("Sexo do cachorro deve ser Fêmea ou Macho!", ex.Message);
+                Console.WriteLine(ex.Message);
+            }
         }
 
         [TestMethod]
         public void Cachorro_DataNascimento_Deve_Ser_Menor_Que_Hoje_Test()
         {
-            var nome_cao = "Yuri";
-            var sexo = "Macho";
-            var dtnasc = DateTime.Today.AddMonths(4);
-            var peso = 10;
-
-            var cachorro = new Cachorro() 
+            try
             {
-             Nome = nome_cao,
-             Sexo = sexo,
-             Nascimento = dtnasc,
-             Peso = peso,
-            };
-            
+                var nome_cao = "Yuri";
+                var sexo = "Macho";
+                var dtnasc = DateTime.Today.AddMonths(4);
+                var peso = 10;
 
-            var mensagens = cachorro.Validar();
-            Assert.AreEqual("Data de nascimento do cão deve ser menor que hoje!", mensagens[0]);
-            Console.WriteLine(mensagens[0]);
+                var cachorro = new Cachorro()
+                {
+                    Nome = nome_cao,
+                    Sexo = sexo,
+                    Nascimento = dtnasc,
+                    Peso = peso,
+                };
+
+
+                cachorro.Validar();
+               
+            }
+            catch (Exception ex)
+            {
+
+                Assert.AreEqual("Data de nascimento do cão deve ser menor que hoje!",ex.Message);
+                Console.WriteLine(ex.Message);
+            }
         }
 
         [TestMethod]
         public void Cachorro_Peso_Deve_Ser_Maior_Que_Zero_Test()
         {
-            var nome_cao = "Yuri";
-            var sexo = "Macho";
-            var dtnasc = new DateTime(2020, 11, 14);
-            var peso = 0;
-
-            var cachorro = new Cachorro()
+            try
             {
-                Nome = nome_cao,
-                Sexo = sexo,
-                Nascimento = dtnasc,
-                Peso = peso,
-            };
-          
-            var mensagens = cachorro.Validar();
-            Assert.AreEqual("Peso do cachorro deve ser maior que zero!", mensagens[0]);
-            Console.WriteLine(mensagens[0]);
+                var nome_cao = "Yuri";
+                var sexo = "Macho";
+                var dtnasc = new DateTime(2020, 11, 14);
+                var peso = 0;
+
+                var cachorro = new Cachorro()
+                {
+                    Nome = nome_cao,
+                    Sexo = sexo,
+                    Nascimento = dtnasc,
+                    Peso = peso,
+                };
+
+                cachorro.Validar();
+            }
+            catch (Exception ex)
+            {
+                Assert.AreEqual("Peso do cachorro deve ser maior que zero!", ex.Message);
+                Console.WriteLine(ex.Message);
+            }
         }
 
 

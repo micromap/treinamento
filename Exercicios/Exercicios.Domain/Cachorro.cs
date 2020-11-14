@@ -66,7 +66,7 @@ namespace Exercicios.Domain
 
         public List<String> Validar()
         {
-            var mensagens = new List<string>();
+            var mensagens = new List<string>();       
 
             if (string.IsNullOrWhiteSpace(Nome))
                 mensagens.Add("Nome do cachorro é obrigatório!");
@@ -80,10 +80,10 @@ namespace Exercicios.Domain
             if (Peso <= 0)
                 mensagens.Add("Peso do cachorro deve ser maior que zero!");
 
-
-
-
             return mensagens.Count == 0 ? (List<string>)null : mensagens;
         }
+
+
+
     }
 }
