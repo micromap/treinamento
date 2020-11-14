@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 
 namespace Exercicios.Domain
@@ -61,6 +62,28 @@ namespace Exercicios.Domain
             return anos > 1? $"{anos} anos": $"{anos} ano";
             
 
+        }
+
+        public List<String> Validar()
+        {
+            var mensagens = new List<string>();
+
+            if (string.IsNullOrWhiteSpace(Nome))
+                mensagens.Add("Nome do cachorro é obrigatório!");
+
+            if (Sexo != "Fêmea" && Sexo != "Macho")
+                mensagens.Add("Sexo do cachorro deve ser Fêmea ou Macho!");
+
+            if (Nascimento >DateTime.Today)
+                mensagens.Add("Data de nascimento do cão deve ser menor que hoje!");
+
+            if (Peso <= 0)
+                mensagens.Add("Peso do cachorro deve ser maior que zero!");
+
+
+
+
+            return mensagens.Count == 0 ? (List<string>)null : mensagens;
         }
     }
 }
