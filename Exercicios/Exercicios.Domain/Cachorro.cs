@@ -1,38 +1,11 @@
-﻿
-using System;
+﻿using System;
 using Microsoft.Win32.SafeHandles;
 
 namespace Exercicios.Domain
 {
     public class Cachorro
     {
-        private string _nome;
-        private string _sexo;
-        private string _raca;
-        private string _porte;
-        private int _idade;
-        private double _pesoKg;
-
-        public string Latir()
-        {
-            return "Au! Au!";
-        }
-
-        // Método para Calcular 5% do Peso (Kg) do cachorro em gramas de ração
-        public string QuantoDevoComer(int pesoKg)
-        {
-            string saida = "";
-            int grama = pesoKg * 1000;
-
-            double porcento = grama * 0.05;
-
-            Console.WriteLine(porcento);
-
-            saida = "Como tenho "+ pesoKg +"Kg,devo comer "+ porcento +"g por dia";
-
-            return saida;
-        }
-
+        #region Nome
         public void SetNome(string nome)
         {
             _nome = nome;
@@ -42,7 +15,10 @@ namespace Exercicios.Domain
         {
             return _nome;
         }
+        private string _nome;
+        #endregion
 
+        #region Sexo
         public void SetSexo(string sexo)
         {
             _sexo = sexo;
@@ -52,17 +28,23 @@ namespace Exercicios.Domain
         {
             return _sexo;
         }
+        private string _sexo;
+        #endregion
 
+        #region Raca
         public void SetRaca(string raca)
         {
             _raca = raca;
         }
-        
+
         public string GetRaca()
         {
             return _raca;
         }
+        private string _raca;
+        #endregion
 
+        #region Porte
         public void SetPorte(string porte)
         {
             _porte = porte;
@@ -72,6 +54,10 @@ namespace Exercicios.Domain
         {
             return _porte;
         }
+        private string _porte;
+        #endregion
+
+        #region Idade
         public void SetIdade(int idade)
         {
             _idade = idade;
@@ -81,14 +67,55 @@ namespace Exercicios.Domain
         {
             return _idade;
         }
+        private int _idade;
+        #endregion
+
+        #region PesoKg
         public void SetPesoKg(double pesoKg)
         {
-            _pesoKg = pesoKg;
+            if (pesoKg < 0 )
+            {
+                _pesoKg = 0;
+            }
+            else
+            {
+                _pesoKg = pesoKg;
+            }
+            
         }
 
         public double GetPesoKg()
         {
             return _pesoKg;
         }
+        private double _pesoKg;
+        #endregion
+
+        public string Latir()
+        {
+            return "Au! Au!";
+        }
+
+        // Método para Calcular 5% do Peso (Kg) do cachorro em gramas de ração
+        public string QuantoDevoComer(int pesoKg)
+        {
+            int grama = pesoKg * 1000;
+
+            double porcento = grama * 0.05;
+
+            Console.WriteLine(porcento);
+
+            //string saida = "Como tenho " + pesoKg.ToString() + "Kg,devo comer " + porcento.ToString() + "g por dia";
+            string saida = $"Como tenho {pesoKg}Kg,devo comer {porcento}g por dia";  //  metodo de interpolar string
+
+            return saida;
+        }
+
+        
+        
+        
+
+        
+        
     }
 }
