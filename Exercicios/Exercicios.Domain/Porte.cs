@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Exercicios.Domain
+﻿namespace Exercicios.Domain
 {
     public enum Porte
     {
