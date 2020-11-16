@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Exercicios.Domain.Cachorro">
+    <Position X="0.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AASAAAEAAABAABAAgAAgAAIAAAAAUQAAAAACAAEAAAA=</HashCode>
+      <FileName>Cachorro.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Raca" />
+      <Property Name="Dono" />
+      <Property Name="Sexo" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Exercicios.Domain.Raca">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Raca.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Porte" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Exercicios.Domain.Dono">
+    <Position X="3.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgCAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Dono.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Exercicios.Domain.Sexo">
+    <Position X="3.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sexo.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Exercicios.Domain.Porte">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAIAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Porte.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
