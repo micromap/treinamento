@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace Exercicios.Domain
 {
@@ -11,7 +13,7 @@ namespace Exercicios.Domain
 
         public static void PassaValor(int valor)
         {
-           
+            valor = 999;
         }
 
         public static void PassaReferencia(Cachorro cachorro)
