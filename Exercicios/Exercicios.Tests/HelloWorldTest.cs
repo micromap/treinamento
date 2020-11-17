@@ -183,7 +183,7 @@ namespace Exercicios.Tests
         }
 
         [TestMethod]
-        public void DateTime_Desmembrando_test()
+        public void DateTime_Desmembrando_Test()
         {
             var agora = DateTime.Now;
             Console.WriteLine(agora);
@@ -237,7 +237,6 @@ namespace Exercicios.Tests
             Console.WriteLine(dataHora);
         }
 
-
         [TestMethod]
         public void DateTime_Quantidade_Dias_Mes_Test()
         {
@@ -260,7 +259,7 @@ namespace Exercicios.Tests
             Console.WriteLine(agora.ToString("dd/MM/yyyy"));
             Console.WriteLine(agora.ToString("dd/MM/yyyy HH:mm"));
             Console.WriteLine(agora.ToString("MMMM/yy"));
-            Console.WriteLine(agora.ToString("MM/yy"));
+            Console.WriteLine(agora.ToString("MMM/yyyy"));
         }
 
         [TestMethod]
@@ -446,5 +445,34 @@ namespace Exercicios.Tests
             Console.WriteLine(mensagem);
         }
 
+        [TestMethod]
+        public void Exception_Test()
+        {
+            try
+            {
+                Cachorro cachorro = null;
+                if (cachorro == null)
+                    throw new Exception("O cachorro não foi instanciado!");
+
+                cachorro.Validar();
+
+                var x = 10;
+                var y = 0;
+                var resultado = x / y;
+                Console.WriteLine(resultado);
+            }
+            catch (DivideByZeroException)
+            {
+                Console.WriteLine("Erro de Divisão por zero!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                Console.WriteLine("Fim do Teste!");
+            }
+        }
     }
 }
