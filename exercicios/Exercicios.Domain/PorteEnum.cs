@@ -6,6 +6,6 @@ namespace Exercicios.Domain
 {
    public enum PorteEnum
     {
-        pequeno, medio, grande
+        Pequeno, Medio, Grande
     }
 }

@@ -207,15 +207,21 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Cachorro_Enun_Porte()
         {
-            var cachorro = new Cachorro();
-            var raca = new Raca();
-            cachorro.Nome = "Tequila";
-            cachorro.Sexo = SexoEnum.Femea;
-            raca.Nome = "Labrador";
-            raca.Porte = PorteEnum.grande;
+                  
+            var york = new Raca
+            {
+                Nome = "Yorkshide",
+                Porte = PorteEnum.Pequeno
+            };
 
-            Console.WriteLine(raca.Nome + " " + raca.Porte);
-            Assert.AreEqual(PorteEnum.grande, raca.Porte);
+            var leia = new Cachorro
+            {
+                Nome = "Léia",
+                Raca = york
+            };
+
+            Assert.AreEqual(PorteEnum.Pequeno, leia.Raca.Porte);
+            Console.WriteLine(leia.Raca.Porte);
         }
 
     }
