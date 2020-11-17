@@ -11,6 +11,9 @@ namespace Exercicios.Domain
         public string Porte { get; set; }
         public DateTime DataDeNascimento { get; set; }
         public bool Vacinado { get; set; }
+        public Dono Dono { get; set; }
+
+
 
         public double? Peso
         {
@@ -98,6 +101,11 @@ namespace Exercicios.Domain
                 throw new Exception ("Peso deve ser maior que 0");
             }               
             
+        }
+
+        public override string ToString()
+        {
+            return "Nome: " + Nome + " " + "Dono: " + Dono;
         }
     }
 }
