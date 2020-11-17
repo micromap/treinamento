@@ -116,6 +116,90 @@ namespace Exercicios.Tests
 
 
         }
+
+        [TestMethod]
+        public void Tipos_Explicitos_Test()
+        {
+            string nome = "Léia"; 
+            int idade = 1;
+            double peso = 1.3;
+            Cachorro cachorro = new Cachorro();
+
+            Assert.AreEqual(typeof(string), nome.GetType());
+            Assert.AreEqual(typeof(int), idade.GetType());
+            Assert.AreEqual(typeof(double), peso.GetType());
+            Assert.AreEqual(typeof(Cachorro), cachorro.GetType());
+
+
+        }
+
+
+        [TestMethod]
+        public void Tipos_Implicitos_Test()
+        {
+            var nome = "Léia";
+            var idade = 1;
+            var peso = 1.3;
+            Cachorro cachorro = new Cachorro();
+
+            Assert.AreEqual(typeof(string), nome.GetType());
+            Assert.AreEqual(typeof(int), idade.GetType());
+            Assert.AreEqual(typeof(double), peso.GetType());
+            Assert.AreEqual(typeof(Cachorro), cachorro.GetType());
+
+
+        }
+
+        [TestMethod]
+        public void Declarar_Sem_Inicializar_Test()
+        {
+
+            Cachorro cachorro;
+            cachorro = new Cachorro();
+            Assert.AreEqual(typeof(Cachorro), cachorro.GetType());
+
+
+            //Não podemos declarar variáveis sem definir os valores usando os tipos implicitos. Ex:
+            //var nome;
+            //nome = "Léia";
+            //Assert.AreEqual(typeof(string), nome.GetType()); 
+        }
+
+        [TestMethod]
+        public void Tipos_Que_Aceitam_Null_Test()
+        {
+            string nome = null;
+            Cachorro cachorro = null;
+
+            
+
+            Assert.AreEqual(null, nome);
+            
+            Assert.AreEqual(null, cachorro);
+
+
+            //Com esses tipos não da certo. Eles não aceitam valores nulos como atribuição.
+            //int idade = null;
+            //double peso = null;
+
+            //Assert.AreEqual(null, idade.GetType());
+            //Assert.AreEqual(null, peso.GetType());
+
+        }
+
+        [TestMethod]
+        public void Tipos_Nullaveis_Test()
+        {
+
+            //com esses tipos não da certo. eles não aceitam valores nulos como atribuição.
+            //porém é possível fazer com que elas aceitem adicionando o caracter "?" na frente do tipo. Ex:
+            int? idade = null;
+            double? peso = null;
+
+            //Assert.AreEqual(null, idade.GetType());
+            //Assert.AreEqual(null, peso.GetType());
+
+        }
     }
 }
 
