@@ -126,5 +126,65 @@ namespace Exercicios.Tests
             Assert.AreEqual("1 mês", idade);
             Console.WriteLine(idade);
         }
+
+        [TestMethod]
+        public void Cachorro_Nome_Obrigatorio_Test()
+        {
+            var cachorro = new Cachorro();
+            cachorro.Nome = "";
+            cachorro.Sexo = "Fêmea";
+            cachorro.DataNascimento = new DateTime(2020, 7, 4);
+            cachorro.Peso = 5;
+
+            var mensagens = cachorro.Validar();
+
+            Assert.AreEqual("Nome do Cachorro é Obrigatório!", mensagens[0]);
+            Console.WriteLine(mensagens[0]);
+        }
+
+        [TestMethod]
+        public void Cachorro_Sexo_Deve_Ser_Femea_ou_Macho_Test()
+        {
+            var cachorro = new Cachorro();
+            cachorro.Nome = "Léia";
+            cachorro.Sexo = "AAAA";
+            cachorro.DataNascimento = new DateTime(2020, 7, 4);
+            cachorro.Peso = 5;
+
+            var mensagens = cachorro.Validar();
+
+            Assert.AreEqual("Sexo do cachorro deve ser Fêmea ou Macho!", mensagens[0]);
+            Console.WriteLine(mensagens[0]);
+        }
+
+        [TestMethod]
+        public void Cachorro_Sexo_DataNascimento_Deve_ser_Menor_que_Hoje_Test()
+        {
+            var cachorro = new Cachorro();
+            cachorro.Nome = "Léia";
+            cachorro.Sexo = "Fêmea";
+            cachorro.DataNascimento = DateTime.Today.AddMonths(5);
+            cachorro.Peso = 5;
+
+            var mensagens = cachorro.Validar();
+
+            Assert.AreEqual("Data de nascimento deve ser menor que hoje!", mensagens[0]);
+            Console.WriteLine(mensagens[0]);
+        }
+
+        [TestMethod]
+        public void Cachorro_Peso_Deve_ser_Maior_que_Zero_Test()
+        {
+            var cachorro = new Cachorro();
+            cachorro.Nome = "Léia";
+            cachorro.Sexo = "Fêmea";
+            cachorro.DataNascimento = new DateTime(2020, 7, 4);
+            cachorro.Peso = 0;
+
+            var mensagens = cachorro.Validar();
+
+            Assert.AreEqual("Peso deve ser maior que zero!", mensagens[0]);
+            Console.WriteLine(mensagens[0]);
+        }
     }
 }
