@@ -51,87 +51,15 @@ namespace Exercicios.Tests
         }
 
         [TestMethod]
-        public void Cachorro_Nome_Get_Set_Teste()
-        {
-            Cachorro yuri = new Cachorro();
-
-            yuri.SetNome("Yuri");
-            string nome = yuri.GetNome();
-
-            Console.WriteLine(nome);
-            Assert.AreEqual("Yuri", nome);
-        }
-
-        [TestMethod]
-        public void Cachorro_Sexo_Get_Set_Test()
-        {
-            Cachorro yuri = new Cachorro();
-
-            yuri.SetSexo("Masculino");
-            string sexo = yuri.GetSexo();
-
-            Console.WriteLine(sexo);
-            Assert.AreEqual("Masculino", sexo);
-        }
-
-        [TestMethod]
-        public void Cachorro_Raca_Get_Set_Test()
-        {
-            Cachorro yuri = new Cachorro();
-
-            yuri.SetRaca("Vira Lata");
-            string raca = yuri.GetRaca();
-
-            Console.WriteLine(raca);
-            Assert.AreEqual("Vira Lata", raca);
-        }
-
-        [TestMethod]
-        public void Cachorro_Porte_Get_Set_Test()
-        {
-            Cachorro yuri = new Cachorro();
-
-            yuri.SetPorte("Grande");
-            string porte = yuri.GetPorte();
-
-            Console.WriteLine(porte);
-            Assert.AreEqual("Grande", porte);
-        }
-
-        [TestMethod]
-        public void Cachorro_Idade_Get_Set_Test()
-        {
-            Cachorro yuri = new Cachorro();
-
-            yuri.SetIdade(7);
-            int idade = yuri.GetIdade();
-
-            Console.WriteLine(idade);
-            Assert.AreEqual(7, idade);
-        }
-
-        [TestMethod]
         public void Cachorro_Peso_Get_Set_Test()
         {
             Cachorro yuri = new Cachorro();
 
-            yuri.SetPeso(10);
-            double peso = yuri.GetPeso();
+            yuri.Peso = 10;
+            double? peso = yuri.Peso;
 
             Console.WriteLine(peso);
             Assert.AreEqual(10, peso);
-        }
-
-        [TestMethod]
-        public void Cachorro_Set_Get_Vacinado_Test()
-        {
-            Cachorro tequila = new Cachorro();
-
-            tequila.SetVacinado(true);
-            bool vacinado = tequila.GetVacinado();
-
-            Console.WriteLine(vacinado);
-            Assert.AreEqual(true, vacinado);
         }
     }
 }

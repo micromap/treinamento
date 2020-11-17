@@ -4,103 +4,31 @@ namespace Exercicios.Domain
 {
     public class Cachorro
     {
-        #region Nome
-        public void SetNome(string nome)
-        {
-            _nome = nome;
-        }
+        public string Nome { set; get; }
 
-        public string GetNome()
-        {
-            return _nome;
-        }
-        private string _nome;
-        #endregion
+        public string Sexo { set; get; }
 
-        #region Sexo
-        public void SetSexo(string sexo)
-        {
-            _sexo = sexo;
-        }
+        public string Raca { set; get; }
 
-        public string GetSexo()
-        {
-            return _sexo;
-        }
-        private string _sexo;
-        #endregion
+        public string Porte { set; get; }
+        
+        public int Idade { set; get; }
 
-        #region Raca
-        public void SetRaca(string raca)
+        public double? Peso
         {
-            _raca = raca;
-        }
-
-        public string GetRaca()
-        {
-            return _raca;
-        }
-        private string _raca;
-        #endregion
-
-        #region Porte
-        public void SetPorte(string porte)
-        {
-            _porte = porte;
-        }
-
-        public string GetPorte()
-        {
-            return _porte;
-        }
-        private string _porte;
-        #endregion
-
-        #region Idade
-        public void SetIdade(int idade)
-        {
-            _idade = idade;
-        }
-
-        public int GetIdade()
-        {
-            return _idade;
-        }
-        private int _idade;
-        #endregion
-
-        #region Peso
-        public void SetPeso(double peso)
-        {
-            if (peso < 0)
+            set 
             {
-                _peso = 0;
+                if (value < 0)
+                    _pesoKg = null;
+                else
+                    _pesoKg = value;
             }
-            else
+            get
             {
-                _peso = peso;
+                return _pesoKg;
             }
         }
-
-        public double GetPeso()
-        {
-            return _peso;
-        }
-        private double _peso;
-        #endregion
-
-        #region Vacinado
-        public void SetVacinado(bool vacinado)
-        {
-            _vacinado = vacinado;
-        }
-
-        public bool GetVacinado()
-        {
-            return _vacinado;
-        }
-        private bool _vacinado;
-        #endregion
+        private double? _pesoKg;
 
         public string Latir(short quantidadeLatidos)
         {
