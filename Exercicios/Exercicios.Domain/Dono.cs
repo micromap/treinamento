@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace Exercicios.Domain
-{   
+{
     //Classe Dono
     public class Dono
     {
@@ -12,5 +12,25 @@ namespace Exercicios.Domain
         public string Telefone { set; get; }
 
         public string Email { set; get; }
+
+        public List<Cachorro> Pets { set; get; }
+
+        public void AddPet(Cachorro pet)
+        {
+            if (Pets == null)
+                Pets = new List<Cachorro>();
+
+            Pets.Add(pet);
+            pet.Dono = this;
+        }
+
+        public void RemovePet(Cachorro pet)
+        {
+            if (Pets == null)
+                return;
+
+            if (Pets.Remove(pet))
+                pet.Dono = null;
+        }
     }
 }
