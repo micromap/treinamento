@@ -5,10 +5,11 @@ namespace Exercicios.Domain
 {
     public class Cachorro
     {
+        public Dono Dono { get; set; }
         public string Nome { get; set; }
-        public string Sexo { get; set; }
-        public string Raca { set; get; }
-        public string Porte { get; set; }
+        public SexoEnum Sexo { get; set; }
+        public Raca Raca { get; set; }
+        public PorteEnum Porte { get; set; }
         public DateTime DataNascimento { get; set; }
         public bool Vacinado { get; set; }
 
@@ -16,16 +17,10 @@ namespace Exercicios.Domain
         {
             set
             {
-                if (value < 0)
-                    _pesoKg = null;
-                else
-                    _pesoKg = value;
+                _pesoKg = value < 0 ? null : value;
             }
-            get
-            {
-                return _pesoKg;
-            }
-        }        
+            get => _pesoKg;
+        }
         private double? _pesoKg;
 
         public string Latir(short qtdeLatidos)
@@ -61,10 +56,7 @@ namespace Exercicios.Domain
 
             if (string.IsNullOrWhiteSpace(Nome))
                 mensagens.Add("Nome do Cachorro é Obrigatório!");
-
-            if (Sexo != "Fêmea" && Sexo != "Macho")
-                mensagens.Add("Sexo do Cachorro deve ser Fêmea ou Macho!");
-
+           
             if (DataNascimento > DateTime.Today)
                 mensagens.Add("Data de Nascimento do Cachorro deve ser menor que Hoje!");
 

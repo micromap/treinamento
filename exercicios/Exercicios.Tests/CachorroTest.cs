@@ -135,7 +135,7 @@ namespace Exercicios.Tests
                 var cachorro = new Cachorro
                 {
                     Nome = "",
-                    Sexo = "Xyz",
+                    Sexo = SexoEnum.Femea,
                     DataNascimento = DateTime.Today.AddMonths(5),
                     Peso = 0
                 };
@@ -145,14 +145,78 @@ namespace Exercicios.Tests
             }
             catch (Exception ex)
             {
-                var ok = ex.Message.Contains("Nome do Cachorro é Obrigatório!") &&
-                         ex.Message.Contains("Sexo do Cachorro deve ser Fêmea ou Macho!") &&
+                var ok = ex.Message.Contains("Nome do Cachorro é Obrigatório!") &&                         
                          ex.Message.Contains("Data de Nascimento do Cachorro deve ser menor que Hoje!") &&
                          ex.Message.Contains("Peso do Cachorro deve ser maior que zero!");
 
                 Assert.AreEqual(true, ok);
                 Console.WriteLine(ex.Message);
             }
+
         }
+
+        [TestMethod]
+        public void Cachorro_Associacao_Raca()
+        {
+            var labrador = new Raca { Nome = "Labrador" };
+            var tequila = new Cachorro()
+            {
+                Nome = "tequila",
+                Raca = labrador
+            };
+            Console.WriteLine(tequila.Raca.Nome);
+
+            Assert.AreEqual("Labrador", tequila.Raca.Nome);
+
+        }
+
+        [TestMethod]
+        public void Cachorro_Associacao_Dono()
+        {
+            var eder = new Dono
+            {
+                Nome = "Eder",
+                Telefone = 2345678,
+                Email = "eder@eder.com.br"
+            };
+            var tequila = new Cachorro 
+            {
+                Nome = "tequila",
+                Dono = eder 
+            };
+
+            Console.WriteLine("Nome: " + tequila.Dono.Nome);
+            Console.WriteLine("Email: " + tequila.Dono.Email);
+            Console.WriteLine("Telefone: " + tequila.Dono.Telefone);
+
+            Assert.AreEqual("Eder", tequila.Dono.Nome);
+
+        }
+
+        [TestMethod]
+        public void Cachorro_Enum_Sexo()
+        {
+            var cachorro = new Cachorro();
+            cachorro.Nome = "Léia";
+            cachorro.Sexo = SexoEnum.Macho;
+
+            Console.WriteLine(cachorro.Sexo);
+            Assert.AreEqual(SexoEnum.Macho, cachorro.Sexo);
+        }
+
+        [TestMethod]
+        public void Cachorro_Enun_Porte()
+        {
+            var cachorro = new Cachorro();
+            var raca = new Raca();
+            cachorro.Nome = "Tequila";
+            cachorro.Sexo = SexoEnum.Femea;
+            raca.Nome = "Labrador";
+            raca.Porte = PorteEnum.grande;
+
+            Console.WriteLine(raca.Nome + " " + raca.Porte);
+            Assert.AreEqual(PorteEnum.grande, raca.Porte);
+        }
+
     }
 }
