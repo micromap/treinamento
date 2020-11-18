@@ -84,11 +84,11 @@ namespace Exercicios.Domain
         #endregion
 
         #region PesoKg
-        public void SetPesoKg(double pesoKg)
+        public void SetPesoKg(double? pesoKg)
         {
             if (pesoKg < 0 )
             {
-                _pesoKg = 0;
+                _pesoKg = null;
             }
             else
             {
@@ -97,18 +97,18 @@ namespace Exercicios.Domain
             
         }
 
-        public double GetPesoKg()
+        public double? GetPesoKg()
         {
             return _pesoKg;
         }
-        private double _pesoKg;
+        private double? _pesoKg;
         #endregion
 
         public string Latir(short qtdeLatidot )
         {
             string latidos = "";
 
-            for (short i = 1; i <= qtdeLatidot; i++)
+            for (var i = 1; i <= qtdeLatidot; i++)
             {
                 //latidos = latidos + "Au! ";   A linha de baixa é um linha mais resumida
                 latidos += "Au! ";
