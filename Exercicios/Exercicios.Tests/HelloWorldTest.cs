@@ -447,6 +447,9 @@ namespace Exercicios.Tests
             try
             {
                 Cachorro cachorro = null;
+                if (cachorro == null)
+                    throw new Exception("O cachorro não foi instanciado!");  //Lançar exception manualmente
+
                 var mensagens = cachorro.Validar();
                 
                 var x = 10;
@@ -461,6 +464,10 @@ namespace Exercicios.Tests
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
+            }
+            finally  //sempre executa
+            {
+                Console.WriteLine("Fim do teste!");
             }
 
         }
