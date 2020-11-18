@@ -8,11 +8,13 @@ namespace Exercicios.Domain
     {
         public string Nome { get; set; }
         public string Sexo { get; set; }
-        public string Raca { get; set; }
+        public Raca Raca { get; set; }
         public string Porte { get; set; }
         public double Peso { get; set; }
         public bool Vacinado { get; set; }
         public DateTime DataNascimento { get; set; }
+        public Dono Dono { get; set; }
+
 
 
         public string Latir(short quantidade)
@@ -53,31 +55,19 @@ namespace Exercicios.Domain
             return result;
         }
 
-        public List<string> validarDadosCachorro()
+        public void ValidarDadosCachorro()
         {
-            var listaValidar = new List<string>();
-
             if (string.IsNullOrWhiteSpace(Nome))
-                listaValidar.Add("Nome do Cachorro é Obrigatório");
-            else
-                listaValidar.Add("Nome Cachorro OK");
+                throw new Exception("Nome do Cachorro é Obrigatório");
 
-            if (Sexo.Equals("Macho") || Sexo.Equals("Femea"))
-                listaValidar.Add("Sexo Cachorro OK");
-            else
-                listaValidar.Add("Sexo do Cachorro Inválido");
+            if (Sexo.Equals("Macho") && Sexo.Equals("Femea"))
+                throw new Exception("Sexo Cachorro OK");
 
             if (DataNascimento > DateTime.Today)
-                listaValidar.Add("Data de Nascimento do Cachorro deve ser menor que Hoje");
-            else
-                listaValidar.Add("Data Nascimento Cachorro OK");
+                throw new Exception("Data de Nascimento do Cachorro deve ser menor que Hoje");
 
             if (Peso <= 0)
-                listaValidar.Add("Peso do Cachorro deve ser maior que 0 (zero)");
-            else
-                listaValidar.Add("Peso Cachorro OK");
-
-            return listaValidar.Count == 0 ? null : listaValidar;
+                throw new Exception("Peso do Cachorro deve ser maior que 0 (zero)");
         }
     }
 }

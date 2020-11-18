@@ -100,43 +100,27 @@ namespace Exercicios.Test
         [TestMethod]
         public void Validar_Dados_Cachorro_Test()
         {
-            Cachorro cachorro = new Cachorro();
-            cachorro.Nome = "Ted";
-            cachorro.Sexo = "Macho";
-            cachorro.DataNascimento = new DateTime(1998, 10, 30);
-            cachorro.Peso = 20.5;
+            try
+            {
+                Cachorro cachorro = new Cachorro();
+                cachorro.Nome = "Ted";
+                cachorro.Sexo = "Macho";
+                cachorro.DataNascimento = new DateTime(1998, 10, 30);
+                cachorro.Peso = 20.5;
 
-            var listaDados = cachorro.validarDadosCachorro();
+                cachorro.ValidarDadosCachorro();
 
-            var listaValidar = new List<string>();
-
-            if (string.IsNullOrWhiteSpace(cachorro.Nome))
-                listaValidar.Add("Nome do Cachorro é Obrigatório");
-            else
-                listaValidar.Add("Nome Cachorro OK");
-
-            if (cachorro.Sexo.Equals("Macho") || cachorro.Sexo.Equals("Femea"))
-                listaValidar.Add("Sexo Cachorro OK");
-            else
-                listaValidar.Add("Sexo do Cachorro Inválido");
-
-            if (cachorro.DataNascimento > DateTime.Today)
-                listaValidar.Add("Data de Nascimento do Cachorro deve ser menor que Hoje");
-            else
-                listaValidar.Add("Data Nascimento Cachorro OK");
-
-            if (cachorro.Peso <= 0)
-                listaValidar.Add("Peso do Cachorro deve ser maior que 0 (zero)");
-            else
-                listaValidar.Add("Peso Cachorro OK");
-
-            if (listaValidar.Count == 0)
-                listaValidar = null;
-
-            foreach (var item in listaValidar)
-                Console.WriteLine(item);
-
-            CollectionAssert.AreEqual(listaValidar, listaDados);
+                Assert.Fail();
+            }
+            catch (Exception e)
+            {
+                Assert.AreEqual("Nome do Cachorro é Obrigatório", e.Message);
+                Console.WriteLine(e.Message);
+            }   
+            finally
+            {
+                Console.WriteLine("Fim do Teste");
+            }
         }
     }
 }
