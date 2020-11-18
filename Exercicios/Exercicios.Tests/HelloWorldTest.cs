@@ -183,5 +183,19 @@ namespace Exercicios.Tests
             Assert.AreEqual(null, peso);
             Assert.AreEqual(null, vacinado);
         }
+        
+        [TestMethod]
+        public void MinhaClasse_Test()
+        {
+            var obj = new MinhaClasse();
+            obj.MeuMetodo();
+        }
+    }
+    public class ClasseFilha2 : MinhaClasse
+    {
+        public void MetodoFilho2()
+        {
+            this.MeuMetodo();
+        }
     }
 }

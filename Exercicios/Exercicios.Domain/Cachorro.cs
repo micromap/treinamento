@@ -130,12 +130,6 @@ namespace Exercicios.Domain
 
             return saida;
         }
-
-        
-        
-        
-
-        
         
     }
 }
