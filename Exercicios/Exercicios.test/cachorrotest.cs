@@ -41,11 +41,11 @@ namespace Exercicios.test
         public void Cachorro_QuantoDevoComer_Test()
         {
             string leia = null;
-            int?quantoDevoComer =null;
+            int? quantoDevoComer = null;
 
-            
-            Assert.AreEqual(null,leia);
-            Assert.AreEqual(null,quantoDevoComer);
+
+            Assert.AreEqual(null, leia);
+            Assert.AreEqual(null, quantoDevoComer);
         }
 
         [TestMethod]
@@ -53,8 +53,8 @@ namespace Exercicios.test
         public void Cachorro_Set_Get_Nome_Test()
         {
             var leia = new Cachorro();
-            leia.SetNome("Leia");
-            var nome = leia.GetNome();
+            leia.Nome = "Leia";
+            var nome = leia.Nome;
 
             Console.WriteLine(nome);
             Assert.AreEqual("Leia", nome);
@@ -64,8 +64,8 @@ namespace Exercicios.test
         public void Cachorro_Set_Get_Raca_test()
         {
             var leia = new Cachorro();
-            leia.SetRaca("Femea");
-            var raca = leia.GetRaca();
+            leia.Raca = "Femea";
+            var raca = leia.Raca;
 
             Console.WriteLine(raca);
             Assert.AreEqual("Femea", raca);
@@ -75,12 +75,29 @@ namespace Exercicios.test
         public void Cahorro_Set_Get_Porte_test()
         {
             var leia = new Cachorro();
-            leia.SetPorte("Pequeno");
-            var porte = leia.GetPorte();
+            leia.Porte = "Pequeno";
+            var porte = leia.Porte;
 
             Console.WriteLine(porte);
             Assert.AreEqual("Pequeno", porte);
         }
+            [TestMethod]
+            public void cachorro_getidade_em_Anos()
+            {
+            var cachorro = new Cachorro();
+            cachorro.datanascimento = new DateTime(2016, 1, 10);
+            var idade = cachorro.GetIdade();
+            Assert.AreEqual("4anos", idade);
+            Console.WriteLine(idade);
+
+            }
+
+        private object DateTime(int v)
+        {
+            throw new NotImplementedException();
+        }
     }
+
+           }
 
 }

@@ -2,57 +2,68 @@
 
 namespace Exercicios.domain
 {
-   public class Cachorro
+    public class Cachorro
     {
-        private string _nome;
+        private const string V = ";;
+         private string _nome;
         private string _sexo;
         private string _raca;
         private string _porte;
-        private int    _idade;
+        private int _idade;
         private double _pesokg;
 
 
         public string Latir()
         {
-            return "Au Au!";         
+            return "Au Au!";
         }
 
         public string QuantoDevoComer(string peso)
         {
-            int ?quantidade = null;
-            return "Devo Comer" + null;
+            int quantidade = peso;
+            return "Devo Comer" + quantidade;
         }
-
-
-        public void SetNome(string nome)
+        public string Nome
         {
-            _nome = nome;
-
+            set
+            {
+                _nome = value;
+            }
+            get
+            {
+                return _nome;
+            }
         }
-
-        public string GetNome()
+         public string Raca
         {
-            return _nome;
+            set
+            {
+                _raca = value;
+            }
+            get
+            {
+                return _raca;
+            }
         }
-
-        public void SetRaca(string raca)
+        public string Porte
         {
-            _raca = raca;
-        }
+            set
+            {
+                _porte = value;
+            }
+            get
+            {
+                return _porte;
+            }
+            
+        public DateTime datanascimento { get; set; }
 
-        public string GetRaca()
+        public string GetIdade()
         {
-            return _raca;
+            
         }
+    }
 
-        public void SetPorte(string porte)
-        {
-            _porte = porte;
-        }
-
-        public string GetPorte()
-        {
-            return _raca;
-        }
+       
     }
 }
