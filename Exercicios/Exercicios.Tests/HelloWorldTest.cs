@@ -440,6 +440,30 @@ namespace Exercicios.Tests
 
             Console.WriteLine(mensagem);
         }
+
+        [TestMethod]
+        public void Exception_Test()
+        {
+            try
+            {
+                Cachorro cachorro = null;
+                var mensagens = cachorro.Validar();
+                
+                var x = 10;
+                var y = 0;
+                var resultado = x / y;
+                Console.WriteLine(resultado);
+            }
+            catch (DivideByZeroException)
+            {
+                Console.WriteLine("Erro de divisão por zero!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+
+        }
     }
 
 }
