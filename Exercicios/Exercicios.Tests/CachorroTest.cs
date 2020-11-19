@@ -154,19 +154,39 @@ namespace Exercicios.Tests
             }
         }
 
-            [TestMethod]
-            public void Cachorro_Associacao_Raca_Test()
+        [TestMethod]
+        public void Cachorro_Associacao_Raca_Test()
+        {
+            var labrador = new Raca { Nome = "Labrador" };
+
+            var tequila = new Cachorro
             {
-                var labrador = new Raca { Nome = "Labrador" };
+                  Nome = "Tequila",
+                  Raca = labrador
+            };
 
-                var tequila = new Cachorro
-                {
-                    Nome = "Tequila",
-                    Raca = labrador
-                };
-
-                Console.WriteLine(tequila.Raca.Nome);
+            Console.WriteLine(tequila.Raca.Nome);
             Assert.AreEqual("Labrador", tequila.Raca.Nome);
-            }        
+        }
+
+        [TestMethod]
+        public void Cachorro_Associacao_Dono_Test()
+        {
+            var tamara = new Dono
+            {
+                Nome = "Tamara",
+                Telefone = "14997583486",
+                Email = "tamara@gemmap.com.br"
+            };
+
+            var leia = new Cachorro
+            {
+                Nome = "Léia",
+                Dono = tamara
+            };
+
+            Console.WriteLine(leia.Dono.Nome);
+            Assert.AreEqual("Tamara", leia.Dono.Nome);
+        }
     }
 }

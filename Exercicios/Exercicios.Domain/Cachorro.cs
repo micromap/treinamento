@@ -29,6 +29,7 @@ namespace Exercicios.Domain
                 return _pesoKg;
             }
         }
+        public Dono Dono { get; set; }
 
         public string Latir(short quantidadeLatidos)
         {
