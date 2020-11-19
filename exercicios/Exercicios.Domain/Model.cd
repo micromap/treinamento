@@ -3,14 +3,13 @@
   <Class Name="Exercicios.Domain.Cachorro" HideInheritanceLine="true">
     <Position X="0.75" Y="1.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AASAAAEAAABAABAAgAAAAAIAAAIAUQEAAAAAAAEAAAA=</HashCode>
+      <HashCode>AASAAAEAAABAABAAgAAAAAIAAAIAQQEAAAAAAAEAAAA=</HashCode>
       <FileName>Cachorro.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="Raca" />
       <Property Name="Dono" />
       <Property Name="Sexo" />
-      <Property Name="Porte" />
+      <Property Name="Raca" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Exercicios.Domain.Raca" HideInheritanceLine="true">
@@ -40,7 +39,7 @@
   <Enum Name="Exercicios.Domain.PorteEnum" Collapsed="true">
     <Position X="6.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAABAAAAAAAAABAAAACAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAIAAAAAQAAAAAAAAAAAAA=</HashCode>
       <FileName>PorteEnum.cs</FileName>
     </TypeIdentifier>
   </Enum>
