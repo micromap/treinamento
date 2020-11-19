@@ -135,7 +135,7 @@ namespace Exercicios.Tests
                 var cachorro = new Cachorro
                 {
                     Nome = "",
-                    Sexo = "Xyz",
+                    Sexo = Sexo.Macho,
                     DataNascimento = DateTime.Today.AddMonths(5),
                     Peso = 0
                 };
@@ -146,7 +146,6 @@ namespace Exercicios.Tests
             catch (Exception ex)
             {
                 var ok = ex.Message.Contains("Nome do Cachorro é Obrigatório!") &&
-                         ex.Message.Contains("Sexo do Cachorro deve ser Fêmea ou Macho!") &&
                          ex.Message.Contains("Data de Nascimento do Cachorro deve ser menor que Hoje!") &&
                          ex.Message.Contains("Peso do Cachorro deve ser maior que zero!");
 
@@ -189,6 +188,49 @@ namespace Exercicios.Tests
 
             Console.WriteLine(leia.Dono.Nome);
             Assert.AreEqual("Silvia", leia.Dono.Nome);
+        }
+
+        [TestMethod]
+        public void Cachorro_Enum_Sexo_Test()
+        {
+            var cachorro = new Cachorro
+            {
+                Nome = "Léia",
+                Sexo = Sexo.Femea
+            };
+
+            Console.WriteLine(cachorro.Sexo);
+            Assert.AreEqual(Sexo.Femea, cachorro.Sexo);
+        }
+
+        [TestMethod]
+        public void Cachorro_Enum_Raca_Porte_Test()
+        {
+            var beagle = new Raca
+            {
+                Nome = "Beagle",
+                Porte = Porte.Grande
+            };
+
+            var dono = new Dono
+            {
+                Nome = "Maikon Frandina",
+                Email = "maikon@gemmap.com.br",
+                Telefone = "(14) 9 9988-8899"
+            };
+
+            var toby = new Cachorro
+            {
+                Nome = "Toby",
+                Sexo = Sexo.Macho,
+                Raca = beagle,
+                Dono = dono,
+                DataNascimento = DateTime.Parse("15/10/2018 22:30"),
+                Vacinado = true
+            };
+
+            Assert.AreEqual(Porte.Grande, toby.Raca.Porte);
+            Console.WriteLine(toby.Raca.Porte);
         }
     }
 }
