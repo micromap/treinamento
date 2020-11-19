@@ -8,9 +8,9 @@ namespace Exercicios.Domain
     public class Cachorro
     {
         public string Nome { get; set; } 
-        public string Sexo { get; set; }
+        public Sexo Sexo { get; set; }
         public Raca Raca { get; set; }
-        public string Porte { get; set; }
+        public Dono Dono { get; set; }
         public DateTime DataNascimento { get; set; }
         public bool Vacinado { get; set; }
 
@@ -29,8 +29,7 @@ namespace Exercicios.Domain
                 return _pesoKg;
             }
         }
-        public Dono Dono { get; set; }
-
+        
         public string Latir(short quantidadeLatidos)
         {
             var latidos = "";
@@ -78,9 +77,6 @@ namespace Exercicios.Domain
 
             if(string.IsNullOrWhiteSpace(Nome)) // if(Nome == null || Nome == "" || Nome == "  ") retorna thrue
                 mensagens.Add("Nome do Cachorro é Obrigatório!");
-
-            if (Sexo != "Fêmea" && Sexo != "Macho")
-                mensagens.Add("Sexo do cachorro deve ser Fêmea ou Macho!");
 
             if (DataNascimento > DateTime.Today)
                 mensagens.Add("Data de nascimento deve ser menor que hoje!");

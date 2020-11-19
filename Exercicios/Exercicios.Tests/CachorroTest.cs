@@ -134,7 +134,7 @@ namespace Exercicios.Tests
             {
                 var cachorro = new Cachorro();
                 cachorro.Nome = "";
-                cachorro.Sexo = "Xyz";
+                cachorro.Sexo = Sexo.Macho;
                 cachorro.DataNascimento = DateTime.Today.AddMonths(5);
                 cachorro.Peso = 0;
 
@@ -145,7 +145,6 @@ namespace Exercicios.Tests
             catch (Exception ex)
             {
                 var ok = ex.Message.Contains("Nome do Cachorro é Obrigatório!") &&
-                         ex.Message.Contains("Sexo do cachorro deve ser Fêmea ou Macho!") &&
                          ex.Message.Contains("Data de nascimento deve ser menor que hoje!") &&
                          ex.Message.Contains("Peso deve ser maior que zero!");
 
@@ -188,5 +187,38 @@ namespace Exercicios.Tests
             Console.WriteLine(leia.Dono.Nome);
             Assert.AreEqual("Tamara", leia.Dono.Nome);
         }
+
+        [TestMethod]
+        public void Cachorro_Enum_Sexo_Test()
+        {
+            var cachorro = new Cachorro
+            {
+                Nome = "Léia",
+                Sexo = Sexo.Femea
+            };
+
+            Console.WriteLine(cachorro.Sexo);
+            Assert.AreEqual(Sexo.Femea, cachorro.Sexo);
+        }
+
+        [TestMethod]
+        public void Cachorro_Enum_Raca_Porte_Test()
+        {
+            var york = new Raca
+            {
+                Nome = "Yorkshhire",
+                Porte = Porte.Pequeno
+            };
+
+            var leia = new Cachorro
+            {
+                Nome = "Léia",
+                Raca = york
+            };
+
+            Assert.AreEqual(Porte.Pequeno, leia.Raca.Porte);
+            Console.WriteLine(leia.Raca.Porte);
+        }
+
     }
 }
