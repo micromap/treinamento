@@ -8,7 +8,6 @@ namespace Exercicios.Domain
         public string Nome { get; set; }
         public Sexo Sexo { get; set; }
         public Raca Raca { set; get; }
-        public string Porte { get; set; }
         public DateTime DataDeNascimento { get; set; }
         public bool Vacinado { get; set; }
         public Dono Dono { get; set; }
