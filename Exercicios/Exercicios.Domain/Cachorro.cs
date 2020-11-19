@@ -6,7 +6,7 @@ namespace Exercicios.Domain
     public class Cachorro
     {
         public string Nome { get; set; }
-        public string Sexo { get; set; }
+        public Sexo Sexo { get; set; }
         public Raca Raca { set; get; }
         public string Porte { get; set; }
         public DateTime DataDeNascimento { get; set; }
@@ -65,11 +65,8 @@ namespace Exercicios.Domain
             var lista = new List<string> {};
 
             if (string.IsNullOrWhiteSpace(Nome))
-                lista.Add("Nome do cachorro é obrigatório");                
-            
-            if (Sexo != "Macho" && Sexo != "Fêmea")
-                lista.Add("Sexo Inválido");
-            
+                lista.Add("Nome do cachorro é obrigatório");    
+                        
             if (DataDeNascimento > DateTime.Today)
                 lista.Add("Data de Nascimento deve ser anterior ou igual a data de hoje");
             
@@ -86,12 +83,7 @@ namespace Exercicios.Domain
                 throw new Exception("Nome do cachorro é obrigatório");
             }
             
-            if (Sexo != "Macho" && Sexo != "Fêmea")
-            {
-                throw new Exception("Sexo Inválido");
-            }
-
-            if (DataDeNascimento > DateTime.Today)
+           if (DataDeNascimento > DateTime.Today)
             {
                 throw new Exception("Data de Nascimento deve ser anterior ou igual a data de hoje");
             }

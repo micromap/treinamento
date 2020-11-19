@@ -124,14 +124,14 @@ namespace Exercicios.Tests
         {
             var cachorro = new Cachorro();
             cachorro.Nome = null;
-            cachorro.Sexo = "Teste";
-            cachorro.DataDeNascimento = DateTime.Parse("12/11/2020");
+            cachorro.Sexo = Sexo.Macho;
+            cachorro.DataDeNascimento = DateTime.Today.AddDays(-1);
             cachorro.Peso = 10;
 
             var resultado = cachorro.ValidarCampos();
 
             Console.WriteLine(resultado);
-            Assert.AreEqual("Nome do cachorro é obrigatório", resultado);
+            Assert.AreEqual("Nome do cachorro é obrigatório", resultado[0]);
 
         }
 
@@ -140,14 +140,14 @@ namespace Exercicios.Tests
         {
             var cachorro = new Cachorro();
             cachorro.Nome = "Yuri";
-            cachorro.Sexo = "Teste";
+            cachorro.Sexo = Sexo.Macho;
             cachorro.DataDeNascimento = DateTime.Parse("12/11/2020");
             cachorro.Peso = 10;
 
             var resultado = cachorro.ValidarCampos();
 
-            Console.WriteLine(resultado[0]);
-            Assert.AreEqual("Sexo Inválido", resultado[0]);
+            Console.WriteLine(Sexo.Macho);
+            Assert.AreEqual(cachorro.Sexo, Sexo.Macho);
         }
 
         [TestMethod]
@@ -155,8 +155,8 @@ namespace Exercicios.Tests
         {
             var cachorro = new Cachorro();
             cachorro.Nome = "YURI";
-            cachorro.Sexo = "Fêmea";
-            cachorro.DataDeNascimento = DateTime.Parse("14/11/2020");
+            cachorro.Sexo = Sexo.Femea;
+            cachorro.DataDeNascimento = DateTime.Today.AddDays(1);
             cachorro.Peso = 10;
 
             var resultado = cachorro.ValidarCampos();
@@ -170,7 +170,7 @@ namespace Exercicios.Tests
         {
             var cachorro = new Cachorro();
             cachorro.Nome = "Yuri";
-            cachorro.Sexo = "Fêmea";
+            cachorro.Sexo = Sexo.Femea;
             cachorro.DataDeNascimento = DateTime.Parse("12/11/2020");
             cachorro.Peso = 0;
 
@@ -185,7 +185,7 @@ namespace Exercicios.Tests
         {
             var cachorro = new Cachorro();
             cachorro.Nome = null;
-            cachorro.Sexo = "Teste";
+            cachorro.Sexo = Sexo.Macho;
             cachorro.DataDeNascimento = DateTime.Parse("12/11/2020");
             cachorro.Peso = 10;
 
@@ -206,7 +206,7 @@ namespace Exercicios.Tests
         {
             var cachorro = new Cachorro();
             cachorro.Nome = "Yuri";
-            cachorro.Sexo = "Outros";
+            cachorro.Sexo = Sexo.Macho;
             cachorro.DataDeNascimento = DateTime.Parse("12/11/2020");
             cachorro.Peso = 10;
 
@@ -226,7 +226,7 @@ namespace Exercicios.Tests
         {
             var cachorro = new Cachorro();
             cachorro.Nome = "Yuri";
-            cachorro.Sexo = "Fêmea";
+            cachorro.Sexo = Sexo.Femea;
             cachorro.DataDeNascimento = DateTime.Parse("14/11/2020");
             cachorro.Peso = 10;
 
@@ -246,7 +246,7 @@ namespace Exercicios.Tests
         {
             var cachorro = new Cachorro();
             cachorro.Nome = "Yuri";
-            cachorro.Sexo = "Fêmea";
+            cachorro.Sexo = Sexo.Femea;
             cachorro.DataDeNascimento = DateTime.Parse("12/11/2020");
             cachorro.Peso = 0;
 
@@ -292,6 +292,19 @@ namespace Exercicios.Tests
             Assert.AreEqual("Diego", cachorro.Dono.Nome);
 
 
+        }
+
+        [TestMethod]
+        public void Cachorro_Enum_Sexo_Test()
+        {
+            var cachorro = new Cachorro
+            {
+                Nome = "Olga",
+                Sexo = Sexo.Femea
+            };
+
+            Console.WriteLine(cachorro.Sexo);
+            Assert.AreEqual(Sexo.Femea, cachorro.Sexo);
         }
 
     }
