@@ -21,5 +21,16 @@ namespace Exercicios.Domain
             pet.Dono = this;
 
         }
+
+        public void RemovePet(Cachorro pet)
+        {
+            if (Pets == null)
+                return;
+
+            if(Pets.Remove(pet) == true)
+            {
+                pet.Dono = null;
+            }
+        }
     }
 }
