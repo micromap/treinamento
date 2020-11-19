@@ -113,40 +113,7 @@ namespace Exercicios.Tests
             Assert.AreEqual("Masculino", sexo);
         }
 
-        public void Leia_Cachorro_Set_Get_Raca_Test()
-        {
-            var Leia = new Cachorro();
-
-            Leia.SetRaca("Vira Lata");
-            var raca = Leia.GetRaca();
-
-            Console.WriteLine(raca);
-            Assert.AreEqual("Vira Lata", raca);
-        }
-
-        public void Tequila_Cachorro_Set_Get_Raca_Test()
-        {
-            var Tequila = new Cachorro();
-
-            Tequila.SetRaca("Labrador");
-            var raca = Tequila.GetRaca();
-
-            Console.WriteLine(raca);
-            Assert.AreEqual("Labrador", raca);
-        }
-
-        [TestMethod]
-        public void Yuri_Cachorro_Set_Get_Raca_Test()
-        {
-            var Yuri = new Cachorro();
-
-            Yuri.SetRaca("Vira Lata");
-            var raca = Yuri.GetRaca();
-
-            Console.WriteLine(raca);
-            Assert.AreEqual("Vira Lata", raca);
-        }
-
+        
         public void Leia_Cachorro_Set_Get_Porte_Test()
         {
             var Leia = new Cachorro();
@@ -215,47 +182,25 @@ namespace Exercicios.Tests
             Assert.AreEqual(3, idade);
         }
 
-        public void Leia_Cachorro_Set_Get_PesoKg_Test()
+        public void Cachorro_Set_Get_PesoKg_Test()
         {
             var Leia = new Cachorro();
 
-            Leia.SetPesoKg(1.2);
-            var pesoKg = Leia.GetPesoKg();
+            Leia.Peso = 1.2;
+            var pesoKg = Leia.Peso;
 
             Console.WriteLine(pesoKg);
             Assert.AreEqual(1.2, pesoKg);
         }
 
-        public void Tequila_Cachorro_Set_Get_PesoKg_Test()
-        {
-            var Tequila = new Cachorro();
-
-            Tequila.SetPesoKg(5.5);
-            var pesoKg = Tequila.GetPesoKg();
-
-            Console.WriteLine(pesoKg);
-            Assert.AreEqual(5.5, pesoKg);
-        }
-
-        [TestMethod]
-        public void Yuri_Cachorro_Set_Get_PesoKg_Test()
-        {
-            var Yuri = new Cachorro();
-
-            Yuri.SetPesoKg(5.5);
-            var pesoKg = Yuri.GetPesoKg();
-
-            Console.WriteLine(pesoKg);
-            Assert.AreEqual(5.5, pesoKg);
-        }
-
+        
         [TestMethod]
         public void Cachorro_Peso_Nao_Pode_Ser_Negativo_Test()
         {
             var Leia = new Cachorro();
 
-            Leia.SetPesoKg(-1.2);
-            var pesoKg = Leia.GetPesoKg();
+            Leia.Peso = -1.2;
+            var pesoKg = Leia.Peso;
 
             Console.WriteLine(pesoKg);
             Assert.AreEqual(null, pesoKg);
@@ -266,8 +211,8 @@ namespace Exercicios.Tests
         {
             var leia = new Cachorro();
 
-            leia.SetPesoKg(null);
-            var peso = leia.GetPesoKg();
+            leia.Peso = null;
+            var peso = leia.Peso;
 
             Console.WriteLine(peso);
             Assert.AreEqual(null, peso);

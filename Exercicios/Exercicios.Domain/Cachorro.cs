@@ -32,15 +32,20 @@ namespace Exercicios.Domain
         #endregion
 
         #region Raca
-        public void SetRaca(string raca)
-        {
-            _raca = raca;
-        }
+        public string Raca { set; get; }
+        /*
+           A opção da linha de cima é chamada de automatico e as linha abaixos são os comandos que internamente o C# faz para nós
+         * { set
+            {
+                _raca = value;
+            }
 
-        public string GetRaca()
-        {
-            return _raca;
-        }
+            get
+            {
+                return _raca;
+            }
+        }*/
+
         private string _raca;
         #endregion
 
@@ -83,23 +88,20 @@ namespace Exercicios.Domain
         private bool _vacinado;
         #endregion
 
-        #region PesoKg
-        public void SetPesoKg(double? pesoKg)
+        #region Peso
+        public double? Peso
         {
-            if (pesoKg < 0 )
+            set
             {
-                _pesoKg = null;
+                if (value < 0)
+                    _pesoKg = null;
+                else
+                    _pesoKg = value;
             }
-            else
+            get
             {
-                _pesoKg = pesoKg;
+                return _pesoKg;
             }
-            
-        }
-
-        public double? GetPesoKg()
-        {
-            return _pesoKg;
         }
         private double? _pesoKg;
         #endregion
