@@ -152,7 +152,21 @@ namespace Exercicios.Tests
                 Assert.AreEqual(true, ok);
                 Console.WriteLine(ex.Message);
             }
-
         }
+
+            [TestMethod]
+            public void Cachorro_Associacao_Raca_Test()
+            {
+                var labrador = new Raca { Nome = "Labrador" };
+
+                var tequila = new Cachorro
+                {
+                    Nome = "Tequila",
+                    Raca = labrador
+                };
+
+                Console.WriteLine(tequila.Raca.Nome);
+            Assert.AreEqual("Labrador", tequila.Raca.Nome);
+            }        
     }
 }
