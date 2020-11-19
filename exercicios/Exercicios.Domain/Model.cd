@@ -13,7 +13,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Exercicios.Domain.Raca" HideInheritanceLine="true">
-    <Position X="4.5" Y="2.5" Width="1.5" />
+    <Position X="4.25" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAEAAAA=</HashCode>
       <FileName>Raca.cs</FileName>
@@ -23,21 +23,24 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Exercicios.Domain.Dono">
-    <Position X="4.5" Y="0.5" Width="1.5" />
+    <Position X="4.25" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAgCAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <HashCode>AAAAAAAAgCAAAQAEgAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
       <FileName>Dono.cs</FileName>
     </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Pets" />
+    </ShowAsCollectionAssociation>
   </Class>
   <Enum Name="Exercicios.Domain.SexoEnum">
-    <Position X="4.5" Y="4.25" Width="1.5" />
+    <Position X="0.75" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>SexoEnum.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="Exercicios.Domain.PorteEnum" Collapsed="true">
-    <Position X="6.75" Y="2.5" Width="1.5" />
+    <Position X="6.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAQAAAIAAAAAQAAAAAAAAAAAAA=</HashCode>
       <FileName>PorteEnum.cs</FileName>
