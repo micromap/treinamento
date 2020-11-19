@@ -71,7 +71,7 @@ namespace Exercicios.Domain
             }
         }
         
-        public List<string> Validar()
+        public void Validar()
         {
             var mensagens = new List<string>();
 
@@ -87,7 +87,14 @@ namespace Exercicios.Domain
             if (Peso <= 0)
                 mensagens.Add("Peso deve ser maior que zero!");
 
-            return mensagens.Count == 0 ? null : mensagens;
+            if(mensagens.Count > 0)
+            {
+                var exceptionMessage = "";
+                foreach (var msg in mensagens)
+                    exceptionMessage += msg + Environment.NewLine;
+
+                throw new Exception(exceptionMessage);
+            }
         }
     }
 }
