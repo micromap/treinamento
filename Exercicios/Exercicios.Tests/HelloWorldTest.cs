@@ -183,7 +183,113 @@ namespace Exercicios.Tests
             Assert.AreEqual(null, peso);
             Assert.AreEqual(null, vacinado);
         }
-        
+
+        [TestMethod]
+        public void DateTime_Test()
+        {
+            var hoje = DateTime.Today;
+            Console.WriteLine(hoje);
+
+            var agora = DateTime.Now;
+            Console.WriteLine(agora);
+        }
+
+        [TestMethod]
+        public void DateTime_Desmembrando_Test()
+        {
+            var agora = DateTime.Now;
+            Console.WriteLine("Agora: "+ agora);
+            Console.WriteLine("Ano: " + agora.Year);
+            Console.WriteLine("Mês: " + agora.Month);
+            Console.WriteLine("Dia: " + agora.Day);
+            Console.WriteLine("Hora: " + agora.Hour);
+            Console.WriteLine("Minuto: " + agora.Minute);
+            Console.WriteLine("Segundo: " + agora.Second);
+            Console.WriteLine("Milisegundo: " + agora.Millisecond);
+            Console.WriteLine("Dia da semana: " + agora.DayOfWeek);
+            Console.WriteLine("Qtde de dias no ano: " + agora.DayOfYear);
+        }
+
+        [TestMethod]
+        public void DateTime_Add_Test()
+        {
+            var agora = DateTime.Now;
+            Console.WriteLine(agora);
+
+            var mais5horas = agora.AddHours(5);
+            Console.WriteLine(mais5horas);
+
+            var amanha = agora.AddDays(1);
+            Console.WriteLine(amanha);
+
+            var ontem = agora.AddDays(-1);
+            Console.WriteLine(ontem);
+
+            var mesQueVem = agora.AddMonths(1);
+            Console.WriteLine(mesQueVem);
+        }
+
+        [TestMethod]
+        public void DateTime_Convertendo_de_String_Test()
+        {
+            var data = DateTime.Parse("17/10/2020");
+            Console.WriteLine(data);
+
+            var dataHora = DateTime.Parse("17/10/2020 10:53");
+            Console.WriteLine(dataHora);
+        }
+
+        [TestMethod]
+        public void DateTime_Inicializacao_Test()
+        {
+            var data = new DateTime(2020, 10, 17);
+            Console.WriteLine("Data" +data);
+
+            var dataHora = new DateTime(2020, 10, 17, 10, 48, 0);
+            Console.WriteLine("Data/Hora: "+dataHora);
+        }
+
+        [TestMethod]
+        public void DateTime_Quantidade_Dias_Mes_Test()
+        {
+            var diasMes = DateTime.DaysInMonth(2020, 10);
+            Console.WriteLine("Último do Dia/Mês " + diasMes);
+
+            var ultimoDiaMes = new DateTime(2020, 10, diasMes);
+            Console.WriteLine("Data do Última dia do Mês " + ultimoDiaMes);
+        }
+
+        [TestMethod]
+        public void DateTime_Formatacoes_Test()
+        {
+            var agora = DateTime.Now;
+            Console.WriteLine("Agora: " + agora);
+            Console.WriteLine("Data: " + agora.ToString("d"));  //short date (d)
+            Console.WriteLine("Data/Hora: " + agora.ToString("G"));  // vai retornar o dia/mes/ano e a hora em português
+            Console.WriteLine("Semana/Data (Extenso): " + agora.ToString("f"));   // vai retornar a data por extenso
+
+            Console.WriteLine("Data : " + agora.ToString("dd/MM/yyyy"));
+            Console.WriteLine("Data/Hora 24 : " + agora.ToString("dd/MM/yyyy HH:mm"));
+            Console.WriteLine("Data/Hora 12 : " + agora.ToString("dd/MM/yyyy hh:mm"));
+            Console.WriteLine("Mês/Ano : " + agora.ToString("MMMM/yy"));
+            Console.WriteLine("Mês abreviado/Ano : " + agora.ToString("MMM/yyyy"));
+        }
+
+        [TestMethod]
+        public void TimeSpan_Test()
+        {
+            var data1 = new DateTime(2020, 10, 17, 10, 25, 12);
+            var data2 = new DateTime(2020, 10, 18, 18, 10, 23);
+
+            var dif = data2.Subtract(data1);
+
+            Console.WriteLine("Diferença em Dia/Hora/Min/Seg : " + dif);
+            Console.WriteLine("Diferença em Segundos : " + dif.TotalSeconds);
+            Console.WriteLine("Diferença em Minutos : " + dif.TotalMinutes);
+            Console.WriteLine("Diferença em Horas : " + dif.TotalHours);
+            Console.WriteLine("Diferença em Dias : " + dif.TotalDays);
+        }
+
         [TestMethod]
         public void MinhaClasse_Test()
         {
