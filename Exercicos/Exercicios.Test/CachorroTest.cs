@@ -104,7 +104,7 @@ namespace Exercicios.Test
             {
                 Cachorro cachorro = new Cachorro();
                 cachorro.Nome = "Ted";
-                cachorro.Sexo = "Macho";
+                cachorro.Sexo = Sexo.Macho;
                 cachorro.DataNascimento = new DateTime(1998, 10, 30);
                 cachorro.Peso = 20.5;
 

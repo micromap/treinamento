@@ -7,9 +7,8 @@ namespace Exercicios.Domain
     public class Cachorro
     {
         public string Nome { get; set; }
-        public string Sexo { get; set; }
+        public Sexo Sexo { get; set; }
         public Raca Raca { get; set; }
-        public string Porte { get; set; }
         public double Peso { get; set; }
         public bool Vacinado { get; set; }
         public DateTime DataNascimento { get; set; }

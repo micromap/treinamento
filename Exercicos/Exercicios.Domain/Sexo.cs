@@ -4,10 +4,8 @@ using System.Text;
 
 namespace Exercicios.Domain
 {
-    public class Raca
+    public enum Sexo
     {
-        public string Nome { get; set;}
-
-        public Porte Porte { get; set; }
+        Femea, Macho
     }
 }

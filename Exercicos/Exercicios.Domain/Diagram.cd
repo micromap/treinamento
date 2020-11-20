@@ -3,27 +3,55 @@
   <Class Name="Exercicios.Domain.Cachorro">
     <Position X="0.5" Y="0.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AASAAAEAABBAAAAAggAAAAAAAAIAUAACAAAAAAEAAAA=</HashCode>
+      <HashCode>AASAAAEAABBAAAAAggAAAAAAAAIAQAACAAAAAAEAAAA=</HashCode>
       <FileName>Cachorro.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Raca" />
       <Property Name="Dono" />
+      <Property Name="Sexo" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Exercicios.Domain.Raca">
     <Position X="4.25" Y="0.5" Width="1.5" />
+    <AssociationLine Name="Porte" Type="Exercicios.Domain.Porte" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.75" Y="1" />
+        <Point X="7.562" Y="1" />
+        <Point X="7.562" Y="1.5" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAEAAAA=</HashCode>
       <FileName>Raca.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Porte" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="Exercicios.Domain.Dono">
-    <Position X="4" Y="2.5" Width="1.5" />
+    <Position X="4.25" Y="2.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAgCAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <HashCode>AAAAAAAAgCAAAAAEAAAAAAAAAAAAAAAAAAAACEEAAAA=</HashCode>
       <FileName>Dono.cs</FileName>
     </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Pets" />
+    </ShowAsCollectionAssociation>
   </Class>
+  <Enum Name="Exercicios.Domain.Sexo">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sexo.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Exercicios.Domain.Porte">
+    <Position X="6.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAIAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Porte.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

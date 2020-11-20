@@ -4,10 +4,8 @@ using System.Text;
 
 namespace Exercicios.Domain
 {
-    public class Raca
+    public enum Porte
     {
-        public string Nome { get; set;}
-
-        public Porte Porte { get; set; }
+        Pequeno, Medio, Grande
     }
 }
