@@ -48,7 +48,7 @@ namespace Exercicios.Tests
         public void Igualdade_Entre_Tipos_De_Referencia()
         {
             Cachorro cachorro1 = new Cachorro();
-            cachorro1.SetNome("LALALA");
+            cachorro1.Nome = "LALALA";
 
 
             Cachorro cachorro2 = cachorro1;
@@ -60,11 +60,11 @@ namespace Exercicios.Tests
         public void Desigualdade_Entre_Tipos_De_Referencia()
         {
             Cachorro cachorro1 = new Cachorro();
-            cachorro1.SetNome("LALALA");
+            cachorro1.Nome = "LALALA";
 
 
             Cachorro cachorro2 = new Cachorro();
-            cachorro1.SetNome("HAHAHA");
+            cachorro1.Nome = "HAHAHA";
 
             Assert.AreEqual(cachorro1, cachorro2);
         }
@@ -133,11 +133,112 @@ namespace Exercicios.Tests
             Assert.AreEqual(null, vacinado);
         }
 
-        [TestMethod]
+        //[TestMethod]
         public void MinhaClasse_Test()
         {
             var obj = new MinhaClasse();
         }
 
+        //[TestMethod]
+        public void DateTime_Test()
+        {
+            //Somente data
+            var hoje = DateTime.Today;
+            Console.WriteLine(hoje);
+
+            //Dia + hora
+            var agora = DateTime.Now;
+            Console.WriteLine(agora);
+        }
+
+        //[TestMethod]
+        public void DateTime_Desmenbrando_Test()
+        {
+            var agora = DateTime.Now;
+            Console.WriteLine(agora);
+            Console.WriteLine(agora.Year);
+            Console.WriteLine(agora.Month);
+            Console.WriteLine(agora.Day);
+            Console.WriteLine(agora.Minute);
+            Console.WriteLine(agora.Second);
+            Console.WriteLine(agora.Millisecond);
+            Console.WriteLine(agora.DayOfWeek);
+            Console.WriteLine(agora.DayOfYear);
+
+        }
+
+        //[TestMethod]
+        public void DateTime_Add_Test()
+        {
+            var agora = DateTime.Now;
+
+            Console.WriteLine(agora.AddHours(5));
+            Console.WriteLine(agora.AddDays(1));
+            Console.WriteLine(agora.AddDays(-1));
+            Console.WriteLine(agora.AddMonths(1));
+
+        }
+
+        //[TestMethod]
+        public void DateTime_Inicializacao_Test()
+        {
+
+            //Construtor Ano+Mes+Dia
+            var data = new DateTime(2020, 11, 13);
+            Console.WriteLine(data);
+
+            var dataHora = new DateTime(2020, 11, 13, 11, 10, 35);
+            Console.WriteLine(dataHora);
+
+        }
+
+        //[TestMethod]
+        public void DateTime_Convertendo_De_String_Test()
+        {
+            string texto = "2020/11/13 11:15:20";
+            var data = DateTime.Parse(texto);
+
+            Console.WriteLine(data);
+        }
+
+        //[TestMethod]
+        public void DateTime_Quantidade_Dias_Mes_Test()
+        {
+            var diasMes = DateTime.DaysInMonth(2020, 11);
+            Console.WriteLine(diasMes);
+
+            var ultimoDiaMes = new DateTime(2020, 11, diasMes);
+            Console.WriteLine(ultimoDiaMes);
+        }
+
+        //[TestMethod]
+        public void DateTime_Formatacoes_Test()
+        {
+
+            DateTime agora = DateTime.Now;
+
+            Console.WriteLine(agora);
+
+            //Formatado
+            Console.WriteLine(agora.ToString("dd/MM/yyyy"));
+
+            //Nome do Mes Formatado e ano.
+            Console.WriteLine(agora.ToString("MMMM/yyyy"));
+
+        }
+
+        [TestMethod]
+        public void TimeSpan_Test()
+        {
+
+            var hoje = DateTime.Today;
+            var amanha = hoje.AddDays(1);
+
+            var dif = amanha.Subtract(hoje);
+
+            Console.WriteLine("Diferenca: " + dif);
+
+        }
+       
     }
 }
