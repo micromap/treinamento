@@ -5,12 +5,13 @@ using System.IO.Pipes;
 
 namespace Exercicios.Domain
 {
-    public class Cachorro
+    public class Cachorro : IPet
     {
         public string Nome { get; set; } 
         public Sexo Sexo { get; set; }
         public Raca Raca { get; set; }
         public Dono Dono { get; set; }
+        public string Foto { get; set; }
         public DateTime DataNascimento { get; set; }
         public bool Vacinado { get; set; }
 

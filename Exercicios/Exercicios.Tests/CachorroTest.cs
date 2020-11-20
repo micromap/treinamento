@@ -220,5 +220,18 @@ namespace Exercicios.Tests
             Console.WriteLine(leia.Raca.Porte);
         }
 
+        [TestMethod]
+        public void Cachorro_IPet_Test()
+        {
+            IPet pet = new Cachorro { Nome = "Léia", Peso = 2 };
+
+            Assert.AreEqual("Léia", pet.Nome);
+            Console.WriteLine(pet.Nome);
+
+            var leia = pet as Cachorro; //var leia = (Cachorro)pet;
+
+            Assert.AreEqual(2, leia.Peso);
+            Console.WriteLine(leia.Peso);
+        }
     }
 }
