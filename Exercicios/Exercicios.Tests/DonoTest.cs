@@ -76,8 +76,7 @@ namespace Exercicios.Tests
 
             var pets = new[] { leia, yuri };
 
-            tamara.AddPet(leia);
-            tamara.AddPet(yuri);
+            tamara.AddPet(leia, yuri);
 
             tamara.RemovePet(yuri, leia);
 
