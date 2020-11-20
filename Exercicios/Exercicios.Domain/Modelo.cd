@@ -23,14 +23,17 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Exercicios.Domain.Dono">
-    <Position X="7" Y="3.25" Width="1.5" />
+    <Position X="7" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAgCAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <HashCode>AAAAAAAAgCAAAQAEgAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
       <FileName>Dono.cs</FileName>
     </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Pets" />
+    </ShowAsCollectionAssociation>
   </Class>
   <Enum Name="Exercicios.Domain.Sexo">
-    <Position X="7" Y="5.25" Width="1.5" />
+    <Position X="5.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Sexo.cs</FileName>
