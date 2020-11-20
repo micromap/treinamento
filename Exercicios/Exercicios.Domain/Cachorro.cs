@@ -5,32 +5,11 @@ namespace Exercicios.Domain
 {
     public class Cachorro
     {
-        #region Nome
-        public void SetNome(string nome)
-        {
-            _nome = nome;
-        }
+        
+        public string Nome { set; get; }
 
-        public string GetNome()
-        {
-            return _nome;
-        }
-        private string _nome;
-        #endregion
-
-        #region Sexo
-        public void SetSexo(string sexo)
-        {
-            _sexo = sexo;
-        }
-
-        public string GetSexo()
-        {
-            return _sexo;
-        }
-        private string _sexo;
-        #endregion
-
+        public string Sexo { set; get; }
+        
         #region Raca
         public string Raca { set; get; }
         /*
@@ -49,44 +28,11 @@ namespace Exercicios.Domain
         private string _raca;
         #endregion
 
-        #region Porte
-        public void SetPorte(string porte)
-        {
-            _porte = porte;
-        }
+        public string Porte { set; get; }
 
-        public string GetPorte()
-        {
-            return _porte;
-        }
-        private string _porte;
-        #endregion
+        public int Idade { set; get; }
 
-        #region Idade
-        public void SetIdade(int idade)
-        {
-            _idade = idade;
-        }
-
-        public int GetIdade()
-        {
-            return _idade;
-        }
-        private int _idade;
-        #endregion
-
-        #region Vacinado
-        public void SetVacinado(bool vacinado)
-        {
-            _vacinado = vacinado;
-        }
-
-        public bool GetVacinado()
-        {
-            return _vacinado;
-        }
-        private bool _vacinado;
-        #endregion
+        public bool Vacinado { set; get; }
 
         #region Peso
         public double? Peso

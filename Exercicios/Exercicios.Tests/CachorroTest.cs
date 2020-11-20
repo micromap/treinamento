@@ -46,142 +46,66 @@ namespace Exercicios.Tests
             Assert.AreEqual("Como tenho 15Kg,devo comer 750g por dia", quantoDevoComer);
         }
 
-        public void Leia_Cachorro_Set_Get_Nome_Test()
-        {
-            var Leia = new Cachorro();
-            Leia.SetNome("Leia");
-            var nome = Leia.GetNome();
-
-            Console.WriteLine(nome);
-            Assert.AreEqual("Leia", nome);
-        }
-
-        public void Tequila_Cachorro_Set_Get_Nome_Test()
-        {
-            var Tequila = new Cachorro();
-
-            Tequila.SetNome("Tequila");
-            var nome = Tequila.GetNome();
-
-            Console.WriteLine(nome);
-            Assert.AreEqual("Tequila", nome);
-        }
-
+        
         [TestMethod]
-        public void Yuri_Cachorro_Set_Get_Nome_Test()
+        public void Cachorro_Set_Get_Nome_Test()
         {
-            var Yuri = new Cachorro();
+            var yuri = new Cachorro();
 
-            Yuri.SetNome("Yuri");
-            var nome = Yuri.GetNome();
+            yuri.Nome = "Yuri";
+            var nome = yuri.Nome;
 
             Console.WriteLine(nome);
             Assert.AreEqual("Yuri", nome);
         }
 
-        public void Leia_Cachorro_Set_Get_Sexo_Test()
-        {
-            var Leia = new Cachorro();
-
-            Leia.SetSexo("Fêmea");
-            var sexo = Leia.GetSexo();
-
-            Console.WriteLine(sexo);
-            Assert.AreEqual("Fêmea", sexo);
-        }
-
-        public void Tequila_Cachorro_Set_Get_Sexo_Test()
+        public void Cachorro_Set_Get_Raca_Test()
         {
             var Tequila = new Cachorro();
 
-            Tequila.SetSexo("Fêmea");
-            var sexo = Tequila.GetSexo();
+            Tequila.Raca = "Labrador";
+            var raca = Tequila.Raca;
+
+            Console.WriteLine(raca);
+            Assert.AreEqual("Labrador", raca);
+        }
+
+        public void Cachorro_Set_Get_Sexo_Test()
+        {
+            var Leia = new Cachorro();
+
+            Leia.Sexo = "Fêmea";
+            var sexo = Leia.Sexo;
 
             Console.WriteLine(sexo);
             Assert.AreEqual("Fêmea", sexo);
-        }
-
-        [TestMethod]
-        public void Yuri_Cachorro_Set_Get_Sexo_Test()
-        {
-            var Yuri = new Cachorro();
-
-            Yuri.SetSexo("Masculino");
-            var sexo = Yuri.GetSexo();
-
-            Console.WriteLine(sexo);
-            Assert.AreEqual("Masculino", sexo);
         }
 
         
-        public void Leia_Cachorro_Set_Get_Porte_Test()
+        public void Cachorro_Set_Get_Porte_Test()
         {
             var Leia = new Cachorro();
 
-            Leia.SetPorte("Médio");
-            var porte = Leia.GetPorte();
+            Leia.Porte = "Médio";
+            var porte = Leia.Porte;
 
             Console.WriteLine(porte);
             Assert.AreEqual("Médio", porte);
         }
 
-        public void Tequila_Cachorro_Set_Get_Porte_Test()
-        {
-            var Tequila = new Cachorro();
-
-            Tequila.SetPorte("Médio");
-            var porte = Tequila.GetPorte();
-
-            Console.WriteLine(porte);
-            Assert.AreEqual("Médio", porte);
-        }
-
-        [TestMethod]
-        public void Yuri_Cachorro_Set_Get_Porte_Test()
-        {
-            var Yuri = new Cachorro();
-
-            Yuri.SetPorte("Médio");
-            var porte = Yuri.GetPorte();
-
-            Console.WriteLine(porte);
-            Assert.AreEqual("Médio", porte);
-        }
-
-        public void Leia_Cachorro_Set_Get_Idade_Test()
-        {
-            var Leia = new Cachorro();
-
-            Leia.SetIdade(3);
-            var idade = Leia.GetIdade();
-
-            Console.WriteLine(idade);
-            Assert.AreEqual(3, idade);
-        }
-
+        
         public void Tequila_Cachorro_Set_Get_Idade_Test()
         {
             var Tequila = new Cachorro();
 
-            Tequila.SetIdade(4);
-            var idade = Tequila.GetIdade();
+            Tequila.Idade = 4;
+            var idade = Tequila.Idade;
 
             Console.WriteLine(idade);
             Assert.AreEqual(4, idade);
         }
 
-        [TestMethod]
-        public void Yuri_Cachorro_Set_Get_Idade_Test()
-        {
-            var Yuri = new Cachorro();
-
-            Yuri.SetIdade(3);
-            var idade = Yuri.GetIdade();
-
-            Console.WriteLine(idade);
-            Assert.AreEqual(3, idade);
-        }
-
+        
         public void Cachorro_Set_Get_PesoKg_Test()
         {
             var Leia = new Cachorro();
@@ -223,8 +147,8 @@ namespace Exercicios.Tests
         {
             var tequila = new Cachorro();
 
-            tequila.SetVacinado(true);
-            var vacinado = tequila.GetVacinado();
+            tequila.Vacinado = true;
+            var vacinado = tequila.Vacinado;
 
             Console.WriteLine(vacinado);
             Assert.AreEqual(true, vacinado);
