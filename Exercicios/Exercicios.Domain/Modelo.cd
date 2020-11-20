@@ -2,11 +2,10 @@
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Exercicios.Domain.Dono">
     <Position X="0.5" Y="3" Width="2" />
-    <AssociationLine Name="Pets" Type="Exercicios.Domain.Cachorro" FixedFromPoint="true" FixedToPoint="true">
+    <AssociationLine Name="Pets" Type="Exercicios.Domain.IPet" FixedFromPoint="true">
       <Path>
-        <Point X="2.5" Y="4.5" />
-        <Point X="6.594" Y="4.5" />
-        <Point X="6.594" Y="3.853" />
+        <Point X="1.875" Y="3" />
+        <Point X="1.875" Y="2.44" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
@@ -44,8 +43,8 @@
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Sexo" />
-      <Property Name="Dono" />
       <Property Name="Raca" />
+      <Property Name="Dono" />
     </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>
@@ -61,6 +60,12 @@
   </Class>
   <Interface Name="Exercicios.Domain.IPet">
     <Position X="0.5" Y="0.5" Width="2" />
+    <AssociationLine Name="Dono" Type="Exercicios.Domain.Dono" FixedToPoint="true">
+      <Path>
+        <Point X="1.188" Y="2.44" />
+        <Point X="1.188" Y="3" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAAAAAEAAAAAAAAAgAAAAAIAAAAAAQAAAAAAQAEAAAA=</HashCode>
       <FileName>IPet.cs</FileName>
