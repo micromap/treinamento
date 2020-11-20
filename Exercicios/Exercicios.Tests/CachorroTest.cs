@@ -325,5 +325,20 @@ namespace Exercicios.Tests
             Console.WriteLine(cachorro.Raca.Porte);
             Assert.AreEqual(Porte.Pequeno, cachorro.Raca.Porte);
         }
+
+        [TestMethod]
+        public void Cachorro_Ipet()
+        {
+            IPet pet = new Cachorro { Nome = "Léia", Peso = 2 };
+
+            Assert.AreEqual("Léia", pet.Nome);
+            Console.WriteLine(pet.Nome);
+
+            var leia = pet as Cachorro;
+
+            Assert.AreEqual(2, leia.Peso);
+            Console.WriteLine(leia.Peso);
+        }
+
     }
 }

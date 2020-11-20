@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Exercicios.Domain
 {
-    public class Cachorro
+    public class Cachorro : IPet
     {
         public string Nome { get; set; }
         public Sexo Sexo { get; set; }
@@ -11,6 +11,7 @@ namespace Exercicios.Domain
         public DateTime DataDeNascimento { get; set; }
         public bool Vacinado { get; set; }
         public Dono Dono { get; set; }
+        public string Foto { get; set; }
 
 
 
