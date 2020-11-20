@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Exercicios.Domain
 {
-    public class Dono
+    public class Dono : IPet
     {
         public string Nome { get; set; }
         public string Telefone { get; set; }
