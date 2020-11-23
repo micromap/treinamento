@@ -3,13 +3,9 @@ using System.Collections.Generic;
 
 namespace Exercicios.Domain
 {
-    public class Cachorro : IPet
+    public class Cachorro : Animal, IPet
     {
-        public string Nome { get; set; }
-        public Sexo Sexo { get; set; }
-        public string Foto { get; set; }
         public Raca Raca { set; get; }
-        public Dono Dono { set; get; }
         public DateTime DataNascimento { get; set; }
         public bool Vacinado { get; set; }
 
@@ -27,9 +23,7 @@ namespace Exercicios.Domain
                 return _pesoKg;
             }
         }
-
         
-
         private double? _pesoKg;
 
         public string Latir(short qtdeLatidos)
@@ -43,7 +37,7 @@ namespace Exercicios.Domain
         }
 
         // Método para calcular 5% do Peso(Kg) do cachorro em Gramas de Ração
-        public string QuantoDevoComer(int pesoKg)
+        public override string QuantoDevoComer(int pesoKg)
         {
             return $"Como tenho {pesoKg}kg, devo comer {pesoKg * 50}g por dia";
         }
@@ -59,7 +53,7 @@ namespace Exercicios.Domain
                 return anos > 1 ? $"{anos} anos" : "1 ano";
         }
 
-        public void Validar()
+        public override void Validar()
         {
             var mensagens = new List<string>();
 

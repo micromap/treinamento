@@ -17,34 +17,28 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="Exercicios.Domain.Gato">
-    <Position X="3.75" Y="2.25" Width="1.5" />
+    <Position X="6.25" Y="4.25" Width="1.75" />
+    <InheritanceLine Type="Exercicios.Domain.Animal" FixedToPoint="true">
+      <Path>
+        <Point X="4.625" Y="3.94" />
+        <Point X="4.625" Y="4.75" />
+        <Point X="6.25" Y="4.75" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAEAAAAAAAAAgAAAAAIAAAAAAQAAAAAAQAEAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Gato.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Sexo" />
-      <Property Name="Dono" />
-    </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Exercicios.Domain.Cachorro">
-    <Position X="6.25" Y="0.5" Width="1.5" />
-    <AssociationLine Name="Dono" Type="Exercicios.Domain.Dono" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="7" Y="3.853" />
-        <Point X="7" Y="4.875" />
-        <Point X="2.5" Y="4.875" />
-      </Path>
-    </AssociationLine>
+    <Position X="6.25" Y="0.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AASAAAEAAABAABAAgAAAAAIAAAIAQQEAAAAAQAEAAAA=</HashCode>
+      <HashCode>AASAAAAAAABAABAAAAAAAAIAAAIAQQEAAAAAAAAAAAA=</HashCode>
       <FileName>Cachorro.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="Sexo" />
       <Property Name="Raca" />
-      <Property Name="Dono" />
     </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>
@@ -56,6 +50,25 @@
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Porte" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Exercicios.Domain.Animal">
+    <Position X="3.75" Y="2" Width="1.75" />
+    <AssociationLine Name="Dono" Type="Exercicios.Domain.Dono" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.75" Y="2.97" />
+        <Point X="3.375" Y="2.97" />
+        <Point X="3.375" Y="3.625" />
+        <Point X="2.5" Y="3.625" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAgAAAAAIAAAAAAQAAAAAAQAEAAAA=</HashCode>
+      <FileName>Animal.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Dono" />
+      <Property Name="Sexo" />
     </ShowAsAssociation>
   </Class>
   <Interface Name="Exercicios.Domain.IPet">
@@ -76,7 +89,7 @@
     </ShowAsAssociation>
   </Interface>
   <Enum Name="Exercicios.Domain.Sexo">
-    <Position X="3.75" Y="0.5" Width="1.5" />
+    <Position X="3.75" Y="0.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Sexo.cs</FileName>

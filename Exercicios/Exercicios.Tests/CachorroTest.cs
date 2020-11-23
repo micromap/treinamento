@@ -139,6 +139,7 @@ namespace Exercicios.Tests
                     DataNascimento = DateTime.Today.AddMonths(5),
                     Peso = 0
                 };
+
                 cachorro.Validar();
 
                 Assert.Fail();
