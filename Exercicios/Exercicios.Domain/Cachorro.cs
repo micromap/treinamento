@@ -52,6 +52,8 @@ namespace Exercicios.Domain
         private double? _pesoKg;
         #endregion
 
+        public DateTime DataNascimento { get; set; }
+
         public string Latir(short qtdeLatidot )
         {
             string latidos = "";
@@ -78,6 +80,16 @@ namespace Exercicios.Domain
 
             return saida;
         }
-        
+
+        public string GetIdade()
+        {
+            var anos = DateTime.Today.Year - DataNascimento.Year;
+            var meses = DateTime.Today.Month - DataNascimento.Month + (12 * anos);
+
+            if (meses < 12)
+                return meses > 1 ? $"{meses} meses" : "1 mês";
+            else
+                return anos > 1 ? $"{anos} anos" : "1 ano";
+        }
     }
 }
