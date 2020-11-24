@@ -5,113 +5,37 @@ namespace Exercicios.Domain
     public class Cachorro
     
     {
-        #region nome
-        public void SetNome(string nome)
-        {
-            _nome = nome;
-        }
-
-        public string GetNome()
-        {
-            return _nome;
-        }
-
-        private string _nome;
-        #endregion
-
-        #region sexo
-        public void SetSexo(string sexo)
-        {
-            _sexo = sexo;
-        }
-
-        public string GetSexo()
-        {
-            return _sexo;
-        }
-        private string _sexo;
-        #endregion
-
-        #region raca
-        public void SetRaca(string raca)
-        {
-            _raca = raca;
-        }
-
-        public string GetRaca()
-        {
-            return _raca;
-        }
-        private string _raca;
-        #endregion
-
-        #region porte
-        public void SetPorte(string porte)
-        {
-            _porte = porte;
-        }
-
-        public string GetPorte()
-        {
-            return _porte;
-        }
-        private string _porte;
-        #endregion
-
-        #region idade
-        public void SetIdade(int idade)
-        {
-            _idade = idade;
-        }
-
-        public int GetIdade()
-        {
-            return _idade;
-        }
-        private int _idade;
-        #endregion
+        public string Nome { set; get; }
+        public string Sexo { get; set; }
+        public string Raca { set; get; }
+        public string Porte { set; get; }
+        public DateTime DataNascimento { get; set; }
+        public bool Vacinado { set; get; }
 
         #region peso
-        public void SetPeso(double peso)
+        public double? Peso
         {
-            if (peso < 0)
+            set
             {
-                _pesoKg = 0;
+                if (value < 0)
+                    _pesoKg = null;
+                else
+                    _pesoKg = value;
             }
-            else
-            { 
-                _pesoKg = peso;
+            get
+            {
+                return _pesoKg;
             }
         }
-
-        public double GetPeso()
-        {
-            return _pesoKg;
-        }
-        private double _pesoKg;
-        #endregion
-
-        #region vacinado
-        public void SetVacinado(bool vacinado)
-        {
-            _vacinado = vacinado;
-        }
-
-        public bool GetVacinado()
-        {
-            return _vacinado;
-        }
-        private bool _vacinado;
+        private double? _pesoKg;
         #endregion
 
         public string latir(short qtdeLatidos)
         {
-            string latidos = "";
+            var latidos = "";
 
-            for (short i = 1; i <= qtdeLatidos; i++)
-            {
-                latidos = latidos + "Au! ";
-            }
+            for (var i = 1; i <= qtdeLatidos; i++)
+                latidos += "Au! ";
 
             return latidos.TrimEnd();
         }
@@ -121,5 +45,21 @@ namespace Exercicios.Domain
             return $"Como tenho {pesoKg} Kg, devo comer {pesoKg * 50} g por dia";
         }
 
+        public string GetIdade()
+        {
+            var anos = DateTime.Today.Year - DataNascimento.Year;
+            var meses = DateTime.Today.Month - DataNascimento.Month + (12 * anos);
+
+            if (meses < 12)
+                return meses > 1 ? $"{meses} meses" : "1 mês";
+            else
+                return anos > 1 ? $"{anos} anos" : "1 ano";
+
+            //if (idade > 1)
+            //    return $"{idade} anos";
+            //else
+            //    return "1 ano";
+
+        }
     }
 }
