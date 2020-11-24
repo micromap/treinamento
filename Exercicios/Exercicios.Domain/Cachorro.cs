@@ -53,7 +53,7 @@ namespace Exercicios.Domain
                 return anos > 1 ? $"{anos} anos" : "1 ano";
         }
 
-        public List<String> Validar()
+        public void Validar()
         {
             var mensagens = new List<string>();
 
@@ -62,11 +62,16 @@ namespace Exercicios.Domain
             if (Sexo != "Fêmea" && Sexo != "Macho")
                 mensagens.Add("Sexo do Cachorro deve ser Fêmea ou Macho!");
             if (DataNascimento > DateTime.Today)
-                mensagens.Add("Date de Nascimento do Cachorro deve ser menor que Hoje!");
+                mensagens.Add("Data de Nascimento do Cachorro deve ser menor que Hoje!");
             if (Peso <= 0)
                 mensagens.Add("Peso do Cachorro deve ser maior que zero!");
-
-            return mensagens.Count == 0 ? null : mensagens;
+            if (mensagens.Count > 0)
+            {
+                var exceptionMessage = "";
+                foreach (var msg in mensagens)
+                    exceptionMessage += msg + Environment.NewLine;
+                throw new Exception(exceptionMessage);
+            }
         }
     }
 }
