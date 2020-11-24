@@ -462,6 +462,36 @@ namespace Exercicios.Tests
             var obj = new MinhaClasse();
             //obj.MeuMetodo();
         }
+
+        [TestMethod]
+        public void Exception_Test()
+        {
+            try
+            {
+                Cachorro cachorro = null;
+                if (cachorro == null)
+                    throw new Exception("O cachorro não foi instanciado!");
+
+                var mensagens = cachorro.Validar();
+
+                var x = 10;
+                var y = 0;
+                var resultado = x / y;
+                Console.WriteLine(resultado);
+            }
+            catch (DivideByZeroException)
+            {
+                Console.WriteLine("Erro de Divisão por zero!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                Console.WriteLine("Fim do Teste!");
+            }
+        }
     }
 
     public class ClasseFilha2 : MinhaClasse
