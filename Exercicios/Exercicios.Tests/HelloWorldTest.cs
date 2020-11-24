@@ -1,6 +1,7 @@
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Exercicios.Domain;
+using System.Collections.Generic;
 
 namespace Exercicios.Tests
 {
@@ -296,6 +297,178 @@ namespace Exercicios.Tests
             var obj = new MinhaClasse();
             obj.MeuMetodo();
         }
+
+        [TestMethod]
+        public void Array_While_Test()
+        {
+            var array = new int[3];
+            array[0] = 10;
+            array[1] = 20;
+            array[2] = 30;
+
+            var i = 0;
+            while (i < array.Length)
+            {
+                Console.WriteLine("Valor do Array ["+ i+"]: "+array[i]);
+                i++;
+            }
+        }
+
+        [TestMethod]
+        public void Array_Do_While_Test()
+        {
+            var array = new string[] { "Léia", "Yuri", "Tequila" };
+
+            var i = 0;
+            do
+            {
+                Console.WriteLine("Valor do Array [" + i + "]: " + array[i++]);
+            } while (i < array.Length);
+        }
+
+        [TestMethod]
+        public void Array_For_Test()
+        {
+            var array = new string[] { "Léia", "Yuri", "Tequila" };
+
+            for (var i = 0; i < array.Length; i++)
+               Console.WriteLine("Valor do Array [" + i + "]: " + array[i]);
+        }
+
+        [TestMethod]
+        public void Array_For_Invertido_Test()
+        {
+            var array = new[] { "Léia", "Yuri", "Tequila" };
+
+            for (var i = array.Length - 1; i >= 0; i--)
+                Console.WriteLine("Valor do Array [" + i + "]: " + array[i]);
+        }
+
+        [TestMethod]
+        public void Array_Foreach_Test()
+        {
+            var array = new[] { "Léia", "Yuri", "Tequila" };
+
+            foreach (var item in array)
+                Console.WriteLine("Valor do Array: " + item);
+            //Console.WriteLine(item);
+        }
+
+        [TestMethod]
+        public void List_Foreach_Test()
+        {
+            // var array = new[] { "Léia", "Yuri", "Tequila" };
+            var lista = new List<string> { "Léia", "Yuri", "Tequila" };
+            lista.Add("Xyz");
+            lista.Remove("Yuri");
+
+            foreach (var item in lista)
+                Console.WriteLine("Valor da Lista: " + item);
+        }
+
+        [TestMethod]
+        public void Dictionary_Test()
+        {
+            // var lista = new List<string> { "Léia", "Yuri", "Tequila" };
+            var dic = new Dictionary<int, string>();
+            dic.Add(1, "Léia");
+            dic.Add(2, "Yuri");
+            dic.Add(3, "Tequila");
+
+            dic.Remove(2);
+
+            foreach (var item in dic)
+                Console.WriteLine($"{item.Key}: {item.Value}");
+        }
+
+        [TestMethod]
+        public void If_Else_Test()
+        {
+            var agora = DateTime.Now;
+            var numero = agora.Second;
+
+            string mensagem;
+            if (numero % 2 == 0)
+                mensagem = $"{numero} é par";
+            else
+                mensagem = $"{numero} é impar";
+
+            Console.WriteLine(mensagem);
+        }
+
+        [TestMethod]
+        public void If_Inline_Test()
+        {
+            var agora = DateTime.Now;
+            var numero = agora.Second;
+
+            var mensagem = numero % 2 == 0
+                ? $"{numero} é par"
+                : $"{numero} é impar";
+
+            Console.WriteLine(mensagem);
+        }
+
+        [TestMethod]
+        public void Else_If_Test()
+        {
+            var hoje = DateTime.Today;
+
+            string mensagem;
+
+            if (hoje.DayOfWeek == DayOfWeek.Sunday)
+                mensagem = "Hoje é Domingo";
+            else if (hoje.DayOfWeek == DayOfWeek.Monday)
+                mensagem = "Hoje é Segunda :(";
+            else if (hoje.DayOfWeek == DayOfWeek.Tuesday)
+                mensagem = "Hoje é Terça";
+            else if (hoje.DayOfWeek == DayOfWeek.Wednesday)
+                mensagem = "Hoje é Quarta";
+            else if (hoje.DayOfWeek == DayOfWeek.Thursday)
+                mensagem = "Hoje é Quinta";
+            else if (hoje.DayOfWeek == DayOfWeek.Friday)
+                mensagem = "Sextou!";
+            else
+                mensagem = "É Sábado! :)";
+
+            Console.WriteLine(mensagem);
+        }
+
+        [TestMethod]
+        public void Switch_Case_Test()
+        {
+            var hoje = DateTime.Today;
+
+            string mensagem;
+
+            switch (hoje.DayOfWeek)
+            {
+                case DayOfWeek.Sunday:
+                    mensagem = "Hoje é Domingo";
+                    break;
+                case DayOfWeek.Monday:
+                    mensagem = "Hoje é Segunda :(";
+                    break;
+                case DayOfWeek.Tuesday:
+                    mensagem = "Hoje é Terça";
+                    break;
+                case DayOfWeek.Wednesday:
+                    mensagem = "Hoje é Quarta";
+                    break;
+                case DayOfWeek.Thursday:
+                    mensagem = "Hoje é Quinta";
+                    break;
+                case DayOfWeek.Friday:
+                    mensagem = "Sextou! :)";
+                    break;
+                default:
+                    mensagem = "É Sábado! :)";
+                    break;
+            }
+
+            Console.WriteLine(mensagem);
+        }
+
     }
     public class ClasseFilha2 : MinhaClasse
     {
