@@ -10,7 +10,23 @@ namespace Exercicios.Domain
         public string Foto { get; set; }
         public Dono Dono { get; set; }
 
-        public abstract string QuantoDevoComer(int pesoKg);
+        public double? Peso
+        {
+            set
+            {
+                if (value < 0)
+                    _pesoKg = null;
+                else
+                    _pesoKg = value;
+            }
+            get
+            {
+                return _pesoKg;
+            }
+        }
+        private double? _pesoKg;
+
+        public abstract string QuantoDevoComer();
 
         protected List<string> ValidacoesComuns()
         {
