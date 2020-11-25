@@ -13,24 +13,24 @@ namespace Exercicios.Domain
 
         public string Email { set; get; }
 
-        public List<Cachorro> Pets { set; get; }
+        public List<IPet> Pets { set; get; }
 
-        public void AddPet(Cachorro pet)
+        public void AddPet(IPet pet)
         {
             if (Pets == null)
-                Pets = new List<Cachorro>();
+                Pets = new List<IPet>();
 
             Pets.Add(pet);
             pet.Dono = this;
         }
 
-        public void AddPet(params Cachorro[] pets)
+        public void AddPet(params IPet[] pets)
         {
             foreach (var pet in pets)
                 AddPet(pet);
         }
 
-        public void RemovePet(Cachorro pet)
+        public void RemovePet(IPet pet)
         {
             if (Pets == null)
                 return;
@@ -39,7 +39,7 @@ namespace Exercicios.Domain
                 pet.Dono = null;
         }
 
-        public void RemovePet(params Cachorro[] pets)
+        public void RemovePet(params IPet[] pets)
         {
             foreach (var pet in pets)
                 RemovePet(pet);
