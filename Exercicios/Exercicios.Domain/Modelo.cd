@@ -18,16 +18,16 @@
   </Class>
   <Class Name="Exercicios.Domain.Gato">
     <Position X="5" Y="3" Width="1.75" />
-    <InheritanceLine Type="Exercicios.Domain.Animal" FixedToPoint="true">
+    <InheritanceLine Type="Exercicios.Domain.Animal" ManuallyRouted="true" FixedToPoint="true">
       <Path>
         <Point X="7.125" Y="2.055" />
-        <Point X="7.125" Y="2.625" />
-        <Point X="6.188" Y="2.625" />
+        <Point X="7.125" Y="2.631" />
+        <Point X="6.188" Y="2.631" />
         <Point X="6.188" Y="3" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Gato.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />

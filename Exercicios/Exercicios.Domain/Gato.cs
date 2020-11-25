@@ -13,5 +13,10 @@ namespace Exercicios.Domain
 
             return miados.TrimEnd();
         }
+
+        public override string QuantoDevoComer(int pesoKg)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
