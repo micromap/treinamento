@@ -5,7 +5,7 @@ namespace Exercicios.Domain
 {   
 
     //Classe Cachorro
-    public class Cachorro
+    public class Cachorro : IPet
     {
         //Propriedades da Classe 
         public string Nome { set; get; }
@@ -19,8 +19,9 @@ namespace Exercicios.Domain
         public bool Vacinado { set; get; }
 
         public Dono Dono { set; get; }
-        
-        #region PesoKG
+
+        public string Foto { get; set; }
+
         public double? PesoKg
         {
             set
@@ -35,8 +36,8 @@ namespace Exercicios.Domain
                 return _pesoKg;
             }
         }
+
         private double? _pesoKg;
-        #endregion _pesoKg
 
         //Metodo da classe, Latir(), QuantoDevoComer()
         public string Latir(short quantidadeLatidos)

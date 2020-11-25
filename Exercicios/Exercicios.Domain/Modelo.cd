@@ -1,29 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Exercicios.Domain.Cachorro">
-    <Position X="4" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AASAAAGAAAAAABAAgAAAAAIAAAIAQQEAAAAAAAEAAAA=</HashCode>
-      <FileName>Cachorro.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Sexo" />
-      <Property Name="Raca" />
-      <Property Name="Dono" />
-    </ShowAsAssociation>
-  </Class>
-  <Class Name="Exercicios.Domain.Raca">
-    <Position X="7.25" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAEAAAA=</HashCode>
-      <FileName>Raca.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Porte" />
-    </ShowAsAssociation>
-  </Class>
   <Class Name="Exercicios.Domain.Dono">
-    <Position X="1" Y="0.5" Width="1.5" />
+    <Position X="1.25" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAgCAAAQAEgAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
       <FileName>Dono.cs</FileName>
@@ -32,15 +10,61 @@
       <Property Name="Pets" />
     </ShowAsCollectionAssociation>
   </Class>
+  <Class Name="Exercicios.Domain.Gato">
+    <Position X="3.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAgAAAAAIAAAAAAQAAAAAAQAEAAAA=</HashCode>
+      <FileName>Gato.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Sexo" />
+      <Property Name="Dono" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exercicios.Domain.Cachorro">
+    <Position X="6.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AASAAAGAAAAAABAAgAAAAAIAAAIAQQEAAAAAQAEAAAA=</HashCode>
+      <FileName>Cachorro.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Dono" />
+      <Property Name="Sexo" />
+      <Property Name="Raca" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exercicios.Domain.Raca">
+    <Position X="9.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Raca.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Porte" />
+    </ShowAsAssociation>
+  </Class>
+  <Interface Name="Exercicios.Domain.IPet">
+    <Position X="1.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAgAAAAAIAAAAAAQAAAAAAQAEAAAA=</HashCode>
+      <FileName>IPet.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Dono" />
+      <Property Name="Sexo" />
+    </ShowAsAssociation>
+  </Interface>
   <Enum Name="Exercicios.Domain.Sexo">
-    <Position X="7.25" Y="2.25" Width="1.5" />
+    <Position X="4" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Sexo.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="Exercicios.Domain.Porte">
-    <Position X="10" Y="0.5" Width="1.5" />
+    <Position X="9.25" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAQAAAIAAAAAQAAAAAAAAAAAAA=</HashCode>
       <FileName>Porte.cs</FileName>
