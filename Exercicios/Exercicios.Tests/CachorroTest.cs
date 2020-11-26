@@ -19,7 +19,7 @@ namespace Exercicios.Tests
         }
 
         [TestMethod]
-        public  void Leia_QuantoDevoComer_Test()
+        public void Leia_QuantoDevoComer_Test()
         {
             var leia = new Cachorro();
             var quantoDevoComer = leia.QuantoDevoComer(1);
@@ -28,7 +28,7 @@ namespace Exercicios.Tests
 
             Assert.AreEqual("Como tenho 1kg, devo comer 50g por dia", quantoDevoComer);
         }
-        
+
         [TestMethod]
         public void Cachorro_Set_Get_Peso_Test()
         {
@@ -135,7 +135,7 @@ namespace Exercicios.Tests
                 var cachorro = new Cachorro
                 {
                     Nome = "",
-                    Sexo = "Xyz",
+                    Sexo = Sexo.Femea,
                     DataNascimento = DateTime.Today.AddMonths(5),
                     Peso = 0
                 };
@@ -147,7 +147,6 @@ namespace Exercicios.Tests
             catch (Exception ex)
             {
                 var ok = ex.Message.Contains("Nome do Cachorro é Obrigatório!") &&
-                         ex.Message.Contains("Sexo do Cachorro deve ser Fêmea ou Macho!") &&
                          ex.Message.Contains("Data de Nascimento do Cachorro deve ser menor que Hoje!") &&
                          ex.Message.Contains("Peso do Cachorro deve ser maior que zero!");
 
@@ -175,8 +174,8 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Cachorro_Associacao_Dono_Test()
         {
-            var silvia = new Dono 
-            { 
+            var silvia = new Dono
+            {
                 Nome = "Silvia",
                 Email = "silvia@teste.com",
                 Telefone = "1111-1111"
@@ -191,6 +190,20 @@ namespace Exercicios.Tests
             Console.WriteLine(leia.Dono.Nome);
 
             Assert.AreEqual("Silvia", leia.Dono.Nome);
+        }
+
+        [TestMethod]
+        public void Cachorro_Enum_Sexo_Test()
+        {
+            var cachorro = new Cachorro
+            {
+                Nome = "Léia",
+                Sexo = Sexo.Femea
+            };
+
+            Console.WriteLine(cachorro.Sexo);
+
+            Assert.AreEqual(Sexo.Femea, cachorro.Sexo);
         }
     }
 }

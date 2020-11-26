@@ -9,6 +9,7 @@
     <ShowAsAssociation>
       <Property Name="Raca" />
       <Property Name="Dono" />
+      <Property Name="Sexo" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Exercicios.Domain.Raca">
@@ -25,5 +26,12 @@
       <FileName>Dono.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Enum Name="Exercicios.Domain.Sexo">
+    <Position X="4.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sexo.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
