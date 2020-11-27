@@ -9,9 +9,8 @@ namespace Exercicios.Domain
         
         public string Nome { set; get; }
 
-        public string Sexo { set; get; }
+        public Sexo Sexo { set; get; }
         
-        #region Raca
         public Raca Raca { set; get; }
         /*
            A opção da linha de cima é chamada de automatico e as linha abaixos são os comandos que internamente o C# faz para nós
@@ -25,9 +24,6 @@ namespace Exercicios.Domain
                 return _raca;
             }
         }*/
-
-        private string _raca;
-        #endregion
 
         public Dono Dono { set; get; }
 
@@ -102,9 +98,6 @@ namespace Exercicios.Domain
 
             if (string.IsNullOrWhiteSpace(Nome))
                 mensagens.Add("Nome do Cachorro é Obrigatório!");
-            // (Sexo != diferente.... && AND   )
-            if (Sexo != "Fêmea" && Sexo != "Macho")
-                mensagens.Add("Sexo do Cachorro deve ser Fêmea ou Macho!");
 
             if (DataNascimento > DateTime.Today)
                 mensagens.Add("Data de Nascimento do Cachorro deve ser menor que Hoje!");
