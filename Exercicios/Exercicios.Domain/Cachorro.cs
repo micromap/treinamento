@@ -12,7 +12,7 @@ namespace Exercicios.Domain
         public string Sexo { set; get; }
         
         #region Raca
-        public string Raca { set; get; }
+        public Raca Raca { set; get; }
         /*
            A opção da linha de cima é chamada de automatico e as linha abaixos são os comandos que internamente o C# faz para nós
          * { set

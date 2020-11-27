@@ -59,16 +59,16 @@ namespace Exercicios.Tests
             Assert.AreEqual("Yuri", nome);
         }
 
-        public void Cachorro_Set_Get_Raca_Test()
-        {
-            var Tequila = new Cachorro();
-
-            Tequila.Raca = "Labrador";
-            var raca = Tequila.Raca;
-
-            Console.WriteLine(raca);
-            Assert.AreEqual("Labrador", raca);
-        }
+        //public void Cachorro_Set_Get_Raca_Test()
+        //{
+        //    var Tequila = new Cachorro();/
+        //
+        //    Tequila.Raca = "Labrador";
+        //    var raca = Tequila.Raca;
+        //
+        //    Console.WriteLine(raca);
+        //    Assert.AreEqual("Labrador", raca);
+       // }
 
         public void Cachorro_Set_Get_Sexo_Test()
         {
@@ -228,6 +228,22 @@ namespace Exercicios.Tests
                 Assert.AreEqual(true, ok);
                 Console.WriteLine(ex.Message);
             }
+        }
+
+        [TestMethod]
+        public void Cachorro_Associacao_Raca_Test()
+        {
+            var labrador = new Raca { Nome = "Labrador" };
+
+            var tequila = new Cachorro
+            {
+                Nome = "Tequila",
+                Raca = labrador
+            };
+
+            Console.WriteLine(tequila.Raca.Nome);
+
+            Assert.AreEqual("Labrador", tequila.Raca.Nome);
         }
     }
 }
