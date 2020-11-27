@@ -499,6 +499,25 @@ namespace Exercicios.Tests
             }
         }
 
+        [TestMethod]
+        public void Cachorro_Associacao_Dono_Test()
+        {
+            var alessandro = new Dono
+            {
+                Nome = "Alessandro",
+                Email = "alesandro@gemmap.com.br",
+                Telefone = "(14) 3332-3232 - Ramal 236"
+            };
+
+            var leia = new Cachorro
+            {
+                Nome = "Léia",
+                Dono = alessandro
+            };
+
+            Console.WriteLine("Nome do dono: "+leia.Dono.Nome);
+            Assert.AreEqual("Alessandro", leia.Dono.Nome);
+        }
 
     }
     public class ClasseFilha2 : MinhaClasse

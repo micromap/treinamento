@@ -29,6 +29,8 @@ namespace Exercicios.Domain
         private string _raca;
         #endregion
 
+        public Dono Dono { set; get; }
+
         public string Porte { set; get; }
 
         public int Idade { set; get; }
