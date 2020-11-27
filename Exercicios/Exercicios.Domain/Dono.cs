@@ -20,6 +20,12 @@ namespace Exercicios.Domain
             pet.Dono = this;
         }
 
+        public void AddPet(params Cachorro[] pets)
+        {
+            foreach (var pet in pets)
+                AddPet(pet);
+        }
+
         public void RemovePet(Cachorro pet)
         {
             if (Pets == null)
@@ -27,6 +33,12 @@ namespace Exercicios.Domain
 
             if (Pets.Remove(pet))
                 pet.Dono = null;
+        }
+
+        public void RemovePet(params Cachorro[] pets)
+        {
+            foreach (var pet in pets)
+                RemovePet(pet);
         }
     }
 }
