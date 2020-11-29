@@ -4,18 +4,9 @@ using System.Globalization;
 
 namespace Exercicios.Domain
 {
-    public class Cachorro : IPet
+    public class Cachorro : Animal, IPet
     {
         //ESTRUTURA DE PROPRIEDADES
-
-        public string Nome { set; get; }
-
-        public Sexo Sexo { set; get; }
-
-        public string Foto { get; set; }
-
-        public Dono Dono { set; get; }
-
 
         public Raca Raca { set; get; }
 
@@ -50,7 +41,7 @@ namespace Exercicios.Domain
             return latidos.TrimEnd();
         }
 
-        public string QuantoDevoComer(int peso)
+        public override string QuantoDevoComer(int peso)
         {
             //Método para Calcular 5% do peso do cachorro em gramas de ração.
             return $"Como tenho { peso }Kg, devo comer { peso * 50}g por dia";
@@ -75,12 +66,9 @@ namespace Exercicios.Domain
 
         }
 
-        public void Validar()
+        public override void Validar()
         {
-            var mensagens = new List<string>();
-
-            if (string.IsNullOrWhiteSpace(Nome))
-                mensagens.Add("Nome do pet é obrigatório!");
+            var mensagens = ValidacoesComuns();
 
             if (Nascimento > DateTime.Today)
                 mensagens.Add("Data de nascimento do pet deve ser menor que hoje!");
