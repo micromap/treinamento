@@ -8,10 +8,10 @@ namespace Exercicios.Domain
     {
         //ESTRUTURA DE PROPRIEDADES
 
-        public string Nome { set; get; } 
+        public string Nome { set; get; }
 
-        public Sexo Sexo { set; get; }  
-        
+        public Sexo Sexo { set; get; }
+
         public string Foto { get; set; }
 
         public Dono Dono { set; get; }
@@ -39,13 +39,13 @@ namespace Exercicios.Domain
                 return _peso;
             }
         }
-     
+
         private double? _peso;
-          
+
         public string Latir(short q_latidos)
         {
             string latidos = "";
-            for(var i= 1; i <= q_latidos; i++)
+            for (var i = 1; i <= q_latidos; i++)
                 latidos += "Au! ";
             return latidos.TrimEnd();
         }
@@ -59,7 +59,7 @@ namespace Exercicios.Domain
         public String GetIdade()
         {
             var anos = DateTime.Today.Year - Nascimento.Year;
-            var meses = DateTime.Today.Month - Nascimento.Month+(12 * anos);
+            var meses = DateTime.Today.Month - Nascimento.Month + (12 * anos);
             /*  if (idade > 1)
                   return $"{idade} anos";
                 else
@@ -70,23 +70,23 @@ namespace Exercicios.Domain
             if (meses < 12)
                 return $"{meses} meses";
             else
-            return anos > 1? $"{anos} anos": $"{anos} ano";
-            
+                return anos > 1 ? $"{anos} anos" : $"{anos} ano";
+
 
         }
 
         public void Validar()
         {
-            var mensagens = new List<string>();       
+            var mensagens = new List<string>();
 
             if (string.IsNullOrWhiteSpace(Nome))
-                mensagens.Add("Nome do cachorro é obrigatório!");
+                mensagens.Add("Nome do pet é obrigatório!");
 
-            if (Nascimento >DateTime.Today)
-                mensagens.Add("Data de nascimento do cão deve ser menor que hoje!");
+            if (Nascimento > DateTime.Today)
+                mensagens.Add("Data de nascimento do pet deve ser menor que hoje!");
 
             if (Peso <= 0)
-                mensagens.Add("Peso do cachorro deve ser maior que zero!");
+                mensagens.Add("Peso do pet deve ser maior que zero!");
 
             if (mensagens.Count > 0)
             {
@@ -96,7 +96,7 @@ namespace Exercicios.Domain
 
                 throw new Exception(exceptionMessage);
             }
-            
+
         }
 
 

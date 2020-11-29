@@ -13,7 +13,7 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Cachorro_Latir_Test()
         {
-            
+
             var leia = new Cachorro();
             var latido = leia.Latir(5);
 
@@ -32,14 +32,14 @@ namespace Exercicios.Tests
             Assert.AreEqual("Como tenho " + peso + "Kg, devo comer 50g por dia", quantoDevoComer);
 
         }
-        
+
         [TestMethod]
         public void Tequila_QuantoDevoComer_Test()
         {
-           
-            var peso = 30;           
+
+            var peso = 30;
             var tequila = new Cachorro();
-            var quantoDevoComer= tequila.QuantoDevoComer(peso);
+            var quantoDevoComer = tequila.QuantoDevoComer(peso);
             Console.WriteLine(quantoDevoComer);
             Assert.AreEqual("Como tenho " + peso + "Kg, devo comer 1500g por dia", quantoDevoComer);
         }
@@ -47,7 +47,7 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Yuri_QuantoDevoComer_Test()
         {
-            var peso = 15;           
+            var peso = 15;
             var yuri = new Cachorro();
             var quantoDevoComer = yuri.QuantoDevoComer(peso);
             Console.WriteLine(quantoDevoComer);
@@ -60,10 +60,10 @@ namespace Exercicios.Tests
             var peso_cao = 1.2;
             var leia = new Cachorro();
 
-            leia.Peso=(peso_cao);
+            leia.Peso = (peso_cao);
             var peso = leia.Peso;
             Console.WriteLine(peso);
-            Assert.AreEqual(1.2,peso_cao);
+            Assert.AreEqual(1.2, peso_cao);
         }
 
         [TestMethod]
@@ -77,13 +77,13 @@ namespace Exercicios.Tests
             Console.WriteLine(peso);
             Assert.AreEqual(-1.2, peso_cao);
         }
-        
+
         [TestMethod]
         public void Cachorro_Peso_Deve_Aceitar_Null_Teste()
         {
             var leia = new Cachorro();
 
-            leia.Peso = null;   
+            leia.Peso = null;
             var peso = leia.Peso;
 
             Console.WriteLine(peso);
@@ -126,16 +126,16 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Dt_Nascimento_Mes_Test()
         {
-            
-           var dtnascimento = new Cachorro();
 
-           dtnascimento.Nascimento = new DateTime(2020, 10, 8);
-           var idade = dtnascimento.GetIdade();
-           Console.WriteLine(idade);
+            var dtnascimento = new Cachorro();
 
-           Assert.AreEqual("1 mês", idade);
-           Console.WriteLine(idade);
-      
+            dtnascimento.Nascimento = new DateTime(2020, 10, 8);
+            var idade = dtnascimento.GetIdade();
+            Console.WriteLine(idade);
+
+            Assert.AreEqual("1 mês", idade);
+            Console.WriteLine(idade);
+
         }
 
         [TestMethod]
@@ -162,9 +162,9 @@ namespace Exercicios.Tests
             }
             catch (Exception ex)
             {
-                var ok = ex.Message.Contains("Nome do cachorro é obrigatório!") &&
-                         ex.Message.Contains("Data de nascimento do cão deve ser menor que hoje!") &&
-                         ex.Message.Contains("Peso do cachorro deve ser maior que zero!");
+                var ok = ex.Message.Contains("Nome do pet é obrigatório!") &&
+                         ex.Message.Contains("Data de nascimento do pet deve ser menor que hoje!") &&
+                         ex.Message.Contains("Peso do pet deve ser maior que zero!");
 
                 Assert.AreEqual(true, ok);
                 Console.WriteLine(ex.Message);
@@ -215,11 +215,11 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Cachorro_Associacao_Dono_Test()
         {
-            var pessoa = new Dono 
+            var pessoa = new Dono
             {
-                Nome = "Silvia", 
-                Email= "silvia@teste.com",
-                Telefone= "(14)99770-7070"
+                Nome = "Silvia",
+                Email = "silvia@teste.com",
+                Telefone = "(14)99770-7070"
             };
 
             var cachorro = new Cachorro
@@ -232,7 +232,7 @@ namespace Exercicios.Tests
         }
 
         [TestMethod]
-        public  void Cachorro_Enum_Sexo_Test()
+        public void Cachorro_Enum_Sexo_Test()
         {
             var cachorro = new Cachorro
             {
@@ -251,7 +251,7 @@ namespace Exercicios.Tests
 
             var porte = new Raca
             {
-                Nome = raca ,
+                Nome = raca,
                 Porte = Porte.Pequeno
             };
 
@@ -265,11 +265,11 @@ namespace Exercicios.Tests
             Console.WriteLine(cachorro.Raca.Porte);
 
         }
-    
+
         [TestMethod]
         public void Cachorro_IPet_Test()
         {
-            IPet pet = new Cachorro { Nome = "Léia", Peso = 2};
+            IPet pet = new Cachorro { Nome = "Léia", Peso = 2 };
 
             Assert.AreEqual("Léia", pet.Nome);
             Console.WriteLine(pet.Nome);
@@ -283,6 +283,3 @@ namespace Exercicios.Tests
 
 
 }
-
-
-

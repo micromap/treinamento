@@ -12,10 +12,10 @@ namespace Exercicios.Tests
         public void Dono_AddPet_Test()
         {
 
-            var cachorro1 = new Cachorro { Nome = "Léia" };
-            var cachorro2 = new Cachorro { Nome = "Yuri" };
-            var gato1 = new Cachorro { Nome = "Vesgo" };
-            var gato2 = new Cachorro { Nome = "Mingau" };
+            var cachorro1 = new Gato { Nome = "Léia" };
+            var cachorro2 = new Gato { Nome = "Yuri" };
+            var gato1 = new Gato { Nome = "Vesgo" };
+            var gato2 = new Gato { Nome = "Mingau" };
 
             var dono_pet = new Dono { Nome = "Silvia" };
 
@@ -38,8 +38,8 @@ namespace Exercicios.Tests
         public void Dono_AddPets_Test()
         {
 
-            var cachorro1 = new Cachorro { Nome = "Léia" };
-            var cachorro2 = new Cachorro { Nome = "Yuri" };
+            var cachorro1 = new Gato { Nome = "Léia" };
+            var cachorro2 = new Gato { Nome = "Yuri" };
             var gato1     = new Gato { Nome = "Vesgo" };
             var gato2     = new Gato { Nome = "Mingau" };
 
@@ -63,8 +63,8 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Dono_RemovePet_Test()
         {
-            var cachorro1 = new Cachorro { Nome = "Léia" };
-            var cachorro2 = new Cachorro { Nome = "Yuri" };
+            var cachorro1 = new Gato { Nome = "Léia" };
+            var cachorro2 = new Gato { Nome = "Yuri" };
             var gato1 = new Gato { Nome = "Vesgo" };
             var gato2 = new Gato { Nome = "Mingau" };
 
@@ -92,8 +92,8 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Dono_RemovePets_Test()
         {
-            var cachorro1 = new Cachorro { Nome = "Léia" };
-            var cachorro2 = new Cachorro { Nome = "Yuri" };
+            var cachorro1 = new Gato { Nome = "Léia" };
+            var cachorro2 = new Gato { Nome = "Yuri" };
             var gato1 = new Gato { Nome = "Vesgo" };
             var gato2 = new Gato { Nome = "Mingau" };
 

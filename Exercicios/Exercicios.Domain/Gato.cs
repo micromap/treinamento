@@ -4,21 +4,14 @@ using System.Text;
 
 namespace Exercicios.Domain
 {
-    public class Gato : IPet
+    public class Gato : Animal, IPet
     {
-        public string Nome { get; set; }
-        public Sexo Sexo { get; set; }
-        public string Foto { get; set; }
-        public Dono Dono { get; set; }
-
-        public string QuantoDevoComer(int pesoKg)
+        public string Miar(int qtdMiado)
         {
-            throw new NotImplementedException();
-        }
-
-        public void Validar()
-        {
-            throw new NotImplementedException();
+            string miados = "";
+            for (var i = 1; i <= qtdMiado; i++)
+                miados += "Miau! ";
+            return miados.TrimEnd();
         }
     }
 }
