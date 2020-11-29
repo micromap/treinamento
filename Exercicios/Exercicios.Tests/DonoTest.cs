@@ -12,18 +12,25 @@ namespace Exercicios.Tests
         public void Dono_AddPet_Test()
         {
 
-            var leia = new Cachorro { Nome = "Léia" };
-            var yuri = new Cachorro { Nome = "Yuri" };
+            var cachorro1 = new Cachorro { Nome = "Léia" };
+            var cachorro2 = new Cachorro { Nome = "Yuri" };
+            var gato1 = new Cachorro { Nome = "Vesgo" };
+            var gato2 = new Cachorro { Nome = "Mingau" };
 
-            var silvia = new Dono { Nome = "Silvia" };
-      
-            silvia.AddPet(leia);
-            silvia.AddPet(yuri);
-            Assert.AreEqual(2, silvia.Pets.Count);
-            Assert.AreEqual(silvia,leia.Dono);
-            Assert.AreEqual(silvia, yuri.Dono);
+            var dono_pet = new Dono { Nome = "Silvia" };
 
-            foreach ( var pet in silvia.Pets)
+            dono_pet.AddPet(cachorro1);
+            dono_pet.AddPet(cachorro2);
+            dono_pet.AddPet(gato1);
+            dono_pet.AddPet(gato2);
+
+            Assert.AreEqual(4, dono_pet.Pets.Count);
+            Assert.AreEqual(dono_pet, cachorro1.Dono);
+            Assert.AreEqual(dono_pet, cachorro2.Dono);
+            Assert.AreEqual(dono_pet, gato1.Dono);
+            Assert.AreEqual(dono_pet, gato2.Dono);
+
+            foreach ( var pet in dono_pet.Pets)
                 Console.WriteLine(pet.Nome);
         }
 
@@ -33,16 +40,21 @@ namespace Exercicios.Tests
 
             var cachorro1 = new Cachorro { Nome = "Léia" };
             var cachorro2 = new Cachorro { Nome = "Yuri" };
+            var gato1     = new Cachorro { Nome = "Vesgo" };
+            var gato2     = new Cachorro { Nome = "Mingau" };
 
-            var dono_cao = new Dono { Nome = "Silvia" };
+            var dono_pet = new Dono { Nome = "Silvia" };
 
-            dono_cao.AddPet(cachorro1, cachorro2);
+            dono_pet.AddPet(cachorro1, cachorro2);
+            dono_pet.AddPet(gato1, gato2);
 
-            Assert.AreEqual(2, dono_cao.Pets.Count);
-            Assert.AreEqual(dono_cao, cachorro1.Dono);
-            Assert.AreEqual(dono_cao, cachorro2.Dono);
+            Assert.AreEqual(4, dono_pet.Pets.Count);
+            Assert.AreEqual(dono_pet, cachorro1.Dono);
+            Assert.AreEqual(dono_pet, cachorro2.Dono);
+            Assert.AreEqual(dono_pet, gato1.Dono);
+            Assert.AreEqual(dono_pet, gato2.Dono);
 
-            foreach (var pet in dono_cao.Pets)
+            foreach (var pet in dono_pet.Pets)
                 Console.WriteLine(pet.Nome);
         }
 
@@ -51,21 +63,29 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Dono_RemovePet_Test()
         {
-            var leia = new Cachorro { Nome = "Léia" };
-            var yuri = new Cachorro { Nome = "Yuri" };
+            var cachorro1 = new Cachorro { Nome = "Léia" };
+            var cachorro2 = new Cachorro { Nome = "Yuri" };
+            var gato1 = new Cachorro { Nome = "Vesgo" };
+            var gato2 = new Cachorro { Nome = "Mingau" };
 
-            var silvia = new Dono { Nome = "Silvia" };
 
-            silvia.AddPet(leia);
-            silvia.AddPet(yuri);
+            var dono_pet = new Dono { Nome = "Silvia" };
 
-            silvia.RemovePet(yuri);
+            dono_pet.AddPet(cachorro1);
+            dono_pet.AddPet(cachorro2);
+            dono_pet.AddPet(gato1);
+            dono_pet.AddPet(gato2);
 
-            Assert.AreEqual(1, silvia.Pets.Count);
-            Assert.AreEqual(silvia, leia.Dono);
-            Assert.AreEqual(null, yuri.Dono);
+            dono_pet.RemovePet(cachorro2); 
+            dono_pet.RemovePet(gato2);
 
-            foreach (var pet in silvia.Pets)
+            Assert.AreEqual(2, dono_pet.Pets.Count);
+            Assert.AreEqual(dono_pet, cachorro1.Dono);
+            Assert.AreEqual(dono_pet, gato1.Dono);
+            Assert.AreEqual(null, cachorro2.Dono);
+            Assert.AreEqual(null, gato2.Dono);
+
+            foreach (var pet in dono_pet.Pets)
                 Console.WriteLine(pet.Nome);
         }
 
@@ -74,19 +94,28 @@ namespace Exercicios.Tests
         {
             var cachorro1 = new Cachorro { Nome = "Léia" };
             var cachorro2 = new Cachorro { Nome = "Yuri" };
+            var gato1 = new Cachorro { Nome = "Vesgo" };
+            var gato2 = new Cachorro { Nome = "Mingau" };
 
-            var dono_cao = new Dono { Nome = "Silvia" };
+            var dono_pet = new Dono { Nome = "Silvia" };
 
-            dono_cao.AddPet(cachorro1);
-            dono_cao.AddPet(cachorro2);
+            dono_pet.AddPet(cachorro1);
+            dono_pet.AddPet(cachorro2);
 
-            dono_cao.RemovPet(cachorro1, cachorro2);
+            dono_pet.AddPet(gato1);
+            dono_pet.AddPet(gato2);
 
-            Assert.AreEqual(0, dono_cao.Pets.Count);
+            dono_pet.RemovPet(cachorro1, cachorro2);
+            dono_pet.RemovPet(gato1, gato2);
+
+            Assert.AreEqual(0, dono_pet.Pets.Count);
             Assert.AreEqual(null, cachorro1.Dono);
             Assert.AreEqual(null, cachorro2.Dono);
+            Assert.AreEqual(null, gato1.Dono);
+            Assert.AreEqual(null, gato2.Dono);
 
-            foreach (var pet in dono_cao.Pets)
+
+            foreach (var pet in dono_pet.Pets)
                 Console.WriteLine(pet.Nome);
         }
 

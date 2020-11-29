@@ -4,7 +4,7 @@ using System.Globalization;
 
 namespace Exercicios.Domain
 {
-    public class Cachorro
+    public class Cachorro : IPet
     {
         //ESTRUTURA DE PROPRIEDADES
 
@@ -12,9 +12,12 @@ namespace Exercicios.Domain
 
         public Sexo Sexo { set; get; }  
         
-        public Raca Raca { set; get; }
+        public string Foto { get; set; }
 
         public Dono Dono { set; get; }
+
+
+        public Raca Raca { set; get; }
 
         public string Porte { set; get; }
 
@@ -36,6 +39,7 @@ namespace Exercicios.Domain
                 return _peso;
             }
         }
+     
         private double? _peso;
           
         public string Latir(short q_latidos)

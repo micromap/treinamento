@@ -10,23 +10,23 @@ namespace Exercicios.Domain
         public String Telefone { get; set; }
 
 
-        public List<Cachorro> Pets { get; set; }
+        public List<IPet> Pets { get; set; }
 
-        public void AddPet(params Cachorro[] pets)
+        public void AddPet(params IPet[] pets)
         {
             foreach (var pet in pets)
                 AddPet(pet);
         }
 
-        public void AddPet(Cachorro pet)
+        public void AddPet(IPet pet)
         {
             if (Pets == null)
-                Pets = new List<Cachorro>();
+                Pets = new List<IPet>();
             Pets.Add(pet);
             pet.Dono = this;
         }
 
-        public void RemovePet(Cachorro pet)
+        public void RemovePet(IPet pet)
         {
             if (Pets == null)
                 return;
@@ -35,7 +35,7 @@ namespace Exercicios.Domain
             pet.Dono = null;
         }
 
-        public void RemovPet(params Cachorro[] pets)
+        public void RemovPet(params IPet[] pets)
         {
             foreach (var pet in pets)
                RemovePet(pet);

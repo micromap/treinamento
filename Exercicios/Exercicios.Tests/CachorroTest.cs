@@ -266,7 +266,19 @@ namespace Exercicios.Tests
 
         }
     
+        [TestMethod]
+        public void Cachorro_IPet_Test()
+        {
+            IPet pet = new Cachorro { Nome = "Léia", Peso = 2};
 
+            Assert.AreEqual("Léia", pet.Nome);
+            Console.WriteLine(pet.Nome);
+
+
+            var leia = pet as Cachorro;
+            Assert.AreEqual(2, leia.Peso);
+            Console.WriteLine(leia.Peso);
+        }
     }
 
 
