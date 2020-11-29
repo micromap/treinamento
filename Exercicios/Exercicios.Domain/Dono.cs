@@ -12,7 +12,7 @@ namespace Exercicios.Domain
 
         public List<Cachorro> Pets { get; set; }
 
-        public void AddPet(Cachorro[] pets)
+        public void AddPet(params Cachorro[] pets)
         {
             foreach (var pet in pets)
                 AddPet(pet);
@@ -35,6 +35,12 @@ namespace Exercicios.Domain
             pet.Dono = null;
         }
 
-      
+        public void RemovPet(params Cachorro[] pets)
+        {
+            foreach (var pet in pets)
+               RemovePet(pet);
+        }
+
+
     }
 }
