@@ -10,9 +10,11 @@ namespace Exercicios.Domain
         Sexo Sexo { get; set; }
         string Foto { get; set; }
         Dono Dono { get; set; }
+        
+        double? Peso { get; set; }
 
 
-        string QuantoDevoComer(int pesoKg);
+        string QuantoDevoComer();
         void Validar();
 
 

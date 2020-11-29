@@ -4,18 +4,31 @@ using System.Text;
 
 namespace Exercicios.Domain
 {
-    public class Animal
+    public abstract class Animal
     {
         public string Nome { get; set; }
         public Sexo Sexo { get; set; }
         public string Foto { get; set; }
         public Dono Dono { get; set; }
-
-        public virtual string QuantoDevoComer(int pesoKg)
+        public double? Peso
         {
-            throw new NotImplementedException();
+            set
+            {
+                if (value < 0)
+                    _peso = null;
+                else
+                    _peso = value;
+            }
+            get
+            {
+                return _peso;
+            }
         }
 
+        private double? _peso;
+
+        public abstract string QuantoDevoComer();
+       
         protected List<string> ValidacoesComuns()
         {
             var mensagens = new List<string>();

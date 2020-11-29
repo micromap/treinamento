@@ -16,23 +16,6 @@ namespace Exercicios.Domain
 
         public bool Vacinado { set; get; }
 
-        public double? Peso
-        {
-            set
-            {
-                if (value < 0)
-                    _peso = null;
-                else
-                    _peso = value;
-            }
-            get
-            {
-                return _peso;
-            }
-        }
-
-        private double? _peso;
-
         public string Latir(short q_latidos)
         {
             string latidos = "";
@@ -41,10 +24,10 @@ namespace Exercicios.Domain
             return latidos.TrimEnd();
         }
 
-        public override string QuantoDevoComer(int peso)
+        public override string QuantoDevoComer()
         {
             //Método para Calcular 5% do peso do cachorro em gramas de ração.
-            return $"Como tenho { peso }Kg, devo comer { peso * 50}g por dia";
+            return $"Como tenho {Peso }Kg, devo comer { Peso * 50}g por dia";
         }
 
         public String GetIdade()

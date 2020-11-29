@@ -25,33 +25,28 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Leia_QuantoDevoComer_Test()
         {
-            var peso = 1;
-            var leia = new Cachorro();
-            var quantoDevoComer = leia.QuantoDevoComer(peso);
+            var leia = new Cachorro { Peso = 1 };
+            var quantoDevoComer = leia.QuantoDevoComer();
             Console.WriteLine(quantoDevoComer);
-            Assert.AreEqual("Como tenho " + peso + "Kg, devo comer 50g por dia", quantoDevoComer);
-
+            Assert.AreEqual("Como tenho 1Kg, devo comer 50g por dia", quantoDevoComer);
         }
 
         [TestMethod]
         public void Tequila_QuantoDevoComer_Test()
-        {
-
-            var peso = 30;
-            var tequila = new Cachorro();
-            var quantoDevoComer = tequila.QuantoDevoComer(peso);
+        {             
+            var tequila = new Cachorro { Peso = 30};
+            var quantoDevoComer = tequila.QuantoDevoComer();
             Console.WriteLine(quantoDevoComer);
-            Assert.AreEqual("Como tenho " + peso + "Kg, devo comer 1500g por dia", quantoDevoComer);
+            Assert.AreEqual("Como tenho 30Kg, devo comer 1500g por dia", quantoDevoComer);
         }
 
         [TestMethod]
         public void Yuri_QuantoDevoComer_Test()
         {
-            var peso = 15;
-            var yuri = new Cachorro();
-            var quantoDevoComer = yuri.QuantoDevoComer(peso);
+            var yuri = new Cachorro { Peso = 15};
+            var quantoDevoComer = yuri.QuantoDevoComer();
             Console.WriteLine(quantoDevoComer);
-            Assert.AreEqual("Como tenho " + peso + "Kg, devo comer 750g por dia", quantoDevoComer);
+            Assert.AreEqual("Como tenho 15Kg, devo comer 750g por dia", quantoDevoComer);
         }
 
         [TestMethod]

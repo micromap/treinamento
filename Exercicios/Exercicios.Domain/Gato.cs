@@ -13,5 +13,12 @@ namespace Exercicios.Domain
                 miados += "Miau! ";
             return miados.TrimEnd();
         }
+
+        public override string QuantoDevoComer()
+        {
+            //Método para Calcular 1% do peso do cachorro em gramas de ração.
+            return $"Como tenho {Peso }Kg, devo comer { Peso * 10}g por dia";
+        }
     }
+    
 }
