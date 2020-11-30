@@ -46,14 +46,9 @@ namespace Exercicios.Domain
             if (Peso <= 0)
                 mensagens.Add("Peso do Cachorro deve ser maior que zero!");
 
-            if(mensagens.Count > 0)
-            {
-                var exceptionMessage = "";
-                foreach (var msg in mensagens)
-                    exceptionMessage += msg + Environment.NewLine;
-
-                throw new Exception(exceptionMessage);
-            }
+            var ex = Helpers.ConvertStringListToException(mensagens);
+            if (ex != null)
+                throw ex;
         }
     }
 }
