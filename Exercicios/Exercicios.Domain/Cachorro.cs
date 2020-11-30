@@ -26,9 +26,7 @@ namespace Exercicios.Domain
         }*/
 
         public Dono Dono { set; get; }
-
-        public string Porte { set; get; }
-
+                
         public int Idade { set; get; }
 
         public bool Vacinado { set; get; }

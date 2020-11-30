@@ -58,18 +58,7 @@ namespace Exercicios.Tests
             Console.WriteLine(nome);
             Assert.AreEqual("Yuri", nome);
         }
-
-        //public void Cachorro_Set_Get_Raca_Test()
-        //{
-        //    var Tequila = new Cachorro();/
-        //
-        //    Tequila.Raca = "Labrador";
-        //    var raca = Tequila.Raca;
-        //
-        //    Console.WriteLine(raca);
-        //    Assert.AreEqual("Labrador", raca);
-       // }
-
+                
         public void Cachorro_Set_Get_Sexo_Test()
         {
             var Leia = new Cachorro();
@@ -80,20 +69,7 @@ namespace Exercicios.Tests
             Console.WriteLine(sexo);
             Assert.AreEqual("Fêmea", sexo);
         }
-
-        
-        public void Cachorro_Set_Get_Porte_Test()
-        {
-            var Leia = new Cachorro();
-
-            Leia.Porte = "Médio";
-            var porte = Leia.Porte;
-
-            Console.WriteLine(porte);
-            Assert.AreEqual("Médio", porte);
-        }
-
-        
+                        
         public void Tequila_Cachorro_Set_Get_Idade_Test()
         {
             var Tequila = new Cachorro();
@@ -256,6 +232,25 @@ namespace Exercicios.Tests
 
             Console.WriteLine("Sexo do cachorro é "+cachorro.Sexo);
             Assert.AreEqual(Sexo.Femea, cachorro.Sexo);
+        }
+
+        [TestMethod]
+        public void Cachorro_Enum_Raca_Porte_Test()
+        {
+            var york = new Raca
+            {
+                Nome = "Yorkshire",
+                Porte = Porte.Pequeno
+            };
+
+            var leia = new Cachorro
+            {
+                Nome = "Léia",
+                Raca = york
+            };
+
+            Assert.AreEqual(Porte.Pequeno, leia.Raca.Porte);
+            Console.WriteLine("Tipo de Porte da Raça: "+leia.Raca.Porte);
         }
     }
 }
