@@ -13,18 +13,22 @@ namespace Exercicios.Tests
         {
             var leia = new Cachorro { Nome = "Léia" };
             var yuri = new Cachorro { Nome = "Yuri" };
+            var vesgo = new Gato { Nome = "Vesgo" };
+            var mingau = new Gato { Nome = "Mingau" };
 
             var silvia = new Dono { Nome = "Silvia" };
 
             silvia.AddPet(leia);
             silvia.AddPet(yuri);
+            silvia.AddPet(vesgo);
+            silvia.AddPet(mingau);
 
-            Assert.AreEqual(2, silvia.Pets.Count);
+            Assert.AreEqual(4, silvia.Pets.Count);
             Assert.AreEqual(silvia, leia.Dono);
             Assert.AreEqual(silvia, yuri.Dono);
 
             foreach (var pet in silvia.Pets)
-                Console.WriteLine(pet.Nome);
+                Console.WriteLine($"{pet.GetType().Name}: {pet.Nome}");
         }
 
         [TestMethod]
@@ -32,20 +36,27 @@ namespace Exercicios.Tests
         {
             var leia = new Cachorro { Nome = "Léia" };
             var yuri = new Cachorro { Nome = "Yuri" };
+            var vesgo = new Gato { Nome = "Vesgo" };
+            var mingau = new Gato { Nome = "Mingau" };
 
             var silvia = new Dono { Nome = "Silvia" };
 
             silvia.AddPet(leia);
             silvia.AddPet(yuri);
+            silvia.AddPet(vesgo);
+            silvia.AddPet(mingau);
 
             silvia.RemovePet(yuri);
+            silvia.RemovePet(vesgo);
 
-            Assert.AreEqual(1, silvia.Pets.Count);
+            Assert.AreEqual(2, silvia.Pets.Count);
             Assert.AreEqual(silvia, leia.Dono);
             Assert.AreEqual(null, yuri.Dono);
+            Assert.AreEqual(silvia, mingau.Dono);
+            Assert.AreEqual(null, vesgo.Dono);
 
             foreach (var pet in silvia.Pets)
-                Console.WriteLine(pet.Nome);
+                Console.WriteLine($"{pet.GetType().Name}: {pet.Nome}");
         }
 
         [TestMethod]
@@ -53,17 +64,21 @@ namespace Exercicios.Tests
         {
             var leia = new Cachorro { Nome = "Léia" };
             var yuri = new Cachorro { Nome = "Yuri" };
+            var vesgo = new Gato { Nome = "Vesgo" };
+            var mingau = new Gato { Nome = "Mingau" };
 
             var silvia = new Dono { Nome = "Silvia" };
 
-            silvia.AddPet(leia, yuri);
+            silvia.AddPet(leia, yuri, vesgo, mingau);
 
-            Assert.AreEqual(2, silvia.Pets.Count);
+            Assert.AreEqual(4, silvia.Pets.Count);
             Assert.AreEqual(silvia, leia.Dono);
             Assert.AreEqual(silvia, yuri.Dono);
+            Assert.AreEqual(silvia, vesgo.Dono);
+            Assert.AreEqual(silvia, mingau.Dono);
 
             foreach (var pet in silvia.Pets)
-                Console.WriteLine(pet.Nome);
+                Console.WriteLine($"{pet.GetType().Name}: {pet.Nome}");
         }
 
         [TestMethod]
@@ -71,17 +86,20 @@ namespace Exercicios.Tests
         {
             var leia = new Cachorro { Nome = "Léia" };
             var yuri = new Cachorro { Nome = "Yuri" };
+            var vesgo = new Gato { Nome = "Vesgo" };
+            var mingau = new Gato { Nome = "Mingau" };
 
             var silvia = new Dono { Nome = "Silvia" };
 
-            silvia.AddPet(leia);
-            silvia.AddPet(yuri);
+            silvia.AddPet(leia, yuri, vesgo, mingau);
 
-            silvia.RemovePet(yuri, leia);
+            silvia.RemovePet(yuri, leia, vesgo, mingau);
 
             Assert.AreEqual(0, silvia.Pets.Count);
             Assert.AreEqual(null, leia.Dono);
             Assert.AreEqual(null, yuri.Dono);
+            Assert.AreEqual(null, vesgo.Dono);
+            Assert.AreEqual(null, mingau.Dono);
         }
     }
 }
