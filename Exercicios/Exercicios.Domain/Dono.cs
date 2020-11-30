@@ -12,5 +12,24 @@ namespace Exercicios.Domain
 
         public string Telefone { get; set; }
 
+        public List<Cachorro> Pets { get; set; }
+
+        public void AddPet(Cachorro pet)
+        {
+            if (Pets == null)
+                Pets = new List<Cachorro>();
+
+            Pets.Add(pet);
+            pet.Dono = this;  // this este  intância da classe
+        }
+
+        public void RemovePet(Cachorro pet)
+        {
+            if (Pets == null)
+                return;
+
+            if (Pets.Remove(pet))
+                pet.Dono = null;
+        }
     }
 }
