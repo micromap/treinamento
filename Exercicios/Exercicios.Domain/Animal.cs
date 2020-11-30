@@ -41,7 +41,7 @@ namespace Exercicios.Domain
         public virtual void Validar()
         {
             var mensagens = ValidacoesComuns();
-            var ex = Helpers.ConvertStringListToException(mensagens);
+            var ex = mensagens.ToException();
             if (ex != null)
                 throw ex;
         }
