@@ -2,14 +2,6 @@
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Exercicios.Domain.Dono">
     <Position X="1.5" Y="3.75" Width="2" />
-    <AssociationLine Name="Pets" Type="Exercicios.Domain.Cachorro" ManuallyRouted="true">
-      <Path>
-        <Point X="3.5" Y="5.269" />
-        <Point X="3.5" Y="5.144" />
-        <Point X="8.195" Y="5.144" />
-        <Point X="8.195" Y="4.353" />
-      </Path>
-    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAgCAAAQAEgAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
       <FileName>Dono.cs</FileName>
@@ -19,26 +11,20 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="Exercicios.Domain.Gato">
-    <Position X="5.25" Y="3" Width="1.5" />
+    <Position X="5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAEAAAAAAAAAgAAAAAIAAAAAAQAAAAAAQAEAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Gato.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Sexo" />
-      <Property Name="Dono" />
-    </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Exercicios.Domain.Cachorro">
     <Position X="7.75" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AASAAAEAAABAABAAgAAAAAIAAAIAQQEAAAAAQAEAAAA=</HashCode>
+      <HashCode>AASAAAAAAABAABAAAAAAAAIAAAIAQQEAAAAAAAAAAAA=</HashCode>
       <FileName>Cachorro.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="Sexo" />
-      <Property Name="Dono" />
       <Property Name="Raca" />
     </ShowAsAssociation>
     <Lollipop Position="0.2" />
@@ -51,6 +37,17 @@
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Porte" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Exercicios.Domain.Animal">
+    <Position X="5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAgAAAAAIAAAAAAQAAAAAAQAEAAAA=</HashCode>
+      <FileName>Animal.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Dono" />
+      <Property Name="Sexo" />
     </ShowAsAssociation>
   </Class>
   <Interface Name="Exercicios.Domain.IPet">
