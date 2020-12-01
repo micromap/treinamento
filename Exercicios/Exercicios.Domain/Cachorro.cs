@@ -4,13 +4,11 @@ using System.Collections.Generic;
 
 namespace Exercicios.Domain
 {
-    public class Cachorro
+    public class Cachorro : IPet
     {
-        
         public string Nome { set; get; }
-
         public Sexo Sexo { set; get; }
-        
+        public string Foto { get; set; }
         public Raca Raca { set; get; }
         /*
            A opção da linha de cima é chamada de automatico e as linha abaixos são os comandos que internamente o C# faz para nós
@@ -26,11 +24,8 @@ namespace Exercicios.Domain
         }*/
 
         public Dono Dono { set; get; }
-                
         public int Idade { set; get; }
-
         public bool Vacinado { set; get; }
-
         #region Peso
         public double? Peso
         {
@@ -110,7 +105,6 @@ namespace Exercicios.Domain
                     exceptionMessage += msg + Environment.NewLine;
 
                 throw new Exception(exceptionMessage);
-
             }
 
         }
