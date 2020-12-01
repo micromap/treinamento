@@ -23,6 +23,12 @@ namespace Exercicios.Domain
             pet.Dono = this;  // this este  intância da classe
         }
 
+        public void AddPet(params Cachorro[] pets)    // // o comando params foi usado para passar parametros como arrays
+        {
+            foreach (var pet in pets)
+                AddPet(pet);
+        }
+
         public void RemovePet(Cachorro pet)
         {
             if (Pets == null)
@@ -30,6 +36,12 @@ namespace Exercicios.Domain
 
             if (Pets.Remove(pet))
                 pet.Dono = null;
+        }
+
+        public void RemovePet(params Cachorro[] pets)    // // o comando params foi usado para passar parametros como arrays
+        {
+            foreach (var pet in pets)
+                RemovePet(pet);
         }
     }
 }
