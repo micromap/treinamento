@@ -12,24 +12,24 @@ namespace Exercicios.Domain
 
         public string Telefone { get; set; }
 
-        public List<Cachorro> Pets { get; set; }
+        public List<IPet> Pets { get; set; }
 
-        public void AddPet(Cachorro pet)
+        public void AddPet(IPet pet)
         {
             if (Pets == null)
-                Pets = new List<Cachorro>();
+                Pets = new List<IPet>();
 
             Pets.Add(pet);
             pet.Dono = this;  // this este  intância da classe
         }
 
-        public void AddPet(params Cachorro[] pets)    // // o comando params foi usado para passar parametros como arrays
+        public void AddPet(params IPet[] pets)    // // o comando params foi usado para passar parametros como arrays
         {
             foreach (var pet in pets)
                 AddPet(pet);
         }
 
-        public void RemovePet(Cachorro pet)
+        public void RemovePet(IPet pet)
         {
             if (Pets == null)
                 return;
@@ -38,7 +38,7 @@ namespace Exercicios.Domain
                 pet.Dono = null;
         }
 
-        public void RemovePet(params Cachorro[] pets)    // // o comando params foi usado para passar parametros como arrays
+        public void RemovePet(params IPet[] pets)    // // o comando params foi usado para passar parametros como arrays
         {
             foreach (var pet in pets)
                 RemovePet(pet);

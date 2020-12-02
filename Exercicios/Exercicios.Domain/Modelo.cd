@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Exercicios.Domain.Cachorro">
-    <Position X="4" Y="0.5" Width="1.5" />
+    <Position X="7" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AASAEAEAAABAABAAgAAAAAIAAAIAQQEAAAAAQAEAAAA=</HashCode>
       <FileName>Cachorro.cs</FileName>
@@ -14,7 +14,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Exercicios.Domain.Raca">
-    <Position X="7" Y="0.5" Width="1.5" />
+    <Position X="9.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAEAAAA=</HashCode>
       <FileName>Raca.cs</FileName>
@@ -24,7 +24,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Exercicios.Domain.Dono">
-    <Position X="7" Y="2" Width="1.5" />
+    <Position X="0.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAgCAAAQAEgAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
       <FileName>Dono.cs</FileName>
@@ -34,7 +34,7 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="Exercicios.Domain.Gato">
-    <Position X="4" Y="4.75" Width="1.5" />
+    <Position X="3.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAEAAAAAAAAAgAAAAAIAAAAAAQAAAAAAQAEAAAA=</HashCode>
       <FileName>Gato.cs</FileName>
@@ -53,17 +53,18 @@
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Sexo" />
+      <Property Name="Dono" />
     </ShowAsAssociation>
   </Interface>
   <Enum Name="Exercicios.Domain.Sexo">
-    <Position X="0.5" Y="4" Width="1.5" />
+    <Position X="3.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Sexo.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="Exercicios.Domain.Porte">
-    <Position X="9.75" Y="0.5" Width="1.5" />
+    <Position X="10" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAQAAAIAAAAAQAAAAAAAAAAAAA=</HashCode>
       <FileName>Porte.cs</FileName>
