@@ -192,7 +192,7 @@ namespace Exercicios.Tests
             }
             catch (Exception ex) 
             {
-                var ok = ex.Message.Contains("Nome do Cachorro é Obrigatório!") &&  // serve para buscar um trecho da mensagem. A resposta será true ou false
+                var ok = ex.Message.Contains("Nome do Pet é Obrigatório!") &&  // serve para buscar um trecho da mensagem. A resposta será true ou false
                          ex.Message.Contains("Data de Nascimento do Cachorro deve ser menor que Hoje!") &&
                          ex.Message.Contains("Peso do Cachorro deve ser maior que zero!");
 

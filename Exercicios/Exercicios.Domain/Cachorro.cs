@@ -82,11 +82,8 @@ namespace Exercicios.Domain
 
         public override void Validar()
         {
-            var mensagens = new List<string>();
+            var mensagens = ValidacoesComuns();
             // if  (nome == null || Nome = "" || Nome = "   ")   || quer dizer OR
-
-            if (string.IsNullOrWhiteSpace(Nome))
-                mensagens.Add("Nome do Cachorro é Obrigatório!");
 
             if (DataNascimento > DateTime.Today)
                 mensagens.Add("Data de Nascimento do Cachorro deve ser menor que Hoje!");
