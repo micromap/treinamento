@@ -4,11 +4,8 @@ using System.Collections.Generic;
 
 namespace Exercicios.Domain
 {
-    public class Cachorro : IPet
+    public class Cachorro : Animal, IPet
     {
-        public string Nome { set; get; }
-        public Sexo Sexo { set; get; }
-        public string Foto { get; set; }
         public Raca Raca { set; get; }
         /*
            A opção da linha de cima é chamada de automatico e as linha abaixos são os comandos que internamente o C# faz para nós
@@ -23,7 +20,6 @@ namespace Exercicios.Domain
             }
         }*/
 
-        public Dono Dono { set; get; }
         public int Idade { set; get; }
         public bool Vacinado { set; get; }
         #region Peso
@@ -59,7 +55,7 @@ namespace Exercicios.Domain
         }
 
         // Método para Calcular 5% do Peso (Kg) do cachorro em gramas de ração
-        public string QuantoDevoComer(int pesoKg)
+        public override string QuantoDevoComer(int pesoKg)
         {
             int grama = pesoKg * 1000;
 
@@ -84,7 +80,7 @@ namespace Exercicios.Domain
                 return anos > 1 ? $"{anos} anos" : "1 ano";
         }
 
-        public void Validar()
+        public override void Validar()
         {
             var mensagens = new List<string>();
             // if  (nome == null || Nome = "" || Nome = "   ")   || quer dizer OR

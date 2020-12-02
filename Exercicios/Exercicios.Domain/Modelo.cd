@@ -3,13 +3,11 @@
   <Class Name="Exercicios.Domain.Cachorro">
     <Position X="7" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AASAEAEAAABAABAAgAAAAAIAAAIAQQEAAAAAQAEAAAA=</HashCode>
+      <HashCode>AASAEAAAAABAABAAAAAAAAIAAAIAQQEAAAAAAAAAAAA=</HashCode>
       <FileName>Cachorro.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="Sexo" />
       <Property Name="Raca" />
-      <Property Name="Dono" />
     </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>
@@ -34,16 +32,23 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="Exercicios.Domain.Gato">
+    <Position X="3.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Gato.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Exercicios.Domain.Animal">
     <Position X="3.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAEAAAAAAAAAgAAAAAIAAAAAAQAAAAAAQAEAAAA=</HashCode>
-      <FileName>Gato.cs</FileName>
+      <FileName>Animal.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="Sexo" />
       <Property Name="Dono" />
+      <Property Name="Sexo" />
     </ShowAsAssociation>
-    <Lollipop Position="0.2" />
   </Class>
   <Interface Name="Exercicios.Domain.IPet">
     <Position X="0.5" Y="0.5" Width="1.5" />
