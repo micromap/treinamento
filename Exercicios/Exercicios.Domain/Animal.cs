@@ -4,17 +4,15 @@ using System.Collections.Generic;
 
 namespace Exercicios.Domain
 {
-    public class Animal
+    public abstract class Animal
     {
         public string Nome { get; set; }
         public Sexo Sexo { get; set; }
         public string Foto { get; set; }
         public Dono Dono { get; set; }
 
-        public virtual string QuantoDevoComer(int pesoKg)
-        {
-            throw new NotImplementedException();
-        }
+        public abstract string QuantoDevoComer(int pesoKg);
+        
         protected List<string> ValidacoesComuns()
         {
             var mensagens = new List<string>();

@@ -17,7 +17,7 @@ namespace Exercicios.Tests
 
             Console.WriteLine(mensagem);
         }
-        
+
         [TestMethod]
         public void Tipos_Primitivos_e_Complexos_Test()
         {
@@ -76,7 +76,7 @@ namespace Exercicios.Tests
 
             HelloWorld.PassaReferencia(cachorro);
 
-            string nomeCachorro = cachorro.Nome ;
+            string nomeCachorro = cachorro.Nome;
 
             Console.WriteLine("Nome Cachorro: " + nomeCachorro);
             Assert.AreEqual("Tequila", nomeCachorro);
@@ -199,7 +199,7 @@ namespace Exercicios.Tests
         public void DateTime_Desmembrando_Test()
         {
             var agora = DateTime.Now;
-            Console.WriteLine("Agora: "+ agora);
+            Console.WriteLine("Agora: " + agora);
             Console.WriteLine("Ano: " + agora.Year);
             Console.WriteLine("Mês: " + agora.Month);
             Console.WriteLine("Dia: " + agora.Day);
@@ -244,10 +244,10 @@ namespace Exercicios.Tests
         public void DateTime_Inicializacao_Test()
         {
             var data = new DateTime(2020, 10, 17);
-            Console.WriteLine("Data" +data);
+            Console.WriteLine("Data" + data);
 
             var dataHora = new DateTime(2020, 10, 17, 10, 48, 0);
-            Console.WriteLine("Data/Hora: "+dataHora);
+            Console.WriteLine("Data/Hora: " + dataHora);
         }
 
         [TestMethod]
@@ -309,7 +309,7 @@ namespace Exercicios.Tests
             var i = 0;
             while (i < array.Length)
             {
-                Console.WriteLine("Valor do Array ["+ i+"]: "+array[i]);
+                Console.WriteLine("Valor do Array [" + i + "]: " + array[i]);
                 i++;
             }
         }
@@ -332,7 +332,7 @@ namespace Exercicios.Tests
             var array = new string[] { "Léia", "Yuri", "Tequila" };
 
             for (var i = 0; i < array.Length; i++)
-               Console.WriteLine("Valor do Array [" + i + "]: " + array[i]);
+                Console.WriteLine("Valor do Array [" + i + "]: " + array[i]);
         }
 
         [TestMethod]
@@ -483,7 +483,7 @@ namespace Exercicios.Tests
                 var x = 10;
                 var y = 0;
                 var resultado = x / y;
-                Console.WriteLine("Resultado: "+resultado);
+                Console.WriteLine("Resultado: " + resultado);
             }
             catch (DivideByZeroException)
             {
@@ -491,7 +491,7 @@ namespace Exercicios.Tests
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Erro: "+ ex);
+                Console.WriteLine("Erro: " + ex);
             }
             finally
             {
@@ -515,16 +515,17 @@ namespace Exercicios.Tests
                 Dono = alessandro
             };
 
-            Console.WriteLine("Nome do dono: "+leia.Dono.Nome);
+            Console.WriteLine("Nome do dono: " + leia.Dono.Nome);
             Assert.AreEqual("Alessandro", leia.Dono.Nome);
         }
 
-    }
-    public class ClasseFilha2 : MinhaClasse
-    {
-        public void MetodoFilho2()
+
+        public class ClasseFilha2 : MinhaClasse
         {
-            this.MeuMetodo();
+            public void MetodoFilho2()
+            {
+                this.MeuMetodo();
+            }
         }
     }
 }
