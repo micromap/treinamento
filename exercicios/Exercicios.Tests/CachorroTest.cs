@@ -10,7 +10,7 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Cachorro_Latir_Test()
         {
-            var leia = new Cachorro();
+            var leia = new Ipet();
             var latido = leia.Latir(6);
 
             Console.WriteLine(latido);
@@ -21,7 +21,7 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Leia_QuantoDevoComer_Test()
         {
-            var leia = new Cachorro();
+            var leia = new Ipet();
             var quantoDevoComer = leia.QuantoDevoComer(1);
 
             Console.WriteLine(quantoDevoComer);
@@ -32,7 +32,7 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Tequila_QuantoDevoComer_Test()
         {
-            var tequila = new Cachorro();
+            var tequila = new Ipet();
             var quantoDevoComer = tequila.QuantoDevoComer(30);
 
             Console.WriteLine(quantoDevoComer);
@@ -43,7 +43,7 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Yuri_QuantoDevoComer_Test()
         {
-            var yuri = new Cachorro();
+            var yuri = new Ipet();
             var quantoDevoComer = yuri.QuantoDevoComer(15);
 
             Console.WriteLine(quantoDevoComer);
@@ -54,7 +54,7 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Cachorro_Set_Get_Peso_Teste()
         {
-            var leia = new Cachorro();
+            var leia = new Ipet();
 
             leia.Peso = 1.2;
             var peso = leia.Peso;
@@ -66,7 +66,7 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Cachorro_Peso_Nao_Pode_Ser_Negativo_Teste()
         {
-            var leia = new Cachorro();
+            var leia = new Ipet();
 
             leia.Peso = -1.2;
             var peso = leia.Peso;
@@ -78,7 +78,7 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Cachorro_Peso_Deve_Aceitar_Null_Teste()
         {
-            var leia = new Cachorro();
+            var leia = new Ipet();
 
             leia.Peso = null;
             var peso = leia.Peso;
@@ -90,7 +90,7 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Cachorro_GetIdade_em_Anos_Test()
         {
-            var cachorro = new Cachorro();
+            var cachorro = new Ipet();
             cachorro.DataNascimento = DateTime.Today.AddYears(-4);
             var idade = cachorro.GetIdade();
             Assert.AreEqual("4 anos", idade);
@@ -100,7 +100,7 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Cachorro_GetIdade_um_Ano_Test()
         {
-            var cachorro = new Cachorro();
+            var cachorro = new Ipet();
             cachorro.DataNascimento = DateTime.Today.AddYears(-1);
             var idade = cachorro.GetIdade();
             Assert.AreEqual("1 ano", idade);
@@ -110,7 +110,7 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Cachorro_GetIdade_em_Meses_Test()
         {
-            var cachorro = new Cachorro();
+            var cachorro = new Ipet();
             cachorro.DataNascimento = DateTime.Today.AddMonths(-11);
             var idade = cachorro.GetIdade();
             Assert.AreEqual("11 meses", idade);
@@ -120,7 +120,7 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Cachorro_GetIdade_um_Mes_Test()
         {
-            var cachorro = new Cachorro();
+            var cachorro = new Ipet();
             cachorro.DataNascimento = DateTime.Today.AddMonths(-1);
             var idade = cachorro.GetIdade();
             Assert.AreEqual("1 mês", idade);
@@ -132,7 +132,7 @@ namespace Exercicios.Tests
         {
             try
             {
-                var cachorro = new Cachorro
+                var cachorro = new Ipet
                 {
                     Nome = "",
                     Sexo = SexoEnum.Femea,
@@ -159,7 +159,7 @@ namespace Exercicios.Tests
         public void Cachorro_Associacao_Raca()
         {
             var labrador = new Raca { Nome = "Labrador" };
-            var tequila = new Cachorro()
+            var tequila = new Ipet()
             {
                 Nome = "tequila",
                 Raca = labrador
@@ -179,7 +179,7 @@ namespace Exercicios.Tests
                 Telefone = 2345678,
                 Email = "eder@eder.com.br"
             };
-            var tequila = new Cachorro 
+            var tequila = new Ipet 
             {
                 Nome = "tequila",
                 Dono = eder 
@@ -196,7 +196,7 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Cachorro_Enum_Sexo()
         {
-            var cachorro = new Cachorro();
+            var cachorro = new Ipet();
             cachorro.Nome = "Léia";
             cachorro.Sexo = SexoEnum.Macho;
 
@@ -214,7 +214,7 @@ namespace Exercicios.Tests
                 Porte = PorteEnum.Pequeno
             };
 
-            var leia = new Cachorro
+            var leia = new Ipet
             {
                 Nome = "Léia",
                 Raca = york

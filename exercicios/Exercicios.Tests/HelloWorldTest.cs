@@ -29,7 +29,7 @@ namespace Exercicios.Tests
             Console.WriteLine(idade);
 
             //Tipo complexo
-            Cachorro leia = new Cachorro();
+            Ipet leia = new Ipet();
             Console.WriteLine(leia);
         }
 
@@ -66,7 +66,7 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Tipo_de_Referencia_Test()
         {
-            Cachorro cachorro = new Cachorro();
+            Ipet cachorro = new Ipet();
             cachorro.Nome = "Léia";
 
             HelloWorld.PassaReferencia(cachorro);
@@ -89,10 +89,10 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Desigualdade_entre_Tipos_de_Referencia_Test()
         {
-            Cachorro cachorro1 = new Cachorro();
+            Ipet cachorro1 = new Ipet();
             cachorro1.Nome = "Léia";
 
-            Cachorro cachorro2 = new Cachorro();
+            Ipet cachorro2 = new Ipet();
             cachorro1.Nome = "Léia";
 
             Assert.AreNotEqual(cachorro1, cachorro2);
@@ -101,10 +101,10 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Igualdade_entre_Tipos_de_Referencia_Test()
         {
-            Cachorro cachorro1 = new Cachorro();
+            Ipet cachorro1 = new Ipet();
             cachorro1.Nome = "Léia";
 
-            Cachorro cachorro2 = cachorro1;
+            Ipet cachorro2 = cachorro1;
 
             Assert.AreEqual(cachorro1, cachorro2);
         }
@@ -115,12 +115,12 @@ namespace Exercicios.Tests
             string nome = "Leia";
             int idade = 1;
             double peso = 1.3;
-            Cachorro cachorro = new Cachorro();
+            Ipet cachorro = new Ipet();
 
             Assert.AreEqual(typeof(string), nome.GetType());
             Assert.AreEqual(typeof(int), idade.GetType());
             Assert.AreEqual(typeof(double), peso.GetType());
-            Assert.AreEqual(typeof(Cachorro), cachorro.GetType());
+            Assert.AreEqual(typeof(Ipet), cachorro.GetType());
         }
 
         [TestMethod]
@@ -129,20 +129,20 @@ namespace Exercicios.Tests
             var nome = "Leia";
             var idade = 1;
             var peso = 1.3;
-            var cachorro = new Cachorro();
+            var cachorro = new Ipet();
 
             Assert.AreEqual(typeof(string), nome.GetType());
             Assert.AreEqual(typeof(int), idade.GetType());
             Assert.AreEqual(typeof(double), peso.GetType());
-            Assert.AreEqual(typeof(Cachorro), cachorro.GetType());
+            Assert.AreEqual(typeof(Ipet), cachorro.GetType());
         }
 
         [TestMethod]
         public void Declarar_Sem_Inicializar_Test()
         {
-            Cachorro cachorro;
-            cachorro = new Cachorro();
-            Assert.AreEqual(typeof(Cachorro), cachorro.GetType());
+            Ipet cachorro;
+            cachorro = new Ipet();
+            Assert.AreEqual(typeof(Ipet), cachorro.GetType());
 
             // Não podemos declarar variaveis implicitas sem atribuir valor
             //var nome;
@@ -154,7 +154,7 @@ namespace Exercicios.Tests
         public void Tipos_Que_Aceitam_Null_Test()
         {
             string nome = null;            
-            Cachorro cachorro = null;
+            Ipet cachorro = null;
 
             Assert.AreEqual(null, nome);
             Assert.AreEqual(null, cachorro);
@@ -450,7 +450,7 @@ namespace Exercicios.Tests
         {
             try
             {
-                Cachorro cachorro = null;
+                Ipet cachorro = null;
                 if (cachorro == null)
                     throw new Exception("O cachorro não foi instanciado!");
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Exercicios.Domain
 {
-    public class Cachorro
+    public class Ipet : IPet
     {
         public Dono Dono { get; set; }
         public string Nome { get; set; }
@@ -11,6 +11,7 @@ namespace Exercicios.Domain
         public Raca Raca { get; set; }
         public DateTime DataNascimento { get; set; }
         public bool Vacinado { get; set; }
+        public string Foto { get; set; }
 
         public double? Peso
         {
@@ -20,6 +21,9 @@ namespace Exercicios.Domain
             }
             get => _pesoKg;
         }
+
+        
+
         private double? _pesoKg;
 
         public string Latir(short qtdeLatidos)

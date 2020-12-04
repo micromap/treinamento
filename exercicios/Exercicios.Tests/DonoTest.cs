@@ -11,8 +11,8 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Dono_AddPet_test()
         {
-            var leia = new Cachorro { Nome = "Léia" };
-            var yuri = new Cachorro { Nome = "Yuri" };
+            var leia = new Ipet { Nome = "Léia" };
+            var yuri = new Ipet { Nome = "Yuri" };
 
             var silvia = new Dono { Nome = "Silvia" };
 
@@ -30,8 +30,8 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Dono_AddPets_test()
         {
-            var leia = new Cachorro { Nome = "Léia" };
-            var yuri = new Cachorro { Nome = "Yuri" };
+            var leia = new Ipet { Nome = "Léia" };
+            var yuri = new Ipet { Nome = "Yuri" };
 
             var silvia = new Dono { Nome = "Silvia" };          
 
@@ -50,8 +50,8 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Dono_RemovePet_test()
         {
-            var leia = new Cachorro { Nome = "Léia" };
-            var yuri = new Cachorro { Nome = "Yuri" };
+            var leia = new Ipet { Nome = "Léia" };
+            var yuri = new Ipet { Nome = "Yuri" };
 
             var silvia = new Dono { Nome = "Silvia" };
 
@@ -73,8 +73,8 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Dono_RemovePets_test()
         {
-            var leia = new Cachorro { Nome = "Léia" };
-            var yuri = new Cachorro { Nome = "Yuri" };
+            var leia = new Ipet { Nome = "Léia" };
+            var yuri = new Ipet { Nome = "Yuri" };
 
             var silvia = new Dono { Nome = "Silvia" };
 
