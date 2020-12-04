@@ -1,24 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Exercicios.Domain
 {
-    public class Gato : IPet
+    public class Gato : Animal, IPet
     {
-        public string Nome { get; set; }
-        public string Foto { get; set; }
-        public Sexo Sexo { get; set; }
-        public Dono Dono { get; set; }
-
-        public string QuantoDevoComer(int peso)
+        public string Miar(int qtdMiados)
         {
-            throw new NotImplementedException();
+            var miados = "";
+
+            for (var i = 1; i <= qtdMiados; i++)
+                miados += "Miau! ";
+
+            return miados.TrimEnd();
         }
 
-        public void Validar()
+        public override string QuantoDevoComer()
         {
-            throw new NotImplementedException();
+            return $"Como tenho {Peso}kg, devo comer {Peso * 10}g por dia";
         }
     }
 }

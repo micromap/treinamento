@@ -1,19 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Exercicios.Domain
 {
-    //Classe Dono
     public class Dono
     {
-        public string Nome { set; get; }
+        public string Nome { get; set; }
+        public string Email { get; set; }
+        public string Telefone { get; set; }
 
-        public string Telefone { set; get; }
-
-        public string Email { set; get; }
-
-        public List<IPet> Pets { set; get; }
+        public List<IPet> Pets { get; set; }
 
         public void AddPet(IPet pet)
         {
@@ -44,6 +40,5 @@ namespace Exercicios.Domain
             foreach (var pet in pets)
                 RemovePet(pet);
         }
-
     }
 }

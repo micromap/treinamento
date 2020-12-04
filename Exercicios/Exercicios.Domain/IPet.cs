@@ -11,7 +11,9 @@ namespace Exercicios.Domain
         Sexo Sexo { get; set; }
         Dono Dono { get; set; }
 
-        string QuantoDevoComer(int peso);
+        double? Peso { get; set; }
+
+        string QuantoDevoComer();
 
         void Validar();
 
