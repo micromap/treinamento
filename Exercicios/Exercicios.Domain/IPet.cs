@@ -11,7 +11,9 @@ namespace Exercicios.Domain
         string Foto { get; set; }
         Dono Dono { get; set; }
 
-        string QuantoDevoComer(int pesoKg);
+        double? Peso { get; set; }
+
+        string QuantoDevoComer();
         void Validar();
     }
 }

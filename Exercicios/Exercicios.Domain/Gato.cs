@@ -16,9 +16,9 @@ namespace Exercicios.Domain
             return miados.TrimEnd();
         }
 
-        public override string QuantoDevoComer(int pesoKg)
+        public override string QuantoDevoComer()
         {
-            throw new NotImplementedException();
+            return $"Como tenho {Peso}kg, devo comer {Peso * 10}g por dia";
         }
     }
 }

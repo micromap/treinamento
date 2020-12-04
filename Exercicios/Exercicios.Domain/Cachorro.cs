@@ -22,24 +22,7 @@ namespace Exercicios.Domain
 
         public int Idade { set; get; }
         public bool Vacinado { set; get; }
-        #region Peso
-        public double? Peso
-        {
-            set
-            {
-                if (value < 0)
-                    _pesoKg = null;
-                else
-                    _pesoKg = value;
-            }
-            get
-            {
-                return _pesoKg;
-            }
-        }
-        private double? _pesoKg;
-        #endregion
-
+        
         public DateTime DataNascimento { get; set; }
 
         public string Latir(short qtdeLatidot )
@@ -55,18 +38,11 @@ namespace Exercicios.Domain
         }
 
         // Método para Calcular 5% do Peso (Kg) do cachorro em gramas de ração
-        public override string QuantoDevoComer(int pesoKg)
+        public override string QuantoDevoComer()
         {
-            int grama = pesoKg * 1000;
-
-            double porcento = grama * 0.05;
-
-            Console.WriteLine(porcento);
-
             //string saida = "Como tenho " + pesoKg.ToString() + "Kg,devo comer " + porcento.ToString() + "g por dia";
-            string saida = $"Como tenho {pesoKg}Kg,devo comer {porcento}g por dia";  //  metodo de interpolar string
+            return $"Como tenho {Peso}Kg,devo comer {Peso * 50}g por dia";  //  metodo de interpolar string
 
-            return saida;
         }
 
         public string GetIdade()
