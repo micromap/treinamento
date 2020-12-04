@@ -41,7 +41,7 @@ namespace Exercicios.Domain
                 mensagens.Add("Data de Nascimento do Cachorro deve ser menor que Hoje!");
             if (Peso <= 0)
                 mensagens.Add("Peso do Cachorro deve ser maior que zero!");
-            var ex = Helpers.ConvertStringListToException(mensagens);
+            var ex = mensagens.ToException();
             if (ex != null)
                 throw ex;
         }
