@@ -36,7 +36,7 @@ namespace Exercicios.Tests
 
 
             foreach (var pet in silvia.Pets)
-                Console.WriteLine($"{pet.GetType().Name}: {pet.Nome}");
+                Console.WriteLine($"{pet.GetTipo()}: {pet.Nome}");
         }
 
         [TestMethod]
@@ -69,7 +69,7 @@ namespace Exercicios.Tests
 
 
             foreach (var pet in silvia.Pets)
-                Console.WriteLine($"{pet.GetType().Name}: {pet.Nome}");
+                Console.WriteLine($"{pet.GetTipo()}: {pet.Nome}");
         }
 
         [TestMethod]
@@ -98,7 +98,7 @@ namespace Exercicios.Tests
 
 
             foreach (var pet in silvia.Pets)
-                Console.WriteLine($"{pet.GetType().Name}: {pet.Nome}");
+                Console.WriteLine($"{pet.GetTipo()}: {pet.Nome}");
         }
 
         [TestMethod]

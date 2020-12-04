@@ -9,22 +9,6 @@ namespace Exercicios.Domain
         public DateTime DataNascimento { get; set; }
         public bool Vacinado { get; set; }
 
-        public double? Peso
-        {
-            set
-            {
-                if (value < 0)
-                    _pesoKg = null;
-                else
-                    _pesoKg = value;
-            }
-            get
-            {
-                return _pesoKg;
-            }
-        }
-
-        private double? _pesoKg;
 
         public string Latir(short qtdeLatidos)
         {
@@ -63,7 +47,7 @@ namespace Exercicios.Domain
             if (Peso <= 0)
                 mensagens.Add("Peso do Cachorro deve ser maior que zero!");
 
-            var ex = Helpers.ConvertStringListToException(mensagens);
+            var ex = mensagens.ToException();
             if (ex != null)
                 throw ex;
 
