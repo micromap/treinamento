@@ -1,7 +1,6 @@
 ﻿using Exercicios.Domain;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Collections.Generic;
 
 namespace Exercicios.Tests
 {
@@ -28,7 +27,7 @@ namespace Exercicios.Tests
             Assert.AreEqual(silvia, yuri.Dono);
 
             foreach (var pet in silvia.Pets)
-                Console.WriteLine($"{pet.GetType().Name}: {pet.Nome}");
+                Console.WriteLine($"{pet.GetTipo()}: {pet.Nome}");
         }
 
         [TestMethod]
@@ -56,7 +55,7 @@ namespace Exercicios.Tests
             Assert.AreEqual(null, vesgo.Dono);
 
             foreach (var pet in silvia.Pets)
-                Console.WriteLine($"{pet.GetType().Name}: {pet.Nome}");
+                Console.WriteLine($"{pet.GetTipo()}: {pet.Nome}");
         }
 
         [TestMethod]
@@ -78,7 +77,7 @@ namespace Exercicios.Tests
             Assert.AreEqual(silvia, mingau.Dono);
 
             foreach (var pet in silvia.Pets)
-                Console.WriteLine($"{pet.GetType().Name}: {pet.Nome}");
+                Console.WriteLine($"{pet.GetTipo()}: {pet.Nome}");
         }
 
         [TestMethod]
