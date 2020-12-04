@@ -2,6 +2,7 @@ using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Exercicios.Domain;
 using System.Collections.Generic;
+using System.IO;
 
 namespace Exercicios.Tests
 {
@@ -519,6 +520,33 @@ namespace Exercicios.Tests
             Assert.AreEqual("Alessandro", leia.Dono.Nome);
         }
 
+        [TestMethod]
+        public void SystemIO_CreateDirectory_Test()
+        {
+            Directory.CreateDirectory("C:\\Aula030");
+            Directory.CreateDirectory("C:\\Aula030\\SubPasta");
+        }
+
+        [TestMethod]
+        public void SystemIO_File_Create_Txt_Test()
+        {
+            File.WriteAllText("C:\\Aula030\\hello.txt", "Hello World!");
+        }
+
+        [TestMethod]
+        public void SystemIO_GetFileSystemEntries_Test()
+        {
+            var lista = Directory.GetFileSystemEntries("C:\\Aula030\\");
+            foreach (var item in lista)
+                Console.WriteLine(item);
+        }
+
+        [TestMethod]
+        public void SystemIO_File_Read_Txt_Test()
+        {
+            var conteudo = File.ReadAllText("C:\\Aula030\\hello.txt");
+            Console.WriteLine("Conteudo dentro do arquivo: "+conteudo);
+        }
 
         public class ClasseFilha2 : MinhaClasse
         {
