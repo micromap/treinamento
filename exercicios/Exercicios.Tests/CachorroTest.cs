@@ -10,7 +10,7 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Cachorro_Latir_Test()
         {
-            var leia = new Ipet();
+            var leia = new Cachorro();
             var latido = leia.Latir(6);
 
             Console.WriteLine(latido);
@@ -21,8 +21,8 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Leia_QuantoDevoComer_Test()
         {
-            var leia = new Ipet();
-            var quantoDevoComer = leia.QuantoDevoComer(1);
+            var leia = new Cachorro { Peso = 1 };
+            var quantoDevoComer = leia.QuantoDevoComer();
 
             Console.WriteLine(quantoDevoComer);
 
@@ -32,8 +32,8 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Tequila_QuantoDevoComer_Test()
         {
-            var tequila = new Ipet();
-            var quantoDevoComer = tequila.QuantoDevoComer(30);
+            var tequila = new Cachorro { Peso = 30 };
+            var quantoDevoComer = tequila.QuantoDevoComer();
 
             Console.WriteLine(quantoDevoComer);
 
@@ -43,8 +43,8 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Yuri_QuantoDevoComer_Test()
         {
-            var yuri = new Ipet();
-            var quantoDevoComer = yuri.QuantoDevoComer(15);
+            var yuri = new Cachorro { Peso = 15 };
+            var quantoDevoComer = yuri.QuantoDevoComer();
 
             Console.WriteLine(quantoDevoComer);
 
@@ -54,7 +54,7 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Cachorro_Set_Get_Peso_Teste()
         {
-            var leia = new Ipet();
+            var leia = new Cachorro();
 
             leia.Peso = 1.2;
             var peso = leia.Peso;
@@ -66,7 +66,7 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Cachorro_Peso_Nao_Pode_Ser_Negativo_Teste()
         {
-            var leia = new Ipet();
+            var leia = new Cachorro();
 
             leia.Peso = -1.2;
             var peso = leia.Peso;
@@ -78,7 +78,7 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Cachorro_Peso_Deve_Aceitar_Null_Teste()
         {
-            var leia = new Ipet();
+            var leia = new Cachorro();
 
             leia.Peso = null;
             var peso = leia.Peso;
@@ -90,7 +90,7 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Cachorro_GetIdade_em_Anos_Test()
         {
-            var cachorro = new Ipet();
+            var cachorro = new Cachorro();
             cachorro.DataNascimento = DateTime.Today.AddYears(-4);
             var idade = cachorro.GetIdade();
             Assert.AreEqual("4 anos", idade);
@@ -100,7 +100,7 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Cachorro_GetIdade_um_Ano_Test()
         {
-            var cachorro = new Ipet();
+            var cachorro = new Cachorro();
             cachorro.DataNascimento = DateTime.Today.AddYears(-1);
             var idade = cachorro.GetIdade();
             Assert.AreEqual("1 ano", idade);
@@ -110,7 +110,7 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Cachorro_GetIdade_em_Meses_Test()
         {
-            var cachorro = new Ipet();
+            var cachorro = new Cachorro();
             cachorro.DataNascimento = DateTime.Today.AddMonths(-11);
             var idade = cachorro.GetIdade();
             Assert.AreEqual("11 meses", idade);
@@ -120,7 +120,7 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Cachorro_GetIdade_um_Mes_Test()
         {
-            var cachorro = new Ipet();
+            var cachorro = new Cachorro();
             cachorro.DataNascimento = DateTime.Today.AddMonths(-1);
             var idade = cachorro.GetIdade();
             Assert.AreEqual("1 mês", idade);
@@ -132,97 +132,109 @@ namespace Exercicios.Tests
         {
             try
             {
-                var cachorro = new Ipet
+                var cachorro = new Cachorro
                 {
                     Nome = "",
-                    Sexo = SexoEnum.Femea,
+                    Sexo = Sexo.Macho,
                     DataNascimento = DateTime.Today.AddMonths(5),
                     Peso = 0
                 };
+
                 cachorro.Validar();
 
                 Assert.Fail();
             }
             catch (Exception ex)
             {
-                var ok = ex.Message.Contains("Nome do Cachorro é Obrigatório!") &&                         
+                var ok = ex.Message.Contains("Nome do Pet é Obrigatório!") &&
                          ex.Message.Contains("Data de Nascimento do Cachorro deve ser menor que Hoje!") &&
                          ex.Message.Contains("Peso do Cachorro deve ser maior que zero!");
 
                 Assert.AreEqual(true, ok);
                 Console.WriteLine(ex.Message);
             }
-
         }
 
         [TestMethod]
-        public void Cachorro_Associacao_Raca()
+        public void Cachorro_Associacao_Raca_Test()
         {
             var labrador = new Raca { Nome = "Labrador" };
-            var tequila = new Ipet()
+
+            var tequila = new Cachorro
             {
-                Nome = "tequila",
+                Nome = "Tequila",
                 Raca = labrador
             };
+
             Console.WriteLine(tequila.Raca.Nome);
 
             Assert.AreEqual("Labrador", tequila.Raca.Nome);
-
         }
 
         [TestMethod]
-        public void Cachorro_Associacao_Dono()
+        public void Cachorro_Associacao_Dono_Test()
         {
-            var eder = new Dono
+            var silvia = new Dono
             {
-                Nome = "Eder",
-                Telefone = 2345678,
-                Email = "eder@eder.com.br"
-            };
-            var tequila = new Ipet 
-            {
-                Nome = "tequila",
-                Dono = eder 
+                Nome = "Silvia",
+                Email = "silvia@teste.com",
+                Telefone = "1111111"
             };
 
-            Console.WriteLine("Nome: " + tequila.Dono.Nome);
-            Console.WriteLine("Email: " + tequila.Dono.Email);
-            Console.WriteLine("Telefone: " + tequila.Dono.Telefone);
+            var leia = new Cachorro
+            {
+                Nome = "Léia",
+                Dono = silvia
+            };
 
-            Assert.AreEqual("Eder", tequila.Dono.Nome);
-
+            Console.WriteLine(leia.Dono.Nome);
+            Assert.AreEqual("Silvia", leia.Dono.Nome);
         }
 
         [TestMethod]
-        public void Cachorro_Enum_Sexo()
+        public void Cachorro_Enum_Sexo_Test()
         {
-            var cachorro = new Ipet();
-            cachorro.Nome = "Léia";
-            cachorro.Sexo = SexoEnum.Macho;
+            var cachorro = new Cachorro
+            {
+                Nome = "Léia",
+                Sexo = Sexo.Femea
+            };
 
             Console.WriteLine(cachorro.Sexo);
-            Assert.AreEqual(SexoEnum.Macho, cachorro.Sexo);
+            Assert.AreEqual(Sexo.Femea, cachorro.Sexo);
         }
 
         [TestMethod]
-        public void Cachorro_Enun_Porte()
+        public void Cachorro_Enum_Raca_Porte_Test()
         {
-                  
             var york = new Raca
             {
-                Nome = "Yorkshide",
-                Porte = PorteEnum.Pequeno
+                Nome = "Yorkshire",
+                Porte = Porte.Pequeno
             };
 
-            var leia = new Ipet
+            var leia = new Cachorro
             {
                 Nome = "Léia",
                 Raca = york
             };
 
-            Assert.AreEqual(PorteEnum.Pequeno, leia.Raca.Porte);
+            Assert.AreEqual(Porte.Pequeno, leia.Raca.Porte);
             Console.WriteLine(leia.Raca.Porte);
         }
 
+        [TestMethod]
+        public void Cachorro_IPet_Test()
+        {
+            IPet pet = new Cachorro { Nome = "Léia", Peso = 2 };
+
+            Assert.AreEqual("Léia", pet.Nome);
+            Console.WriteLine(pet.Nome);
+
+            var leia = pet as Cachorro;
+
+            Assert.AreEqual(2, leia.Peso);
+            Console.WriteLine(leia.Peso);
+        }
     }
 }

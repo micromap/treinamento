@@ -12,6 +12,9 @@
   </Class>
   <Class Name="Exercicios.Domain.Gato">
     <Position X="5.25" Y="3.5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AABAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Gato.cs</FileName>

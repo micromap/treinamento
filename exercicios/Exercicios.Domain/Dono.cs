@@ -1,53 +1,44 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Exercicios.Domain
 {
     public class Dono
     {
-        public string Email { get; set; }
         public string Nome { get; set; }
-        public int Telefone { get; set; }
-        
-        public List<Ipet> Pets { get; set; }
+        public string Email { get; set; }
+        public string Telefone { get; set; }
 
-        public void AddPet(Ipet pet)
+        public List<IPet> Pets { get; set; }
+
+        public void AddPet(IPet pet)
         {
             if (Pets == null)
-                {
-                    Pets = new List<Ipet>();                    
-                }
+                Pets = new List<IPet>();
+
             Pets.Add(pet);
             pet.Dono = this;
-
         }
 
-        public void AddPet(params Ipet[] pets)
+        public void AddPet(params IPet[] pets)
         {
             foreach (var pet in pets)
-            {
                 AddPet(pet);
-            }
         }
 
-        public void RemovePet(Ipet pet)
+        public void RemovePet(IPet pet)
         {
             if (Pets == null)
                 return;
 
-            if(Pets.Remove(pet) == true)
-            {
+            if (Pets.Remove(pet))
                 pet.Dono = null;
-            }
         }
 
-        public void RemovePet(params Ipet[] pets)
+        public void RemovePet(params IPet[] pets)
         {
             foreach (var pet in pets)
-            {
-                RemovePet(pets);
-            }
+                RemovePet(pet);
         }
     }
 }

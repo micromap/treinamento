@@ -3,28 +3,11 @@ using System.Collections.Generic;
 
 namespace Exercicios.Domain
 {
-    public class Ipet : IPet
+    public class Cachorro : Animal, IPet
     {
-        public Dono Dono { get; set; }
-        public string Nome { get; set; }
-        public SexoEnum Sexo { get; set; }
-        public Raca Raca { get; set; }
+        public Raca Raca { set; get; }
         public DateTime DataNascimento { get; set; }
         public bool Vacinado { get; set; }
-        public string Foto { get; set; }
-
-        public double? Peso
-        {
-            set
-            {
-                _pesoKg = value < 0 ? null : value;
-            }
-            get => _pesoKg;
-        }
-
-        
-
-        private double? _pesoKg;
 
         public string Latir(short qtdeLatidos)
         {
@@ -37,9 +20,9 @@ namespace Exercicios.Domain
         }
 
         // Método para calcular 5% do Peso(Kg) do cachorro em Gramas de Ração
-        public string QuantoDevoComer(int pesoKg)
+        public override string QuantoDevoComer()
         {
-            return $"Como tenho {pesoKg}kg, devo comer {pesoKg * 50}g por dia";
+            return $"Como tenho {Peso}kg, devo comer {Peso * 50}g por dia";
         }
 
         public string GetIdade()
@@ -53,27 +36,19 @@ namespace Exercicios.Domain
                 return anos > 1 ? $"{anos} anos" : "1 ano";
         }
 
-        public void Validar()
+        public override void Validar()
         {
-            var mensagens = new List<string>();
+            var mensagens = ValidacoesComuns();
 
-            if (string.IsNullOrWhiteSpace(Nome))
-                mensagens.Add("Nome do Cachorro é Obrigatório!");
-           
             if (DataNascimento > DateTime.Today)
                 mensagens.Add("Data de Nascimento do Cachorro deve ser menor que Hoje!");
 
             if (Peso <= 0)
                 mensagens.Add("Peso do Cachorro deve ser maior que zero!");
 
-            if(mensagens.Count > 0)
-            {
-                var exceptionMessage = "";
-                foreach (var msg in mensagens)
-                    exceptionMessage += msg + Environment.NewLine;
-
-                throw new Exception(exceptionMessage);
-            }
+            var ex = mensagens.ToException();
+            if (ex != null)
+                throw ex;
         }
     }
 }

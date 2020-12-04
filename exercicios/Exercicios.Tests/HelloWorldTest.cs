@@ -2,6 +2,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using Exercicios.Domain;
 using System.Collections.Generic;
+using System.IO;
 
 namespace Exercicios.Tests
 {
@@ -29,7 +30,7 @@ namespace Exercicios.Tests
             Console.WriteLine(idade);
 
             //Tipo complexo
-            Ipet leia = new Ipet();
+            Cachorro leia = new Cachorro();
             Console.WriteLine(leia);
         }
 
@@ -66,7 +67,7 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Tipo_de_Referencia_Test()
         {
-            Ipet cachorro = new Ipet();
+            Cachorro cachorro = new Cachorro();
             cachorro.Nome = "Léia";
 
             HelloWorld.PassaReferencia(cachorro);
@@ -89,10 +90,10 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Desigualdade_entre_Tipos_de_Referencia_Test()
         {
-            Ipet cachorro1 = new Ipet();
+            Cachorro cachorro1 = new Cachorro();
             cachorro1.Nome = "Léia";
 
-            Ipet cachorro2 = new Ipet();
+            Cachorro cachorro2 = new Cachorro();
             cachorro1.Nome = "Léia";
 
             Assert.AreNotEqual(cachorro1, cachorro2);
@@ -101,10 +102,10 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Igualdade_entre_Tipos_de_Referencia_Test()
         {
-            Ipet cachorro1 = new Ipet();
+            Cachorro cachorro1 = new Cachorro();
             cachorro1.Nome = "Léia";
 
-            Ipet cachorro2 = cachorro1;
+            Cachorro cachorro2 = cachorro1;
 
             Assert.AreEqual(cachorro1, cachorro2);
         }
@@ -115,12 +116,12 @@ namespace Exercicios.Tests
             string nome = "Leia";
             int idade = 1;
             double peso = 1.3;
-            Ipet cachorro = new Ipet();
+            Cachorro cachorro = new Cachorro();
 
             Assert.AreEqual(typeof(string), nome.GetType());
             Assert.AreEqual(typeof(int), idade.GetType());
             Assert.AreEqual(typeof(double), peso.GetType());
-            Assert.AreEqual(typeof(Ipet), cachorro.GetType());
+            Assert.AreEqual(typeof(Cachorro), cachorro.GetType());
         }
 
         [TestMethod]
@@ -129,20 +130,20 @@ namespace Exercicios.Tests
             var nome = "Leia";
             var idade = 1;
             var peso = 1.3;
-            var cachorro = new Ipet();
+            var cachorro = new Cachorro();
 
             Assert.AreEqual(typeof(string), nome.GetType());
             Assert.AreEqual(typeof(int), idade.GetType());
             Assert.AreEqual(typeof(double), peso.GetType());
-            Assert.AreEqual(typeof(Ipet), cachorro.GetType());
+            Assert.AreEqual(typeof(Cachorro), cachorro.GetType());
         }
 
         [TestMethod]
         public void Declarar_Sem_Inicializar_Test()
         {
-            Ipet cachorro;
-            cachorro = new Ipet();
-            Assert.AreEqual(typeof(Ipet), cachorro.GetType());
+            Cachorro cachorro;
+            cachorro = new Cachorro();
+            Assert.AreEqual(typeof(Cachorro), cachorro.GetType());
 
             // Não podemos declarar variaveis implicitas sem atribuir valor
             //var nome;
@@ -154,7 +155,7 @@ namespace Exercicios.Tests
         public void Tipos_Que_Aceitam_Null_Test()
         {
             string nome = null;            
-            Ipet cachorro = null;
+            Cachorro cachorro = null;
 
             Assert.AreEqual(null, nome);
             Assert.AreEqual(null, cachorro);
@@ -450,7 +451,7 @@ namespace Exercicios.Tests
         {
             try
             {
-                Ipet cachorro = null;
+                Cachorro cachorro = null;
                 if (cachorro == null)
                     throw new Exception("O cachorro não foi instanciado!");
 
@@ -473,6 +474,34 @@ namespace Exercicios.Tests
             {
                 Console.WriteLine("Fim do Teste!");
             }
+        }
+
+        [TestMethod]
+        public void SystemIO_CreateDirectory_Test()
+        {
+            Directory.CreateDirectory("C:\\Aula030");
+            Directory.CreateDirectory("C:\\Aula030\\SubPasta");
+        }
+
+        [TestMethod]
+        public void SystemIO_File_Create_Txt_Test()
+        {
+            File.WriteAllText("C:\\Aula030\\hello.txt", "Hello World!");
+        }
+
+        [TestMethod]
+        public void SystemIO_GetFileSystemEntries_Test()
+        {
+            var lista = Directory.GetFileSystemEntries("C:\\Aula030\\");
+            foreach(var item in lista)
+                Console.WriteLine(item);
+        }
+
+        [TestMethod]
+        public void SystemIO_File_Read_Txt_Test()
+        {
+            var conteudo = File.ReadAllText("C:\\Aula030\\hello.txt");
+            Console.WriteLine(conteudo);
         }
     }
 }

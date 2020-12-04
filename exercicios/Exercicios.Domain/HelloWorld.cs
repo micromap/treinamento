@@ -14,7 +14,7 @@ namespace Exercicios.Domain
             valor = 999;
         }
 
-        public static void PassaReferencia(Ipet cachorro)
+        public static void PassaReferencia(Cachorro cachorro)
         {
             cachorro.Nome = "Tequila";
         }
