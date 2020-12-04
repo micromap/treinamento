@@ -20,8 +20,11 @@
   </Class>
   <Class Name="Exercicios.Domain.Cachorro">
     <Position X="9" Y="4.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AASAAAAAAABAABAAAAAAAAIAAAIAQQEAAAAAAAAAAAA=</HashCode>
+      <HashCode>AASAAAAAAAAAABAAAAAAAAIAAAIAQQAAAAAAAAAAAAA=</HashCode>
       <FileName>Cachorro.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -42,7 +45,7 @@
   <Class Name="Exercicios.Domain.Animal">
     <Position X="8" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAEAAAAAAAAAgAAAAAIAAAAAAQAAAAAAQAEAAAA=</HashCode>
+      <HashCode>AAACAAEAAABAAAAAgAAAAAIAAAAAAQEAAAAAQAEAAAA=</HashCode>
       <FileName>Animal.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -53,7 +56,7 @@
   <Interface Name="Exercicios.Domain.IPet">
     <Position X="1.5" Y="1" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAEAAAAAAAAAgAAAAAIAAAAAAQAAAAAAQAEAAAA=</HashCode>
+      <HashCode>AAAAAAEAAABAAAAAgAAAAAIAAAAAAQAAAAAAQAEAAAA=</HashCode>
       <FileName>IPet.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>

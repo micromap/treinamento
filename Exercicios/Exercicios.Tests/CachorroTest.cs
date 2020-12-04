@@ -21,8 +21,8 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Leia_QuantoDevoComer_Test()
         {
-            var leia = new Cachorro();
-            var quantoDevoComer = leia.QuantoDevoComer(1);
+            var leia = new Cachorro { Peso = 1 };
+            var quantoDevoComer = leia.QuantoDevoComer();
 
             Console.WriteLine(quantoDevoComer);
 
@@ -44,8 +44,8 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Tequila_QuantoDevoComer_Test()
         {
-            var tequila = new Cachorro();
-            var quantoDevoComer = tequila.QuantoDevoComer(30);
+            var tequila = new Cachorro { Peso = 30 };
+            var quantoDevoComer = tequila.QuantoDevoComer();
 
             Console.WriteLine(quantoDevoComer);
 
@@ -55,8 +55,8 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Yuri_QuantoDevoComer_Test()
         {
-            var yuri = new Cachorro();
-            var quantoDevoComer = yuri.QuantoDevoComer(15);
+            var yuri = new Cachorro { Peso = 15 };
+            var quantoDevoComer = yuri.QuantoDevoComer();
 
             Console.WriteLine(quantoDevoComer);
 
