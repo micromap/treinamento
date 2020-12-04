@@ -42,14 +42,18 @@ namespace Exercicios.Domain
         {
             var mensagens = ValidacoesComuns();
 
-            if (mensagens.Count > 0)
+            var ex = Helpers.ConvertStringListToException(mensagens);
+            if (ex != null)
+                throw ex;
+
+            /*if (mensagens.Count > 0)
             {
                 var exceptionMessage = "";
                 foreach (var msg in mensagens)
                     exceptionMessage += msg + Environment.NewLine;
 
                 throw new Exception(exceptionMessage);
-            }
+            }*/
         }
     }
 }
