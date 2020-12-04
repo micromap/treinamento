@@ -1,0 +1,16 @@
+tipo;nome;sexo;dono;peso;raca;porte;datanascimento;vacinado
+Cachorro;Leia;Femea;Silvia;2;Yorkshire;Pequeno;04/07/2020;sim
+Cachorro;Tequila;Femea;Andreia;30;Labrador;Grande;01/10/2016;sim
+Cachorro;Yuri;Macho;Lili;15;Buldog Frances;Medio;10/08/2018;sim
+Cachorro;Laika;Femea;Tati;32;Labrador;Grande;03/04/2010;sim
+Cachorro;Floquinho;Macho;Tati;18;Vira Lata;Medio;07/08/2014;sim
+Cachorro;Bidu;Macho;Pedro;3;Yorkshire;Pequeno;28/02/2013;sim
+Cachorro;Mel;Femea;Aline;2;Yorkshire;Pequeno;01/05/2008;sim
+Cachorro;Chester;Macho;Pedro;35;Golden;Grande;10/11/2009;sim
+Cachorro;Meio Quilo;Macho;Pedro;11;Vira Lata;Medio;01/01/2019;nao
+Gato;Vesgo;Macho;Luciano;6;;;;
+Gato;Juliano;Macho;Lili;4;;;;
+Gato;Mingau;Macho;Magali;5;;;;
+Gato;Valentina;Femea;Tati;3;;;;
+Gato;Magnolia;Femea;Cintia;7;;;;
+Gato;Pedrinho;Macho;Lili;6;;;;
