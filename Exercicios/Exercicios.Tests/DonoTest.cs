@@ -37,7 +37,8 @@ namespace Exercicios.Tests
             Assert.AreEqual(silvia, mingau.Dono);
 
             foreach (var pet in silvia.Pets)
-                Console.WriteLine($"{pet.GetType().Name}: {pet.Nome}");
+                Console.WriteLine($"{pet.GetTipo()}: {pet.Nome}");
+            //Console.WriteLine($"{pet.GetType().Name}: {pet.Nome}");
             //Console.WriteLine("Nome do Pet: "+pet.Nome);
         }
 
@@ -66,7 +67,8 @@ namespace Exercicios.Tests
             Assert.AreEqual(null, vesgo.Dono);
 
             foreach (var pet in silvia.Pets)
-                Console.WriteLine($"{pet.GetType().Name}: {pet.Nome}");
+                Console.WriteLine($"{pet.GetTipo()}: {pet.Nome}");
+            //   Console.WriteLine($"{pet.GetType().Name}: {pet.Nome}");
             //Console.WriteLine("Dono do pet: "+pet.Nome);
         }
 
@@ -92,7 +94,8 @@ namespace Exercicios.Tests
             Assert.AreEqual(silvia, mingau.Dono);
 
             foreach (var pet in silvia.Pets)
-                Console.WriteLine($"{pet.GetType().Name}: {pet.Nome}");
+                Console.WriteLine($"{pet.GetTipo()}: {pet.Nome}");
+            //    Console.WriteLine($"{pet.GetType().Name}: {pet.Nome}");
             //Console.WriteLine("Nome dos cachorros: " +pet.Nome);
         }
 
