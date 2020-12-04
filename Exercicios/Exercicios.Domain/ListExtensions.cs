@@ -3,9 +3,11 @@ using System.Collections.Generic;
 
 namespace Exercicios.Domain
 {
-    public static class Helpers
+    public static class ListExtensions
     {
-        public static Exception ConvertStringListToException(List<string> mensagens)
+        // public static Exception ConvertStringListToException(this List<string> mensagens)
+        public static Exception ToException(this List<string> mensagens)
+        
         {
             var exceptionMessage = "";
             foreach (var msg in mensagens)
