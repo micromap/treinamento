@@ -7,7 +7,8 @@ namespace Exercicios.tests
     [TestClass]
     public class CachorroTest
     {
-  
+        private Dono silvia;
+
         [TestMethod]
         public void Cachorro_latir_test()
         {
@@ -55,7 +56,7 @@ namespace Exercicios.tests
 
             Assert.AreEqual("Como tenho 15kg, devo comer 750g por dia", quantoDevoComer);
         }
-         
+
         [TestMethod]
         public void Cachorro_Peso_Nao_Pode_Ser_Negativo_Teste()
         {
@@ -74,13 +75,45 @@ namespace Exercicios.tests
             var yuri = new Cachorro();
 
             yuri.Peso = null;
-            var peso = yuri.Peso;   
+            var peso = yuri.Peso;
 
             Console.WriteLine(peso);
             Assert.AreEqual(null, peso);
         }
 
+        [TestMethod]
+        public void Cachorro_Associacao_Raca_Test()
+        {
+            var labrador = new Raca { Nome = "labrador" };
+            var tequila = new Cachorro
+            {
+                Nome = "Tequila",
+                Raca = labrador
+            };
 
+            Console.WriteLine(tequila.Raca.Nome) ;
 
+            Assert.AreEqual("labrador", tequila.Raca.Nome);
+        }
+
+        [TestMethod]
+        public void Cachorro_Associacao_Dono_test()
+        {
+            var silvia = new Dono
+            {
+                Nome = "Silvia",
+                Email = "silvia@teste.com",
+                Telefone = "11111"
+            };
+
+            var leia = new Cachorro
+            {
+                Nome = "Léia",
+                Dono = silvia
+            };
+
+            Console.WriteLine(leia.Dono.Nome);
+            Assert.AreEqual("Silvia", leia.Dono.Nome);
+        }
     }
 }

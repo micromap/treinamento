@@ -7,7 +7,8 @@ namespace Exercicios.domain
     {
         public string Nome { set; get; }
         public string Sexo { set; get; }
-        public string Raca { set; get; }
+        public Raca Raca { set; get; }
+        public Dono Dono { set; get; } 
         public string Porte { set; get; }
         public int Idade { set; get; }
         public bool Vacinado { get; set; }

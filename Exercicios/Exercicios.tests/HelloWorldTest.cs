@@ -14,9 +14,7 @@ namespace Exercicios.tests
             string mensagem = HelloWorld.SayHello();
             Assert.AreEqual("Hello World!", mensagem);
         }
-
         [TestMethod]
-
         public void Tipos_Primitivos_e_Complexos()
         {
             // tipos primitivos
@@ -33,7 +31,6 @@ namespace Exercicios.tests
             Console.WriteLine(leia);
 
         }
-
         [TestMethod]
         public void Conversao_Implicita_Test()
         {
@@ -43,7 +40,6 @@ namespace Exercicios.tests
             Console.WriteLine(valor);
             Assert.AreEqual(inteiro, valor);
         }
-
         [TestMethod]
         public void Conversao_Explicita_Test()
         {
@@ -53,7 +49,6 @@ namespace Exercicios.tests
             Console.WriteLine(inteiro);
             Assert.AreNotEqual(valor, inteiro);
         }
-
         [TestMethod]
         public void Tipo_De_Valor_test()
         {
@@ -63,7 +58,6 @@ namespace Exercicios.tests
             Console.WriteLine(valor);
             Assert.AreEqual(10, valor);
         }
-
         [TestMethod]
         public void Tipo_De_Referencia_test()
         {
@@ -77,7 +71,6 @@ namespace Exercicios.tests
             Console.WriteLine(nomeCachorro);
             Assert.AreEqual("Tequila", nomeCachorro);
         }
-
         [TestMethod]
         public void Igualdade_Entre_Tipos_De_Valor_Test()
         {
@@ -114,6 +107,61 @@ namespace Exercicios.tests
         public void MinhaClasse_Test()
         {
             var obj = new MinhaClasse();
+        }
+
+        [TestMethod]
+        public void DateTime_Test()
+        {
+            var hoje = DateTime.Today;
+            Console.WriteLine(hoje); 
+
+            var agora = DateTime.Now;
+            Console.WriteLine(agora);
+        }
+
+        [TestMethod]
+        public void DateTime_Desmembrando_test()
+        {
+            var agora = DateTime.Now;
+            Console.WriteLine(agora);
+            Console.WriteLine(agora.Year);
+            Console.WriteLine(agora.Month);
+            Console.WriteLine(agora.Day);
+            Console.WriteLine(agora.Hour);
+            Console.WriteLine(agora.Minute);
+            Console.WriteLine(agora.Second);
+            Console.WriteLine(agora.Millisecond);
+            Console.WriteLine(agora.DayOfWeek);
+            Console.WriteLine(agora.DayOfYear);
+        }
+
+        [TestMethod]
+        public void Datetime_Add_Test()
+        {
+            var agora = DateTime.Now;
+            Console.WriteLine(agora);
+
+            var mais5horas = agora.AddHours(5);
+            Console.WriteLine(mais5horas);
+
+            var amanha = agora.AddDays(1);
+            Console.WriteLine(amanha);
+
+            var ontem = agora.AddDays(-1);
+            Console.WriteLine(ontem);
+
+            var mesQueVem = agora.AddMonths(1);
+            Console.WriteLine(mesQueVem);
+        }
+
+        [TestMethod]
+        public void DateTime_Inicializacao_Test()
+        {
+            var data = new DateTime(2020, 10, 17);
+            Console.WriteLine(data);
+
+            var dataHora = new DateTime(2020, 10, 17,10, 48, 0);
+            Console.WriteLine(dataHora);
         }
 
     }
