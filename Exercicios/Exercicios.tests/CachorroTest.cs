@@ -115,5 +115,40 @@ namespace Exercicios.tests
             Console.WriteLine(leia.Dono.Nome);
             Assert.AreEqual("Silvia", leia.Dono.Nome);
         }
+
+        [TestMethod]
+        public void Cachorro_Enum_Sexo_test()
+        {
+            var cachorro = new Cachorro
+            {
+                Nome = "Léia",
+                Sexo = Sexo.femea
+            };
+
+            Console.WriteLine(cachorro.Sexo);
+            Assert.AreEqual(Sexo.femea, cachorro.Sexo);
+        }
+
+        [TestMethod]
+        public void Cachorro_Enum_Raca_Porte_Test()
+        {
+            var york = new Raca
+            {
+                Nome = "Yorkshire",
+                Porte = Porte.Pequeno
+            };
+
+            var leia = new Cachorro
+            {
+                Nome = "Léia",
+                Raca = york
+            };
+
+            Assert.AreEqual(Porte.Pequeno, leia.Raca.Porte);
+
+            Console.WriteLine(leia.Raca.Porte);
+
+        }
+
     }
 }
