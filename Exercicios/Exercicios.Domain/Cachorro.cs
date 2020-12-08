@@ -11,22 +11,6 @@ namespace Exercicios.Domain
         public Raca Raca { get; set; }
         public DateTime DataNascimento { get; set; }
         public bool Vacinado { get; set; }
-
-        private double? _pesoKg;
-        public double? Peso
-        {
-            set
-            {
-                if (value < 0)             
-                    _pesoKg = null;
-                else
-                    _pesoKg = value;
-            }
-            get
-            {
-                return _pesoKg;
-            }
-        }
         
         public string Latir(short quantidadeLatidos)
         {

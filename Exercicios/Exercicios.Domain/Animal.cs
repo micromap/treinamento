@@ -3,18 +3,30 @@ using System.Collections.Generic;
 
 namespace Exercicios.Domain
 {
-    public class Animal
+    public abstract class Animal
     {
         public string Nome { get; set; }
         public Sexo Sexo { get; set; }
         public string Foto { get; set; }
         public Dono Dono { get; set; }
 
-        public virtual string QuantoDevoComer(int pesoKg)
+        private double? _pesoKg;
+        public double? Peso
         {
-            throw new NotImplementedException();
+            set
+            {
+                if (value < 0)
+                    _pesoKg = null;
+                else
+                    _pesoKg = value;
+            }
+            get
+            {
+                return _pesoKg;
+            }
         }
 
+        public abstract string QuantoDevoComer(int pesoKg);
         protected virtual List<string> ValidacoesComuns() 
         {
             var mensagens = new List<string>();
