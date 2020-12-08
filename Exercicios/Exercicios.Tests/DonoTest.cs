@@ -13,18 +13,24 @@ namespace Exercicios.Tests
         {
             var leia = new Cachorro { Nome = "Léia" };
             var yuri = new Cachorro { Nome = "Yuri" };
+            var vesgo = new Gato { Nome = "Vesgo" };
+            var mingau = new Gato { Nome = "Mingau" };
 
             var tamara = new Dono { Nome = "Tamara" };
 
             tamara.AddPet(leia);
             tamara.AddPet(yuri);
+            tamara.AddPet(vesgo);
+            tamara.AddPet(mingau);
 
-            Assert.AreEqual(2, tamara.Pets.Count);
+            Assert.AreEqual(4, tamara.Pets.Count);
             Assert.AreEqual(tamara, leia.Dono);
             Assert.AreEqual(tamara, yuri.Dono);
+            Assert.AreEqual(tamara, vesgo.Dono);
+            Assert.AreEqual(tamara, mingau.Dono);
 
             foreach (var pet in tamara.Pets)
-                Console.WriteLine(pet.Nome);
+                Console.WriteLine($"{pet.GetType().Name}: {pet.Nome}");
         }
 
         [TestMethod]
@@ -32,38 +38,50 @@ namespace Exercicios.Tests
         {
             var leia = new Cachorro { Nome = "Léia" };
             var yuri = new Cachorro { Nome = "Yuri" };
+            var vesgo = new Gato { Nome = "Vesgo" };
+            var mingau = new Gato { Nome = "Mingau" };
 
             var tamara = new Dono { Nome = "Tamara" };
 
             tamara.AddPet(leia);
             tamara.AddPet(yuri);
+            tamara.AddPet(vesgo);
+            tamara.AddPet(mingau);
 
             tamara.RemovePet(yuri);
+            tamara.RemovePet(vesgo);
 
-            Assert.AreEqual(1, tamara.Pets.Count);
+            Assert.AreEqual(2, tamara.Pets.Count);
             Assert.AreEqual(tamara, leia.Dono);
             Assert.AreEqual(null, yuri.Dono);
+            Assert.AreEqual(tamara, mingau.Dono);
+            Assert.AreEqual(null, vesgo.Dono);
 
             foreach (var pet in tamara.Pets)
-                Console.WriteLine(pet.Nome);
+                Console.WriteLine($"{pet.GetType().Name}: {pet.Nome}");
         }
+    
 
         [TestMethod]
         public void Dono_AddPets_Test()
         {
             var leia = new Cachorro { Nome = "Léia" };
             var yuri = new Cachorro { Nome = "Yuri" };
+            var vesgo = new Gato { Nome = "Vesgo" };
+            var mingau = new Gato { Nome = "Mingau" };
 
             var tamara = new Dono { Nome = "Tamara" };
 
-            tamara.AddPet(leia, yuri);
+            tamara.AddPet(leia, yuri, vesgo, mingau);
 
-            Assert.AreEqual(2, tamara.Pets.Count);
+            Assert.AreEqual(4, tamara.Pets.Count);
             Assert.AreEqual(tamara, leia.Dono);
             Assert.AreEqual(tamara, yuri.Dono);
+            Assert.AreEqual(tamara, vesgo.Dono);
+            Assert.AreEqual(tamara, mingau.Dono);
 
             foreach (var pet in tamara.Pets)
-                Console.WriteLine(pet.Nome);
+                Console.WriteLine($"{pet.GetType().Name}: {pet.Nome}");
         }
 
         [TestMethod]
@@ -71,21 +89,22 @@ namespace Exercicios.Tests
         {
             var leia = new Cachorro { Nome = "Léia" };
             var yuri = new Cachorro { Nome = "Yuri" };
+            var vesgo = new Gato { Nome = "Vesgo" };
+            var mingau = new Gato { Nome = "Mingau" };
 
             var tamara = new Dono { Nome = "Tamara" };
 
-            var pets = new[] { leia, yuri };
+            tamara.AddPet(leia, yuri, vesgo, mingau);
 
-            tamara.AddPet(leia, yuri);
+            tamara.RemovePet(yuri, leia, vesgo);
 
-            tamara.RemovePet(yuri, leia);
-
-            Assert.AreEqual(0, tamara.Pets.Count);
+            Assert.AreEqual(1, tamara.Pets.Count);
             Assert.AreEqual(null, leia.Dono);
             Assert.AreEqual(null, yuri.Dono);
+            Assert.AreEqual(null, vesgo.Dono);
 
             foreach (var pet in tamara.Pets)
-                Console.WriteLine(pet.Nome);
+                Console.WriteLine($"{pet.GetType().Name}: {pet.Nome}");
         }
     }
 }

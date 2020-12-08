@@ -109,7 +109,7 @@ namespace Exercicios.Tests
         public void Cachorro_GetIdade_em_Meses_Test()
         {
             var cachorro = new Cachorro();
-            cachorro.DataNascimento = new DateTime(2020, 7, 10);
+            cachorro.DataNascimento = new DateTime(2020, 8, 10);
             var idade = cachorro.GetIdade();
 
             Assert.AreEqual("4 meses", idade);
@@ -120,7 +120,7 @@ namespace Exercicios.Tests
         public void Cachorro_GetIdade_um_Mes_Test()
         {
             var cachorro = new Cachorro();
-            cachorro.DataNascimento = new DateTime(2020, 10, 10);
+            cachorro.DataNascimento = new DateTime(2020, 11, 10);
             var idade = cachorro.GetIdade();
 
             Assert.AreEqual("1 mês", idade);
