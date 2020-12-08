@@ -5,13 +5,10 @@ using System.IO.Pipes;
 
 namespace Exercicios.Domain
 {
-    public class Cachorro : IPet
+    public class Cachorro : Animal, IPet
     {
-        public string Nome { get; set; } 
-        public Sexo Sexo { get; set; }
+      
         public Raca Raca { get; set; }
-        public Dono Dono { get; set; }
-        public string Foto { get; set; }
         public DateTime DataNascimento { get; set; }
         public bool Vacinado { get; set; }
 
@@ -41,7 +38,7 @@ namespace Exercicios.Domain
             return latidos.TrimEnd();
         }
 
-        public string QuantoDevoComer(int pesoKg)
+        public override string QuantoDevoComer(int pesoKg)  //override permite especificar no filho
         {
             double qtdeRacaoGramas = pesoKg * 50;
 
@@ -72,12 +69,12 @@ namespace Exercicios.Domain
             }
         }
         
-        public void Validar()
+        public override void Validar()
         {
-            var mensagens = new List<string>();
+            var mensagens = ValidacoesComuns();
 
             if(string.IsNullOrWhiteSpace(Nome)) // if(Nome == null || Nome == "" || Nome == "  ") retorna thrue
-                mensagens.Add("Nome do Cachorro é Obrigatório!");
+                mensagens.Add("Nome do Pet é Obrigatório!");
 
             if (DataNascimento > DateTime.Today)
                 mensagens.Add("Data de nascimento deve ser menor que hoje!");

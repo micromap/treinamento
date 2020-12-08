@@ -2,21 +2,16 @@
 
 namespace Exercicios.Domain
 {
-    public class Gato : IPet
+    public class Gato : Animal, IPet
     {
-        public string Nome { get; set; }
-        public Sexo Sexo { get; set; }
-        public string Foto { get; set; }
-        public Dono Dono { get; set; }
-
-        public string QuantoDevoComer(int pesoKg)
+        public string Miar(int quantidadeMiados)
         {
-            throw new NotImplementedException();
-        }
+            var miados = "";
 
-        public void Validar()
-        {
-            throw new NotImplementedException();
+            for (var i = 1; i <= quantidadeMiados; i++)
+                miados += "Miau! ";  
+
+            return miados.TrimEnd();
         }
     }
 }
