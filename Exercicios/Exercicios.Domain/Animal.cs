@@ -39,15 +39,9 @@ namespace Exercicios.Domain
         public virtual void Validar() //virtual herda, mas pode ter uma versão específica
         {
             var mensagens = ValidacoesComuns();
-
-            if (mensagens.Count > 0)
-            {
-                var exceptionMessage = "";
-                foreach (var msg in mensagens)
-                    exceptionMessage += msg + Environment.NewLine;
-
-                throw new Exception(exceptionMessage);
-            }
+            var ex = Helpers.ConvertStringListToException(mensagens);
+            if (ex != null)
+                throw ex;
         }
     }
 }

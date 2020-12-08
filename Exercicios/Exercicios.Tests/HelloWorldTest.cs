@@ -12,9 +12,7 @@ namespace Exercicios.Tests
         public void SayHello_Test()
         {
             string mensagem = HelloWorld.SayHello();
-
             Assert.AreEqual("Hello World!", mensagem);
-
             Console.WriteLine(mensagem);
        }
         [TestMethod]
