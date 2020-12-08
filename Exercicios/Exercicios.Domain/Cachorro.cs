@@ -22,11 +22,9 @@ namespace Exercicios.Domain
             return latidos.TrimEnd();
         }
 
-        public override string QuantoDevoComer(int pesoKg)  //override permite especificar no filho
+        public override string QuantoDevoComer()  //override permite especificar no filho
         {
-            double qtdeRacaoGramas = pesoKg * 50;
-
-            return $"Como tenho {pesoKg}kg, devo comer {qtdeRacaoGramas}g por dia.";
+            return $"Como tenho {Peso}kg, devo comer {Peso * 50}g por dia.";
         }
         public string GetIdade()
         {

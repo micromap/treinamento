@@ -17,7 +17,7 @@ namespace Exercicios.Tests
             Assert.AreEqual("Miau! Miau! Miau!", miado);
         }
 
-          [TestMethod]
+        [TestMethod]
         public void Gato_Validar_Test()
         {
             try
@@ -35,6 +35,16 @@ namespace Exercicios.Tests
                 Assert.AreEqual(true, ok);
                 Console.WriteLine(ex.Message);
             }
+        }
+
+        [TestMethod]
+        public void Vesgo_QuantoDevoComer_Test()
+        {
+            var vesgo = new Gato { Peso = 3 };
+            var quantoDevoComer = vesgo.QuantoDevoComer();
+
+            Console.WriteLine(quantoDevoComer);
+            Assert.AreEqual("Como tenho 3kg, devo comer 30g por dia.", quantoDevoComer);
         }
     }
 }

@@ -26,7 +26,7 @@ namespace Exercicios.Domain
             }
         }
 
-        public abstract string QuantoDevoComer(int pesoKg);
+        public abstract string QuantoDevoComer();
         protected virtual List<string> ValidacoesComuns() 
         {
             var mensagens = new List<string>();
