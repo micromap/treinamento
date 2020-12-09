@@ -64,7 +64,7 @@ namespace Exercicios.Domain
             if (Peso <= 0)
                 mensagens.Add("Peso deve ser maior que zero!");
 
-            var ex = Helpers.ConvertStringListToException(mensagens);
+            var ex = mensagens.ToException();
             if (ex != null)
                 throw ex;
         }

@@ -30,7 +30,7 @@ namespace Exercicios.Tests
             Assert.AreEqual(tamara, mingau.Dono);
 
             foreach (var pet in tamara.Pets)
-                Console.WriteLine($"{pet.GetType().Name}: {pet.Nome}");
+                Console.WriteLine($"{pet.GetTipo()}: {pet.Nome}");
         }
 
         [TestMethod]
@@ -58,7 +58,7 @@ namespace Exercicios.Tests
             Assert.AreEqual(null, vesgo.Dono);
 
             foreach (var pet in tamara.Pets)
-                Console.WriteLine($"{pet.GetType().Name}: {pet.Nome}");
+                Console.WriteLine($"{pet.GetTipo()}: {pet.Nome}");
         }
     
 
@@ -81,7 +81,7 @@ namespace Exercicios.Tests
             Assert.AreEqual(tamara, mingau.Dono);
 
             foreach (var pet in tamara.Pets)
-                Console.WriteLine($"{pet.GetType().Name}: {pet.Nome}");
+                Console.WriteLine($"{pet.GetTipo()}: {pet.Nome}");
         }
 
         [TestMethod]
@@ -104,7 +104,7 @@ namespace Exercicios.Tests
             Assert.AreEqual(null, vesgo.Dono);
 
             foreach (var pet in tamara.Pets)
-                Console.WriteLine($"{pet.GetType().Name}: {pet.Nome}");
+                Console.WriteLine($"{pet.GetTipo()}: {pet.Nome}");
         }
     }
 }
