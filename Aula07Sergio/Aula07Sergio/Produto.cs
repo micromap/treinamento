@@ -10,5 +10,18 @@ namespace Aula07Sergio
         public string Nome { get; set; }
         public double Preco { get; set; }
         public int Quantidade { get; set; }
+
+        public override string ToString()
+        {
+            return $"Produto(codigo = { Codigo }, nome = {Nome}, preço = {Preco}, quantidade = {Quantidade})";
+        }
+
+        public override bool Equals(object obj)
+        {
+            var p = (Produto) obj;
+
+            return Codigo == p.Codigo;
+       
+        }
     }
 }
