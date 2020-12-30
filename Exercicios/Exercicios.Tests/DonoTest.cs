@@ -12,8 +12,8 @@ namespace Exercicios.Tests
         public void Dono_AddPet_Test()
         {
 
-            var cachorro1 = new Gato { Nome = "Léia" };
-            var cachorro2 = new Gato { Nome = "Yuri" };
+            var cachorro1 = new Cachorro { Nome = "Léia" };
+            var cachorro2 = new Cachorro { Nome = "Yuri" };
             var gato1 = new Gato { Nome = "Vesgo" };
             var gato2 = new Gato { Nome = "Mingau" };
 
@@ -31,15 +31,15 @@ namespace Exercicios.Tests
             Assert.AreEqual(dono_pet, gato2.Dono);
 
             foreach ( var pet in dono_pet.Pets)
-                Console.WriteLine($"{pet.GetType().Name}: {pet.Nome}");
+                Console.WriteLine($"{pet.GetTipo()}: {pet.Nome}");
         }
 
         [TestMethod]
         public void Dono_AddPets_Test()
         {
 
-            var cachorro1 = new Gato { Nome = "Léia" };
-            var cachorro2 = new Gato { Nome = "Yuri" };
+            var cachorro1 = new Cachorro { Nome = "Léia" };
+            var cachorro2 = new Cachorro { Nome = "Yuri" };
             var gato1     = new Gato { Nome = "Vesgo" };
             var gato2     = new Gato { Nome = "Mingau" };
 
@@ -55,7 +55,7 @@ namespace Exercicios.Tests
             Assert.AreEqual(dono_pet, gato2.Dono);
 
             foreach (var pet in dono_pet.Pets)
-                Console.WriteLine($"{pet.GetType().Name}: {pet.Nome}");
+                Console.WriteLine($"{pet.GetTipo()}: {pet.Nome}");
         }
 
 
@@ -63,8 +63,8 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Dono_RemovePet_Test()
         {
-            var cachorro1 = new Gato { Nome = "Léia" };
-            var cachorro2 = new Gato { Nome = "Yuri" };
+            var cachorro1 = new Cachorro { Nome = "Léia" };
+            var cachorro2 = new Cachorro { Nome = "Yuri" };
             var gato1 = new Gato { Nome = "Vesgo" };
             var gato2 = new Gato { Nome = "Mingau" };
 
@@ -86,14 +86,14 @@ namespace Exercicios.Tests
             Assert.AreEqual(null, gato2.Dono);
 
             foreach (var pet in dono_pet.Pets)
-                Console.WriteLine($"{pet.GetType().Name}: {pet.Nome}");
+                Console.WriteLine($"{pet.GetTipo()}: {pet.Nome}");
         }
 
         [TestMethod]
         public void Dono_RemovePets_Test()
         {
-            var cachorro1 = new Gato { Nome = "Léia" };
-            var cachorro2 = new Gato { Nome = "Yuri" };
+            var cachorro1 = new Cachorro { Nome = "Léia" };
+            var cachorro2 = new Cachorro { Nome = "Yuri" };
             var gato1 = new Gato { Nome = "Vesgo" };
             var gato2 = new Gato { Nome = "Mingau" };
 
@@ -116,7 +116,7 @@ namespace Exercicios.Tests
 
 
             foreach (var pet in dono_pet.Pets)
-                Console.WriteLine($"{pet.GetType().Name}: {pet.Nome}");
+                Console.WriteLine($"{pet.GetTipo()}: {pet.Nome}");
         }
 
 
