@@ -111,8 +111,8 @@ namespace Exercicios.Tests
         public void Dt_Nascimento_Meses_Test()
         {
             var dtnascimento = new Cachorro();
-
-            dtnascimento.Nascimento = new DateTime(2020, 08, 10);
+            /* Pode apresentar erro por causa da data*/
+            dtnascimento.Nascimento = new DateTime(2020, 09, 10);
             var idade = dtnascimento.GetIdade();
             Assert.AreEqual("3 meses", idade);
             Console.WriteLine(idade);
@@ -123,8 +123,8 @@ namespace Exercicios.Tests
         {
 
             var dtnascimento = new Cachorro();
-
-            dtnascimento.Nascimento = new DateTime(2020, 10, 8);
+            /* Pode apresentar erro por causa da data*/
+            dtnascimento.Nascimento = new DateTime(2020, 11, 12);
             var idade = dtnascimento.GetIdade();
             Console.WriteLine(idade);
 

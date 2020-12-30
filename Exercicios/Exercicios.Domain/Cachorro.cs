@@ -34,12 +34,8 @@ namespace Exercicios.Domain
         {
             var anos = DateTime.Today.Year - Nascimento.Year;
             var meses = DateTime.Today.Month - Nascimento.Month + (12 * anos);
-            /*  if (idade > 1)
-                  return $"{idade} anos";
-                else
-                  return $"{idade} ano"; */
-
-            if (meses < 2)
+       
+            if (meses <= 2)
                 return $"{meses} mês";
             if (meses < 12)
                 return $"{meses} meses";
@@ -59,14 +55,9 @@ namespace Exercicios.Domain
             if (Peso <= 0)
                 mensagens.Add("Peso do pet deve ser maior que zero!");
 
-            if (mensagens.Count > 0)
-            {
-                var exceptionMessage = "";
-                foreach (var msg in mensagens)
-                    exceptionMessage += msg + Environment.NewLine;
-
-                throw new Exception(exceptionMessage);
-            }
+            var ex = Helpers.CovertStringListToException(mensagens);
+            if (ex != null)
+                throw ex;
 
         }
 
