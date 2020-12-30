@@ -155,5 +155,53 @@ namespace Exercicios.Tests
             foreach (var pet in query)
                 Console.WriteLine($"{pet.Sexo} - {pet.Total}");
         }
+
+        [TestMethod]
+        public void Linq_Group_Dono_Test()
+        {
+            var query = from pet in _pets
+                        group pet by pet.Dono into g
+                        orderby g.Key.Nome
+                        select new
+                        {
+                            Dono = g.Key.Nome,
+                            QtdeCaes = g.Key.Pets.Count(x => x.GetTipo() == "Cachorro"),
+                            QtdeGatos = g.Key.Pets.Count(x => x.GetTipo() == "Gato")
+                        };
+
+            foreach (var x in query)
+                Console.WriteLine($"{x.Dono}: Cachorro = {x.QtdeCaes} - Gatos = {x.QtdeGatos}");
+        }
+
+        [TestMethod]
+        public void Linq_Cachorro_MaisVelho_e_MaisNovo_Test()
+        {
+            // comando cast <> se usar para conversão de double para int
+            var cachorros = _pets.Where(x => x.GetTipo() == "Cachorro").Cast<Cachorro>();
+
+            // O método agregado aplica uma função a cada item de uma coleção. Por exemplo, vamos ter a coleção { 6, 2, 8, 3}
+            // e a função Adicionar(operador + ) que ela faz(((6 + 2) + 8) + 3) e retorna 19.
+            // Implementação de Sum usando o método Aggregate.Este exemplo usa a sobrecarga do método Aggregate 
+            // com apenas um parâmetro func . No parâmetro func , é passada a expressão lambda(método anônimo) 
+            // que adiciona dois números. Este exemplo é apenas para demonstração . 
+            // Para calcular a soma dos números, use Enumerable.Sum.
+
+            // var numbers = new List<int> { 6, 2, 8, 3 };
+            // int sum = numbers.Aggregate(func: (result, item) => result + item);
+            // sum: (((6+2)+8)+3) = 19
+
+            var maisVelho = cachorros.Aggregate((min, x) =>
+                                            x.DataNascimento < min.DataNascimento ? x : min);
+
+            var maisNovo = cachorros.Aggregate((max, x) =>
+                                x.DataNascimento > max.DataNascimento ? x : max);
+
+            Console.WriteLine(
+                $"Mais Velho: {maisVelho.Nome} - {maisVelho.DataNascimento} - {maisVelho.GetIdade()}");
+
+            Console.WriteLine(
+                $"Mais Novo: {maisNovo.Nome} - {maisNovo.DataNascimento} - {maisNovo.GetIdade()}");
+        }
+
     }
 }
