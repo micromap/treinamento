@@ -2,6 +2,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using Exercicios.Domain;
 using System.Collections.Generic;
+using System.IO;
 
 namespace Exercicios.Tests
 {
@@ -374,7 +375,6 @@ namespace Exercicios.Tests
                 Console.WriteLine(item);
         }
 
-
         [TestMethod]
         public void Dictionary_Test()
         {
@@ -475,7 +475,6 @@ namespace Exercicios.Tests
         }
 
         [TestMethod]
-
         public void Exception_Test()
         {
             try
@@ -483,8 +482,7 @@ namespace Exercicios.Tests
                 Gato cachorro = null;
                 if (cachorro == null)
                     throw new Exception("O cachorro não foi instanciado!");
-
-            //    var mensagens = cachorro.Validar();
+            //  var mensagens = cachorro.Validar();
                 var x = 10;
                 var y = 0;
 
@@ -503,12 +501,36 @@ namespace Exercicios.Tests
             {
                 Console.WriteLine("Fim do teste!");
             }
-            
-            
         }
 
-    }
+        [TestMethod]
+        public void SystemIO_CreatedDirectory_Test()
+        {
+            Directory.CreateDirectory("C:\\Aula030");
+            Directory.CreateDirectory("C:\\Aula030\\SubPasta");
+        }
 
+        [TestMethod]
+        public void SystemIO_File_Create_Test()
+        {
+            File.WriteAllText("C:\\Aula030\\hello.txt","Hello World!");
+        }
+
+        [TestMethod]
+        public void SystemIO_GetFileSystemEntries_Test()
+        {
+            var lista = Directory.GetFileSystemEntries("C:\\Aula030\\");
+            foreach (var item in lista)
+                Console.WriteLine(item);
+        }
+
+        [TestMethod]
+        public void SystemIO_File_Read_Txt_Test()
+        {
+            var conteudo = File.ReadAllText("C:\\Aula030\\hello.txt");
+            Console.WriteLine(conteudo);
+        }
+    }
 
     [TestClass]
     public class ClasseFilha2 : MinhaClasse

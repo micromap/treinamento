@@ -13,7 +13,7 @@ namespace Exercicios.Tests
         [TestMethod]
         public void Gato_Miar_Test()
         {
-            
+
             var gato1 = new Gato();
             var miado = gato1.Miar(3);
 
@@ -28,12 +28,12 @@ namespace Exercicios.Tests
             try
             {
                 var nome_gato = " ";
-              
+
 
                 var gato = new Cachorro()
                 {
                     Nome = nome_gato,
-                
+
                 };
 
                 gato.Validar();
@@ -62,6 +62,5 @@ namespace Exercicios.Tests
 
 
 }
-
 
 
