@@ -90,7 +90,7 @@ namespace Exercicios.Tests
         {
             var dtnascimento = new Cachorro();
 
-            dtnascimento.Nascimento = new DateTime(2016, 03, 16);
+            dtnascimento.Nascimento = new DateTime(2017, 03, 16);
             var idade = dtnascimento.GetIdade();
             Assert.AreEqual("4 anos", idade);
             Console.WriteLine(idade);
@@ -101,7 +101,7 @@ namespace Exercicios.Tests
         {
             var dtnascimento = new Cachorro();
 
-            dtnascimento.Nascimento = new DateTime(2019, 03, 16);
+            dtnascimento.Nascimento = new DateTime(2020, 01, 16);
             var idade = dtnascimento.GetIdade();
             Assert.AreEqual("1 ano", idade);
             Console.WriteLine(idade);
@@ -112,7 +112,7 @@ namespace Exercicios.Tests
         {
             var dtnascimento = new Cachorro();
             /* Pode apresentar erro por causa da data*/
-            dtnascimento.Nascimento = new DateTime(2020, 09, 10);
+            dtnascimento.Nascimento = new DateTime(2020, 10, 10);
             var idade = dtnascimento.GetIdade();
             Assert.AreEqual("3 meses", idade);
             Console.WriteLine(idade);
@@ -124,7 +124,7 @@ namespace Exercicios.Tests
 
             var dtnascimento = new Cachorro();
             /* Pode apresentar erro por causa da data*/
-            dtnascimento.Nascimento = new DateTime(2020, 11, 12);
+            dtnascimento.Nascimento = new DateTime(2020, 12, 12);
             var idade = dtnascimento.GetIdade();
             Console.WriteLine(idade);
 

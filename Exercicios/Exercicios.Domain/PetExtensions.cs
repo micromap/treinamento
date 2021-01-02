@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Exercicios.Domain
 {
@@ -12,13 +13,14 @@ namespace Exercicios.Domain
             return pet.GetType().Name;
         }
 
-        public static void CarregaPetsDoArquivo(this List<IPet> pets, string caminho)
+        public static async Task CarregaPetsDoArquivo(this List<IPet> pets, string caminho)
         {
             var donos = new List<Dono>();
             var racas = new List<Raca>();
 
-            var linhas = File.ReadAllLines(caminho);
-            for(var i = 1; i < linhas.Length; i++)
+            var linhas = await File.ReadAllLinesAsync(caminho);
+
+            for(int i = 1; i < linhas.Length; i++)
             {
                 var colunas = linhas[i].Split(";".ToCharArray());
                 if(colunas[0] == "Cachorro")
