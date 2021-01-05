@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Exercicios.Tests
 {
@@ -12,11 +13,11 @@ namespace Exercicios.Tests
         private static List<IPet> _pets;
 
         [ClassInitialize]
-        public static void Setup(TestContext context)
+        public static async Task Setup(TestContext context)
         {
             // carrega a lista de pets pelo arquivo C:\\Aula030\\pets.csv
             _pets = new List<IPet>();
-            _pets.CarregaPetsDoArquivo("C:\\Aula030\\pets.csv");
+            await _pets.CarregaPetsDoArquivo("C:\\Aula030\\pets.csv");
         }
 
         private static void ImprimePets(IEnumerable<IPet> pets)

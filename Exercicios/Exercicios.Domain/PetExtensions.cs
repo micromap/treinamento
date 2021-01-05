@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace Exercicios.Domain
 {
@@ -12,12 +13,12 @@ namespace Exercicios.Domain
             return pet.GetType().Name;
         }
 
-        public static void CarregaPetsDoArquivo(this List<IPet> pets, string caminho)
+        public static async Task CarregaPetsDoArquivo(this List<IPet> pets, string caminho)
         {
             var donos = new List<Dono>();
             var racas = new List<Raca>();
 
-            var linhas = File.ReadAllLines(caminho);
+            var linhas = await File.ReadAllLinesAsync(caminho);
             for (var i = 1; i < linhas.Length; i++)
             {
                 // O método String.Split cria uma matriz de subcadeias, 
