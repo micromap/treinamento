@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Exercicios.Domain
 {
@@ -26,6 +28,31 @@ namespace Exercicios.Domain
             var obj = new MinhaClasse();
             obj.MeuMetodo();
         }
-            
+
+        public static string Tarefa(string tarefa, int passos)
+        {
+            Console.WriteLine($"## Tarefa {tarefa} INICIADA!");
+
+            for (var i = passos; i > 0; i--)
+            {
+                Thread.Sleep(1000);  // fica parada por 1000 milisegundos, ou seja, 1 segundo
+                Console.WriteLine($"      >> Tarefa {tarefa} executando... {i}");
+            }
+
+            return $"## Tarefa {tarefa} CONCLUÍDA!";
+        }
+
+        public static async Task<string> TarefaAsync(string tarefa, int passos)
+        {
+            Console.WriteLine($"## Tarefa {tarefa} INICIADA!");
+
+            for (var i = passos; i > 0; i--)
+            {
+                await Task.Delay(1000);
+                Console.WriteLine($"      >> Tarefa {tarefa} executando... {i}");
+            }
+
+            return $"## Tarefa {tarefa} CONCLUÍDA!";
+        }
     }
 }
