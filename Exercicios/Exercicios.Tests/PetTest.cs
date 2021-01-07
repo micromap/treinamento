@@ -147,5 +147,40 @@ namespace Exercicios.Tests
             foreach (var pet in query)
                 Console.WriteLine($"{pet.Sexo} - {pet.Total}");
         }
+
+        [TestMethod]
+        public void Linq_Group_Dono_Test()
+        {
+            var query = from pet in _pets
+                        group pet by pet.Dono into g
+                        orderby g.Key.Nome
+                        select new
+                        {
+                            Dono = g.Key.Nome,
+                            TotalCaes = g.Key.Pets.Count(x => x.GetTipo() == "Cachorro"),
+                            TotalGatos = g.Key.Pets.Count(x => x.GetTipo() == "Gato")
+                        };
+
+            foreach (var x in query)
+                Console.WriteLine($"{x.Dono}: Cães= {x.TotalCaes} - Gatos = {x.TotalGatos}");
+        }
+
+        [TestMethod]
+        public void Linq_Cachorro_MaisVelho_e_MaisNovo_Test()
+        {
+            var cachorros = _pets.Where(x => x.GetTipo() == "Cachorro").Cast<Cachorro>();
+
+            var maisVelho = cachorros.Aggregate((min, x) =>
+                                            x.DataNascimento < min.DataNascimento ? x : min);
+
+            var maisNovo = cachorros.Aggregate((max, x) =>
+                                x.DataNascimento > max.DataNascimento ? x : max);
+
+            Console.WriteLine(
+                $"Mais Velho: {maisVelho.Nome} - {maisVelho.DataNascimento} - {maisVelho.GetIdade()}");
+
+            Console.WriteLine(
+                $"Mais Novo: {maisNovo.Nome} - {maisNovo.DataNascimento} - {maisNovo.GetIdade()}");
+        }
     }
 }
