@@ -409,7 +409,7 @@ namespace Exercicios.Tests
             Console.WriteLine(mensagem);
         }
 
-        [TestMethod]
+        //[TestMethod]
         public void Exception_Test()
         {
             try
@@ -418,7 +418,7 @@ namespace Exercicios.Tests
                 if (cachorro == null)
                     throw new Exception("O cachorro não foi instanciado!");
 
-                var mensagens = cachorro.Validar();
+                //var mensagens = cachorro.Validar();
 
                 var x = 10;
                 var y = 0;
