@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace Exercicios.Tests
 {
@@ -521,6 +522,59 @@ namespace Exercicios.Tests
             var conteudo = File.ReadAllText("C:\\Aula030\\hello.txt");
             Console.WriteLine(conteudo);
         }
+
+        [TestMethod]
+        public void Async_Await_Tarefa_Test()
+        {
+            var retorno1 = HelloWorld.Tarefa("Um", 5);
+            Console.WriteLine(retorno1);
+
+            var retorno2 = HelloWorld.Tarefa("Dois", 3);
+            Console.WriteLine(retorno2);
+        }
+
+        [TestMethod]
+        public async Task Async_Await_TarefaAsync_1_Test()
+        {
+            Task<string> tarefa1 = HelloWorld.TarefaAsync("Um", 5);
+
+            Console.WriteLine("Código que pode ser executado, independente do retorno da tarefa1");
+
+            string resultado = await tarefa1;
+
+            Console.WriteLine(resultado);
+        }
+
+        [TestMethod]
+        public async Task Async_Await_TarefaAsync_2_Test()
+        {
+            Task<string> tarefa1 = HelloWorld.TarefaAsync("Um", 5);
+            Task<string> tarefa2 = HelloWorld.TarefaAsync("Dois", 5);
+
+            string resultado1 = await tarefa1;
+            Console.WriteLine(resultado1);
+
+            string resultado2 = await tarefa2;
+            Console.WriteLine(resultado2);
+        }
+
+        [TestMethod]
+        public async Task Async_Await_TarefaAsync_3_Test()
+        {
+            Task<string> tarefa1 = HelloWorld.TarefaAsync("Um", 5);
+            Task<string> tarefa2 = HelloWorld.TarefaAsync("Dois", 10);
+
+            string resultado1 = await tarefa1;
+            Console.WriteLine(resultado1);
+
+            Task<string> tarefa3 = HelloWorld.TarefaAsync("Três", 5);
+
+            string resultado2 = await tarefa2;
+            Console.WriteLine(resultado2);
+
+            string resultado3 = await tarefa3;
+            Console.WriteLine(resultado3);
+        }
     }
 
     public class ClasseFilha2 : MinhaClasse
@@ -530,5 +584,6 @@ namespace Exercicios.Tests
             //this.MeuMetodo();
         }
     }
+
 }
 
